@@ -1,15 +1,73 @@
-name: Auto Trading Agent
+name: Auto Trading Agent (Full Config)
 
 on:
   schedule:
-    # Runs daily at 18:00 Beijing Time (10:00 UTC) - Same as your other repo
+    # 默认每天 18:00 (UTC 10:00) 运行，使用默认参数
     - cron: '0 10 * * 1-5'
+  
   workflow_dispatch:
+    inputs:
+      # Step 1: 股票代码
+      ticker:
+        description: '【Step 1】股票代码 (Ticker)'
+        required: true
+        default: 'SPY'
+      
+      # Step 3: 分析师团队 (逗号分隔)
+      analysts:
+        description: '【Step 3】启用分析师 (market,news,fundamentals,social)'
+        required: true
+        default: 'market,news,fundamentals,social'
+      
+      # Step 4: 研究深度
+      research_depth:
+        description: '【Step 4】研究深度 (辩论轮数)'
+        required: true
+        default: '1'
+        type: choice
+        options:
+          - '1'
+          - '3'
+          - '5'
+      
+      # Step 5: LLM 提供商
+      llm_provider:
+        description: '【Step 5】LLM 提供商'
+        required: true
+        default: 'google'
+        type: choice
+        options:
+          - google
+          - openai
+          - anthropic
+          - xai
+          - openrouter
+      
+      # Step 6: 模型选择
+      quick_model:
+        description: '【Step 6】快速模型 (Summary/Search)'
+        required: true
+        default: 'gemini-2.0-flash' 
+      deep_model:
+        description: '【Step 6】深度模型 (Decision/Debate)'
+        required: true
+        default: 'gemini-2.0-pro-exp-02-11'
+      
+      # Step 7: 推理配置
+      reasoning_effort:
+        description: '【Step 7】推理强度 (仅限 OpenAI o1/o3)'
+        required: false
+        default: 'medium'
+        type: choice
+        options:
+          - low
+          - medium
+          - high
 
 jobs:
   run-agent:
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 60
     
     steps:
       - name: Checkout code
@@ -25,28 +83,119 @@ jobs:
         run: |
           pip install --upgrade pip
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          # 确保脚本运行所需的额外库
+          pip install rich python-dotenv
           
-      - name: Run Trading Agent
+      - name: 生成全参数运行脚本
+        run: |
+          cat <<EOF > auto_run.py
+          import os
+          import sys
+          from datetime import datetime
+          from tradingagents.graph.trading_graph import TradingAgentsGraph
+          from tradingagents.default_config import DEFAULT_CONFIG
+
+          # --- 1. 获取环境变量 (对应 CLI 的 7 个步骤) ---
+          ticker = os.getenv("INPUT_TICKER", "SPY")
+          current_date = datetime.now().strftime("%Y-%m-%d")
+          
+          # Step 3: 解析分析师列表
+          analysts_str = os.getenv("INPUT_ANALYSTS", "market,news,fundamentals,social")
+          selected_analysts = [a.strip() for a in analysts_str.split(",") if a.strip()]
+          
+          # Step 4: 深度
+          try:
+              depth = int(os.getenv("INPUT_DEPTH", "1"))
+          except:
+              depth = 1
+              
+          # Step 5 & 6: 模型配置
+          llm_provider = os.getenv("INPUT_PROVIDER", "google").lower()
+          quick_model = os.getenv("INPUT_QUICK_MODEL", "gemini-2.0-flash")
+          deep_model = os.getenv("INPUT_DEEP_MODEL", "gemini-2.0-pro-exp-02-11")
+          
+          # Step 7: 推理配置
+          reasoning_effort = os.getenv("INPUT_REASONING", "medium")
+
+          print("="*60)
+          print(f"🚀 Auto Trading Agent Configured")
+          print(f"🎯 Ticker: {ticker}")
+          print(f"📅 Date: {current_date}")
+          print(f"👥 Analysts: {selected_analysts}")
+          print(f"🧠 Provider: {llm_provider}")
+          print(f"⚡️ Quick Model: {quick_model}")
+          print(f"🧘 Deep Model: {deep_model}")
+          print(f"🔄 Rounds: {depth}")
+          print("="*60)
+
+          # --- 2. 构建配置字典 (覆盖 default_config) ---
+          config = DEFAULT_CONFIG.copy()
+          config["llm_provider"] = llm_provider
+          config["quick_think_llm"] = quick_model
+          config["deep_think_llm"] = deep_model
+          
+          # 映射深度到轮数
+          config["max_debate_rounds"] = depth
+          config["max_risk_discuss_rounds"] = depth
+          
+          # Step 7: 注入特殊模型参数
+          if llm_provider == "openai" and ("o1" in deep_model or "o3" in deep_model):
+              config["openai_reasoning_effort"] = reasoning_effort
+          
+          # 可以在这里根据 provider 自动设置 google_thinking_level 等
+          # config["google_thinking_level"] = "include_thoughts"
+
+          # --- 3. 初始化并运行 ---
+          try:
+              # 这里的 selected_analysts 对应 CLI 的 Step 3
+              graph = TradingAgentsGraph(selected_analysts=selected_analysts, config=config, debug=True)
+              
+              print("\n... Starting Analysis Propagation ...\n")
+              final_state, decision = graph.propagate(ticker, current_date)
+              
+              print("\n✅ Final Decision Output:")
+              print(decision)
+              
+              # 保存结果供 Artifact 下载
+              with open("decision.txt", "w") as f:
+                  f.write(str(decision))
+                  
+          except Exception as e:
+              print(f"\n❌ Fatal Error: {e}")
+              import traceback
+              traceback.print_exc()
+              sys.exit(1)
+          EOF
+          
+      - name: 执行分析
         env:
-          # LLM Providers - Ensure these are set in your Repo Settings > Secrets
+          # 将 GitHub Inputs 映射为 Python 环境变量
+          INPUT_TICKER: ${{ github.event.inputs.ticker || 'NVDA' }}
+          INPUT_ANALYSTS: ${{ github.event.inputs.analysts || 'market,news,fundamentals,social' }}
+          INPUT_DEPTH: ${{ github.event.inputs.research_depth || '1' }}
+          INPUT_PROVIDER: ${{ github.event.inputs.llm_provider || 'google' }}
+          INPUT_QUICK_MODEL: ${{ github.event.inputs.quick_model || 'gemini-2.0-flash' }}
+          INPUT_DEEP_MODEL: ${{ github.event.inputs.deep_model || 'gemini-2.0-pro-exp-02-11' }}
+          INPUT_REASONING: ${{ github.event.inputs.reasoning_effort || 'medium' }}
+          
+          # API Secrets
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
           OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-          
-          # Add your stock data keys here if needed
-          # TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
+          TUSHARE_TOKEN: ${{ secrets.TUSHARE_TOKEN }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
         run: |
-          echo "Starting Trading Agent..."
-          python main.py
+          python auto_run.py
           
-      - name: Upload Logs
+      - name: Upload Decision Artifact
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: execution-logs
+          name: analysis-result-${{ env.INPUT_TICKER }}
           path: |
+            decision.txt
             *.log
-            logs/
+            reports/
           retention-days: 7
