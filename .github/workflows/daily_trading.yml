@@ -11,7 +11,7 @@ on:
       ticker:
         description: '【Step 1】股票代码 (Ticker)'
         required: true
-        default: 'SPY'
+        default: 'NVDA'
       
       # Step 3: 分析师团队 (逗号分隔)
       analysts:
@@ -47,11 +47,11 @@ on:
       quick_model:
         description: '【Step 6】快速模型 (Summary/Search)'
         required: true
-        default: 'gemini-2.0-flash' 
+        default: 'gemini-flash-lastest' 
       deep_model:
         description: '【Step 6】深度模型 (Decision/Debate)'
         required: true
-        default: 'gemini-2.0-pro-exp-02-11'
+        default: 'gemini-2.5-pro'
       
       # Step 7: 推理配置
       reasoning_effort:
