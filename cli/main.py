@@ -578,11 +578,11 @@ def get_user_selections():
             )
         )
         thinking_level = ask_gemini_thinking_config()
-    elif provider_lower == "openai":
+    elif provider_lower in ("openai", "siliconflow"):
         console.print(
             create_question_box(
                 "Step 8: Reasoning Effort",
-                "Configure OpenAI reasoning effort level"
+                "Configure OpenAI-compatible reasoning effort level"
             )
         )
         reasoning_effort = ask_openai_reasoning_effort()

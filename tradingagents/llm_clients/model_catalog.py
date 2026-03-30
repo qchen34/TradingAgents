@@ -9,6 +9,18 @@ ProviderModeOptions = Dict[str, Dict[str, List[ModelOption]]]
 
 
 MODEL_OPTIONS: ProviderModeOptions = {
+    "siliconflow": {
+        "quick": [
+            ("Qwen3-32B - Fast Chinese/English reasoning", "Qwen/Qwen3-32B"),
+            ("DeepSeek V3 - Strong general analysis", "deepseek-ai/DeepSeek-V3"),
+            ("Qwen3-14B - Lower latency and cost", "Qwen/Qwen3-14B"),
+        ],
+        "deep": [
+            ("MiniMax-M2.5 - Deep financial reasoning", "Pro/MiniMaxAI/MiniMax-M2.5"),
+            ("Qwen3-235B-A22B-Instruct-2507 - High-end capability", "Qwen/Qwen3-235B-A22B-Instruct-2507"),
+            ("DeepSeek V3 - Strong general analysis", "deepseek-ai/DeepSeek-V3"),
+        ],
+    },
     "openai": {
         "quick": [
             ("GPT-5.4 Mini - Fast, strong coding and tool use", "gpt-5.4-mini"),
