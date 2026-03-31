@@ -2,7 +2,6 @@ from typing import Optional
 
 from .base_client import BaseLLMClient
 from .openai_client import OpenAIClient
-from .siliconflow_client import SiliconFlowClient
 from .anthropic_client import AnthropicClient
 from .google_client import GoogleClient
 
@@ -35,14 +34,11 @@ def create_llm_client(
     """
     provider_lower = provider.lower()
 
-    if provider_lower in ("openai", "ollama", "openrouter"):
+    if provider_lower in ("openai", "ollama", "openrouter", "siliconflow"):
         return OpenAIClient(model, base_url, provider=provider_lower, **kwargs)
 
     if provider_lower == "xai":
         return OpenAIClient(model, base_url, provider="xai", **kwargs)
-
-    if provider_lower == "siliconflow":
-        return SiliconFlowClient(model, base_url, **kwargs)
 
     if provider_lower == "anthropic":
         return AnthropicClient(model, base_url, **kwargs)
