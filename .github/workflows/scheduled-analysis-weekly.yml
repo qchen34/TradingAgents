@@ -1,0 +1,112 @@
+# Weekly scheduled TradingAgents analysis (UTC). Configure Repository Variables + Secrets.
+# Repo root = directory containing this file and pyproject.toml.
+# Disable or delete this file if you only want daily runs.
+
+name: Scheduled analysis (weekly)
+
+on:
+  schedule:
+    - cron: "15 1 * * 1" # 01:15 UTC every Monday — adjust as needed
+  workflow_dispatch:
+    inputs:
+      ticker:
+        description: "Stock ticker (overrides SCHEDULE_TICKER when set)"
+        required: true
+        type: string
+      analysis_date:
+        description: "YYYY-MM-DD (overrides SCHEDULE_ANALYSIS_DATE / default yesterday UTC)"
+        required: true
+        type: string
+
+concurrency:
+  group: scheduled-analysis-weekly-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    env:
+      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+      SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
+      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
+      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+      ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install package
+        run: pip install -e .
+
+      - name: Resolve ticker and analysis date
+        id: cfg
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "ticker=${{ github.event.inputs.ticker }}" >> "$GITHUB_OUTPUT"
+            echo "date=${{ github.event.inputs.analysis_date }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "ticker=${{ vars.SCHEDULE_TICKER }}" >> "$GITHUB_OUTPUT"
+            if [ -n "${{ vars.SCHEDULE_ANALYSIS_DATE }}" ]; then
+              echo "date=${{ vars.SCHEDULE_ANALYSIS_DATE }}" >> "$GITHUB_OUTPUT"
+            else
+              echo "date=$(date -u -d yesterday +%Y-%m-%d)" >> "$GITHUB_OUTPUT"
+            fi
+          fi
+
+      - name: Validate configuration
+        run: |
+          if [ -z "${{ steps.cfg.outputs.ticker }}" ]; then
+            echo "Set Repository Variable SCHEDULE_TICKER or use workflow_dispatch"
+            exit 1
+          fi
+          if [ -z "${{ steps.cfg.outputs.date }}" ]; then
+            echo "Missing analysis date"
+            exit 1
+          fi
+
+      - name: Run headless analysis
+        env:
+          SCHEDULE_OUTPUT_DIR: reports/_ci/${{ github.run_id }}
+          SCHEDULE_ANALYST_LIST: ${{ vars.SCHEDULE_ANALYST_LIST }}
+          SCHEDULE_RESEARCH_DEPTH: ${{ vars.SCHEDULE_RESEARCH_DEPTH }}
+          SCHEDULE_LLM_PROVIDER: ${{ vars.SCHEDULE_LLM_PROVIDER }}
+          SCHEDULE_BACKEND_URL: ${{ vars.SCHEDULE_BACKEND_URL }}
+          SCHEDULE_QUICK_MODEL: ${{ vars.SCHEDULE_QUICK_MODEL }}
+          SCHEDULE_DEEP_MODEL: ${{ vars.SCHEDULE_DEEP_MODEL }}
+          SCHEDULE_OUTPUT_LANGUAGE: ${{ vars.SCHEDULE_OUTPUT_LANGUAGE }}
+          SCHEDULE_OPENAI_REASONING_EFFORT: ${{ vars.SCHEDULE_OPENAI_REASONING_EFFORT }}
+          SCHEDULE_GOOGLE_THINKING_LEVEL: ${{ vars.SCHEDULE_GOOGLE_THINKING_LEVEL }}
+          SCHEDULE_ANTHROPIC_EFFORT: ${{ vars.SCHEDULE_ANTHROPIC_EFFORT }}
+          TRADINGAGENTS_CI: "1"
+        run: |
+          OUT="reports/_ci/${{ github.run_id }}"
+          mkdir -p "$OUT"
+          python scripts/github_scheduled_analysis.py \
+            --ticker "${{ steps.cfg.outputs.ticker }}" \
+            --date "${{ steps.cfg.outputs.date }}" \
+            --output-dir "$OUT" \
+            ${SCHEDULE_ANALYST_LIST:+--analysts "$SCHEDULE_ANALYST_LIST"} \
+            ${SCHEDULE_RESEARCH_DEPTH:+--research-depth "$SCHEDULE_RESEARCH_DEPTH"} \
+            ${SCHEDULE_LLM_PROVIDER:+--llm-provider "$SCHEDULE_LLM_PROVIDER"} \
+            ${SCHEDULE_BACKEND_URL:+--backend-url "$SCHEDULE_BACKEND_URL"} \
+            ${SCHEDULE_QUICK_MODEL:+--quick-model "$SCHEDULE_QUICK_MODEL"} \
+            ${SCHEDULE_DEEP_MODEL:+--deep-model "$SCHEDULE_DEEP_MODEL"} \
+            ${SCHEDULE_OUTPUT_LANGUAGE:+--output-language "$SCHEDULE_OUTPUT_LANGUAGE"} \
+            ${SCHEDULE_OPENAI_REASONING_EFFORT:+--openai-reasoning-effort "$SCHEDULE_OPENAI_REASONING_EFFORT"} \
+            ${SCHEDULE_GOOGLE_THINKING_LEVEL:+--google-thinking-level "$SCHEDULE_GOOGLE_THINKING_LEVEL"} \
+            ${SCHEDULE_ANTHROPIC_EFFORT:+--anthropic-effort "$SCHEDULE_ANTHROPIC_EFFORT"}
+
+      - name: Upload reports artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: tradingagents-weekly-${{ steps.cfg.outputs.ticker }}-${{ github.run_id }}
+          path: reports/_ci/${{ github.run_id }}
+          retention-days: 14
