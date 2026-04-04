@@ -7,18 +7,18 @@
 
 在 GitHub 打开 **Actions** → 选择下列任一 workflow → **Run workflow**，在表单中填写即可（留空则见下方「优先级」说明）。
 
-**`Scheduled analysis (manual now)`** 仅支持手动运行，适合第一次试用。
+**`Scheduled analysis (manual now)`** 仅支持手动运行，适合第一次试用：**`ticker` 为必填文本**；**`analysis_date` 留空则使用 UTC 当日**；**`research_depth` 为下拉单选**（与 CLI 中 Shallow=1 / Medium=3 / Deep=5 一致）。
 
 **`Scheduled analysis (daily)`** / **`Scheduled analysis (weekly)`** 除定时 cron 外，同样支持手动运行；手动时也可只在表单里填写，而不去仓库 Settings 里配 Variables。
 
-表单字段与含义（与本地 CLI 选项对应）：
+表单字段与含义（对齐本地 CLI）：
 
 | 表单字段 (workflow input) | 说明 |
 |----------------------------|------|
-| `ticker` | 标的代码，如 `QQQM` |
-| `analysis_date` | `YYYY-MM-DD` |
-| `analyst_list` | `all` 或 `market,social,news,fundamentals` |
-| `research_depth` | `1`、`3` 或 `5` |
+| `ticker` | 标的代码，如 `QQQM`（**manual workflow 中为必填**） |
+| `analysis_date` | `YYYY-MM-DD`；**留空则使用 UTC 当日**（与「默认今日」一致；Runner 使用 UTC） |
+| `research_depth` | **下拉单选**：`1`（Shallow）、`3`（Medium）、`5`（Deep），默认 `1` |
+| `analyst_list` | 文本：`all` 或逗号分隔 `market,social,news,fundamentals` |
 | `llm_provider` | 如 `openai`、`siliconflow` |
 | `backend_url` | OpenAI 兼容 API 的 base URL |
 | `quick_model` / `deep_model` | quick / deep 模型 id |
@@ -27,7 +27,7 @@
 | `google_thinking_level` | Gemini thinking（若适用） |
 | `anthropic_effort` | Claude effort（若适用） |
 
-**优先级**：某一字段在表单里**非空** → 使用表单值；**留空** → 再尝试同名的 **Repository Variable**（见下表）；仍无则脚本使用 `default_config` 或内置默认（分析日在定时任务下还可为 UTC 昨天）。
+**优先级**：某一字段在表单里**非空**（或 `research_depth` 下拉已选）→ 使用表单值；**留空** → 再尝试同名的 **Repository Variable**（见下表）；`analysis_date` 仍无则使用 **UTC 当日**；其余仍无则脚本使用 `default_config`。
 
 ## Repository Secrets（敏感，对应 `.env` 中的密钥）
 
@@ -52,9 +52,9 @@ Workflow 会将它们注入为同名环境变量，与本地 `.env` 一致。
 | Variable | 典型用途 |
 |----------|----------|
 | `SCHEDULE_TICKER` | **定时 cron 无人运行时**必填之一：标的代码（或每次手动在表单填 `ticker`） |
-| `SCHEDULE_ANALYSIS_DATE` | 定时任务默认分析日；不填则 **UTC 昨天** |
+| `SCHEDULE_ANALYSIS_DATE` | 后备分析日；不设且表单也未填时，工作流使用 **UTC 当日** |
 | `SCHEDULE_ANALYST_LIST` | 表单 `analyst_list` 留空时的后备 |
-| `SCHEDULE_RESEARCH_DEPTH` | 表单留空时的后备 |
+| `SCHEDULE_RESEARCH_DEPTH` | 定时任务无表单时，作为 1/3/5 的后备 |
 | `SCHEDULE_LLM_PROVIDER` | 表单留空时的后备 |
 | `SCHEDULE_BACKEND_URL` | 表单留空时的后备 |
 | `SCHEDULE_QUICK_MODEL` | 表单留空时的后备 |
@@ -69,7 +69,7 @@ Workflow 会将它们注入为同名环境变量，与本地 `.env` 一致。
 - **`scheduled-analysis-manual.yml`**：仅手动运行，在表单中填参即可（可不配置任何 Variable）。
 - **`scheduled-analysis-daily.yml`** / **`scheduled-analysis-weekly.yml`**：支持 **定时 cron**（UTC）与 **手动 Run workflow**。  
   - **手动运行**：在表单里填写 `ticker` 等即可，不必去 Settings 配 Variables。  
-  - **定时、无人值守**：`workflow_dispatch` 表单不可用，此时需在 Repository Variables 中至少设置 **`SCHEDULE_TICKER`**（其他项可选用 Variables 作为默认）；分析日不设则用 **UTC 昨天**。
+  - **定时、无人值守**：`workflow_dispatch` 表单不可用，此时需在 Repository Variables 中至少设置 **`SCHEDULE_TICKER`**（其他项可选用 Variables 作为默认）；分析日不设则用 **UTC 当日**。
 
 `cron` 使用 **UTC**，请自行换算本地时间。
 
