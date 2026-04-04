@@ -3,10 +3,31 @@
 本仓库通过 **新增** 脚本 [`scripts/github_scheduled_analysis.py`](../scripts/github_scheduled_analysis.py) 与 [`.github/workflows/`](../.github/workflows/) 下的 workflow，在 Actions 中无交互跑完整分析。  
 **不会修改** 本地交互式 CLI（`tradingagents` / `python -m cli.main analyze`）。
 
-## 前置条件
+## 推荐：在「Run workflow」里填参数（无需配置 Variables）
 
-- GitHub 仓库根目录须为包含 `pyproject.toml` 的目录（与本 `docs` 文件夹同级）。若你的远端仓库多包了一层父目录，请在 workflow 里增加 `defaults.run.working-directory` 并相应调整 Artifact 路径。
-- `schedule` 使用 **UTC**。请自行把本地时间换算为 cron。
+在 GitHub 打开 **Actions** → 选择下列任一 workflow → **Run workflow**，在表单中填写即可（留空则见下方「优先级」说明）。
+
+**`Scheduled analysis (manual now)`** 仅支持手动运行，适合第一次试用。
+
+**`Scheduled analysis (daily)`** / **`Scheduled analysis (weekly)`** 除定时 cron 外，同样支持手动运行；手动时也可只在表单里填写，而不去仓库 Settings 里配 Variables。
+
+表单字段与含义（与本地 CLI 选项对应）：
+
+| 表单字段 (workflow input) | 说明 |
+|----------------------------|------|
+| `ticker` | 标的代码，如 `QQQM` |
+| `analysis_date` | `YYYY-MM-DD` |
+| `analyst_list` | `all` 或 `market,social,news,fundamentals` |
+| `research_depth` | `1`、`3` 或 `5` |
+| `llm_provider` | 如 `openai`、`siliconflow` |
+| `backend_url` | OpenAI 兼容 API 的 base URL |
+| `quick_model` / `deep_model` | quick / deep 模型 id |
+| `output_language` | 如 `English`、`中文` |
+| `openai_reasoning_effort` | OpenAI 系 reasoning effort（若适用） |
+| `google_thinking_level` | Gemini thinking（若适用） |
+| `anthropic_effort` | Claude effort（若适用） |
+
+**优先级**：某一字段在表单里**非空** → 使用表单值；**留空** → 再尝试同名的 **Repository Variable**（见下表）；仍无则脚本使用 `default_config` 或内置默认（分析日在定时任务下还可为 UTC 昨天）。
 
 ## Repository Secrets（敏感，对应 `.env` 中的密钥）
 
@@ -24,29 +45,33 @@
 
 Workflow 会将它们注入为同名环境变量，与本地 `.env` 一致。
 
-## Repository Variables（非敏感）
+## Repository Variables（非敏感，可选）
 
-| Variable | 必填 | 说明 |
-|----------|------|------|
-| `SCHEDULE_TICKER` | 定时运行时必填 | 标的代码，如 `QQQM` |
-| `SCHEDULE_ANALYSIS_DATE` | 否 | `YYYY-MM-DD`；不填则定时任务使用 **UTC 意义下的昨天** |
-| `SCHEDULE_ANALYST_LIST` | 否 | `all` 或逗号分隔：`market,social,news,fundamentals` |
-| `SCHEDULE_RESEARCH_DEPTH` | 否 | `1`、`3` 或 `5`（与本地 CLI 深度一致） |
-| `SCHEDULE_LLM_PROVIDER` | 否 | 如 `openai`、`siliconflow`；不填用 `default_config` |
-| `SCHEDULE_BACKEND_URL` | 否 | 兼容 OpenAI 的 API base |
-| `SCHEDULE_QUICK_MODEL` | 否 | quick 模型名 |
-| `SCHEDULE_DEEP_MODEL` | 否 | deep 模型名 |
-| `SCHEDULE_OUTPUT_LANGUAGE` | 否 | 如 `English`、`中文` |
-| `SCHEDULE_OPENAI_REASONING_EFFORT` | 否 | OpenAI 系 reasoning effort |
-| `SCHEDULE_GOOGLE_THINKING_LEVEL` | 否 | Gemini thinking |
-| `SCHEDULE_ANTHROPIC_EFFORT` | 否 | Claude effort |
+以下 **仅在**「Run workflow 表单留空」或 **无人值守的定时 cron** 需要默认配置时使用。若你每次都在表单里填完整，可以**不配置**任何 Variable。
+
+| Variable | 典型用途 |
+|----------|----------|
+| `SCHEDULE_TICKER` | **定时 cron 无人运行时**必填之一：标的代码（或每次手动在表单填 `ticker`） |
+| `SCHEDULE_ANALYSIS_DATE` | 定时任务默认分析日；不填则 **UTC 昨天** |
+| `SCHEDULE_ANALYST_LIST` | 表单 `analyst_list` 留空时的后备 |
+| `SCHEDULE_RESEARCH_DEPTH` | 表单留空时的后备 |
+| `SCHEDULE_LLM_PROVIDER` | 表单留空时的后备 |
+| `SCHEDULE_BACKEND_URL` | 表单留空时的后备 |
+| `SCHEDULE_QUICK_MODEL` | 表单留空时的后备 |
+| `SCHEDULE_DEEP_MODEL` | 表单留空时的后备 |
+| `SCHEDULE_OUTPUT_LANGUAGE` | 表单留空时的后备 |
+| `SCHEDULE_OPENAI_REASONING_EFFORT` | 表单留空时的后备 |
+| `SCHEDULE_GOOGLE_THINKING_LEVEL` | 表单留空时的后备 |
+| `SCHEDULE_ANTHROPIC_EFFORT` | 表单留空时的后备 |
 
 ## Workflows
 
-- **`scheduled-analysis-daily.yml`**：`cron: "13 0 * * *"`（每天 00:13 UTC）— 请按需要修改。
-- **`scheduled-analysis-weekly.yml`**：`cron: "15 1 * * 1"`（每周一 01:15 UTC）— 不需要每周跑时可删除该文件或清空 `on.schedule`。
+- **`scheduled-analysis-manual.yml`**：仅手动运行，在表单中填参即可（可不配置任何 Variable）。
+- **`scheduled-analysis-daily.yml`** / **`scheduled-analysis-weekly.yml`**：支持 **定时 cron**（UTC）与 **手动 Run workflow**。  
+  - **手动运行**：在表单里填写 `ticker` 等即可，不必去 Settings 配 Variables。  
+  - **定时、无人值守**：`workflow_dispatch` 表单不可用，此时需在 Repository Variables 中至少设置 **`SCHEDULE_TICKER`**（其他项可选用 Variables 作为默认）；分析日不设则用 **UTC 昨天**。
 
-二者均支持 **`workflow_dispatch`**：手动运行时需填写 `ticker` 与 `analysis_date`，会覆盖 Variables 中的 ticker/date 逻辑。
+`cron` 使用 **UTC**，请自行换算本地时间。
 
 ## 产物
 

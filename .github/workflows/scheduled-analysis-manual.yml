@@ -1,16 +1,70 @@
+# Manual run only: fill parameters in the "Run workflow" form (optional Repository Variables as fallback).
+
 name: Scheduled analysis (manual now)
 
 on:
   workflow_dispatch:
     inputs:
       ticker:
-        description: "Stock ticker (e.g., QQQM)"
-        required: true
+        description: "Stock ticker (e.g. QQQM). Empty → Variable SCHEDULE_TICKER if set."
+        required: false
         type: string
+        default: ""
       analysis_date:
-        description: "YYYY-MM-DD (use today's or past date)"
-        required: true
+        description: "YYYY-MM-DD. Empty → Variable or UTC yesterday."
+        required: false
         type: string
+        default: ""
+      analyst_list:
+        description: "all OR market,social,news,fundamentals. Empty → Variable."
+        required: false
+        type: string
+        default: ""
+      research_depth:
+        description: "1, 3, or 5. Empty → Variable or script default."
+        required: false
+        type: string
+        default: ""
+      llm_provider:
+        description: "e.g. openai, siliconflow. Empty → Variable or default_config."
+        required: false
+        type: string
+        default: ""
+      backend_url:
+        description: "OpenAI-compatible base URL. Empty → Variable."
+        required: false
+        type: string
+        default: ""
+      quick_model:
+        description: "Quick / shallow model id. Empty → Variable."
+        required: false
+        type: string
+        default: ""
+      deep_model:
+        description: "Deep model id. Empty → Variable."
+        required: false
+        type: string
+        default: ""
+      output_language:
+        description: "e.g. English. Empty → Variable."
+        required: false
+        type: string
+        default: ""
+      openai_reasoning_effort:
+        description: "OpenAI / compatible reasoning effort. Empty → Variable."
+        required: false
+        type: string
+        default: ""
+      google_thinking_level:
+        description: "Gemini thinking level. Empty → Variable."
+        required: false
+        type: string
+        default: ""
+      anthropic_effort:
+        description: "Claude effort. Empty → Variable."
+        required: false
+        type: string
+        default: ""
 
 concurrency:
   group: scheduled-analysis-manual-${{ github.ref }}
@@ -40,26 +94,66 @@ jobs:
       - name: Install package
         run: pip install -e .
 
+      - name: Resolve parameters (form overrides Variables)
+        id: cfg
+        run: |
+          set -e
+          T="${{ github.event.inputs.ticker }}"
+          D="${{ github.event.inputs.analysis_date }}"
+          TICKER="${T:-${{ vars.SCHEDULE_TICKER }}}"
+          if [ -n "$D" ]; then
+            DATE="$D"
+          elif [ -n "${{ vars.SCHEDULE_ANALYSIS_DATE }}" ]; then
+            DATE="${{ vars.SCHEDULE_ANALYSIS_DATE }}"
+          else
+            DATE="$(date -u -d yesterday +%Y-%m-%d)"
+          fi
+          echo "ticker=$TICKER" >> "$GITHUB_OUTPUT"
+          echo "date=$DATE" >> "$GITHUB_OUTPUT"
+
+          pick() { i="$1"; v="$2"; r="${i:-$v}"; echo "$r"; }
+          I_AL="${{ github.event.inputs.analyst_list }}"
+          I_RD="${{ github.event.inputs.research_depth }}"
+          I_LP="${{ github.event.inputs.llm_provider }}"
+          I_BU="${{ github.event.inputs.backend_url }}"
+          I_QM="${{ github.event.inputs.quick_model }}"
+          I_DM="${{ github.event.inputs.deep_model }}"
+          I_OL="${{ github.event.inputs.output_language }}"
+          I_ORE="${{ github.event.inputs.openai_reasoning_effort }}"
+          I_GTL="${{ github.event.inputs.google_thinking_level }}"
+          I_AE="${{ github.event.inputs.anthropic_effort }}"
+
+          echo "SCHEDULE_ANALYST_LIST=$(pick "$I_AL" "${{ vars.SCHEDULE_ANALYST_LIST }}")" >> "$GITHUB_ENV"
+          echo "SCHEDULE_RESEARCH_DEPTH=$(pick "$I_RD" "${{ vars.SCHEDULE_RESEARCH_DEPTH }}")" >> "$GITHUB_ENV"
+          echo "SCHEDULE_LLM_PROVIDER=$(pick "$I_LP" "${{ vars.SCHEDULE_LLM_PROVIDER }}")" >> "$GITHUB_ENV"
+          echo "SCHEDULE_BACKEND_URL=$(pick "$I_BU" "${{ vars.SCHEDULE_BACKEND_URL }}")" >> "$GITHUB_ENV"
+          echo "SCHEDULE_QUICK_MODEL=$(pick "$I_QM" "${{ vars.SCHEDULE_QUICK_MODEL }}")" >> "$GITHUB_ENV"
+          echo "SCHEDULE_DEEP_MODEL=$(pick "$I_DM" "${{ vars.SCHEDULE_DEEP_MODEL }}")" >> "$GITHUB_ENV"
+          echo "SCHEDULE_OUTPUT_LANGUAGE=$(pick "$I_OL" "${{ vars.SCHEDULE_OUTPUT_LANGUAGE }}")" >> "$GITHUB_ENV"
+          echo "SCHEDULE_OPENAI_REASONING_EFFORT=$(pick "$I_ORE" "${{ vars.SCHEDULE_OPENAI_REASONING_EFFORT }}")" >> "$GITHUB_ENV"
+          echo "SCHEDULE_GOOGLE_THINKING_LEVEL=$(pick "$I_GTL" "${{ vars.SCHEDULE_GOOGLE_THINKING_LEVEL }}")" >> "$GITHUB_ENV"
+          echo "SCHEDULE_ANTHROPIC_EFFORT=$(pick "$I_AE" "${{ vars.SCHEDULE_ANTHROPIC_EFFORT }}")" >> "$GITHUB_ENV"
+
+      - name: Validate configuration
+        run: |
+          if [ -z "${{ steps.cfg.outputs.ticker }}" ]; then
+            echo "Set ticker in the workflow form or Repository Variable SCHEDULE_TICKER."
+            exit 1
+          fi
+          if [ -z "${{ steps.cfg.outputs.date }}" ]; then
+            echo "Missing analysis date."
+            exit 1
+          fi
+
       - name: Run headless analysis now
         env:
-          SCHEDULE_OUTPUT_DIR: reports/_ci/${{ github.run_id }}
-          SCHEDULE_ANALYST_LIST: ${{ vars.SCHEDULE_ANALYST_LIST }}
-          SCHEDULE_RESEARCH_DEPTH: ${{ vars.SCHEDULE_RESEARCH_DEPTH }}
-          SCHEDULE_LLM_PROVIDER: ${{ vars.SCHEDULE_LLM_PROVIDER }}
-          SCHEDULE_BACKEND_URL: ${{ vars.SCHEDULE_BACKEND_URL }}
-          SCHEDULE_QUICK_MODEL: ${{ vars.SCHEDULE_QUICK_MODEL }}
-          SCHEDULE_DEEP_MODEL: ${{ vars.SCHEDULE_DEEP_MODEL }}
-          SCHEDULE_OUTPUT_LANGUAGE: ${{ vars.SCHEDULE_OUTPUT_LANGUAGE }}
-          SCHEDULE_OPENAI_REASONING_EFFORT: ${{ vars.SCHEDULE_OPENAI_REASONING_EFFORT }}
-          SCHEDULE_GOOGLE_THINKING_LEVEL: ${{ vars.SCHEDULE_GOOGLE_THINKING_LEVEL }}
-          SCHEDULE_ANTHROPIC_EFFORT: ${{ vars.SCHEDULE_ANTHROPIC_EFFORT }}
           TRADINGAGENTS_CI: "1"
         run: |
           OUT="reports/_ci/${{ github.run_id }}"
           mkdir -p "$OUT"
           python scripts/github_scheduled_analysis.py \
-            --ticker "${{ github.event.inputs.ticker }}" \
-            --date "${{ github.event.inputs.analysis_date }}" \
+            --ticker "${{ steps.cfg.outputs.ticker }}" \
+            --date "${{ steps.cfg.outputs.date }}" \
             --output-dir "$OUT" \
             ${SCHEDULE_ANALYST_LIST:+--analysts "$SCHEDULE_ANALYST_LIST"} \
             ${SCHEDULE_RESEARCH_DEPTH:+--research-depth "$SCHEDULE_RESEARCH_DEPTH"} \
@@ -75,6 +169,6 @@ jobs:
       - name: Upload reports artifact
         uses: actions/upload-artifact@v4
         with:
-          name: tradingagents-manual-${{ github.event.inputs.ticker }}-${{ github.run_id }}
+          name: tradingagents-manual-${{ steps.cfg.outputs.ticker }}-${{ github.run_id }}
           path: reports/_ci/${{ github.run_id }}
           retention-days: 14
