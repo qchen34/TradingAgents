@@ -1,195 +1,33 @@
-# Daily cron (UTC) + manual run. Prefer filling the "Run workflow" form; Variables are optional fallbacks (needed for unattended cron).
+# Daily cron (UTC). Unattended: set Repository Variable SCHEDULE_TICKER (and optional overrides).
+# Full CLI-parity form: use workflow "Scheduled analysis (manual now)".
 
 name: Scheduled analysis (daily)
 
 on:
   schedule:
-    - cron: "13 0 * * *" # 00:13 UTC daily — adjust to your timezone
-  workflow_dispatch:
-    inputs:
-      ticker:
-        description: "Stock ticker. Empty → Variable SCHEDULE_TICKER (required for cron-only runs)."
-        required: false
-        type: string
-        default: ""
-      analysis_date:
-        description: "YYYY-MM-DD. Leave empty for UTC today. Empty → Variable or UTC today."
-        required: false
-        type: string
-        default: ""
-      analyst_list:
-        description: "all OR market,social,news,fundamentals. Empty → Variable."
-        required: false
-        type: string
-        default: ""
-      research_depth:
-        description: "Research depth (same as CLI). Cron uses Variable if unset."
-        type: choice
-        options:
-          - "1"
-          - "3"
-          - "5"
-        default: "1"
-      llm_provider:
-        description: "e.g. openai, siliconflow. Empty → Variable."
-        required: false
-        type: string
-        default: ""
-      backend_url:
-        description: "OpenAI-compatible base URL. Empty → Variable."
-        required: false
-        type: string
-        default: ""
-      quick_model:
-        description: "Quick model id. Empty → Variable."
-        required: false
-        type: string
-        default: ""
-      deep_model:
-        description: "Deep model id. Empty → Variable."
-        required: false
-        type: string
-        default: ""
-      output_language:
-        description: "e.g. English. Empty → Variable."
-        required: false
-        type: string
-        default: ""
-      openai_reasoning_effort:
-        description: "OpenAI-compatible reasoning effort. Empty → Variable."
-        required: false
-        type: string
-        default: ""
-      google_thinking_level:
-        description: "Gemini thinking level. Empty → Variable."
-        required: false
-        type: string
-        default: ""
-      anthropic_effort:
-        description: "Claude effort. Empty → Variable."
-        required: false
-        type: string
-        default: ""
+    - cron: "13 0 * * *" # 00:13 UTC — adjust
 
 concurrency:
   group: scheduled-analysis-daily-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  analyze:
-    runs-on: ubuntu-latest
-    timeout-minutes: 240
-    env:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
-      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-      ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-
-      - name: Install package
-        run: pip install -e .
-
-      - name: Resolve parameters (form overrides Variables)
-        id: cfg
-        run: |
-          set -e
-          pick() { i="$1"; v="$2"; r="${i:-$v}"; echo "$r"; }
-
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            T="${{ github.event.inputs.ticker }}"
-            D="${{ github.event.inputs.analysis_date }}"
-            I_AL="${{ github.event.inputs.analyst_list }}"
-            I_RD="${{ github.event.inputs.research_depth }}"
-            I_LP="${{ github.event.inputs.llm_provider }}"
-            I_BU="${{ github.event.inputs.backend_url }}"
-            I_QM="${{ github.event.inputs.quick_model }}"
-            I_DM="${{ github.event.inputs.deep_model }}"
-            I_OL="${{ github.event.inputs.output_language }}"
-            I_ORE="${{ github.event.inputs.openai_reasoning_effort }}"
-            I_GTL="${{ github.event.inputs.google_thinking_level }}"
-            I_AE="${{ github.event.inputs.anthropic_effort }}"
-          else
-            T=""
-            D=""
-            I_AL=""
-            I_RD=""
-            I_LP=""
-            I_BU=""
-            I_QM=""
-            I_DM=""
-            I_OL=""
-            I_ORE=""
-            I_GTL=""
-            I_AE=""
-          fi
-
-          TICKER="${T:-${{ vars.SCHEDULE_TICKER }}}"
-          if [ -n "$D" ]; then
-            DATE="$D"
-          elif [ -n "${{ vars.SCHEDULE_ANALYSIS_DATE }}" ]; then
-            DATE="${{ vars.SCHEDULE_ANALYSIS_DATE }}"
-          else
-            DATE="$(date -u +%Y-%m-%d)"
-          fi
-          echo "ticker=$TICKER" >> "$GITHUB_OUTPUT"
-          echo "date=$DATE" >> "$GITHUB_OUTPUT"
-
-          echo "SCHEDULE_ANALYST_LIST=$(pick "$I_AL" "${{ vars.SCHEDULE_ANALYST_LIST }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_RESEARCH_DEPTH=$(pick "$I_RD" "${{ vars.SCHEDULE_RESEARCH_DEPTH }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_LLM_PROVIDER=$(pick "$I_LP" "${{ vars.SCHEDULE_LLM_PROVIDER }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_BACKEND_URL=$(pick "$I_BU" "${{ vars.SCHEDULE_BACKEND_URL }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_QUICK_MODEL=$(pick "$I_QM" "${{ vars.SCHEDULE_QUICK_MODEL }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_DEEP_MODEL=$(pick "$I_DM" "${{ vars.SCHEDULE_DEEP_MODEL }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_OUTPUT_LANGUAGE=$(pick "$I_OL" "${{ vars.SCHEDULE_OUTPUT_LANGUAGE }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_OPENAI_REASONING_EFFORT=$(pick "$I_ORE" "${{ vars.SCHEDULE_OPENAI_REASONING_EFFORT }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_GOOGLE_THINKING_LEVEL=$(pick "$I_GTL" "${{ vars.SCHEDULE_GOOGLE_THINKING_LEVEL }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_ANTHROPIC_EFFORT=$(pick "$I_AE" "${{ vars.SCHEDULE_ANTHROPIC_EFFORT }}")" >> "$GITHUB_ENV"
-
-      - name: Validate configuration
-        run: |
-          if [ -z "${{ steps.cfg.outputs.ticker }}" ]; then
-            echo "Set ticker in the workflow form or Repository Variable SCHEDULE_TICKER (required for scheduled cron runs)."
-            exit 1
-          fi
-          if [ -z "${{ steps.cfg.outputs.date }}" ]; then
-            echo "Missing analysis date."
-            exit 1
-          fi
-
-      - name: Run headless analysis
-        env:
-          TRADINGAGENTS_CI: "1"
-        run: |
-          OUT="reports/_ci/${{ github.run_id }}"
-          mkdir -p "$OUT"
-          python scripts/github_scheduled_analysis.py \
-            --ticker "${{ steps.cfg.outputs.ticker }}" \
-            --date "${{ steps.cfg.outputs.date }}" \
-            --output-dir "$OUT" \
-            ${SCHEDULE_ANALYST_LIST:+--analysts "$SCHEDULE_ANALYST_LIST"} \
-            ${SCHEDULE_RESEARCH_DEPTH:+--research-depth "$SCHEDULE_RESEARCH_DEPTH"} \
-            ${SCHEDULE_LLM_PROVIDER:+--llm-provider "$SCHEDULE_LLM_PROVIDER"} \
-            ${SCHEDULE_BACKEND_URL:+--backend-url "$SCHEDULE_BACKEND_URL"} \
-            ${SCHEDULE_QUICK_MODEL:+--quick-model "$SCHEDULE_QUICK_MODEL"} \
-            ${SCHEDULE_DEEP_MODEL:+--deep-model "$SCHEDULE_DEEP_MODEL"} \
-            ${SCHEDULE_OUTPUT_LANGUAGE:+--output-language "$SCHEDULE_OUTPUT_LANGUAGE"} \
-            ${SCHEDULE_OPENAI_REASONING_EFFORT:+--openai-reasoning-effort "$SCHEDULE_OPENAI_REASONING_EFFORT"} \
-            ${SCHEDULE_GOOGLE_THINKING_LEVEL:+--google-thinking-level "$SCHEDULE_GOOGLE_THINKING_LEVEL"} \
-            ${SCHEDULE_ANTHROPIC_EFFORT:+--anthropic-effort "$SCHEDULE_ANTHROPIC_EFFORT"}
-
-      - name: Upload reports artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: tradingagents-report-${{ steps.cfg.outputs.ticker }}-${{ github.run_id }}
-          path: reports/_ci/${{ github.run_id }}
-          retention-days: 14
+  call:
+    uses: ./.github/workflows/tradingagents-analysis-run.yml
+    secrets: inherit
+    with:
+      ticker: ${{ vars.SCHEDULE_TICKER }}
+      analysis_date: ${{ vars.SCHEDULE_ANALYSIS_DATE }}
+      output_language: ${{ vars.SCHEDULE_OUTPUT_LANGUAGE || 'English' }}
+      output_language_custom: ${{ vars.SCHEDULE_OUTPUT_LANGUAGE_CUSTOM }}
+      include_market: ${{ vars.SCHEDULE_INCLUDE_MARKET != 'false' }}
+      include_social: ${{ vars.SCHEDULE_INCLUDE_SOCIAL != 'false' }}
+      include_news: ${{ vars.SCHEDULE_INCLUDE_NEWS != 'false' }}
+      include_fundamentals: ${{ vars.SCHEDULE_INCLUDE_FUNDAMENTALS != 'false' }}
+      research_depth: ${{ vars.SCHEDULE_RESEARCH_DEPTH || '1' }}
+      llm_provider: ${{ vars.SCHEDULE_LLM_PROVIDER || 'openai' }}
+      quick_model: ${{ vars.SCHEDULE_QUICK_MODEL || 'gpt-5.4-mini' }}
+      deep_model: ${{ vars.SCHEDULE_DEEP_MODEL || 'gpt-5.4' }}
+      google_thinking_level: ${{ vars.SCHEDULE_GOOGLE_THINKING_LEVEL || 'none' }}
+      openai_reasoning_effort: ${{ vars.SCHEDULE_OPENAI_REASONING_EFFORT || 'none' }}
+      anthropic_effort: ${{ vars.SCHEDULE_ANTHROPIC_EFFORT || 'none' }}

@@ -1,4 +1,4 @@
-# Manual run only: fill parameters in the "Run workflow" form (optional Repository Variables as fallback).
+# Manual run — same inputs as interactive CLI (see tradingagents-analysis-run.yml).
 
 name: Scheduled analysis (manual now)
 
@@ -6,21 +6,54 @@ on:
   workflow_dispatch:
     inputs:
       ticker:
-        description: "Stock ticker (e.g. QQQM). Optional fallback: Variable SCHEDULE_TICKER."
+        description: "Step 1 — Ticker (cli get_ticker)"
+        type: string
         required: true
-        type: string
       analysis_date:
-        description: "YYYY-MM-DD. Leave empty for UTC today. Optional fallback: Variable SCHEDULE_ANALYSIS_DATE."
-        required: false
+        description: "Step 2 — YYYY-MM-DD. Leave empty for UTC today (runner)."
         type: string
-        default: ""
-      analyst_list:
-        description: "all OR market,social,news,fundamentals. Empty → Variable."
         required: false
-        type: string
         default: ""
+      output_language:
+        description: "Step 3 — Output language (cli ask_output_language)"
+        type: choice
+        options:
+          - English
+          - Chinese
+          - Japanese
+          - Korean
+          - Hindi
+          - Spanish
+          - Portuguese
+          - French
+          - German
+          - Arabic
+          - Russian
+          - custom
+        default: English
+      output_language_custom:
+        description: "When output_language is custom — language name"
+        type: string
+        required: false
+        default: ""
+      include_market:
+        description: "Step 4 — Analyst: Market (checkbox)"
+        type: boolean
+        default: true
+      include_social:
+        description: "Step 4 — Analyst: Social"
+        type: boolean
+        default: true
+      include_news:
+        description: "Step 4 — Analyst: News"
+        type: boolean
+        default: true
+      include_fundamentals:
+        description: "Step 4 — Analyst: Fundamentals"
+        type: boolean
+        default: true
       research_depth:
-        description: "Research depth (same as CLI: Shallow / Medium / Deep)."
+        description: "Step 5 — Research depth (cli select_research_depth): 1=Shallow, 3=Medium, 5=Deep"
         type: choice
         options:
           - "1"
@@ -28,149 +61,121 @@ on:
           - "5"
         default: "1"
       llm_provider:
-        description: "e.g. openai, siliconflow. Empty → Variable or default_config."
-        required: false
-        type: string
-        default: ""
-      backend_url:
-        description: "OpenAI-compatible base URL. Empty → Variable."
-        required: false
-        type: string
-        default: ""
+        description: "Step 6 — Provider (cli select_llm_provider)"
+        type: choice
+        options:
+          - openai
+          - siliconflow
+          - google
+          - anthropic
+          - xai
+          - openrouter
+          - ollama
+        default: openai
       quick_model:
-        description: "Quick / shallow model id. Empty → Variable."
-        required: false
-        type: string
-        default: ""
+        description: "Step 7 — Quick-Thinking LLM (cli select_shallow_thinking_agent)"
+        type: choice
+        options:
+          - Qwen/Qwen3-32B
+          - deepseek-ai/DeepSeek-V3
+          - Qwen/Qwen3-14B
+          - gpt-5.4-mini
+          - gpt-5.4-nano
+          - gpt-5.4
+          - gpt-4.1
+          - claude-sonnet-4-6
+          - claude-haiku-4-5
+          - claude-sonnet-4-5
+          - gemini-3-flash-preview
+          - gemini-2.5-flash
+          - gemini-3.1-flash-lite-preview
+          - gemini-2.5-flash-lite
+          - grok-4-1-fast-non-reasoning
+          - grok-4-fast-non-reasoning
+          - grok-4-1-fast-reasoning
+          - "nvidia/nemotron-3-nano-30b-a3b:free"
+          - "z-ai/glm-4.5-air:free"
+          - "qwen3:latest"
+          - "gpt-oss:latest"
+          - "glm-4.7-flash:latest"
+        default: gpt-5.4-mini
       deep_model:
-        description: "Deep model id. Empty → Variable."
-        required: false
-        type: string
-        default: ""
-      output_language:
-        description: "e.g. English. Empty → Variable."
-        required: false
-        type: string
-        default: ""
-      openai_reasoning_effort:
-        description: "OpenAI / compatible reasoning effort. Empty → Variable."
-        required: false
-        type: string
-        default: ""
+        description: "Step 7 — Deep-Thinking LLM (cli select_deep_thinking_agent)"
+        type: choice
+        options:
+          - Pro/MiniMaxAI/MiniMax-M2.5
+          - Qwen/Qwen3-235B-A22B-Instruct-2507
+          - deepseek-ai/DeepSeek-V3
+          - gpt-5.4
+          - gpt-5.2
+          - gpt-5.4-mini
+          - gpt-5.4-pro
+          - claude-opus-4-6
+          - claude-opus-4-5
+          - claude-sonnet-4-6
+          - claude-sonnet-4-5
+          - gemini-3.1-pro-preview
+          - gemini-3-flash-preview
+          - gemini-2.5-pro
+          - gemini-2.5-flash
+          - grok-4-0709
+          - grok-4-1-fast-reasoning
+          - grok-4-fast-reasoning
+          - grok-4-1-fast-non-reasoning
+          - "z-ai/glm-4.5-air:free"
+          - "nvidia/nemotron-3-nano-30b-a3b:free"
+          - "glm-4.7-flash:latest"
+          - "gpt-oss:latest"
+          - "qwen3:latest"
+        default: gpt-5.4
       google_thinking_level:
-        description: "Gemini thinking level. Empty → Variable."
-        required: false
-        type: string
-        default: ""
+        description: "Step 8 — Gemini only (cli ask_gemini_thinking_config)"
+        type: choice
+        options:
+          - none
+          - high
+          - minimal
+        default: none
+      openai_reasoning_effort:
+        description: "Step 8 — OpenAI / SiliconFlow (cli ask_openai_reasoning_effort)"
+        type: choice
+        options:
+          - none
+          - medium
+          - high
+          - low
+        default: none
       anthropic_effort:
-        description: "Claude effort. Empty → Variable."
-        required: false
-        type: string
-        default: ""
+        description: "Step 8 — Anthropic only (cli ask_anthropic_effort)"
+        type: choice
+        options:
+          - none
+          - high
+          - medium
+          - low
+        default: none
 
 concurrency:
   group: scheduled-analysis-manual-${{ github.ref }}
   cancel-in-progress: false
 
 jobs:
-  analyze:
-    runs-on: ubuntu-latest
-    timeout-minutes: 240
-    env:
-      OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
-      SILICONFLOW_API_KEY: ${{ secrets.SILICONFLOW_API_KEY }}
-      GOOGLE_API_KEY: ${{ secrets.GOOGLE_API_KEY }}
-      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
-      XAI_API_KEY: ${{ secrets.XAI_API_KEY }}
-      OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
-      ALPHA_VANTAGE_API_KEY: ${{ secrets.ALPHA_VANTAGE_API_KEY }}
-
-    steps:
-      - uses: actions/checkout@v4
-
-      - uses: actions/setup-python@v5
-        with:
-          python-version: "3.11"
-          cache: pip
-
-      - name: Install package
-        run: pip install -e .
-
-      - name: Resolve parameters (form overrides Variables)
-        id: cfg
-        run: |
-          set -e
-          T="${{ github.event.inputs.ticker }}"
-          D="${{ github.event.inputs.analysis_date }}"
-          TICKER="${T:-${{ vars.SCHEDULE_TICKER }}}"
-          if [ -n "$D" ]; then
-            DATE="$D"
-          elif [ -n "${{ vars.SCHEDULE_ANALYSIS_DATE }}" ]; then
-            DATE="${{ vars.SCHEDULE_ANALYSIS_DATE }}"
-          else
-            DATE="$(date -u +%Y-%m-%d)"
-          fi
-          echo "ticker=$TICKER" >> "$GITHUB_OUTPUT"
-          echo "date=$DATE" >> "$GITHUB_OUTPUT"
-
-          pick() { i="$1"; v="$2"; r="${i:-$v}"; echo "$r"; }
-          I_AL="${{ github.event.inputs.analyst_list }}"
-          I_RD="${{ github.event.inputs.research_depth }}"
-          I_LP="${{ github.event.inputs.llm_provider }}"
-          I_BU="${{ github.event.inputs.backend_url }}"
-          I_QM="${{ github.event.inputs.quick_model }}"
-          I_DM="${{ github.event.inputs.deep_model }}"
-          I_OL="${{ github.event.inputs.output_language }}"
-          I_ORE="${{ github.event.inputs.openai_reasoning_effort }}"
-          I_GTL="${{ github.event.inputs.google_thinking_level }}"
-          I_AE="${{ github.event.inputs.anthropic_effort }}"
-
-          echo "SCHEDULE_ANALYST_LIST=$(pick "$I_AL" "${{ vars.SCHEDULE_ANALYST_LIST }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_RESEARCH_DEPTH=$(pick "$I_RD" "${{ vars.SCHEDULE_RESEARCH_DEPTH }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_LLM_PROVIDER=$(pick "$I_LP" "${{ vars.SCHEDULE_LLM_PROVIDER }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_BACKEND_URL=$(pick "$I_BU" "${{ vars.SCHEDULE_BACKEND_URL }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_QUICK_MODEL=$(pick "$I_QM" "${{ vars.SCHEDULE_QUICK_MODEL }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_DEEP_MODEL=$(pick "$I_DM" "${{ vars.SCHEDULE_DEEP_MODEL }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_OUTPUT_LANGUAGE=$(pick "$I_OL" "${{ vars.SCHEDULE_OUTPUT_LANGUAGE }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_OPENAI_REASONING_EFFORT=$(pick "$I_ORE" "${{ vars.SCHEDULE_OPENAI_REASONING_EFFORT }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_GOOGLE_THINKING_LEVEL=$(pick "$I_GTL" "${{ vars.SCHEDULE_GOOGLE_THINKING_LEVEL }}")" >> "$GITHUB_ENV"
-          echo "SCHEDULE_ANTHROPIC_EFFORT=$(pick "$I_AE" "${{ vars.SCHEDULE_ANTHROPIC_EFFORT }}")" >> "$GITHUB_ENV"
-
-      - name: Validate configuration
-        run: |
-          if [ -z "${{ steps.cfg.outputs.ticker }}" ]; then
-            echo "Set ticker in the workflow form or Repository Variable SCHEDULE_TICKER."
-            exit 1
-          fi
-          if [ -z "${{ steps.cfg.outputs.date }}" ]; then
-            echo "Missing analysis date."
-            exit 1
-          fi
-
-      - name: Run headless analysis now
-        env:
-          TRADINGAGENTS_CI: "1"
-        run: |
-          OUT="reports/_ci/${{ github.run_id }}"
-          mkdir -p "$OUT"
-          python scripts/github_scheduled_analysis.py \
-            --ticker "${{ steps.cfg.outputs.ticker }}" \
-            --date "${{ steps.cfg.outputs.date }}" \
-            --output-dir "$OUT" \
-            ${SCHEDULE_ANALYST_LIST:+--analysts "$SCHEDULE_ANALYST_LIST"} \
-            ${SCHEDULE_RESEARCH_DEPTH:+--research-depth "$SCHEDULE_RESEARCH_DEPTH"} \
-            ${SCHEDULE_LLM_PROVIDER:+--llm-provider "$SCHEDULE_LLM_PROVIDER"} \
-            ${SCHEDULE_BACKEND_URL:+--backend-url "$SCHEDULE_BACKEND_URL"} \
-            ${SCHEDULE_QUICK_MODEL:+--quick-model "$SCHEDULE_QUICK_MODEL"} \
-            ${SCHEDULE_DEEP_MODEL:+--deep-model "$SCHEDULE_DEEP_MODEL"} \
-            ${SCHEDULE_OUTPUT_LANGUAGE:+--output-language "$SCHEDULE_OUTPUT_LANGUAGE"} \
-            ${SCHEDULE_OPENAI_REASONING_EFFORT:+--openai-reasoning-effort "$SCHEDULE_OPENAI_REASONING_EFFORT"} \
-            ${SCHEDULE_GOOGLE_THINKING_LEVEL:+--google-thinking-level "$SCHEDULE_GOOGLE_THINKING_LEVEL"} \
-            ${SCHEDULE_ANTHROPIC_EFFORT:+--anthropic-effort "$SCHEDULE_ANTHROPIC_EFFORT"}
-
-      - name: Upload reports artifact
-        uses: actions/upload-artifact@v4
-        with:
-          name: tradingagents-manual-${{ steps.cfg.outputs.ticker }}-${{ github.run_id }}
-          path: reports/_ci/${{ github.run_id }}
-          retention-days: 14
+  call:
+    uses: ./.github/workflows/tradingagents-analysis-run.yml
+    secrets: inherit
+    with:
+      ticker: ${{ github.event.inputs.ticker }}
+      analysis_date: ${{ github.event.inputs.analysis_date }}
+      output_language: ${{ github.event.inputs.output_language }}
+      output_language_custom: ${{ github.event.inputs.output_language_custom }}
+      include_market: ${{ github.event.inputs.include_market }}
+      include_social: ${{ github.event.inputs.include_social }}
+      include_news: ${{ github.event.inputs.include_news }}
+      include_fundamentals: ${{ github.event.inputs.include_fundamentals }}
+      research_depth: ${{ github.event.inputs.research_depth }}
+      llm_provider: ${{ github.event.inputs.llm_provider }}
+      quick_model: ${{ github.event.inputs.quick_model }}
+      deep_model: ${{ github.event.inputs.deep_model }}
+      google_thinking_level: ${{ github.event.inputs.google_thinking_level }}
+      openai_reasoning_effort: ${{ github.event.inputs.openai_reasoning_effort }}
+      anthropic_effort: ${{ github.event.inputs.anthropic_effort }}
