@@ -48,7 +48,7 @@
 
 <div align="center">
 
-🚀 [框架介绍](#tradingagents-框架) | ⚡ [安装与 CLI](#安装与命令行) | 🕒 [GitHub Actions 定时/手动运行指南](docs/github-scheduled-analysis.md) | 🎬 [演示](https://www.youtube.com/watch?v=90gr5lwjIho) | 📦 [包使用方式](#tradingagents-包) | 🤝 [贡献](#贡献) | 📄 [引用](#引用)
+🚀 [框架介绍](#tradingagents-框架) | ⚡ [安装与 CLI](#安装与命令行) | 🎬 [演示](https://www.youtube.com/watch?v=90gr5lwjIho) | 📦 [包使用方式](#tradingagents-包) | 🤝 [贡献](#贡献) | 📄 [引用](#引用)
 
 </div>
 

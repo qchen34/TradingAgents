@@ -221,5 +221,19 @@ __marimo__/
 3月30日/*
 images/*
 
-reports/*
-results/*
+# Runtime outputs
+eval_results/
+reports/
+results/
+# Runtime data
+data/dashboard/history/
+data/dashboard/latest.json
+data/cache/
+data/portfolio.json
+
+eval_results/*
+
+docs/data_report.md
+docs/webui_prd.md
+docs/strategy_module_future.md
+docs/ui_shell.md
