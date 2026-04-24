@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04-4 滚动窗口分析 — LRS TQQQ 策略研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.chart-img-wrap { border-radius: 10px; overflow: hidden; background: #0f172a; }
+.chart-img-wrap img { width: 100%; display: block; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">← 目录</a>
+  <div class="nav-divider"></div>
+  <span class="nav-chapter">Chapter 04 &nbsp;·&nbsp; 质疑与压力测试 &nbsp;·&nbsp; 4.4</span>
+  <span class="nav-counter">4.4 / 4.4</span>
+  <a href="04c.html" class="nav-btn">← 4.3</a>
+  <a href="05.html" class="nav-btn">Ch.05 →</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <span class="page-num">04 &nbsp;·&nbsp; 4.4</span>
+    <h1 class="page-title">滚动窗口分析</h1>
+    <span class="page-sub">Chart J · Rolling ~5y excess vs QQQ</span>
+  </div>
+
+  <div class="panel" style="flex:1;">
+    <div class="strip strip-green"></div>
+    <div class="panel-header has-sub">
+      <div class="ph-title-row">
+        <span class="ph-num">J</span>
+        <h3>滚动约 5 年超额收益分布</h3>
+      </div>
+      <div class="ph-sub">横轴：LRS 总收益 − QQQ 总收益（百分点）；避免只展示单一固定起点</div>
+    </div>
+    <div class="panel-body" style="padding:0.65rem 0.85rem;">
+      <div class="chart-img-wrap">
+        <img src="charts/chart_j_rolling.png" alt="Chart J 滚动窗口" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1.2%;">
+    <div class="strip strip-indigo"></div>
+    <div class="card-header label-indigo">
+      <span class="ch-num">读图</span>
+      <span class="ch-title">分布比单点更重要</span>
+    </div>
+    <div class="card-body">
+      <ul class="bl">
+        <li>若大量窗口超额为负，说明策略优势高度依赖特定年代。</li>
+        <li class="hi">中位数相对零轴的位置，可作为「稳健性」的粗粒度参考。</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>03-3 市场结构分析 — LRS TQQQ 策略研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.row-f {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr);
+  gap: 1.2%;
+  flex-shrink: 0;
+}
+.struct-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.65rem;
+}
+.scard {
+  border-radius: 10px;
+  border: 1.5px solid #E2E8F0;
+  background: #FFFFFF;
+  padding: 0.65rem 0.8rem;
+}
+.scard h4 { font-size: 0.82rem; font-weight: 800; color: #1E293B; margin-bottom: 0.35rem; }
+.scard p { font-size: 0.78rem; color: #64748B; line-height: 1.55; }
+.chart-img-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #f8fafc;
+}
+.chart-img-wrap.dark { background: #0f172a; }
+.chart-img-wrap img { width: 100%; display: block; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">← 目录</a>
+  <div class="nav-divider"></div>
+  <span class="nav-chapter">Chapter 03 &nbsp;·&nbsp; 历史回测 &nbsp;·&nbsp; 3.3 市场结构分析</span>
+  <span class="nav-counter">3.3 / 3.3</span>
+  <a href="03b.html" class="nav-btn">← 3.2 风险指标</a>
+  <a href="04.html" class="nav-btn">Ch.04 →</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <span class="page-num">03 &nbsp;·&nbsp; 3.3</span>
+    <h1 class="page-title">市场结构分析</h1>
+    <span class="page-sub">Regime heatmap · Signal timeline 2010–</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:1.2%;flex:1;min-height:0;">
+
+    <div class="row-f">
+      <div class="panel" style="min-height:0;display:flex;flex-direction:column;">
+        <div class="strip strip-green"></div>
+        <div class="panel-header has-sub">
+          <div class="ph-title-row">
+            <span class="ph-num">F</span>
+            <h3>四种市场结构 × 三类指标</h3>
+          </div>
+          <div class="ph-sub">示意性评分（1–5），用于归纳策略适配度，非单一区间回测数字</div>
+        </div>
+        <div class="panel-body" style="padding:0.65rem 0.85rem;">
+          <div class="chart-img-wrap">
+            <img src="charts/chart_f_heatmap.png" alt="Chart F 热力图" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="struct-grid">
+        <div class="scard" style="border-color:#BBF7D0;background:#F0FDF4;">
+          <h4>趋势牛市</h4>
+          <p>均线斜率与价格同向，信号连续性强；LRS 易吃到 TQQQ 趋势段，需关注追高与回撤。</p>
+        </div>
+        <div class="scard" style="border-color:#FECDD3;background:#FFF1F2;">
+          <h4>趋势熊市</h4>
+          <p>价格持续低于均线，策略以空仓为主；相对基准的关键是<strong>少亏时间</strong>。</p>
+        </div>
+        <div class="scard" style="border-color:#FDE68A;background:#FFFBEB;">
+          <h4>震荡市</h4>
+          <p>均线附近来回，易出现 Whipsaw；连续三日确认规则用于过滤假突破。</p>
+        </div>
+        <div class="scard" style="border-color:#C7D2FE;background:#EEF2FF;">
+          <h4>V 型急跌</h4>
+          <p>急跌后快速反弹，均线滞后；可能出现晚入场或反复扫损，尾部风险需单独压力测试。</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="flex:1;min-height:0;display:flex;flex-direction:column;">
+      <div class="strip strip-indigo"></div>
+      <div class="panel-header has-sub">
+        <div class="ph-title-row">
+          <span class="ph-num">G</span>
+          <h3>信号时间轴（QQQ 对数 + MA200）</h3>
+        </div>
+        <div class="ph-sub">绿底：信号为真（可持仓逻辑区间）；红底：信号为假</div>
+      </div>
+      <div class="panel-body" style="padding:0.65rem 0.85rem;flex:1;">
+        <div class="chart-img-wrap dark">
+          <img src="charts/chart_g_timeline.png" alt="Chart G 时间轴" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>

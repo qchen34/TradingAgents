@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04-2 宏观稳健性 — LRS TQQQ 策略研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.chart-img-wrap { border-radius: 10px; overflow: hidden; background: #0f172a; }
+.chart-img-wrap img { width: 100%; display: block; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">← 目录</a>
+  <div class="nav-divider"></div>
+  <span class="nav-chapter">Chapter 04 &nbsp;·&nbsp; 质疑与压力测试 &nbsp;·&nbsp; 4.2</span>
+  <span class="nav-counter">4.2 / 4.4</span>
+  <a href="04.html" class="nav-btn">← 4.1</a>
+  <a href="04c.html" class="nav-btn">4.3 →</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <span class="page-num">04 &nbsp;·&nbsp; 4.2</span>
+    <h1 class="page-title">宏观层面的稳健性</h1>
+    <span class="page-sub">Chart H · Regime table</span>
+  </div>
+
+  <div class="panel" style="flex:1;min-height:0;">
+    <div class="strip strip-indigo"></div>
+    <div class="panel-header has-sub">
+      <div class="ph-title-row">
+        <span class="ph-num">H</span>
+        <h3>宏观阶段对照（示意）</h3>
+      </div>
+      <div class="ph-sub">QQQ 路径与 LRS 可回测范围；2000 年前后无 TQQQ 上市</div>
+    </div>
+    <div class="panel-body" style="padding:0.65rem 0.85rem;">
+      <div class="chart-img-wrap">
+        <img src="charts/chart_h_macro.png" alt="Chart H 宏观对照表" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:1.2%;">
+    <div class="strip strip-amber"></div>
+    <div class="card-header label-amber">
+      <span class="ch-num">解读</span>
+      <span class="ch-title">如何使用这张表</span>
+    </div>
+    <div class="card-body">
+      <ul class="bl">
+        <li>利率、流动性与风险偏好会改变「趋势延续」的概率，均线类策略并非恒定有效。</li>
+        <li>极端黑天鹅（单日熔断、流动性枯竭）可能让技术指标短期失效，需单独假设尾部场景。</li>
+      </ul>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

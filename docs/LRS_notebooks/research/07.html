@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>07 总结与决策框架 — LRS TQQQ 策略研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.steps {
+  counter-reset: s;
+  list-style: none;
+}
+.steps li {
+  position: relative;
+  padding: 0.55rem 0 0.55rem 2.4rem;
+  border-bottom: 1px solid #F1F5F9;
+  font-size: 0.95rem;
+  color: #475569;
+}
+.steps li::before {
+  counter-increment: s;
+  content: counter(s);
+  position: absolute;
+  left: 0;
+  top: 0.5rem;
+  width: 1.6rem;
+  height: 1.6rem;
+  border-radius: 6px;
+  background: #EEF2FF;
+  border: 1.5px solid #C7D2FE;
+  color: #4338CA;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">← 目录</a>
+  <div class="nav-divider"></div>
+  <span class="nav-chapter">Chapter 07 &nbsp;·&nbsp; 总结与决策框架</span>
+  <span class="nav-counter">Ch.07</span>
+  <a href="06.html" class="nav-btn">← Ch.06</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <span class="page-num">Chapter 07</span>
+    <h1 class="page-title">总结与决策框架</h1>
+    <span class="page-sub">Synthesis · Fit · Five-step checklist</span>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="strip strip-indigo"></div>
+      <div class="card-header label-indigo">
+        <span class="ch-num">综合</span>
+        <span class="ch-title">策略画像</span>
+      </div>
+      <div class="card-body">
+        <ul class="bl">
+          <li>LRS 试图用趋势过滤降低杠杆 ETF 的路径伤害，在多年样本中相对 QQQ 买入持有可体现超额，但<strong>不保证</strong>未来复现。</li>
+          <li>优势来自规则化仓位与空仓纪律；代价是回撤仍可能很深、且依赖市场出现可识别的趋势段。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="strip strip-green"></div>
+      <div class="card-header label-green">
+        <span class="ch-num">人群</span>
+        <span class="ch-title">更适合谁</span>
+      </div>
+      <div class="card-body">
+        <ul class="bl">
+          <li>能承受较大净值波动、接受杠杆工具约束的投资者。</li>
+          <li>愿意严格执行信号、减少主观干预的执行者。</li>
+          <li class="hi">若睡眠与现金流会被净值牵动，应降低杠杆占比或不用此类工具。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:1.2%;flex:1;">
+    <div class="strip strip-amber"></div>
+    <div class="panel-header">
+      <div class="ph-title-row">
+        <span class="ph-num">落地</span>
+        <h3>五步决策清单</h3>
+      </div>
+    </div>
+    <div class="panel-body">
+      <ol class="steps">
+        <li>明确可承受的最大回撤与投资期限，反推是否允许持有 TQQQ 类资产。</li>
+        <li>读完 Ch.04 压力测试：能否接受滚动窗口与参数敏感性所揭示的方差。</li>
+        <li>写下入场、加仓、减仓规则（与策略 Step 对齐），并承诺不在盘中临时改写。</li>
+        <li>评估执行渠道：佣金、滑点、税务与是否能在信号日完成操作。</li>
+        <li>设复盘频率（季/年），用<strong>过程指标</strong>（纪律执行率）而非单日盈亏评价策略。</li>
+      </ol>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

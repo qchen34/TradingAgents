@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04-3 参数敏感性 — LRS TQQQ 策略研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.chart-img-wrap { border-radius: 10px; overflow: hidden; background: #0f172a; }
+.chart-img-wrap img { width: 100%; display: block; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">← 目录</a>
+  <div class="nav-divider"></div>
+  <span class="nav-chapter">Chapter 04 &nbsp;·&nbsp; 质疑与压力测试 &nbsp;·&nbsp; 4.3</span>
+  <span class="nav-counter">4.3 / 4.4</span>
+  <a href="04b.html" class="nav-btn">← 4.2</a>
+  <a href="04d.html" class="nav-btn">4.4 →</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <span class="page-num">04 &nbsp;·&nbsp; 4.3</span>
+    <h1 class="page-title">参数敏感性</h1>
+    <span class="page-sub">Chart I · MA 100–300 · ~5y window</span>
+  </div>
+
+  <div class="panel" style="flex:1;">
+    <div class="strip strip-violet"></div>
+    <div class="panel-header has-sub">
+      <div class="ph-title-row">
+        <span class="ph-num">I</span>
+        <h3>均线周期扫描</h3>
+      </div>
+      <div class="ph-sub">固定其余规则，仅改变 MA 长度；同一段约 5 年样本</div>
+    </div>
+    <div class="panel-body" style="padding:0.65rem 0.85rem;">
+      <div class="chart-img-wrap">
+        <img src="charts/chart_i_ma_sensitivity.png" alt="Chart I 参数敏感性" loading="lazy">
+      </div>
+    </div>
+  </div>
+
+  <div class="g2" style="margin-top:1.2%;">
+    <div class="card">
+      <div class="strip strip-green"></div>
+      <div class="card-header label-green">
+        <span class="ch-num">稳健</span>
+        <span class="ch-title">曲线平缓</span>
+      </div>
+      <div class="card-body">
+        <p style="font-size:0.95rem;color:#475569;">若在较宽参数带内收益与 Sharpe 无断崖式变化，说明结论对「精确 200 日」依赖较低。</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="strip strip-amber"></div>
+      <div class="card-header label-amber">
+        <span class="ch-num">警惕</span>
+        <span class="ch-title">尖峰与过拟合</span>
+      </div>
+      <div class="card-body">
+        <p style="font-size:0.95rem;color:#475569;">若仅单一 MA 显著最优，需怀疑样本内拟合，并缩短训练窗做样本外验证。</p>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

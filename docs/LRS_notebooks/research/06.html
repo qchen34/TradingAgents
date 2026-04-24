@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>06 风险清单 — LRS TQQQ 策略研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.risk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2%;
+  flex: 1;
+  min-height: 0;
+}
+.risk-card {
+  border-radius: 12px;
+  border: 1.5px solid #FECDD3;
+  background: #FFF1F2;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.risk-card .rc-head {
+  padding: 0.65rem 1rem;
+  background: #FFE4E6;
+  border-bottom: 1px solid #FECDD3;
+  font-weight: 800;
+  font-size: 0.95rem;
+  color: #9F1239;
+}
+.risk-card .rc-body { padding: 0.85rem 1rem; flex: 1; }
+.risk-card ul.bl li { font-size: 0.92rem; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">← 目录</a>
+  <div class="nav-divider"></div>
+  <span class="nav-chapter">Chapter 06 &nbsp;·&nbsp; 风险清单</span>
+  <span class="nav-counter">Ch.06</span>
+  <a href="05.html" class="nav-btn">← Ch.05</a>
+  <a href="07.html" class="nav-btn">Ch.07 →</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <span class="page-num">Chapter 06</span>
+    <h1 class="page-title">策略风险清单</h1>
+    <span class="page-sub">Structure · Product · Behavior · Tail</span>
+  </div>
+
+  <div class="risk-grid">
+    <div class="risk-card">
+      <div class="rc-head">市场结构风险</div>
+      <div class="rc-body">
+        <ul class="bl">
+          <li>震荡市中均线附近反复交叉，可能出现连续小额亏损（Whipsaw）。</li>
+          <li>趋势策略在「无趋势」阶段天然缺乏优势。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="risk-card">
+      <div class="rc-head">杠杆工具风险</div>
+      <div class="rc-body">
+        <ul class="bl">
+          <li>TQQQ 存在波动损耗、跟踪误差与流动性折价风险。</li>
+          <li>极端行情下基金运作与再平衡机制可能与直觉线性三倍关系不一致。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="risk-card">
+      <div class="rc-head">执行与行为风险</div>
+      <div class="rc-body">
+        <ul class="bl">
+          <li>信号出现时能否按纪律执行，比回测曲线更难复制。</li>
+          <li class="hi">主观干预（提前抄底、延迟止损）往往破坏规则优势。</li>
+        </ul>
+      </div>
+    </div>
+    <div class="risk-card">
+      <div class="rc-head">尾部与监管风险</div>
+      <div class="rc-body">
+        <ul class="bl">
+          <li>黑天鹅与流动性危机可能让技术指标短期全部失真。</li>
+          <li>杠杆 ETF 监管与产品条款未来可能变化。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

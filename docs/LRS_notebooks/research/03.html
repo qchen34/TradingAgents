@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>03-1 回测概览 — LRS TQQQ 策略研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.pg31 {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: 1.2%;
+  flex: 1;
+  min-height: 0;
+}
+.chart-img-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0f172a;
+}
+.chart-img-wrap img { width: 100%; display: block; vertical-align: middle; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">← 目录</a>
+  <div class="nav-divider"></div>
+  <span class="nav-chapter">Chapter 03 &nbsp;·&nbsp; 历史回测 &nbsp;·&nbsp; 3.1 回测概览</span>
+  <span class="nav-counter">3.1 / 3.3</span>
+  <a href="02.html" class="nav-btn">← Ch.02</a>
+  <a href="03b.html" class="nav-btn">3.2 风险指标 →</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <span class="page-num">03 &nbsp;·&nbsp; 3.1</span>
+    <h1 class="page-title">回测概览</h1>
+    <span class="page-sub">Five Windows · LRS vs QQQ · $10,000 · Python PNG</span>
+  </div>
+
+  <div class="pg31">
+
+    <div class="panel" style="min-height:0;display:flex;flex-direction:column;">
+      <div class="strip strip-green"></div>
+      <div class="panel-header has-sub">
+        <div class="ph-title-row">
+          <span class="ph-num">A</span>
+          <h3>多窗口汇总表</h3>
+        </div>
+        <div class="ph-sub">绿色行：LRS 总收益 ≥ QQQ；红色行：跑输基准</div>
+      </div>
+      <div class="panel-body" style="padding:0.65rem 0.85rem;">
+        <div class="chart-img-wrap">
+          <img src="charts/chart_a_summary.png" alt="Chart A 汇总表" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:1.2%;min-height:0;">
+      <div class="panel" style="flex:1;min-height:0;display:flex;flex-direction:column;">
+        <div class="strip strip-indigo"></div>
+        <div class="panel-header has-sub">
+          <div class="ph-title-row">
+            <span class="ph-num">B</span>
+            <h3>总收益与年化 CAGR</h3>
+          </div>
+          <div class="ph-sub">柱：区间总收益率；线：年化 CAGR</div>
+        </div>
+        <div class="panel-body" style="padding:0.65rem 0.85rem;flex:1;">
+          <div class="chart-img-wrap">
+            <img src="charts/chart_b_returns.png" alt="Chart B 收益对比" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div class="panel" style="flex:0 0 auto;">
+        <div class="strip strip-amber"></div>
+        <div class="panel-header">
+          <div class="ph-title-row">
+            <span class="ph-num">3.1</span>
+            <h3>阅读提示</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <ul class="bl" style="flex:0;">
+            <li>具体数值以 <strong>Chart A</strong> 为准，随数据日期自动更新</li>
+            <li>近 2/3/5/10/15 年为独立滚动样本，非嵌套区间</li>
+            <li><span class="hi">CAGR</span> 按各窗口有效起点至末日的自然年数复利折算</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+</body>
+</html>

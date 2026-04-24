@@ -48,10 +48,14 @@ def apply_theme() -> None:
   box-shadow: none !important;
 }}
 /* NavMenu：option_menu iframe 铺满导航轨 */
+[data-testid="stSidebar"] [data-testid="stElementContainer"] {{
+  background: {rail_base} !important;
+}}
 [data-testid="stSidebar"] iframe {{
   width: 100% !important;
-  min-height: 300px;
+  min-height: 0 !important;
   border: none !important;
+  background: {rail_base} !important;
 }}
 """
     _work_pane = """

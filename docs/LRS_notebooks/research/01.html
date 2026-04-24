@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>01 研究动机 — LRS TQQQ 策略研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">← 目录</a>
+  <div class="nav-divider"></div>
+  <span class="nav-chapter">Chapter 01 &nbsp;·&nbsp; 研究动机</span>
+  <span class="nav-counter">01 / 03</span>
+  <a href="02.html" class="nav-btn">下一章 →</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <span class="page-num">Chapter 01</span>
+    <h1 class="page-title">研究动机</h1>
+    <span class="page-sub">Research Motivation</span>
+  </div>
+
+  <div class="g3">
+
+    <!-- ── Card 1 ── -->
+    <div class="card">
+      <div class="strip strip-amber"></div>
+      <div class="card-header label-amber">
+        <span class="ch-num">1.1</span>
+        <span class="ch-title">收益潜力 vs 持有风险</span>
+      </div>
+      <div class="card-body">
+
+        <!-- 大数字区 — 固定高度对齐 -->
+        <div style="display:flex;align-items:flex-end;gap:0.6rem;margin-bottom:0.22rem;">
+          <div class="big-num num-amber">-75%</div>
+        </div>
+        <div class="big-cap">QQQ 下跌 35% 时，TQQQ 的实际跌幅</div>
+
+        <div class="sep"></div>
+
+        <ul class="bl">
+          <li>TQQQ = QQQ 日收益率 × <strong>3 倍</strong>，牛市弹性极强</li>
+          <li>QQQ <span class="neg">-35%</span> &nbsp;→&nbsp; TQQQ 跌幅<span class="neg"><strong>超 -75%</strong></span></li>
+          <li>从 -75% 回本须涨 <strong>300%</strong>，复利修复周期极长</li>
+          <li class="hi">一次大熊市可能抹平多年积累收益</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <!-- ── Card 2 ── -->
+    <div class="card">
+      <div class="strip strip-indigo"></div>
+      <div class="card-header label-indigo">
+        <span class="ch-num">1.2</span>
+        <span class="ch-title">波动损耗机制（Volatility Decay）</span>
+      </div>
+      <div class="card-body">
+
+        <!-- 大数字区 — 与 Card 1 对齐 -->
+        <div style="display:flex;align-items:flex-end;gap:0.6rem;margin-bottom:0.22rem;">
+          <div class="big-num num-indigo">-9%</div>
+          <div style="font-size:0.82rem;color:#64748B;padding-bottom:0.45rem;line-height:1.4;">
+            相同涨跌幅<br>额外净值损耗
+          </div>
+        </div>
+        <div class="big-cap">0.7 × 1.3 = 0.91 &nbsp;vs&nbsp; 0.9 × 1.1 = 0.99</div>
+
+        <div class="sep"></div>
+
+        <div class="mpair" style="margin-bottom:0.42rem;">
+          <div class="mbox mbox-g">
+            <div class="tk">QQQ</div>
+            <div class="eq">-10% 后 +10%</div>
+            <div class="eq">0.9 × 1.1 =</div>
+            <div class="rs">0.99</div>
+          </div>
+          <div class="mvs">VS</div>
+          <div class="mbox mbox-r">
+            <div class="tk">TQQQ</div>
+            <div class="eq">-30% 后 +30%</div>
+            <div class="eq">0.7 × 1.3 =</div>
+            <div class="rs">0.91</div>
+          </div>
+        </div>
+
+        <ul class="bl">
+          <li>震荡越频繁，净值侵蚀越严重</li>
+          <li class="hi">结论：震荡 / 下行市持有 TQQQ 是数学必输</li>
+        </ul>
+
+      </div>
+    </div>
+
+    <!-- ── Card 3 ── -->
+    <div class="card">
+      <div class="strip strip-violet"></div>
+      <div class="card-header label-violet">
+        <span class="ch-num">1.3</span>
+        <span class="ch-title">LRS 策略的出现背景</span>
+      </div>
+      <div class="card-body">
+
+        <!-- 大数字区 — 占位对齐 Card 1/2 -->
+        <div style="display:flex;align-items:flex-end;gap:0.6rem;margin-bottom:0.22rem;">
+          <div class="big-num num-indigo" style="color:#7C3AED;">LRS</div>
+        </div>
+        <div class="big-cap">Long-when-Rising Strategy — 趋势驱动的持仓过滤体系</div>
+
+        <div class="sep"></div>
+
+        <div class="flow" style="margin-bottom:0.55rem;">
+          <div class="fbox fp">波动损耗<br>持有风险</div>
+          <div class="fa">→</div>
+          <div class="fbox fs">趋势信号<br>过滤持仓</div>
+        </div>
+
+        <ul class="bl">
+          <li>用<strong>客观价格信号</strong>替代主观择时预测</li>
+          <li>规则驱动，消除<em>情绪干扰</em>与决策偏差</li>
+          <li>只在趋势明确阶段持有，<span class="pos">捕获杠杆收益</span></li>
+          <li class="hi">核心假设：价格趋势具有延续性</li>
+        </ul>
+
+      </div>
+    </div>
+
+  </div><!-- /g3 -->
+</main>
+
+</body>
+</html>

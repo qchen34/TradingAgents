@@ -1,0 +1,11 @@
+{
+  "cross_idx": "2026-04-08",
+  "cross_price": 48.0,
+  "current_price": 54.67499923706055,
+  "distance_pct": 13.906248410542807,
+  "entry_mode": "Split",
+  "mode_detail": "1/3 直接买入 + 1/3 Sell Put + 1/3 预留",
+  "rationale": "距离 13.9% — TQQQ 已有一定涨幅，分批入场降低追高风险。",
+  "macro_score": 5.0,
+  "_updated_at": "2026-04-16 01:34:30"
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>03-2 风险调整指标 — LRS TQQQ 策略研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.ch32-top {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2%;
+  flex-shrink: 0;
+}
+.ch32-bot {
+  display: grid;
+  grid-template-columns: 1fr 22rem;
+  gap: 1.2%;
+  flex: 1;
+  min-height: 0;
+}
+.chart-img-wrap {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #0f172a;
+}
+.chart-img-wrap img { width: 100%; display: block; }
+</style>
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">← 目录</a>
+  <div class="nav-divider"></div>
+  <span class="nav-chapter">Chapter 03 &nbsp;·&nbsp; 历史回测 &nbsp;·&nbsp; 3.2 风险调整指标</span>
+  <span class="nav-counter">3.2 / 3.3</span>
+  <a href="03.html"  class="nav-btn">← 3.1 概览</a>
+  <a href="03c.html" class="nav-btn">3.3 结构分析 →</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <span class="page-num">03 &nbsp;·&nbsp; 3.2</span>
+    <h1 class="page-title">风险调整指标</h1>
+    <span class="page-sub">Sharpe · Max DD · 5Y Equity · LRS / QQQ / TQQQ B&amp;H</span>
+  </div>
+
+  <div style="display:flex;flex-direction:column;gap:1.2%;flex:1;min-height:0;">
+
+    <div class="ch32-top">
+      <div class="panel" style="min-height:0;">
+        <div class="strip strip-indigo"></div>
+        <div class="panel-header has-sub">
+          <div class="ph-title-row">
+            <span class="ph-num">C</span>
+            <h3>Sharpe 对比</h3>
+          </div>
+          <div class="ph-sub">(年化 CAGR − 4%) / 年化波动；虚线 Sharpe = 1</div>
+        </div>
+        <div class="panel-body" style="padding:0.65rem 0.85rem;">
+          <div class="chart-img-wrap">
+            <img src="charts/chart_c_sharpe.png" alt="Chart C Sharpe" loading="lazy">
+          </div>
+        </div>
+      </div>
+      <div class="panel" style="min-height:0;">
+        <div class="strip strip-violet"></div>
+        <div class="panel-header has-sub">
+          <div class="ph-title-row">
+            <span class="ph-num">D</span>
+            <h3>最大回撤</h3>
+          </div>
+          <div class="ph-sub">三策略：LRS / QQQ 买入持有 / TQQQ 买入持有</div>
+        </div>
+        <div class="panel-body" style="padding:0.65rem 0.85rem;">
+          <div class="chart-img-wrap">
+            <img src="charts/chart_d_drawdown.png" alt="Chart D 回撤" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ch32-bot">
+      <div class="panel" style="min-height:0;display:flex;flex-direction:column;">
+        <div class="strip strip-green"></div>
+        <div class="panel-header has-sub">
+          <div class="ph-title-row">
+            <span class="ph-num">E</span>
+            <h3>近 5 年权益曲线</h3>
+          </div>
+          <div class="ph-sub">红底：2022 熊市示意区间；三角：入场 / 出场</div>
+        </div>
+        <div class="panel-body" style="padding:0.65rem 0.85rem;flex:1;">
+          <div class="chart-img-wrap">
+            <img src="charts/chart_e_equity.png" alt="Chart E 权益曲线" loading="lazy">
+          </div>
+        </div>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:1.2%;min-height:0;">
+        <div class="panel" style="flex:1;">
+          <div class="strip strip-amber"></div>
+          <div class="panel-header">
+            <div class="ph-title-row">
+              <span class="ph-num">读图</span>
+              <h3>Sharpe 与回撤</h3>
+            </div>
+          </div>
+          <div class="panel-body">
+            <ul class="bl">
+              <li>Sharpe 用同一无风险利率假设（4%）便于跨策略比较</li>
+              <li>TQQQ 买入持有波动极高，Sharpe 常低于 QQQ</li>
+              <li class="hi">LRS 通过空仓降低路径依赖，回撤形态与纯多头不同</li>
+            </ul>
+          </div>
+        </div>
+        <div class="panel" style="flex:1;">
+          <div class="strip strip-indigo"></div>
+          <div class="panel-header">
+            <div class="ph-title-row">
+              <span class="ph-num">读图</span>
+              <h3>权益曲线 E</h3>
+            </div>
+          </div>
+          <div class="panel-body">
+            <ul class="bl">
+              <li>三条曲线同一初始资金与同一时间轴</li>
+              <li>绿色上三角为策略入场，下三角为平仓（颜色区分盈亏）</li>
+              <li>与基准对比时关注<strong>相对路径</strong>而非单日噪声</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+</body>
+</html>

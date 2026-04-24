@@ -1,0 +1,18 @@
+{
+  "total_cash": 19000.0,
+  "tqqq_price": 54.61989974975586,
+  "macro_score": 4,
+  "ceiling_pct": 1.0,
+  "deployable": 19000.0,
+  "quality_adj": 0.75,
+  "deployable_adj": 14250.0,
+  "direct_alloc": 4750.0,
+  "wheel_margin": 4750.0,
+  "shares": 86,
+  "actual_cost": 4697.311378479004,
+  "put_contracts": 0,
+  "reserve_cash": 14302.688621520996,
+  "entry_mode": "Split",
+  "signal_quality": "Weak",
+  "_updated_at": "2026-04-15 23:27:11"
+}

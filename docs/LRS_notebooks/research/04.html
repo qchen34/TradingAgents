@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>04-1 历史数据局限性 — LRS TQQQ 策略研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">← 目录</a>
+  <div class="nav-divider"></div>
+  <span class="nav-chapter">Chapter 04 &nbsp;·&nbsp; 质疑与压力测试 &nbsp;·&nbsp; 4.1</span>
+  <span class="nav-counter">4.1 / 4.4</span>
+  <a href="03c.html" class="nav-btn">← Ch.03</a>
+  <a href="04b.html" class="nav-btn">4.2 →</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <span class="page-num">04 &nbsp;·&nbsp; 4.1</span>
+    <h1 class="page-title">历史数据的局限性</h1>
+    <span class="page-sub">Coverage · Survivorship · Regime shift</span>
+  </div>
+
+  <div class="g2">
+    <div class="card">
+      <div class="strip strip-amber"></div>
+      <div class="card-header label-amber">
+        <span class="ch-num">4.1</span>
+        <span class="ch-title">样本与市场结构</span>
+      </div>
+      <div class="card-body">
+        <ul class="bl">
+          <li>回测可观测的是<strong>已发生</strong>的行情，未来可能出现未覆盖的结构（例如长期高利率 + 高波动）。</li>
+          <li>TQQQ 上市较晚，早期纳斯达克极端行情只能通过 QQQ 间接讨论，杠杆路径不可完全复现。</li>
+          <li class="hi">任何「最优参数」都可能是样本内拟合，需在第四章后续节做压力测试。</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="strip strip-indigo"></div>
+      <div class="card-header label-indigo">
+        <span class="ch-num">注</span>
+        <span class="ch-title">模拟与幸存者偏差</span>
+      </div>
+      <div class="card-body">
+        <ul class="bl">
+          <li>杠杆 ETF 有换仓、费用与流动性约束，回测使用收盘价与固定佣金，与实盘滑点存在差距。</li>
+          <li>指数与产品可能经历规则修订；过去可用的工具未来未必相同。</li>
+          <li>结论应写成<strong>条件概率</strong>：在何种假设下策略历史表现如何。</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:1.2%;flex:0;">
+    <div class="strip strip-green"></div>
+    <div class="panel-header">
+      <div class="ph-title-row">
+        <span class="ph-num">小结</span>
+        <h3>进入压力测试的理由</h3>
+      </div>
+    </div>
+    <div class="panel-body">
+      <p style="font-size:0.95rem;color:#475569;line-height:1.65;">
+        若仅展示单一「好看区间」，容易高估可复制性。下一节从宏观阶段对照出发，再检验参数敏感性与滚动窗口分布。
+      </p>
+    </div>
+  </div>
+</main>
+
+</body>
+</html>

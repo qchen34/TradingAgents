@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>02 策略机制 — LRS TQQQ 策略研究</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;900&family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="top-nav">
+  <a href="index.html" class="nav-brand">← 目录</a>
+  <div class="nav-divider"></div>
+  <span class="nav-chapter">Chapter 02 &nbsp;·&nbsp; 策略机制</span>
+  <span class="nav-counter">02 / 03</span>
+  <a href="01.html" class="nav-btn">← 上一章</a>
+  <a href="03.html" class="nav-btn">下一章 →</a>
+</nav>
+
+<main>
+  <div class="page-header">
+    <span class="page-num">Chapter 02</span>
+    <h1 class="page-title">策略机制</h1>
+    <span class="page-sub">Strategy Mechanics</span>
+  </div>
+
+  <div class="g2">
+
+    <!-- ── Left: Flowchart ── -->
+    <div class="panel">
+      <div class="strip strip-amber"></div>
+      <div class="panel-header has-sub">
+        <div class="ph-title-row">
+          <span class="ph-num">2.1</span>
+          <h3>核心决策规则</h3>
+        </div>
+        <div class="ph-sub">QQQ 200 日均线驱动 &nbsp;·&nbsp; 规则客观 &nbsp;·&nbsp; 零主观干预</div>
+      </div>
+      <div class="panel-body">
+        <div class="fc">
+          <div class="fc-node fc-start">每日收盘后 &nbsp;—&nbsp; 检查 QQQ 收盘价</div>
+          <div class="fc-arr">↓</div>
+          <div class="fc-node fc-dec">
+            QQQ 收盘价 &nbsp;<span class="hl">高于</span>&nbsp; 200 日均线，<br>
+            且均线斜率 &gt; -0.5%，连续满足 <strong>≥ 3 天</strong>？
+          </div>
+          <div class="fc-split">
+            <div class="fc-side">
+              <div class="fc-lbl y">✓ &nbsp;三项全满足</div>
+              <div class="fc-arr">↓</div>
+              <div class="fc-out fc-buy">
+                <div class="fmain">买入 TQQQ</div>
+                <div class="fsub">▲ 趋势确认，杠杆捕获上涨</div>
+              </div>
+            </div>
+            <div class="fc-side">
+              <div class="fc-lbl n">✗ &nbsp;任一不满足</div>
+              <div class="fc-arr">↓</div>
+              <div class="fc-out fc-sell">
+                <div class="fmain">清仓 / 持有现金</div>
+                <div class="fsub">▼ 趋势转弱，规避下行风险</div>
+              </div>
+            </div>
+          </div>
+          <div class="fc-foot">
+            200 日均线 ≈ 过去 10 个月均价，业界公认的中长期趋势基准<br>
+            <em>连续 3 天确认：有效过滤单日假突破信号</em>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Right: 两个面板 ── -->
+    <div class="rstack">
+
+      <!-- 2.2 三层假设 -->
+      <div class="panel">
+        <div class="strip strip-indigo"></div>
+        <div class="panel-header">
+          <div class="ph-title-row">
+            <span class="ph-num">2.2</span>
+            <h3>三层理论假设</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <div class="ar">
+            <div class="badge">①</div>
+            <div>
+              <div class="al">趋势延续性</div>
+              <div class="ad">上涨趋势中继续上涨的概率 &gt; 短期反转概率</div>
+            </div>
+          </div>
+          <div class="ar">
+            <div class="badge">②</div>
+            <div>
+              <div class="al">均线有效过滤</div>
+              <div class="ad">200 日均线识别<strong>中长期趋势</strong>，而非短期价格噪音</div>
+            </div>
+          </div>
+          <div class="ar">
+            <div class="badge">③</div>
+            <div>
+              <div class="al">杠杆收益覆盖摩擦成本</div>
+              <div class="ad">趋势期内 TQQQ 收益 &gt; 假信号带来的交易摩擦损耗</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2.3 非对称风险 -->
+      <div class="panel">
+        <div class="strip strip-violet"></div>
+        <div class="panel-header">
+          <div class="ph-title-row">
+            <span class="ph-num">2.3</span>
+            <h3>本质：非对称风险管理</h3>
+          </div>
+        </div>
+        <div class="panel-body">
+          <table class="cmp-tbl">
+            <thead>
+              <tr>
+                <th class="rh">纯 TQQQ 买入持有</th>
+                <th class="gh">LRS 策略</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="rc">完整承受 3x 下跌放大</td>
+                <td class="gc">系统性规避下行风险 ✓</td>
+              </tr>
+              <tr>
+                <td class="rc">震荡市波动损耗持续侵蚀</td>
+                <td class="gc">空仓期完全避开损耗</td>
+              </tr>
+              <tr>
+                <td class="rc">单次大熊市可抹平多年收益</td>
+                <td class="gc">保护复利路径的连续性 ✓</td>
+              </tr>
+              <tr>
+                <td class="rc">需要极强的持仓心理承受力</td>
+                <td class="gc">规则客观，消除情绪干扰</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+    </div><!-- /rstack -->
+  </div><!-- /g2 -->
+</main>
+
+</body>
+</html>
