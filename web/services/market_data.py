@@ -26,13 +26,34 @@ INDEX_SUBTITLE_CN: dict[str, str] = {
     "^VIX": "标普500波动率指数（恐慌指数）",
 }
 
-SECTOR_PROXIES = ["XLK", "SOXX", "XLC", "QQQ"]
+SECTOR_PROXIES = [
+    "XLB",  # Materials
+    "XLC",  # Communication Services
+    "XLE",  # Energy
+    "XLF",  # Financials
+    "XLI",  # Industrials
+    "XLK",  # Technology
+    "XLP",  # Consumer Staples
+    "XLRE",  # Real Estate
+    "XLU",  # Utilities
+    "XLV",  # Health Care
+    "XLY",  # Consumer Discretionary
+    "SOXX",  # Semiconductors (theme proxy)
+]
 
 SECTOR_SUBTITLE_CN: dict[str, str] = {
-    "XLK": "信息技术板块 ETF",
-    "SOXX": "半导体板块 ETF",
+    "XLB": "原材料板块 ETF",
     "XLC": "通信服务板块 ETF",
-    "QQQ": "纳斯达克100指数 ETF",
+    "XLE": "能源板块 ETF",
+    "XLF": "金融板块 ETF",
+    "XLI": "工业板块 ETF",
+    "XLK": "信息技术板块 ETF",
+    "XLP": "日常消费板块 ETF",
+    "XLRE": "房地产板块 ETF",
+    "XLU": "公用事业板块 ETF",
+    "XLV": "医疗保健板块 ETF",
+    "XLY": "可选消费板块 ETF",
+    "SOXX": "半导体板块 ETF",
 }
 
 # Yahoo 可交易代理：美债收益率曲线、美元、通胀保值 ETF（非官方 CPI）
@@ -160,6 +181,7 @@ def get_dashboard_market_snapshot() -> dict[str, Any]:
     return {
         "indexes": index_rows,
         "top3_sectors": sectors[:3],
+        "top6_sectors": sectors[:6],
         "macro_strip": macro_strip,
         "market_status": market_status_text(),
         "last_updated_et": format_et(now_et()),
@@ -189,9 +211,13 @@ def _dict_to_quote(d: dict[str, Any]) -> QuoteRow:
 
 
 def _snapshot_from_stored(snap: dict[str, Any]) -> dict[str, Any]:
+    top6_raw = snap.get("top6_sectors")
+    if top6_raw is None:
+        top6_raw = snap.get("top3_sectors", [])
     return {
         "indexes": [_dict_to_quote(x) for x in snap.get("indexes", [])],
-        "top3_sectors": [_dict_to_quote(x) for x in snap.get("top3_sectors", [])],
+        "top3_sectors": [_dict_to_quote(x) for x in top6_raw[:3]],
+        "top6_sectors": [_dict_to_quote(x) for x in top6_raw],
         "macro_strip": snap.get("macro_strip") or [],
         "market_status": snap.get("market_status", "N/A"),
         "last_updated_et": snap.get("last_updated_et", "N/A"),
@@ -208,7 +234,8 @@ def save_dashboard_cache(snapshot: dict[str, Any], news: list[dict[str, Any]]) -
     CACHE_PATH.parent.mkdir(parents=True, exist_ok=True)
     payload = {
         "indexes": [_quote_to_dict(x) for x in snapshot.get("indexes", [])],
-        "top3_sectors": [_quote_to_dict(x) for x in snapshot.get("top3_sectors", [])],
+        "top3_sectors": [_quote_to_dict(x) for x in snapshot.get("top6_sectors", [])[:3]],
+        "top6_sectors": [_quote_to_dict(x) for x in snapshot.get("top6_sectors", [])],
         "macro_strip": snapshot.get("macro_strip") or [],
         "market_digest_md": snapshot.get("market_digest_md") or "",
         "market_status": snapshot.get("market_status", "N/A"),
@@ -257,7 +284,8 @@ def _build_store_payload(
 ) -> dict[str, Any]:
     snap_out = {
         "indexes": [_quote_to_dict(x) for x in snapshot.get("indexes", [])],
-        "top3_sectors": [_quote_to_dict(x) for x in snapshot.get("top3_sectors", [])],
+        "top3_sectors": [_quote_to_dict(x) for x in snapshot.get("top6_sectors", [])[:3]],
+        "top6_sectors": [_quote_to_dict(x) for x in snapshot.get("top6_sectors", [])],
         "macro_strip": snapshot.get("macro_strip") or [],
         "market_digest_md": snapshot.get("market_digest_md") or "",
         "market_status": snapshot.get("market_status", "N/A"),

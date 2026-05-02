@@ -1,0 +1,56 @@
+{
+  "target_indexes": [
+    13,
+    278,
+    43,
+    314,
+    174,
+    111,
+    100
+  ],
+  "target_count": 7,
+  "targets": [
+    {
+      "idx": 13,
+      "handle": "sama",
+      "url": "https://x.com/sama/status/2050274547061129577",
+      "title": "you know what\n\nall of these \"which is better\" polls are silly\n\nuse codex or claude code, whatever works best for you\n\ni am grateful we live in a time with such amazing tools, and grateful there is a choice"
+    },
+    {
+      "idx": 278,
+      "handle": "sama",
+      "url": "https://x.com/sama/status/2049653810558353746",
+      "title": "GPT-5.5 is going to have a party for itself. it chose 5/5 at 5:55 pm for the date and time.  \n\nif you'd like to come, let us know here: https://luma.com/5.5\n\ncodex will help the team pick people from the replies. 5.5 had some good ideas/requests for the party, which we'll do."
+    },
+    {
+      "idx": 43,
+      "handle": "Pluvio9yte",
+      "url": "https://x.com/Pluvio9yte/status/2050221337424408733",
+      "title": "Sam Altman 在和 Stripe 联合创始人 Patrick Collison 的访谈里亲口承认：OpenAI 没有护城河，而且永远不会有。\n\n这话从地球上估值最高的私人公司 CEO嘴里说出来，确实值得认真看一下。\n\n以下是几个核心信息：\n\n1. Sam 说希望 OpenAI 做一个\"forever low margin\"（永远低利润率）的公司，类比 utility company（公用事业公司，简单说就是水电煤那种）。只要业务足够大、增速足够快，利润率低他不在乎。\n\n2. 他说 AI 的 switching costs（切换成本）正在崩塌。还拿 Codex 举例——用户从竞品切过来很容易。更有意思的是他的推论：AI越聪明，切换越容易，因为你直接让 Agent 帮你迁移就行了。\n\n3. OpenAI 正在建\"人类历史上最贵的基础设施\"——万亿美元级数据中心，能源合约跨度20年。但5年后员工数只想翻倍。翻译成人话：他赌 AI Agent能干掉大部分工程和运维岗位。\n\n4. OpenAI 计划派工程师驻场到企业 CEO 身边，帮 CEO 自动化日常决策和工作流。理论是：先搞定 CEO，效果会像分形一样向下扩散到整个组织。举了 Shopify CEO Tobi Lutke 的例子——Tobi 自己先上手折腾 AI 自动化，然后逼着全公司跟进。\n\n5. GPT-5.5 开始表现出\"偏好\"——Sam 给 Agent 一张信用卡买20美元以下的东西，它选了 Gumroad 上一个 HTML 设计。GPT-5.5还要求办生日派对，指定5月5日，说不想自己致辞，要构建它的工程师来致辞。Sam 说他感到\"real moral pressure\"（真正的道德压力）。"
+    },
+    {
+      "idx": 314,
+      "handle": "cursor_ai",
+      "url": "https://x.com/cursor_ai/status/2049499866217185492",
+      "title": "We’re introducing the Cursor SDK so you can build agents with the same runtime, harness, and models that power Cursor.\n\nRun agents from CI/CD pipelines, create automations for end-to-end workflows, or embed agents directly inside your products."
+    },
+    {
+      "idx": 174,
+      "handle": "cursor_ai",
+      "url": "https://x.com/cursor_ai/status/2049926283061035254",
+      "title": "Cursor Security Review is now available for Teams and Enterprise plans.\n\nRun two types of always-on agents:\n1. Security Reviewer checks every PR for vulnerabilities and leaves comments.\n2. Vulnerability Scanner runs scheduled scans of your codebase and posts findings in Slack."
+    },
+    {
+      "idx": 111,
+      "handle": "Pluvio9yte",
+      "url": "https://x.com/Pluvio9yte/status/2050059618043543563",
+      "title": "卧槽，看完 Andrej Karpathy 在 Sequoia AI Ascent 2026 的最新访谈，我直接破防了🤯\n\n他说：最近几个月，他作为程序员从来没有感觉这么“behind”过……不，是突然之间，他发现自己再也不落后了。12月前后，agentic tools 突然从“偶尔靠谱”变成了“离谱地靠谱”。\n\nKarpathy说了三个阶段：\nSoftware 1.0：你写显式规则\nSoftware 2.0：你调数据+训练网络\nSoftware 3.0：你给 Context + Prompt，让 LLM 自己去当那个智能解释器\n\n举两个他亲身实验的狠例子：\nOpenClaw 安装：以前是写一堆复杂 shell script 去适配各种平台。现在？直接扔一句 prompt 给 agent，它自己看环境、debug、搞定全部。你编程的对象从“代码”变成了“一段描述”。\n\nMenu Gen：以前他还老老实实写 Vercel App、OCR、调用图像生成器……结果 Gemini 直接吃照片、用 prompt 就把菜单重绘+图片叠加上去了。整个 App 都没必要存在了！\n\n他还区分了两个词：\nVibe Coding：把地板拉高，所有人都能随便搞东西，太爽了\nAgentic Engineering：把天花板继续拔高，专业软件的质量不能因为“vibe”而掉，你得学会 harness 这些技能，让它们又快又稳\n\nAI 加快了技术平权，编程从职业开始变成每个人都能拥有的超级能力。"
+    },
+    {
+      "idx": 100,
+      "handle": "runes_leo",
+      "url": "https://x.com/runes_leo/status/2050096487967695197",
+      "title": "Karpathy 这场 Sequoia 演讲把 AI 编程下个阶段讲透了，最有感触的是第 6 条。\n\n1. Software 3.0 来了。\n1.0 写代码，2.0 训神经网络，3.0 在 LLM 的 context 里用自然语言\"编程\"。\n\n2. 2025-12 是拐点。\n生成代码块变大变连贯，编程的最小单位从\"写代码\"升级到\"委派任务\"。\n\n3. 神经网络会成主计算层。\n未来不是 CPU 上跑神经网络，是神经网络当主进程，传统计算变辅助。\n\n4. 许多应用会消失。\n用户不需应用，直接拿模型输出。MenuGen 那种轻量工具最先被替代。\n\n5. 验证性决定进展速度。\n数学、代码这种可结算的领域 AI 飞快。模糊任务仍是\"锯齿智能\"。\n\n6. 新的 10x 工程师不是会写代码的人。\n是会做这五件事的人——\n\n规范 / 监督 / 审查 / 评估 / 权限管理。\n\n没一件是写代码本身。\n\n7. 它们是鬼，不是动物。\nLLM 是统计模拟物，盲信和盲拒都不对，要实证理解它的边界。\n\n最强金句：\n\n> 你可以外包思考。\n> 但不能外包理解。\n\n---\n\n跑了半年策略，第 6 条最有体感。\n\n写新策略丢 prompt 给 Claude Code 就有了。\n真正花时间的是规范怎么写、跑出来怎么审、上线前权限怎么收。\n\n代码量从 0 到 1 的那段不再是瓶颈。\n从 1 到能信任的那段才是。\n\n---\n\n鬼，不是动物。\n盲信和盲拒都不对。"
+    }
+  ]
+}

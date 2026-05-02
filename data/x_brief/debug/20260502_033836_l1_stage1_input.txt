@@ -1,0 +1,454 @@
+[meta]
+
+tweets=120
+
+tweet_summary_chars=106473
+
+phase=stage1_draft
+
+
+
+[prompt]
+
+你是“X资讯月报总编”。请先产出“结构草案 JSON”（阶段1），供后续阶段2定稿使用。
+
+你必须遵循“用户配置文档”的偏好：
+- 优先覆盖“我现在最关心的事”；
+- 按“账号权重与偏好”做信息优先级排序（高权重账号更容易进入 themes/p0）；
+- 按“内容类型偏好（✅/❌）”进行取舍；
+- 尽量贴合“简报格式偏好”的表达风格（中文总结为主，保留关键英文原句）；
+- 页面是固定模块位，内容应服务于前端模块整合，不要输出散乱信息。
+
+阶段1输出要求（仅草案）：
+1) 只输出 JSON 对象，不要 markdown，不要解释文字。
+2) 使用如下字段（严格保持键名）：
+{
+  "headline":"今日一句话总结，<40字，点出主旋律",
+  "trending_keywords":["关键词1","关键词2","关键词3"],
+  "themes":[{"id":"t1","title":"...","subtitle":"...","priority":"P0|P1|P2","bullets":["..."],"sample_urls":["..."]}],
+  "p0_events":[{"id":"p01","title":"...","meta":"...","summary":"...","url":"..."}],
+  "top_quotes":[{"id":"q1","quote":"...","speaker":"...","date":"...","note":"...","url":"..."}],
+  "category_updates":[{"id":"c1","title":"...","subtitle":"...","level":"P0|P1|P2|WARN","item_urls":["..."],"item_texts":["..."]}],
+  "risk_signals":[{"id":"r1","level":"HIGH|MID|OPP","title":"...","detail":"..."}]
+}
+3) 数量限制：themes=3, p0_events<=6, top_quotes<=3, category_updates<=6, risk_signals<=6。
+4) trending_keywords：3-6 个当期最热词条（中英均可），直接从推文内容提炼。
+5) themes 的 priority 字段：首个主题通常为 P0，其余为 P1/P2；根据重要性自判。
+6) 每个模块优先包含可验证 URL；无法确定时宁缺毋滥。
+7) 内容必须中文，简洁可执行。
+8) JSON 必须合法：双引号、无注释、无尾逗号。
+
+用户配置文档（用于本次简报编排）：
+# 我的 X 资讯简报配置
+> 这是一份活的文档。你可以随时手动编辑，Claude 也会根据你的阅读行为自动更新行为日志和权重建议。
+> 设计参考：Karpathy 的 LLM Wiki 模式——知识预编译，随时间积累。
+
+**创建日期**：2026-04-26
+**最后更新**：2026-04-29（新增 Cursor 官方账号 + 17位中文区博主；华语圈从3人扩充至20人）
+
+---
+
+## 一、我现在最关心的事
+> 这是简报的核心过滤器。Claude 在筛选和总结推文时，会优先选出和这里相关的内容放进主题卡片。
+
+- 探索 AI 工具在投资研究和期权分析中的实际应用
+- 寻找值得在 B站分享的开源项目和 AI 工具（能快速跑通、有演示效果的优先）
+- 跟上 AI 编程工具的发展（Claude Code、Cursor、Agent 相关）
+- 了解顶级 VC 和行业领袖对 AI 下一步方向的判断
+- 关注 A股和美股宏观叙事的变化（尤其是科技板块）
+
+---
+
+## 二、账号权重与偏好
+
+> 权重分三档：高 / 中 / 低
+> 高权重账号：内容优先进入主题卡片
+> 中权重账号：有足够价值时进入快速扫读
+> 低权重账号：仅在有明确高价值内容时出现
+
+### AI 行业
+
+| 账号 | 名称 | 当前权重 | 偏好内容类型 | 备注 |
+|------|------|----------|--------------|------|
+| @karpathy | Andrej Karpathy | 高 | 技术深度、可操作项目、AI编程实践 | 质量极高，几乎每条都值得看 |
+| @sama | Sam Altman | 高 | 行业方向、产品发布 | 信息密度高，观点有参考价值 |
+| @DarioAmodei | Dario Amodei | 高 | Anthropic动向、AI安全与能力 | Anthropic CEO，和Claude直接相关 |
+| @AravSrinivas | Aravind Srinivas | 高 | AI产品方向、搜索与Agent | Perplexity CEO，活跃度高 |
+| @AndrewYNg | Andrew Ng | 高 | 学习资源、AI教育、应用落地 | 对理解AI应用场景有帮助 |
+| @cursor_ai | Cursor | 中 | 产品更新、功能发布、Cursor生态 | 新增；AI编程工具官方账号，主线之一 |
+| @ylecun | Yann LeCun | 中 | 研究方向、学术争论 | 偶尔有深度洞见，但争论性内容较多 |
+| @JeffDean | Jeff Dean | 中 | 研究进展、Google AI动向 | 更新频率低，但含金量高 |
+| @soumithchintala | Soumith Chintala | 中 | 开源框架、技术工具 | PyTorch相关，关注技术底层 |
+| @gregbrockman | Greg Brockman | 中 | OpenAI产品动向 | 更新较少，有则关注 |
+| @GaryMarcus | Gary Marcus | 低 | AI批评与反思 | 有参考价值但以质疑为主 |
+| @elonmusk | Elon Musk | 低 | 偶尔有AI/科技相关 | 噪音多，仅关注有实质内容的推文 |
+
+### VC / 投资人
+
+| 账号 | 名称 | 当前权重 | 偏好内容类型 | 备注 |
+|------|------|----------|--------------|------|
+| @paulg | Paul Graham | 高 | 创业思维、长文洞见 | 更新少但质量极高，每条都值得读 |
+| @naval | Naval Ravikant | 高 | 思维框架、财富哲学 | 更新不频繁，但思想密度高 |
+| @pmarca | Marc Andreessen | 高 | AI/科技政策、VC判断、行业叙事 | a16z联合创始人，极其活跃，2.1M粉 |
+| @david_tiantian | David Tian Wang | 中 | 宏观分析、市场判断 | 账号实际发帖量约42条，活跃度一般 |
+| @morganhousel | Morgan Housel | 中 | 投资心理、长期主义、行为金融 | 《Psychology of Money》作者 |
+| @eladgil | Elad Gil | 中 | AI投资趋势、公司判断 | 偶有高质量行业洞见 |
+| @DavidSacks | David Sacks | 中 | 科技政策、VC视角 | 观点有时偏政治，筛选后看 |
+| @HarryStebbings | Harry Stebbings | 低 | VC动态 | 内容较泛，权重低 |
+| @jason | Jason Calacanis | 低 | 创业生态 | 噪音较多 |
+
+### 宏观与交易
+
+| 账号 | 名称 | 当前权重 | 偏好内容类型 | 备注 |
+|------|------|----------|--------------|------|
+| @charliebilello | Charlie Bilello | 高 | 宏观数据图表、资产类别轮动 | 每天发图表分析，数据驱动；贴近A股/美股宏观叙事主线 |
+| @WarriorTrading | Warrior Trading | 低 | 日内交易技术 | 偏教育/营销内容 |
+| @CryptoCred | Credible Crypto | 低 | 加密趋势分析 | 加密相关，权重偏低 |
+| @AltcoinBuzz | AltcoinBuzz | 低 | 币圈媒体 | 偏媒体性质，优先级低 |
+
+### 华语圈
+
+> ✅ 以下所有账号均为英文 handle，Nitter RSS 和 xint 均可正常抓取，无需 X API 补充。
+> ⚠️ 例外：@二级炒家 仍为中文 handle，需走 X API 通道。
+
+#### 华语圈 · AI 编程 / 工具（与用户核心兴趣高度重叠）
+
+| 账号 | 名称 | 当前权重 | 偏好内容类型 | 备注 |
+|------|------|----------|--------------|------|
+| @svwang1 | 王川（硅谷） | 高 | 科技投资观察、深度思考 | 质量高，思考密度接近英文圈顶级账号 |
+| @bozhou_ai | 泊舟 | 高 | 智能体构建、提示词、AI编程实践 | 新增；AI程序员+氛围编程践行者，2.1万粉，内容实操性强 |
+| @lxfater | 铁锤人 | 高 | AI工具、开源项目、创业实践 | 新增；GitHub 3万星热门项目作者，B站内容参考价值高 |
+| @berryxia | Berryxia | 高 | AI工具、系统提示词、设计美学 | 新增；提示词研究深度高，和用户兴趣直接对齐 |
+| @Pluvio9yte | 雪踏乌云 | 高 | 氛围编程、AI编程技巧、产品出海 | 新增；大厂开发者视角，实操经验丰富 |
+| @liuliu | 刘进 | 中 | VC投资、华语科技圈 | 技术洞见高质量，但更新频率偏低 |
+| @CuiMao | CuiMao | 中 | 深度学习、NVIDIA生态、ComfyUI工作流 | 新增；技术深度强，ComfyUI方向与AI工具主线相关 |
+| @0xAA_Science | 0xAA | 中 | Web3教育、开源项目、AI+Web3交叉 | 新增；北大计算机博士，WTF Academy发起人，技术可信度高；偏Web3但有AI视角 |
+
+#### 华语圈 · 独立创作者 / 产品人
+
+| 账号 | 名称 | 当前权重 | 偏好内容类型 | 备注 |
+|------|------|----------|--------------|------|
+| @dingyi | Ding | 中 | 独立产品、SaaS工具、产品设计 | 新增；SaasPick/TopFeed作者，全网15万粉，出海产品实战参考 |
+| @GoSailGlobal | Jason Zhu | 中 | SaaS出海、AI资讯、Agent资源站 | 新增；独立开发者，搭建AI Agent聚合资源站，出海视角有参考价值 |
+| @frxiaobei | 凡人小北 | 中 | AI战略咨询、AIGC商业落地 | 新增；商业+战略顾问背景，关注真实商业场景的AI落地，偏B端视角 |
+| @gkxspace | 余温 | 中 | AI产品商业化、从0到1创业 | 新增；05年连续创业者，已有AI项目七位数营收，创业实战参考价值高 |
+| @Stv_Lynn | Steven Lynn | 中 | 科技播客、AI社区活动 | 新增；FirstLabAI播客主持人+Crazy Saturday主办者，华语AI圈社交节点 |
+| @chuxiaeth | 初夏 | 中 | AI学习分享、个人成长 | 新增；Cursor资助创作者，内容质量待观察，初设中权重 |
+
+#### 华语圈 · Crypto / 链上（低权重，仅关注AI交叉内容）
+
+| 账号 | 名称 | 当前权重 | 偏好内容类型 | 备注 |
+|------|------|----------|--------------|------|
+| @二级炒家 | 二级炒家 | 高 | A股宏观、市场判断 | 和投资主线直接相关；⚠️ 中文handle，需X API |
+| @wolfyxbt | 杀破狼 | 低 | 氛围编程、链上数据、Meme币 | 新增；表达一针见血，但主线偏Meme币；仅关注AI编程相关内容 |
+| @runes_leo | Leo | 低 | 比特币生态、链上量化 | 新增；AI+Crypto独立建设者，主线偏比特币生态，AI交叉内容才关注 |
+| @oranges | 比特币橙子 | 低 | 比特币、AI工具（OwlClawHub） | 新增；搭建了AI智能体工具集，但主业是加密投资；仅关注AI工具相关 |
+| @realNyarime | 奶昔 | 低 | eSIM技术、社区运营 | 新增；主业eSIM和奶昔社区，与简报主线相关性低；暂设低权重观察 |
+
+---
+
+## 三、内容类型偏好
+
+### ✅ 优先展示
+- **可操作的项目/工具**：有 GitHub 链接、可以立刻尝试的内容
+- **AI 编程实践**：提示词技巧、Agent 搭建、工作流分享
+- **行业方向判断**：顶级 VC 或创始人对未来的预测和押注
+- **宏观与投资叙事**：A股、美股科技板块的结构性变化
+- **中文圈独特视角**：英文圈没有的本地化洞见
+
+### ❌ 降低优先级
+- 纯政治观点（和 AI/投资无关的）
+- 加密货币炒作、价格预测类
+- 互相转发的无实质内容互动
+- 重复已知信息的科普
+
+---
+
+## 四、简报格式偏好
+
+```
+📰 AI & 投资日报 · [日期]
+
+【30秒总览】一句话概括今日主旋律
+
+━━━━━━━━━━━━━
+🔥 今日主题卡片（2～3个）
+每张卡片包含：
+  - 主题标签
+  - 核心洞见（1～2句）
+  - 来源账号
+  - 你可以做什么（可操作建议）
+
+━━━━━━━━━━━━━
+⚡ 快速扫读（剩余有价值内容）
+
+━━━━━━━━━━━━━
+🀄 华语圈单独板块
+
+━━━━━━━━━━━━━
+📌 本期可以跟着做的事
+
+━━━━━━━━━━━━━
+😴 今日无新内容的账号
+```
+
+**语言**：中文总结为主，保留有分量的英文原句
+**长度**：10分钟内可以读完
+**主题卡片数量**：每日 2～3 个，宁缺毋滥
+
+---
+
+## 五、行为日志
+> 由 Claude 根据你的互动自动追加。记录有意义的偏好信号，作为未来权重调整的依据。
+
+| 日期 | 行为 | 内容摘要 | 影响 |
+|------|------|----------|------|
+| 2026-04-26 | 初始配置建立 | 人工设定初始权重 | — |
+| 2026-04-28 | 账号列表核查优化 | Web搜索核查全部33个账号的真实性与活跃度 | 修正7处、新增5个、删除7个 |
+| 2026-04-29 | 批量新增华语圈博主 | 添加Cursor官方账号 + 15位Cursor资助中文区创作者 + 1位用户自荐（@chuxiaeth） | 总账号数从33增至51；华语圈从3扩充至20；新增AI编程/工具高权重博主4个 |
+
+---
+
+## 六、待解决的遗留问题
+> 系统尚未实现的功能，记录在此，后续迭代时参考。
+
+- [ ] 账号内容类型自动分类（通用知识型 vs 项目介绍型），不同类型反馈权重不同
+- [ ] 点踩行为如何自动写回本文件并影响下次抓取权重
+- [ ] 新账号发现与加入机制（何时、如何引入新的关注对象）
+- [ ] 账号沉默超过 N 天自动降权的规则实现
+- [ ] 新加入的华语圈账号经过 2 周观察后，根据实际内容质量调整权重
+
+上下文（摘要）：
+# X平台关注列表推文汇总
+
+**生成日期**: 2026-05-01T19:38:36.469180+00:00
+**数据来源**: Nitter RSS 订阅
+**时间范围**: 最近7天
+**账号总数**: 44 | **成功获取**: 34 | **推文总数**: 478
+
+---
+
+### ✅ @karpathy — Andrej Karpathy（3 条）
+
+**[2026-04-30T17:43:06+00:00]**
+> This is the the quote I've been citing a lot recently.
+[原文链接](https://x.com/karpathy/status/2049907410303865030)
+
+**[2026-04-30T17:28:50+00:00]**
+> Fireside chat at Sequoia Ascent 2026 from a ~week ago. Some highlights: The first theme I tried to push on is that LLMs are about a lot more than just speeding up what existed before (e.g. coding). T…
+[原文链接](https://x.com/karpathy/status/2049903821095354523)
+
+**[2026-04-27T21:34:34+00:00]**
+> RT by @karpathy: New work with @AlecRad and @DavidDuvenaud: Have you ever dreamed of talking to someone from the past? Introducing talkie, a 13B model trained only on pre-1931 text. Vintage models sh…
+[原文链接](https://x.com/karpathy/status/2048878495539843211)
+
+---
+
+### ✅ @sama — Sam Altman（20 条）
+
+**[2026-05-01T18:01:58+00:00]**
+> you know what all of these "which is better" polls are silly use codex or claude code, whatever works best for you i am grateful we live in a time with such amazing tools, and grateful there is a cho…
+[原文链接](https://x.com/sama/status/2050274547061129577)
+
+**[2026-05-01T15:18:10+00:00]**
+> RT by @sama: Don't join a company or industry that has contempt for its customers. You can make a lot of money that way, and of course it gives you a feeling of superiority, but you'll never do great…
+[原文链接](https://x.com/sama/status/2050233324963008553)
+
+**[2026-05-01T15:01:14+00:00]**
+> R to @sama: i'm hopeful for a future where people who want to work really hard have incredibly fulfilling things to do, and people who don't want to work hard don't have to and can still have an amaz…
+[原文链接](https://x.com/sama/status/2050229060887044494)
+
+**[2026-05-01T15:01:13+00:00]**
+> R to @sama: i think a lot of people are going to be busier (and hopefully more fulfilled) than ever, and jobs doomerism is likely long-term wrong. though of course there will be disruption/significan…
+[原文链接](https://x.com/sama/status/2050229059507159242)
+
+**[2026-05-01T15:01:13+00:00]**
+> we want to build tools to augment and elevate people, not entities to replace them.
+[原文链接](https://x.com/sama/status/2050229058425045178)
+
+**[2026-05-01T01:17:03+00:00]**
+> artificial goblin intelligence achieved
+[原文链接](https://x.com/sama/status/2050021650641695108)
+
+**[2026-04-30T20:16:55+00:00]**
+> big upgrade for codex today! try it for non-coding computer work.
+[原文链接](https://x.com/sama/status/2049946120441520624)
+
+**[2026-04-30T20:12:24+00:00]**
+> it does seem cool
+[原文链接](https://x.com/sama/status/2049944981750833659)
+
+**[2026-04-30T19:23:47+00:00]**
+> RT by @sama: Computer Use runs this use case 42% faster in today's Codex app update.
+[原文链接](https://x.com/sama/status/2049932746567598472)
+
+**[2026-04-30T19:08:00+00:00]**
+> RT by @sama: It's never been easier to do everyday work with Codex. Choose your role, connect the apps you use every day, and try suggested prompts. Codex helps with everything from research and plan…
+[原文链接](https://x.com/sama/status/2049928776147230886)
+
+**[2026-04-30T17:29:15+00:00]**
+> lisan say more mean things about us you're being too nice
+[原文链接](https://x.com/sama/status/2049903925311267311)
+
+**[2026-04-30T05:56:16+00:00]**
+> RT by @sama: When future historians write about Silicon Valley, they’ll have an entire chapter dedicated to the Ron Conway way: how he turned generosity, warmth, and showing up for founders into a wi…
+[原文链接](https://x.com/sama/status/2049729530059960571)
+
+**[2026-04-30T04:59:15+00:00]**
+> alignment failure
+[原文链接](https://x.com/sama/status/2049715178611380317)
+
+**[2026-04-30T04:46:56+00:00]**
+> we're starting rollout of GPT-5.5-Cyber, a frontier cybersecurity model, to critical cyber defenders in the next few days. we will work with the entire ecosystem and the government to figure out trus…
+[原文链接](https://x.com/sama/status/2049712078836170843)
+
+**[2026-04-30T03:27:12+00:00]**
+> R to @sama: openai.com/index/where-the-g…
+[原文链接](https://x.com/sama/status/2049692014586048973)
+
+**[2026-04-30T03:27:08+00:00]**
+> goblinblog dropped
+[原文链接](https://x.com/sama/status/2049691999444639872)
+
+**[2026-04-30T03:18:22+00:00]**
+> RT by @sama: This GPT Image 2 prompt is going insanely viral right now. “Redraw the attached image in the most clumsy, scribbly, and utterly pathetic way possible. Use a white background, and make it…
+[原文链接](https://x.com/sama/status/2049689793118998717)
+
+**[2026-04-30T00:55:24+00:00]**
+> R to @sama: we will have it at our SF HQ and pay for plane tickets & hotel for people who aren't local. we'll close the link tomorrow at 5:55 pm.
+[原文链接](https://x.com/sama/status/2049653814463168638)
+
+**[2026-04-30T00:55:23+00:00]**
+> GPT-5.5 is going to have a party for itself. it chose 5/5 at 5:55 pm for the date and time. if you'd like to come, let us know here: https://luma.com/5.5 codex will help the team pick people from the…
+[原文链接](https://x.com/sama/status/2049653810558353746)
+
+**[2026-04-29T14:19:33+00:00]**
+> R to @sama: i meant a goblin moment, sorry
+[原文链接](https://x.com/sama/status/2049493797114126484)
+
+---
+
+### ✅ @DarioAmodei — Dario Amodei（0 条）
+
+---
+
+### ✅ @AravSrinivas — Aravind Srinivas（7 条）
+
+**[2026-05-01T03:22:08+00:00]**
+> Computer plays the orchestra
+[原文链接](https://x.com/AravSrinivas/status/2050053128452456584)
+
+**[2026-05-01T03:04:54+00:00]**
+> Video
+[原文链接](https://x.com/AravSrinivas/status/2050048790908785072)
+
+**[2026-04-30T17:42:35+00:00]**
+> RT by @AravSrinivas: The best hedge fund PMs compare views from different research analysts. Now you can do that in 2 minutes with Equity Research Council in Perplexity Computer. This workflow pulls …
+[原文链接](https://x.com/AravSrinivas/status/2049907277646160333)
+
+**[2026-04-28T16:05:11+00:00]**
+> RT by @AravSrinivas: Today we’re rolling out a new native Comet experience for iPad. Comet now works naturally with iPadOS features like multiple windows and Split View, so you can work with Comet al…
+[原文链接](https://x.com/AravSrinivas/status/2049157990604025896)
+
+**[2026-04-28T15:38:49+00:00]**
+> R to @AravSrinivas: reddit.com/r/GeminiAI/commen…
+[原文链接](https://x.com/AravSrinivas/status/2049151356985040934)
+
+**[2026-04-28T15:38:28+00:00]**
+> A Google Earth + Flight Simulator, fully cooked by Perplexity Computer with Codex/CC as subagents inside it. GTA vibes.
+[原文链接](https://x.com/AravSrinivas/status/2049151268606894310)
+
+**[2026-04-24T21:24:24+00:00]**
+> You would consume less computer credits (and be able to run more tasks as a result) if you switched to GPT-5.5 as your default orchestrator. This was the number one complaint about Computer (being cr…
+[原文链接](https://x.com/AravSrinivas/status/2047788775468908840)
+
+---
+
+### ✅ @AndrewYNg — Andrew Ng（2 条）
+
+**[2026-04-30T16:21:35+00:00]**
+> Pinned: How we prompt AI is very different in 2026 than 2022 when ChatGPT came out. I'm teaching a new course, AI Prompting for Everyone, to help you become an AI power user — whatever your current s…
+[原文链接](https://x.com/AndrewYNg/status/2049886895530967534)
+
+**[2026-04-27T15:58:13+00:00]**
+> AI-native software engineering teams operate very differently than traditional teams. The obvious difference is that AI-native teams use coding agents to build products much faster, but this leads to…
+[原文链接](https://x.com/AndrewYNg/status/2048793852702757151)
+
+---
+
+### ✅ @cursor_ai — Cursor（12 条）
+
+**[2026-04-30T18:58:07+00:00]**
+> R to @cursor_ai: We’re continuing to improve the runtime, harness, and models powering Cursor Security Review for a strong out-of-the-box experience. Security agents draw from your existing usage poo…
+[原文链接](https://x.com/cursor_ai/status/2049926287439929475)
+
+**[2026-04-30T18:58:06+00:00]**
+> R to @cursor_ai: Customize these Cursor-managed security agents to match your team’s requirements. Adjust triggers, add your own instructions, give them custom tooling, and choose how outputs are sha…
+[原文链接](https://x.com/cursor_ai/status/2049926285518848093)
+
+**[2026-04-30T18:58:06+00:00]**
+> Cursor Security Review is now available for Teams and Enterprise plans. Run two types of always-on agents: 1. Security Reviewer checks every PR for vulnerabilities and leaves comments. 2. Vulnerabili…
+[原文链接](https://x.com/cursor_ai/status/2049926283061035254)
+
+**[2026-04-30T17:19:22+00:00]**
+> Our agent harness makes models inside Cursor faster, smarter, and more token-efficient. Here's how we test improvements to the harness, monitor and repair degradations, and customize it for different…
+[原文链接](https://x.com/cursor_ai/status/2049901436918436249)
+
+**[2026-04-29T14:43:43+00:00]**
+> R to @cursor_ai: Customers like Rippling, Notion, C3 AI, and Faire are using the Cursor SDK to build custom background agents, take bugs from ticket to merge-ready PR, and maintain self-healing codeb…
+[原文链接](https://x.com/cursor_ai/status/2049499876388454903)
+
+**[2026-04-29T14:43:42+00:00]**
+> R to @cursor_ai: We've open-sourced a few starter projects for you to build on: a coding agent CLI, a prototyping tool, and an agent-powered kanban board. Use Cursor to customize them for your use ca…
+[原文链接](https://x.com/cursor_ai/status/2049499874043830389)
+
+**[2026-04-29T14:43:42+00:00]**
+> R to @cursor_ai: With the Cursor SDK, you can run agents locally or deploy them in our cloud.
+[原文链接](https://x.com/cursor_ai/status/2049499871980200082)
+
+**[2026-04-29T14:43:40+00:00]**
+> We’re introducing the Cursor SDK so you can build agents with the same runtime, harness, and models that power Cursor. Run agents from CI/CD pipelines, create automations for end-to-end workflows, or…
+[原文链接](https://x.com/cursor_ai/status/2049499866217185492)
+
+**[2026-04-24T19:48:34+00:00]**
+> R to @cursor_ai: Download Cursor 3.2 to try these new features in the agents window: http://cursor.com/download
+[原文链接](https://x.com/cursor_ai/status/2047764656165646786)
+
+**[2026-04-24T19:48:33+00:00]**
+> R to @cursor_ai: We've also added multi-root workspaces for cross-repo changes. A single agent session can now target a reusable workspace made of multiple folders.
+[原文链接](https://x.com/cursor_ai/status/2047764654760632725)
+
+**[2026-04-24T19:48:33+00:00]**
+> R to @cursor_ai: Another way to parallelize work is with new and improved worktrees in the agents window. Run isolated tasks in the background across different branches. When you're ready to test cha…
+[原文链接](https://x.com/cursor_ai/status/2047764652977958938)
+
+**[2026-04-24T19:48:33+00:00]**
+> Introducing /multitask in the new Cursor 3 interface. Cursor can now run async subagents to parallelize your requests instead of adding them to the queue. For already queued messages, you can ask Cur…
+[原文链接](https://x.com/cursor_ai/status/2047764651363180839)
+
+---
+
+### ✅ @ylecun — Yann LeCun（20 条）
+
+**[2026-05-01T10:36:08+00:00]**
+> RT by @ylecun: All the Doomers and hawks are lining up behind this distillation "attack" farce because they want to see open source banned. It's really as simple as that. They want to take away your …
+[原文链接](https://x.com/ylecun/status/2050162348891979817)
+
+**[2026-05-01T00:42:44+00:00]**
+> RT by @ylecun: I think the expression is “pulling the ladder”! All labs trained their models by distilling (at the very least distilling the web) which allowed them to become the fastest growing busi…
+[原文链接](https://x.com/ylecun/status/2050013015680995631)
+
+**[2026-04-30T11:02:45+00:00]**
+> RT by @ylecun: ✨🧠 Tribe v2, our latest model of human brain responses to sound, sight and language can now be (partly) explored on your phone📱: ▶️demo: https://aidemos.atmeta.com/tribev2/ 📄paper: htt…
+[原文链接](https://x.com/ylecun/status/2049806660001022372)
+
+**[2026-04-30T06:58:24+00:00]**
+> RT by @ylecun: These folks are trying to ban open source. They're looking to take away your freedom to choose. They're also looking to take away the rights of businesses like Cursor to fine tune and …
+[原文链接](https://x.com/ylecun/status/2049745165665853742)
+
+**[2026-04-30T00:05:29+00:00]**
+> Trump's war on science.
+[原文链接](ht
+
+推文样本（JSON）：
+[{"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-05-01T19:28:41+00:00", "title": "If you think you are going to get alignment out of LLMs you are sadly mistaken.\n\nIf you live in a society in which people are rolling out LLMs at massive scale, without a robust solution to alignment (or even managing gremlins) you’re probably fucked.\n\nResist the proliferation of", "url": "https://x.com/GaryMarcus/status/2050296366161940584"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T19:26:58+00:00", "title": "Important, and obviously true. https://psyche.co/ideas/have-online-worlds-become-the-last-free-places-for-children", "url": "https://x.com/pmarca/status/2050295934920302777"}, {"handle": "Stv_Lynn", "name": "Steven Lynn", "published_at": "2026-05-01T18:47:37+00:00", "title": "Media", "url": "https://x.com/Stv_Lynn/status/2050286033552736527"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-05-01T18:43:18+00:00", "title": "Enjoyed visiting MSG South in the seventh borough, Atlanta, last night… see y’all in the sixth borough (Philly) where we will beat the @sixers in six games \n\n@GovernorShapiro @david_adelman care to be my some of those nasty cheesesteaks for some bagels?! 😂\n\n[ sorry @celtics, you ", "url": "https://x.com/jason/status/2050284947345486290"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-05-01T18:41:17+00:00", "title": "AI and GDP - what does it mean?\n\nSure, AI is “contributing” to GDP  — but @davidsacks really nails it below, “Paying people to dig holes and fill them back up increases GDP, as it is currently measured, even though that activity has no value.”\n\nIn the case of AI, GDP is going up ", "url": "https://x.com/GaryMarcus/status/2050284439343862266"}, {"handle": "CuiMao", "name": "CuiMao", "published_at": "2026-05-01T18:31:06+00:00", "title": "哈哈 @OpenAI 官号换掉了banner了\n很明显，他们想再一次用这种画风重新走一遍当时4o宫崎骏现象级爆款。难，难啊。", "url": "https://x.com/CuiMao/status/2050281878322811194"}, {"handle": "0xAA_Science", "name": "0xAA", "published_at": "2026-05-01T18:31:03+00:00", "title": "一直想要个越野摩托车，这次张雪出了 MX250，支持一下。", "url": "https://x.com/0xAA_Science/status/2050281865245024365"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-05-01T18:25:15+00:00", "title": "Bill, the Knicks have won the east", "url": "https://x.com/jason/status/2050280406461677908"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-05-01T18:22:55+00:00", "title": "One of the things I hate the most about this site is the consistent lack of nuance.\n\nThat’s why everything is an argument, and progress here is so rare.", "url": "https://x.com/GaryMarcus/status/2050279819347448258"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-05-01T18:21:24+00:00", "title": "I have many beefs with Dario and don’t trust him or his hype — but he has certainly eaten OpenAI’s lunch, despite their immense initial lead.\n\nMaybe “clown” isn’t the right word here.", "url": "https://x.com/GaryMarcus/status/2050279436717785406"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T18:08:02+00:00", "title": "Concerning.", "url": "https://x.com/pmarca/status/2050276070952517767"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-05-01T18:04:30+00:00", "title": "Meta is basically Black Mirror incarnate.", "url": "https://x.com/GaryMarcus/status/2050275183223857462"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-05-01T18:04:01+00:00", "title": "“Marcus’ specific point about coding is structurally important: a model that produces code which compiles and passes the tests it was given is not the same as a model that produces correct, secure, maintainable, well-architected software. The first is verifiable in seconds; the s", "url": "https://x.com/GaryMarcus/status/2050275059361792137"}, {"handle": "sama", "name": "Sam Altman", "published_at": "2026-05-01T18:01:58+00:00", "title": "you know what\n\nall of these \"which is better\" polls are silly\n\nuse codex or claude code, whatever works best for you\n\ni am grateful we live in a time with such amazing tools, and grateful there is a choice", "url": "https://x.com/sama/status/2050274547061129577"}, {"handle": "liuliu", "name": "刘进", "published_at": "2026-05-01T17:33:05+00:00", "title": "What's harder for outsiders to understand is the falling of Deep Research inside @GeminiApp. On the other hand, Deep Research in @OpenAI is improving. Even so, nothing matches what Deep Research used to be around this time last year. It is a sad product story.", "url": "https://x.com/liuliu/status/2050267276893708414"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-05-01T17:30:46+00:00", "title": "Elon Musk, Sam Altman, the future of humanity, and … goblins.\n\nTerrific interview @theinformation with @rocketalignment \n\nhttps://www.youtube.com/live/zh70d6CyuCo?si=WIZJnwKnYEy5Pugl", "url": "https://x.com/GaryMarcus/status/2050266692732014689"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-05-01T17:18:23+00:00", "title": "Last 10 Years\nNVIDIA $NVDA: +22,875%\nBitcoin $BTC: +17,205%\n$AMD: +10,030%\nTesla $TSLA: +2,362%\nApple $AAPL: +1,233%\nGoogle $GOOGL: +999%\nNetflix $NFLX: +932%\nMicrosoft $MSFT: +844%\nAmazon $AMZN: +717%\nMeta: $META: +425%\nS&P 500 $SPY: +312%\nGold $GLD: +245%\nUS Inflation: +39%", "url": "https://x.com/charliebilello/status/2050263578188333549"}, {"handle": "Pluvio9yte", "name": "雪踏乌云", "published_at": "2026-05-01T17:15:15+00:00", "title": "Damn！确实如此，所有AI编程工具都在卷模型智能，但现在满足基本的生产力了，转而让人崩溃的根本不是模型笨，是它每次开会话都失忆😅\n\nAGENTS.md塞不下100万token的领域知识，\nRAG搜不到\"未知的未知\"，\n我自己维护Skills维护到想吐。\n\n在公司里，新人入职花两周pair一下就能内化领域知识。\n现在跟AI协作，每个新session都是\"新人第一天\"——而且是个永远不会转正的新人。这个gap确实没被好的工具解决。\n\n如果有个工具能让用户持续喂入领域知识，且这些知识真正内化到推理里而不只是RAG式的检索拼接，那比现有方案高一个维度。至少目前", "url": "https://x.com/Pluvio9yte/status/2050262789256859872"}, {"handle": "Pluvio9yte", "name": "雪踏乌云", "published_at": "2026-05-01T17:07:00+00:00", "title": "说个暴论，这个一百多万阅读帖子下的评论区里说\"Claude Code杀死了我的大脑\"，其实90%搞反了因果🤯🤯🤯\n\n我自己用CC大半年，直接把省下来的执行时间全砸在了架构设计上，脑子不但没退化反而比以前转得更快\n\n以前写代码，80%时间花在执行（查文档、写代码、修bug），20%花在设计。现在执行交给Claude或者Codex了，只有两种结果：\n\n1. 如果把省下的时间也一起交出去，只写prompt按Accept，那就跟刷老虎机没区别，退化是必然的\n\n2. 但是把省下的时间花在架构设计和code review上，认知负荷会不降反升\n\n简单说，AI干掉的是", "url": "https://x.com/Pluvio9yte/status/2050260712858210516"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-05-01T17:03:07+00:00", "title": "#FF @PeterMallouk, a great follow!", "url": "https://x.com/charliebilello/status/2050259734930800740"}, {"handle": "CuiMao", "name": "CuiMao", "published_at": "2026-05-01T16:08:50+00:00", "title": "比我还抽象，刚才刷抖音，刷到个一个女的说，她自己用一个月的时间从什么都不懂的 AI 白痴，通过她的这套学习方法论，拿到了中厂的agent工程师 offer 😅😅😅😅，评论区一堆人求资料，\n这个逼社会太疯狂了，我已经看不懂了。", "url": "https://x.com/CuiMao/status/2050246075219693922"}, {"handle": "0xAA_Science", "name": "0xAA", "published_at": "2026-05-01T16:01:35+00:00", "title": "我发现 Cursor 额度还挺耐用的，使劲蹬才用掉了 $150，这 $10,000 得用到什么时候？\n看起来只有跑类似 auto research 的循环任务才能消耗掉这些 token 了！", "url": "https://x.com/0xAA_Science/status/2050244250563182801"}, {"handle": "0xAA_Science", "name": "0xAA", "published_at": "2026-05-01T15:59:10+00:00", "title": "目前 WTF AI 讨论群已经 700 多人了，如果你的申请没有通过，可以推特私信我你的 TG 昵称。", "url": "https://x.com/0xAA_Science/status/2050243640925233619"}, {"handle": "CuiMao", "name": "CuiMao", "published_at": "2026-05-01T15:54:12+00:00", "title": "I mainly focus on AI tech research and honestly, I’m not into crypto at all. Pls stop sending me DMs about collabs. Thanks🫡🫡🫡", "url": "https://x.com/CuiMao/status/2050242393132396921"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-05-01T15:48:23+00:00", "title": "Why Agent-Owned Busineses Will Run America… https://x.com/i/broadcasts/1jxXgeAleadJZ", "url": "https://x.com/jason/status/2050240926707314767"}, {"handle": "lxfater", "name": "铁锤人", "published_at": "2026-05-01T15:47:13+00:00", "title": "Apple Support App发布打包进了Claude.md 文件\n\n看来苹果$1B 建 Apple Intelligence已经彻底报废，都用上Cluade code，哈哈哈", "url": "https://x.com/lxfater/status/2050240636020732015"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T15:43:21+00:00", "title": "R to @GoSailGlobal: 提示词：\nRework the given image into a crayon-style illustration, transforming the entire scene into something that feels hand-drawn by a 10-year-old. Keep the forms simple and slightly imperfect, like a child’s drawing.  Avoid using the original color palette—rep", "url": "https://x.com/GoSailGlobal/status/2050239662288146865"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T15:43:21+00:00", "title": "海外疯玩的prompt \n\n可以用来给自己的profile，生成一个十岁小孩的蜡笔画\n\n提示词放下面👇（截图+pormpt就行）：", "url": "https://x.com/GoSailGlobal/status/2050239659377295552"}, {"handle": "svwang1", "name": "王川（硅谷）", "published_at": "2026-05-01T15:31:23+00:00", "title": "不要和别人竞争。让他们变得无关紧要。\n\n你在决定和某某人竞争的那一刻，就已经束缚住自己的手脚，就放弃了针对自身的优缺点制定灵活策略的选择，就已经输了。\n\n在你开始布局让他们变得无关紧要的时候，他们慢慢无法限制你，而你的策略只适合你自己的特点，别人无法简单模仿，你就已经开始赢了。", "url": "https://x.com/svwang1/status/2050236650329186525"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T15:30:01+00:00", "title": "发现海外的人真牛逼，AI真的可以做游戏啦❗️❗️\n\n这是 AI 做整套游戏角色目前唯一能跑通的工作流\n\n99% 的人卡在 walk cycle（走路循环动画，左右腿交替的连续动作）上，是因为他们一直试图用 GPT Image 2.0（OpenAI 最新的图像生成模型）/ Nano Banana 2（Google Gemini 的图像生成模型代号）解决 \n\n无论怎么 prompt（给 AI 的文字指令）、怎么传参考图，图像模型就是做不出对的走路循环 左右腿对不上、人物飘出画框、scaling（缩放比例）会乱\n\n🌟 视频模型在这一步反而无敌 \n\nSeedan", "url": "https://x.com/GoSailGlobal/status/2050236307721584945"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-05-01T15:24:04+00:00", "title": "R to @paulg: I was trying to think what's the opposite of this kind of company. Who really respects their customers? And I realized (I swear I didn't set this up) the answer is YC. YC's customers are Tony Xu and Brian Chesky and the Collisons. Respect? More like awe, frankly.", "url": "https://x.com/paulg/status/2050234809188761677"}, {"handle": "svwang1", "name": "王川（硅谷）", "published_at": "2026-05-01T15:21:59+00:00", "title": "不要和别人竞争。让他们变得无关紧要。你在决定和某某人竞争的那一刻，就已经束缚住自己的手脚，就已经输了。", "url": "https://x.com/svwang1/status/2050234282208317919"}, {"handle": "sama", "name": "Sam Altman", "published_at": "2026-05-01T15:18:10+00:00", "title": "RT by @sama: Don't join a company or industry that has contempt for its customers. You can make a lot of money that way, and of course it gives you a feeling of superiority, but you'll never do great work for a market you despise.", "url": "https://x.com/sama/status/2050233324963008553"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-05-01T15:18:10+00:00", "title": "Don't join a company or industry that has contempt for its customers. You can make a lot of money that way, and of course it gives you a feeling of superiority, but you'll never do great work for a market you despise.", "url": "https://x.com/paulg/status/2050233324963008553"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-05-01T15:06:52+00:00", "title": "Why Agent-Owned Busineses Will Run America… https://x.com/i/broadcasts/1yKAPMBDzLyxb", "url": "https://x.com/jason/status/2050230480751243284"}, {"handle": "runes_leo", "name": "Leo", "published_at": "2026-05-01T15:03:25+00:00", "title": "终于。\n\nClaude Code 长 session 跑久了，/resume 卡到怀疑人生，每次启动还得等最慢那个 MCP 拖几秒到十几秒——CC 重度用户应该都熟。这次一波修了。\n\n实打实有体感的两条：\n• /resume 在 40MB+ session 上快了 67%，50MB 的 /branch 上限也砍了——我自己 subagent 转录飙到过 122M（人家 50MB 上限的两倍多），主 session 也常驻 55M+，这次提速能直接吃到\n• MCP servers 改成并发连接，启动不再卡最慢那个——装了 serena / playwrig", "url": "https://x.com/runes_leo/status/2050229609795407876"}, {"handle": "HarryStebbings", "name": "Harry Stebbings", "published_at": "2026-05-01T15:02:00+00:00", "title": "Why Google is a mega-buy on the back of the Anthropic investment \n\n\"Google becomes a win on multiple fronts.\n\nThey benefit whether usage goes to Gemini or Anthropic.\n\nThey have unmatched compute capacity and cash flow, letting them allocate resources across their own models and p", "url": "https://x.com/HarryStebbings/status/2050229254705553516"}, {"handle": "sama", "name": "Sam Altman", "published_at": "2026-05-01T15:01:14+00:00", "title": "R to @sama: i'm hopeful for a future where people who want to work really hard have incredibly fulfilling things to do, and people who don't want to work hard don't have to and can still have an amazing life of prosperity.", "url": "https://x.com/sama/status/2050229060887044494"}, {"handle": "sama", "name": "Sam Altman", "published_at": "2026-05-01T15:01:13+00:00", "title": "R to @sama: i think a lot of people are going to be busier (and hopefully more fulfilled) than ever, and jobs doomerism is likely long-term wrong.\n\nthough of course there will be disruption/significant transition as we switch to new jobs, the jobs of the future may look v differe", "url": "https://x.com/sama/status/2050229059507159242"}, {"handle": "sama", "name": "Sam Altman", "published_at": "2026-05-01T15:01:13+00:00", "title": "we want to build tools to augment and elevate people,  not entities to replace them.", "url": "https://x.com/sama/status/2050229058425045178"}, {"handle": "berryxia", "name": "Berryxia", "published_at": "2026-05-01T14:50:44+00:00", "title": "比起疯传的那个风格，我自己更偏爱这个风格。\n\nPrompt：\n「彩色潦草小狗线条风格绘制该图，童趣和doodle加入其中，务必使用毫无章法的绘制手法，凌乱和草率即可。』", "url": "https://x.com/berryxia/status/2050226420681757102"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-05-01T14:42:53+00:00", "title": "RT by @paulg: A 7-million parameter model outperforming models a thousand times its size on tasks like ARC Prize. That's what recursive reasoning unlocks.\n\nIn this episode of Decoded, YC's @agupta and @FrancoisChauba1 break down two recent papers on recursive AI models, HRMs and ", "url": "https://x.com/paulg/status/2050224443461718118"}, {"handle": "berryxia", "name": "Berryxia", "published_at": "2026-05-01T14:37:39+00:00", "title": "“ChatGPT，你陪我段时间了，我想看看你的样子。请成一张类似你iPhone随拍的照：没有明确主题、没有刻意构图，只是很普通、甚至有点失败的快照。照略带运动模糊，光线不均、轻微曝光过度，角度尴尬，构图混乱，整体呈现出一种“过于真实的随手一拍感\"，就像是从口袋里拿出手机不小心按到的自拍。”", "url": "https://x.com/berryxia/status/2050223126739665337"}, {"handle": "Pluvio9yte", "name": "雪踏乌云", "published_at": "2026-05-01T14:30:32+00:00", "title": "Sam Altman 在和 Stripe 联合创始人 Patrick Collison 的访谈里亲口承认：OpenAI 没有护城河，而且永远不会有。\n\n这话从地球上估值最高的私人公司 CEO嘴里说出来，确实值得认真看一下。\n\n以下是几个核心信息：\n\n1. Sam 说希望 OpenAI 做一个\"forever low margin\"（永远低利润率）的公司，类比 utility company（公用事业公司，简单说就是水电煤那种）。只要业务足够大、增速足够快，利润率低他不在乎。\n\n2. 他说 AI 的 switching costs（切换成本）正在崩塌。还拿", "url": "https://x.com/Pluvio9yte/status/2050221337424408733"}, {"handle": "berryxia", "name": "Berryxia", "published_at": "2026-05-01T14:29:58+00:00", "title": "🚀 GameHub Evolution 正式上线！\n\n架构全面大升级，Steam启动速度翻倍 + Epic Games 原生集成，手机玩PC大作体验直接起飞！\n\n1. Steam Launch Boost：游戏启动速度提升数倍\n\n2. Ultimate Virtual Controls + 配置分享：最强大自定义布局 + Share Code 一键分享\n\n3. Epic Games 原生集成：直接访问海量 Epic 游戏库\n\n4. 横竖屏无缝切换 + 复古模拟器：经典游戏掌上畅玩\n\nEarly Access 版本，已不支持回退旧版，欢迎大家反馈！\n\n官方", "url": "https://x.com/berryxia/status/2050221193752637888"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-05-01T14:15:19+00:00", "title": "This is an instance of the more general principle: If you are graduating university and are about to join a consulting firm, don't do that.", "url": "https://x.com/paulg/status/2050217507374457280"}, {"handle": "realNyarime", "name": "奶昔", "published_at": "2026-05-01T14:03:27+00:00", "title": "近期市面上出现eLink可编程eUICC实体卡，芯片布局上与eSTK极其相似，暂不明确该卡的EID及制造厂商\n不做推荐，我已在他们淘宝店「eLink Store」下单\n\n目前市面上的实体eSIM卡均不可缺少的功能：\n支持自定义ARA-M权限配置\n兼容各类写卡软件及读卡器读写\n并可通过STK菜单实现eSIM Profile下载、切换与管理", "url": "https://x.com/realNyarime/status/2050214520162038238"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-05-01T13:48:51+00:00", "title": "The Nasdaq Composite just crossed above 25,000 for the first time. A year ago it was at 18,000. 5 years ago it was at 14,000. 10 years ago it was at 4,800.", "url": "https://x.com/charliebilello/status/2050210847650132146"}, {"handle": "Pluvio9yte", "name": "雪踏乌云", "published_at": "2026-05-01T13:42:36+00:00", "title": "Theo 这条说得挺实在的：GPT 更聪明能帮你 unblock，但会以很蠢的方式卡住；Opus 会走一些很野的路径，但对你意图的理解确实更好。\n\n他的结论是根据任务类型来回切换，而不是站队。\n\n这跟我自己的体感基本一致。我现在日常编程也是双工具流：\n\n1. 需要快速解决一个明确的技术问题、查 API 用法、debug 报错信息，GPT 响应快、知识面广，确实好用\n\n2. 需要做一个比较复杂的重构、写一个完整的功能模块，Opus 对上下文和意图的把握更稳，不容易跑偏\n\n3. 写作、翻译这类对语感要求高的任务，Opus 还是明显更好\n\nTheo 还提了一个", "url": "https://x.com/Pluvio9yte/status/2050209273310060805"}, {"handle": "berryxia", "name": "Berryxia", "published_at": "2026-05-01T13:36:12+00:00", "title": "破案了，应该是美团的模型😄", "url": "https://x.com/berryxia/status/2050207663892627601"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-05-01T13:34:42+00:00", "title": "First Silicon Valley captured the US Government, and now it is capturing “independent” media.", "url": "https://x.com/GaryMarcus/status/2050207285377417591"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-05-01T13:21:35+00:00", "title": "The S&P 500 hit its 11th all-time high of the year yesterday.\n\nVideo: https://www.youtube.com/watch?v=IC55jwli3-8&t=858s", "url": "https://x.com/charliebilello/status/2050203982388142245"}, {"handle": "dingyi", "name": "Ding", "published_at": "2026-05-01T13:04:04+00:00", "title": "Stop making coding agents...\n\nhttps://www.dpcode.cc/", "url": "https://x.com/dingyi/status/2050199576603468134"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-05-01T13:04:00+00:00", "title": "RT by @charliebilello: The market isn’t red or blue - it’s green.\nIt doesn’t care about politics.\nIt runs on earnings, innovation, and growth.", "url": "https://x.com/charliebilello/status/2050199558995738866"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-05-01T12:56:38+00:00", "title": "Since the start of the Iran war...\nJet Fuel: +80%\nSulfur: +68%\nHeating Oil: +56%\nWTI Crude Oil: +55%\nBrent Crude Oil: +52%\nDiesel: +48%\nGasoline: +47%\nUrea: +47%\nEuropean Nat Gas: +44%\nFertilizer: +23%\nCoal: +13%\nPalm Oil: +13%\nIron Ore: +8%\nWheat: +6%\nS&P 500: +5%\n$VIX: -15%", "url": "https://x.com/charliebilello/status/2050197704941158556"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-05-01T12:50:39+00:00", "title": "Gas prices in the US have moved up to $4.39 per gallon, their highest level since July 2022. The 47% spike over the last 9 weeks ($2.98/gallon to $4.39/gallon) is the biggest we've seen in the past 30 years.", "url": "https://x.com/charliebilello/status/2050196201014718675"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T12:48:53+00:00", "title": "英文圈 freelancer 每月从客户那拿 $5K-$25K 做的事 \n\nAnthropic 官方在一个 30 分钟的视频里全讲完了\n\n中文圈知道的人不到 1%，传开就没差价了\n\n他们做的就一件事 把 Claude Code SDK + GitHub Action 接到客户自己的代码仓库里，做成一套自动化的工程流水线\n\n为什么客户愿意为这个付钱？\n\n 不是 AI 写代码这件事值钱，是「把 AI 放进生产环境、且不会乱删生产代码」这件事值钱\n\nAnthropic Claude Code 工程负责人 Sid Bidasaria 在视频里讲了三个分水岭\n1️", "url": "https://x.com/GoSailGlobal/status/2050195755936448705"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-05-01T12:40:47+00:00", "title": "RT by @paulg: This is remarkable and you should watch this entire video.\n\nThe House was going to pass a 45 day extension of FISA 702 (Foreign Intelligence Surveillance Act), BY VOICE WITHOUT VOTING, and Thomas Massie courageously forced a debate and demanded a recorded vote.\n\nJim", "url": "https://x.com/paulg/status/2050193715063300532"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T12:33:04+00:00", "title": "大部分人的 RAG 系统，只检索一次就完事了——这可能是你效果上不去的最大原因。\n\nvia @omarsar0 这条帖子讲的是「推理过程中什么时候该去检索」，AI 开发者建议收藏。\n\n核心观点拆解：\n\n1️⃣ 多数 RAG 系统的做法是：用户提问 → 检索一次 → 丢给模型生成答案。一锤子买卖，检索质量不够，后面全白搭。\n\n2️⃣ 更好的思路是在推理过程中动态触发检索——模型推到一半发现信息不够，再去拿一轮上下文，而不是开头一把梭。\n\n3️⃣ 这背后的逻辑是：复杂问题往往需要多跳推理，第一次检索拿到的文档不一定能覆盖所有子问题，中途补检索才能让推理链不断", "url": "https://x.com/GoSailGlobal/status/2050191775881736409"}, {"handle": "Pluvio9yte", "name": "雪踏乌云", "published_at": "2026-05-01T12:25:12+00:00", "title": "牛逼，今天刷到一篇帖子，然后成功用这个方法双开了微信👇\n\n只需要将这段话发给Codex：\n\n使用该项目 https://github.com/mcncarl/yichen-skills/tree/main/mac-wechat-dual-open  帮我安装微信双开。把它的图标换成蓝色。", "url": "https://x.com/Pluvio9yte/status/2050189794324713656"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T12:21:44+00:00", "title": "孙割是真割啊\n\n我是懒得去试\n\n积分额度随便调，背后调度可想而知😅", "url": "https://x.com/GoSailGlobal/status/2050188921665941984"}, {"handle": "lxfater", "name": "铁锤人", "published_at": "2026-05-01T12:21:36+00:00", "title": "身体脆弱就会造成精神脆弱\n\n精神脆弱就会导致效率低下", "url": "https://x.com/lxfater/status/2050188888744804410"}, {"handle": "gkxspace", "name": "余温", "published_at": "2026-05-01T12:00:26+00:00", "title": "Gemini会员每个月能领谷歌云额度，别忘啦，Pro10美金/月，Ultra100美金/月\n\n一次有效期一年，用不到就先攒着吧😄\n\nhttps://me.developers.google.com/benefits?hl=zh-cn", "url": "https://x.com/gkxspace/status/2050183561316016186"}, {"handle": "liuliu", "name": "刘进", "published_at": "2026-05-01T11:34:44+00:00", "title": "RT by @liuliu: 浏览器里跑 ASR 真的不是梦，一个完全没做啥优化的版本就能做到很高的准确率和推理速度了，估计我能优化到 0.04 这个速度（浏览器识别1秒音频需要 0.04秒时间）", "url": "https://x.com/liuliu/status/2050177096505561140"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-05-01T11:19:10+00:00", "title": "RT by @paulg: I am very saddened by the news that Martijn van der Vorm has passed away.\n\nIt is safe to say that, without Martijn, The Ocean Cleanup wouldn’t be where it is today, or perhaps wouldn’t be here at all. He was one of the first people to support us in a major way. It w", "url": "https://x.com/paulg/status/2050173178689749188"}, {"handle": "HarryStebbings", "name": "Harry Stebbings", "published_at": "2026-05-01T10:53:28+00:00", "title": "I am sorry but work from home Friday is a 4-day work week. Even worse when the Friday is a sunny Friday. \n\nBack to the office. 996.", "url": "https://x.com/HarryStebbings/status/2050166710645268939"}, {"handle": "ylecun", "name": "Yann LeCun", "published_at": "2026-05-01T10:36:08+00:00", "title": "RT by @ylecun: All the Doomers and hawks are lining up behind this distillation \"attack\" farce because they want to see open source banned. \n\nIt's really as simple as that.\n\nThey want to take away your right to choose, and take away businesses' rights to fine tune and make your p", "url": "https://x.com/ylecun/status/2050162348891979817"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T10:15:11+00:00", "title": "Concerning.", "url": "https://x.com/pmarca/status/2050157073883902069"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T10:10:19+00:00", "title": "Co-sign.", "url": "https://x.com/pmarca/status/2050155852460675379"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T10:05:55+00:00", "title": "GPT 5.5 可以通过设定目标和指标\n\n自行迭代优化🔁", "url": "https://x.com/GoSailGlobal/status/2050154742480040440"}, {"handle": "CuiMao", "name": "CuiMao", "published_at": "2026-05-01T09:31:03+00:00", "title": "RT by @CuiMao: I LOVE Deepseek-v4-flash, incredibly reliable and capable, logical. It's lacking in frontend but I have MiMo for that. \n\nI would recommend any company spending 100k+ a year on AI to purchase 8-10~ 6000s and have a few of the works to have them blind test these mode", "url": "https://x.com/CuiMao/status/2050145968553709999"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T09:21:25+00:00", "title": "RT by @pmarca: A great summary of the 21st century so far", "url": "https://x.com/pmarca/status/2050143545525211213"}, {"handle": "realNyarime", "name": "奶昔", "published_at": "2026-05-01T09:17:00+00:00", "title": "那些餐饮店的饮料还以为是做慈善\n原来进货价就1毛钱一瓶水实测可以买很多瓶\n自己有多少个号买多少个号，应该不是敌敌畏\n0.1🉐百花蜂蜜500g\nhttps://u.jd.com/fOY2tiP\n0.1🉐弱碱苏打水300ml*1瓶\nhttps://u.jd.com/fgYnQ2p\n0.1🉐金银花罗汉果茶360ml*1瓶\nhttps://u.jd.com/fOYTQzZ\n0.1🉐百合绿豆水400ml*1瓶\nhttps://u.jd.com/f6YpRFx", "url": "https://x.com/realNyarime/status/2050142432088526883"}, {"handle": "CuiMao", "name": "CuiMao", "published_at": "2026-05-01T09:15:45+00:00", "title": "北京环球影城！✌️", "url": "https://x.com/CuiMao/status/2050142119604691422"}, {"handle": "dingyi", "name": "Ding", "published_at": "2026-05-01T08:57:02+00:00", "title": "这个音频组件库做得太完美了。\n\nhttps://audio.raphaelsalaja.com/", "url": "https://x.com/dingyi/status/2050137408268886450"}, {"handle": "realNyarime", "name": "奶昔", "published_at": "2026-05-01T08:55:20+00:00", "title": "从昨天开始有不少网友反馈iOS推送异常，原因未知\n在对 http://push.apple.com 分流后仍无法接到Telegram等App推送，切换外区Apple ID后恢复，但CN直连失败\n\n这是Apple自App Store对中国大陆IP重定向至/cn（国区商店）后，进一步限制移动端设备推送，暂不影响macOS", "url": "https://x.com/realNyarime/status/2050136980454031800"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T08:49:27+00:00", "title": "On Project Fear.", "url": "https://x.com/pmarca/status/2050135501550883051"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T08:48:42+00:00", "title": "…", "url": "https://x.com/pmarca/status/2050135309053276499"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T08:47:13+00:00", "title": "…", "url": "https://x.com/pmarca/status/2050134937396007224"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T08:38:10+00:00", "title": "Self recommending.", "url": "https://x.com/pmarca/status/2050132661348561361"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T08:33:16+00:00", "title": "I remember that moral panic too! And the one before that, when the Anarchist’s Cookbook was being [shudder] photocopied.", "url": "https://x.com/pmarca/status/2050131426499301840"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T08:31:37+00:00", "title": "“Jack Valenti [then head of the film industry’s MPAA] famously told a congressional panel in 1982, ‘I say to you that the VCR is to the American film producer and the American public as the Boston Strangler is to the woman home alone.’”", "url": "https://x.com/pmarca/status/2050131011095404902"}, {"handle": "0xAA_Science", "name": "0xAA", "published_at": "2026-05-01T08:23:56+00:00", "title": "贵州牛肉粉 3u", "url": "https://x.com/0xAA_Science/status/2050129079677145442"}, {"handle": "runes_leo", "name": "Leo", "published_at": "2026-05-01T08:17:19+00:00", "title": "Anthropic 这招真狠，所有 Claude Code 用户都该看一眼。\n\n@theo  做了个最干净的实验：\n建一个空 Git 仓库，commit 只放一行 JSON：\n\n{\"schema\": \"openclaw.inbound_meta.v1\"}\n\n调用官方 Claude Code —— 直接报错\"out of extra usage\"。\n要么拒绝请求，要么强制多收一份钱。\n\n0 行业务代码，只因为那一行 JSON 里有 OpenClaw 这个单词。\n\n模型在卷开源，工具会不会开始卷封闭？", "url": "https://x.com/runes_leo/status/2050127414630469937"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T08:17:08+00:00", "title": "The same will be true of “because of AI”.", "url": "https://x.com/pmarca/status/2050127365930729486"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T08:16:13+00:00", "title": "Image", "url": "https://x.com/pmarca/status/2050127137898922384"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T08:15:12+00:00", "title": "Every argument of “because of the smartphone” or “the Internet” or “social media” is cope, to avoid confronting the catastrophic collapse of incumbent institutional competence over the same timeframe.", "url": "https://x.com/pmarca/status/2050126879982805379"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T08:03:23+00:00", "title": "Ooh.", "url": "https://x.com/pmarca/status/2050123904849699053"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T08:01:35+00:00", "title": "R to @pmarca: Credit @qorprate", "url": "https://x.com/pmarca/status/2050123454373048716"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T07:56:57+00:00", "title": "And yet we write.", "url": "https://x.com/pmarca/status/2050122286603321365"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T07:53:41+00:00", "title": "Spotify真的挺有意思的\n\n为人类艺术家打上了“验证”标签\n\n是不是太多AI生成了。\n\n看来AI Generate的标识已经打不过来，甚至分辨不出来了", "url": "https://x.com/GoSailGlobal/status/2050121466021363878"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T07:51:20+00:00", "title": "Ooh.", "url": "https://x.com/pmarca/status/2050120872309264725"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-05-01T07:49:08+00:00", "title": "Ooh.", "url": "https://x.com/pmarca/status/2050120321399951771"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T07:49:04+00:00", "title": "OpenAI 要分家了\n\n山姆（Sam）醉酒发推\n\nGitHub 要完蛋了\n\nAnthropic 还是老样子\n\n播客也挺难的，支持一下", "url": "https://x.com/GoSailGlobal/status/2050120304203317373"}, {"handle": "bozhou_ai", "name": "泊舟", "published_at": "2026-05-01T07:46:06+00:00", "title": "Dragoncode群友也分享了一下设计的聚合站，我目前做的产品都是在这里面直接拿设计风格\n\nhttps://getdesign.md", "url": "https://x.com/bozhou_ai/status/2050119556644171998"}, {"handle": "Pluvio9yte", "name": "雪踏乌云", "published_at": "2026-05-01T07:40:37+00:00", "title": "⏺ OpenAI 官方发了一份 GPT-5.5 的 Prompt 编写指南，核心观点一句话概括：别再写又臭又长的 Prompt 了，告诉模型你要什么结果就行。\n\n这份指南的思路挺有意思。以前大家写 Prompt 的习惯是\"手把手教\"：先做A，再做B，然后比较C。\n\n现在 OpenAI 官方的建议是：描述终点，而不是规定路线。\n\n几个值得注意的点：\n\n1. Outcome-First（结果导向）：\n\n不要写一堆步骤让模型按顺序执行，而是描述\"成功是什么样的\"，让模型自己决定怎么走。翻译成人话：以前是写\nSOP，现在是写验收标准。\n\n2. 停止条件（Stop", "url": "https://x.com/Pluvio9yte/status/2050118179062743418"}, {"handle": "frxiaobei", "name": "凡人小北", "published_at": "2026-05-01T07:35:11+00:00", "title": "这几周 Codex 常驻电脑，已经很久没有打开 ChatGPT 了。\n\n推荐一下插件和自动化，很上头。", "url": "https://x.com/frxiaobei/status/2050116811769954778"}, {"handle": "dingyi", "name": "Ding", "published_at": "2026-05-01T07:05:58+00:00", "title": "新时代的设计灵感聚合站，应该长这样。把网站的设计样式都变成了 design.md\n\nhttps://styles.refero.design/", "url": "https://x.com/dingyi/status/2050109458957947150"}, {"handle": "realNyarime", "name": "奶昔", "published_at": "2026-05-01T07:02:32+00:00", "title": "小米之家河南限定五一礼物钧瓷已拿到\n还送了水和王者明信片，汝窑会更好看，天青色\n\n对了，其实周杰伦的青花瓷这首歌最初写词是写的汝瓷\n不知道为啥换名字了\n\n青花瓷是靛蓝或者宝石蓝，不是天青色", "url": "https://x.com/realNyarime/status/2050108592246984780"}, {"handle": "realNyarime", "name": "奶昔", "published_at": "2026-05-01T06:32:41+00:00", "title": "跟推友问好👋\n\n有一个问题想问大家🙋\n\n放假都没出去，看了一圈好像没什么好玩的地方🤔\n\n所以想问问，有什么值得两人旅行的地方？😳", "url": "https://x.com/realNyarime/status/2050101082433720730"}, {"handle": "runes_leo", "name": "Leo", "published_at": "2026-05-01T06:14:26+00:00", "title": "Karpathy 这场 Sequoia 演讲把 AI 编程下个阶段讲透了，最有感触的是第 6 条。\n\n1. Software 3.0 来了。\n1.0 写代码，2.0 训神经网络，3.0 在 LLM 的 context 里用自然语言\"编程\"。\n\n2. 2025-12 是拐点。\n生成代码块变大变连贯，编程的最小单位从\"写代码\"升级到\"委派任务\"。\n\n3. 神经网络会成主计算层。\n未来不是 CPU 上跑神经网络，是神经网络当主进程，传统计算变辅助。\n\n4. 许多应用会消失。\n用户不需应用，直接拿模型输出。MenuGen 那种轻量工具最先被替代。\n\n5. 验证性", "url": "https://x.com/runes_leo/status/2050096487967695197"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T05:58:11+00:00", "title": "硅谷101 这期 DeepSeek，我反复看了 3 遍\n\n陈茜也转发了我的推文\n\n3 个细节没人注意到，但对我们做出海/独立开发的影响最大：\n\n1️⃣ DeepSeek 全员 ~150 人，正面打 OpenAI 1000+\n\n出海产品从来不是\"等团队够大\"，是\"敢做\"\n\n我 1 个人 3 个月上了 4 个出海工具，靠的就是 Cursor + DeepSeek API + 不内耗\n\n2️⃣ 幻方 7 年量化背景，把\"模型上线 → A/B → 不行就删\"做成了肌肉记忆\n\n3 周一次大版本，迭代速度是 OpenAI 的 3 倍\n\n独立开发者天然就该这么干，但 ", "url": "https://x.com/GoSailGlobal/status/2050092401004564952"}, {"handle": "bozhou_ai", "name": "泊舟", "published_at": "2026-05-01T05:57:01+00:00", "title": "目前已经有4位伙伴提交了作品，挺有意思的，都是一些小工具，估计就一两个小时就完成了", "url": "https://x.com/bozhou_ai/status/2050092103565496369"}, {"handle": "realNyarime", "name": "奶昔", "published_at": "2026-05-01T05:42:39+00:00", "title": "避雷一下中国电信英国（CTExcel UK）\n虽然补卡费用30块（3英镑），但为了恶心你一下增加了库存机制\n头一次听到补eSIM还能有“库存”这一说法的，这eSIM又不是实体卡，居然还能补卡卡池库存不足🤣🤣🤣", "url": "https://x.com/realNyarime/status/2050088491925815667"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-05-01T05:25:11+00:00", "title": "RT by @paulg: Sky's special correspondent @AlexCrawfordSky reports on the dozens of villages in southern Lebanon which have been virtually wiped out by Israel in a matter of weeks", "url": "https://x.com/paulg/status/2050084092402688337"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T04:54:26+00:00", "title": "x.com/i/article/204974561199…", "url": "https://x.com/GoSailGlobal/status/2050076357296824737"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T04:51:28+00:00", "title": "今天看了 @GabiExplores 的两个项目：\n\nstitch-kit · 22 ★ · Google Stitch MCP 完整设计 pipeline，35 skill / 5 层架构，覆盖 6 个 agent 平台\n\nslopbuster · 2 ★ · AI 文本去痕迹，含市面上唯一的 code 去 AI 味（comment / commit / naming），引用 4 篇 LLM 检测论文\n\n工程量：扎实。GitHub stars 加起来 24，X 关注 4。\n\n同期对比：obra/superpowers 173K，garrytan/gst", "url": "https://x.com/GoSailGlobal/status/2050075607707586658"}, {"handle": "Pluvio9yte", "name": "雪踏乌云", "published_at": "2026-05-01T04:39:44+00:00", "title": "⏺ Sam Altman 这段话说得挺实在的：AI 的下一个大突破不是某个具体领域，而是人们意识到自己每天在电脑上浪费了多少时间。\n\n简单说，大家以为 AI 的价值是\"帮你把某件事做得更好\"，但 Altman认为真正的价值是\"帮你省掉那些根本不该做的事\"——在应用之间切换、复制粘贴、处理各种数字杂务。这些摩擦看着不起眼，但确实在不断打断心流。\n\n这个观点我是认同的。说说自己的体验：\n\n1. 以前写一篇翻译稿，光是在浏览器、编辑器、翻译工具之间来回切换就要耗掉不少精力。现在直接在 Claude Code 里一条龙搞定，中间那些摩擦几乎消失了。\n2. 以前整", "url": "https://x.com/Pluvio9yte/status/2050072657618772226"}, {"handle": "berryxia", "name": "Berryxia", "published_at": "2026-05-01T04:32:27+00:00", "title": "我艹！这一波Codex+GPT2 真是成了！\n直接可以来开发游戏了，而且只是用嘴！\n\n一句话就可以搞起来，完整教程看藏师傅的教程👇", "url": "https://x.com/berryxia/status/2050070823256654283"}, {"handle": "dingyi", "name": "Ding", "published_at": "2026-05-01T04:13:08+00:00", "title": "假新闻、任何虚假的东西，总是能获得更多关注。这对吗？", "url": "https://x.com/dingyi/status/2050065962855182350"}, {"handle": "Pluvio9yte", "name": "雪踏乌云", "published_at": "2026-05-01T04:04:38+00:00", "title": "Anthropic这个BioMysteryBench直接把我对AI在硬核科学领域真实能力的认知彻底刷新了🤯\n\n不是测评玩具benchmark，他们直接把Claude扔进99个来自真实研究的烂摊子生物信息学难题:原始DNA序列、临床样本那种messy到爆炸的数据，连PhD学生都要熬夜啃的开放谜题。\n\n结果呢？5个领域专家都搞不定的23个硬骨头，Claude Mythos Preview直接干掉了约30%，剩下大部分也拿下。Genentech和Roche自己跑的CompBioBench也印证了，Claude Opus 4.6整体准确率冲到81%……\n\n这已经", "url": "https://x.com/Pluvio9yte/status/2050063821377810451"}, {"handle": "Pluvio9yte", "name": "雪踏乌云", "published_at": "2026-05-01T03:47:55+00:00", "title": "卧槽，看完 Andrej Karpathy 在 Sequoia AI Ascent 2026 的最新访谈，我直接破防了🤯\n\n他说：最近几个月，他作为程序员从来没有感觉这么“behind”过……不，是突然之间，他发现自己再也不落后了。12月前后，agentic tools 突然从“偶尔靠谱”变成了“离谱地靠谱”。\n\nKarpathy说了三个阶段：\nSoftware 1.0：你写显式规则\nSoftware 2.0：你调数据+训练网络\nSoftware 3.0：你给 Context + Prompt，让 LLM 自己去当那个智能解释器\n\n举两个他亲身实验的狠例", "url": "https://x.com/Pluvio9yte/status/2050059618043543563"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-05-01T03:44:13+00:00", "title": "Customer service in the age of AI has been become truly horrible. Excruciatingly bad.", "url": "https://x.com/GaryMarcus/status/2050058685531983988"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-05-01T03:37:32+00:00", "title": "Hey @DHLCanadaHelp, your customer service really and truly sucks. You claimed to try to deliver a package, but didn’t actually contact me, didn’t leave a service card, your automated software won’t let me change delivery options, and I literally cannot reach a human. \n\nYou have s", "url": "https://x.com/GaryMarcus/status/2050057004862103767"}, {"handle": "Pluvio9yte", "name": "雪踏乌云", "published_at": "2026-05-01T03:24:52+00:00", "title": "这种平台有点意思，也见过好几个同类型的了。\n互动加热的平台其实很大程度上依赖宣传和用户自传播。\n见过两个逐渐杳无音讯的，目前唯一做起来的就是灯塔，看看这个平台会怎么样", "url": "https://x.com/Pluvio9yte/status/2050053813802090671"}, {"handle": "AravSrinivas", "name": "Aravind Srinivas", "published_at": "2026-05-01T03:22:08+00:00", "title": "Computer plays the orchestra", "url": "https://x.com/AravSrinivas/status/2050053128452456584"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-05-01T03:15:22+00:00", "title": "RT by @paulg: As agents become the biggest users of software, then all software has to be available in a headless fashion. Agents won’t be using your UI, they’ll be talking to your APIs.\n\nSo the question becomes what is the business model of software and this headless approach in", "url": "https://x.com/paulg/status/2050051426446152159"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-05-01T03:12:06+00:00", "title": "RT by @GaryMarcus: More money for worse work that you have to fix, good stuff this AI thing, thanks Nvidia.", "url": "https://x.com/GaryMarcus/status/2050050604915888484"}, {"handle": "GoSailGlobal", "name": "Jason Zhu", "published_at": "2026-05-01T03:08:51+00:00", "title": "🤔赚钱 -> 美股，长持复利\n\n2月开始关注上英特尔的，后面又加仓\n\n陈立武真是英特尔的福星", "url": "https://x.com/GoSailGlobal/status/2050049784094855501"}, {"handle": "AravSrinivas", "name": "Aravind Srinivas", "published_at": "2026-05-01T03:04:54+00:00", "title": "Video", "url": "https://x.com/AravSrinivas/status/2050048790908785072"}]

@@ -1,57 +1,20 @@
 from __future__ import annotations
 
 import streamlit as st
-from langchain_core.messages import HumanMessage
 
-from tradingagents.llm_clients.base_client import normalize_content
-from tradingagents.llm_clients.factory import create_llm_client
 from web.services.dashboard_llm import build_llm_config
+from web.services.strategy_api_service import answer_lrs_question, get_lrs_doc_markdown
 from web.pages.lrs.strategy_macro import render_tab_macro
 from web.pages.lrs.strategy_base_signal import render_tab_base_signal
 from web.pages.lrs.strategy_validation import render_tab_validation
 from web.pages.lrs.strategy_execution import render_tab_execution
 from web.pages.lrs.strategy_risk import render_tab_risk
 from web.pages.backtesting import render_backtest_tab
-from web.pages.wheel.strategy_aggressive import render_soxl_wheel_page, render_tqqq_wheel_page
-
-_LRS_DOC_MD = """
-### LRS TQQQ策略（草案）
-
-LRS（Long Regime Switching）TQQQ 策略的当前目标是提供一个最小可运行框架，用于快速验证：
-
-1. 在趋势行情中保持多头暴露（以 TQQQ 为核心标的）。
-2. 在风险放大阶段降低仓位或切换到观望。
-3. 将信号、仓位和回测结果放在同一策略页面里，便于迭代。
-
-**当前版本（MVP）策略骨架：**
-
-- **标的**：`TQQQ`
-- **信号层**：趋势/波动率/风险三类信号（后续逐步细化）
-- **执行层**：先不接券商下单，仅输出建议仓位与操作提示
-- **评估层**：回测页展示收益、回撤、胜率、换手（当前先占位）
-
-**后续计划：**
-
-- 增加参数面板（信号窗口、止损阈值、仓位上限）
-- 接入历史数据批量回测
-- 输出可复盘的策略日志与版本对比
-"""
-
+from web.pages.wheel.strategy_wheel import render_wheel_page
 
 def _llm_answer(prompt: str) -> str:
     cfg = build_llm_config(st.session_state.get("last_params"))
-    client = create_llm_client(
-        provider=cfg["llm_provider"],
-        model=cfg["quick_think_llm"],
-        base_url=cfg.get("backend_url"),
-    )
-    llm = client.get_llm()
-    resp = llm.invoke([HumanMessage(content=prompt)])
-    if hasattr(resp, "content"):
-        normalize_content(resp)
-        content = resp.content
-        return content if isinstance(content, str) else str(content)
-    return str(resp)
+    return answer_lrs_question(prompt, cfg)
 
 
 def _render_lrs_dashboard() -> None:
@@ -95,11 +58,8 @@ def render_strategy() -> None:
     sub_strategy = str(st.session_state.get("strategy_sub_menu", "LRS TQQQ策略"))
     st.caption(f"当前子策略：{sub_strategy}")
 
-    if sub_strategy == "TQQQ Wheel策略":
-        render_tqqq_wheel_page()
-        return
-    if sub_strategy == "SOXL Wheel策略":
-        render_soxl_wheel_page()
+    if sub_strategy == "Wheel策略":
+        render_wheel_page()
         return
     if sub_strategy != "LRS TQQQ策略":
         st.info("未找到该子策略。")
@@ -110,7 +70,7 @@ def render_strategy() -> None:
     with tab_doc:
         left, right = st.columns([1.45, 1], gap="large")
         with left:
-            st.markdown(_LRS_DOC_MD)
+            st.markdown(get_lrs_doc_markdown())
         with right:
             st.markdown("#### LRS 策略问答（LLM）")
             st.caption("可针对 LRS 思路、参数与风控方案进行讨论。")

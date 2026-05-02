@@ -1,0 +1,413 @@
+[meta]
+
+tweets=120
+
+tweet_summary_chars=61510
+
+
+
+[prompt]
+
+你是“X资讯月报总编”。请将原始推文样本压缩为前端仪表盘可直接渲染的模块化 JSON。
+
+你必须遵循“用户配置文档”的偏好：
+- 优先覆盖“我现在最关心的事”；
+- 按“账号权重与偏好”做信息优先级排序（高权重账号更容易进入 themes/p0）；
+- 按“内容类型偏好（✅/❌）”进行取舍；
+- 尽量贴合“简报格式偏好”的表达风格（中文总结为主，保留关键英文原句）；
+- 页面是固定模块位，内容应服务于前端模块整合，不要输出散乱信息。
+
+硬性要求：
+1) 只输出 JSON 对象，不要 markdown。
+2) 使用如下字段：
+{
+  "themes":[{"id":"t1","title":"...","subtitle":"...","bullets":["..."],"samples":[{"text":"...","url":"...","handle":"...","date":"..."}]}],
+  "p0_events":[{"id":"p01","title":"...","meta":"...","summary":"...","url":"..."}],
+  "top_quotes":[{"id":"q1","quote":"...","speaker":"...","date":"...","note":"...","url":"..."}],
+  "category_updates":[{"id":"c1","title":"...","subtitle":"...","level":"P0|P1|P2|WARN","items":[{"text":"...","url":"..."}]}],
+  "risk_signals":[{"id":"r1","level":"HIGH|MID|OPP","title":"...","detail":"..."}]
+}
+3) 数量限制：themes=3, p0_events<=6, top_quotes<=3, category_updates<=6, risk_signals<=6。
+4) 优先引用有明确链接的证据；无法确定时宁缺毋滥。
+5) 内容必须中文，简洁可执行。
+
+用户配置文档（用于本次简报编排）：
+# 我的 X 资讯简报配置
+> 这是一份活的文档。你可以随时手动编辑，Claude 也会根据你的阅读行为自动更新行为日志和权重建议。
+> 设计参考：Karpathy 的 LLM Wiki 模式——知识预编译，随时间积累。
+
+**创建日期**：2026-04-26
+**最后更新**：2026-04-28（账号列表经核查优化：修正7处、新增5个、删除7个）
+
+---
+
+## 一、我现在最关心的事
+> 这是简报的核心过滤器。Claude 在筛选和总结推文时，会优先选出和这里相关的内容放进主题卡片。
+
+- 探索 AI 工具在投资研究和期权分析中的实际应用
+- 寻找值得在 B站分享的开源项目和 AI 工具（能快速跑通、有演示效果的优先）
+- 跟上 AI 编程工具的发展（Claude Code、Cursor、Agent 相关）
+- 了解顶级 VC 和行业领袖对 AI 下一步方向的判断
+- 关注 A股和美股宏观叙事的变化（尤其是科技板块）
+
+---
+
+## 二、账号权重与偏好
+
+> 权重分三档：高 / 中 / 低
+> 高权重账号：内容优先进入主题卡片
+> 中权重账号：有足够价值时进入快速扫读
+> 低权重账号：仅在有明确高价值内容时出现
+
+### AI 行业
+
+| 账号 | 名称 | 当前权重 | 偏好内容类型 | 备注 |
+|------|------|----------|--------------|------|
+| @karpathy | Andrej Karpathy | 高 | 技术深度、可操作项目、AI编程实践 | 质量极高，几乎每条都值得看 |
+| @sama | Sam Altman | 高 | 行业方向、产品发布 | 信息密度高，观点有参考价值 |
+| @DarioAmodei | Dario Amodei | 高 | Anthropic动向、AI安全与能力 | Anthropic CEO，和Claude直接相关，新增 |
+| @AravSrinivas | Aravind Srinivas | 高 | AI产品方向、搜索与Agent | Perplexity CEO，活跃度高，新增 |
+| @AndrewYNg | Andrew Ng | 高 | 学习资源、AI教育、应用落地 | 对理解AI应用场景有帮助 |
+| @ylecun | Yann LeCun | 中 | 研究方向、学术争论 | 偶尔有深度洞见，但争论性内容较多 |
+| @JeffDean | Jeff Dean | 中 | 研究进展、Google AI动向 | 更新频率低，但含金量高 |
+| @soumithchintala | Soumith Chintala | 中 | 开源框架、技术工具 | PyTorch相关，关注技术底层 |
+| @gregbrockman | Greg Brockman | 中 | OpenAI产品动向 | 更新较少，有则关注 |
+| @GaryMarcus | Gary Marcus | 低 | AI批评与反思 | 有参考价值但以质疑为主，权重偏低 |
+| @elonmusk | Elon Musk | 低 | 偶尔有AI/科技相关 | 噪音多，仅关注有实质内容的推文 |
+
+### VC / 投资人
+
+| 账号 | 名称 | 当前权重 | 偏好内容类型 | 备注 |
+|------|------|----------|--------------|------|
+| @paulg | Paul Graham | 高 | 创业思维、长文洞见 | 更新少但质量极高，每条都值得读 |
+| @naval | Naval Ravikant | 高 | 思维框架、财富哲学 | 更新不频繁，但思想密度高 |
+| @pmarca | Marc Andreessen | 高 | AI/科技政策、VC判断、行业叙事 | a16z联合创始人，极其活跃，2.1M粉，新增替换@lmsqueegie |
+| @david_tiantian | David Tian Wang | 中 | 宏观分析、市场判断 | 原@david__tian（handle有误，已修正）；账号实际发帖量约42条，活跃度一般 |
+| @morganhousel | Morgan Housel | 中 | 投资心理、长期主义、行为金融 | 《Psychology of Money》作者，思想密度高，新增 |
+| @eladgil | Elad Gil | 中 | AI投资趋势、公司判断 | 偶有高质量行业洞见 |
+| @DavidSacks | David Sacks | 中 | 科技政策、VC视角 | 观点有时偏政治，筛选后看 |
+| @HarryStebbings | Harry Stebbings | 低 | VC动态 | 内容较泛，权重低 |
+| @jason | Jason Calacanis | 低 | 创业生态 | 噪音较多 |
+
+### 宏观与交易
+
+| 账号 | 名称 | 当前权重 | 偏好内容类型 | 备注 |
+|------|------|----------|--------------|------|
+| @charliebilello | Charlie Bilello | 高 | 宏观数据图表、资产类别轮动 | 每天发图表分析，数据驱动，新增；贴近A股/美股宏观叙事主线 |
+| @WarriorTrading | Warrior Trading | 低 | 日内交易技术 | 偏教育/营销内容，仅保留；TradingGods/ProfTrading已移除（账号无法验证） |
+| @CryptoCred | Credible Crypto | 低 | 加密趋势分析 | 加密相关，权重偏低 |
+| @AltcoinBuzz | AltcoinBuzz | 低 | 币圈媒体 | 偏媒体性质，优先级低 |
+
+### 华语圈
+
+> ⚠️ 注意：中文账号名的 X handle 无法被 Nitter RSS 正常抓取。以下账号需通过 X API 或手动采集。
+
+| 账号 | 名称 | 当前权重 | 偏好内容类型 | 备注 |
+|------|------|----------|--------------|------|
+| @二级炒家 | 二级炒家 | 高 | A股宏观、市场判断 | 和投资主线直接相关；⚠️ 中文handle，需X API |
+| @svwang1 | 王川（硅谷） | 高 | 科技投资观察、深度思考 | 原@王川（已修正英文handle为@svwang1）；质量高 |
+| @liuliu | 刘进 | 中 | VC投资、华语科技圈 | 英文handle，Nitter可用 |
+
+---
+
+## 三、内容类型偏好
+
+### ✅ 优先展示
+- **可操作的项目/工具**：有 GitHub 链接、可以立刻尝试的内容
+- **AI 编程实践**：提示词技巧、Agent 搭建、工作流分享
+- **行业方向判断**：顶级 VC 或创始人对未来的预测和押注
+- **宏观与投资叙事**：A股、美股科技板块的结构性变化
+- **中文圈独特视角**：英文圈没有的本地化洞见
+
+### ❌ 降低优先级
+- 纯政治观点（和 AI/投资无关的）
+- 加密货币炒作、价格预测类
+- 互相转发的无实质内容互动
+- 重复已知信息的科普
+
+---
+
+## 四、简报格式偏好
+
+```
+📰 AI & 投资日报 · [日期]
+
+【30秒总览】一句话概括今日主旋律
+
+━━━━━━━━━━━━━
+🔥 今日主题卡片（2～3个）
+每张卡片包含：
+  - 主题标签
+  - 核心洞见（1～2句）
+  - 来源账号
+  - 你可以做什么（可操作建议）
+
+━━━━━━━━━━━━━
+⚡ 快速扫读（剩余有价值内容）
+
+━━━━━━━━━━━━━
+🀄 华语圈单独板块
+
+━━━━━━━━━━━━━
+📌 本期可以跟着做的事
+
+━━━━━━━━━━━━━
+😴 今日无新内容的账号
+```
+
+**语言**：中文总结为主，保留有分量的英文原句
+**长度**：10分钟内可以读完
+**主题卡片数量**：每日 2～3 个，宁缺毋滥
+
+---
+
+## 五、行为日志
+> 由 Claude 根据你的互动自动追加。记录有意义的偏好信号，作为未来权重调整的依据。
+
+| 日期 | 行为 | 内容摘要 | 影响 |
+|------|------|----------|------|
+| 2026-04-26 | 初始配置建立 | 人工设定初始权重 | — |
+| 2026-04-28 | 账号列表核查优化 | Web搜索核查全部33个账号的真实性与活跃度 | 见变更日志 |
+
+---
+
+## 六、待解决的遗留问题
+> 系统尚未实现的功能，记录在此，后续迭代时参考。
+
+- [ ] 账号内容类型自动分类（通用知识型 vs 项目介绍型），不同类型反馈权重不同
+- [ ] 点踩行为如何自动写回本文件并影响下次抓取权重
+- [ ] 新账号发现与加入机制（何时、如何引入新的关注对象）
+- [ ] 账号沉默超过 N 天自动降权的规则实现
+
+上下文（摘要）：
+# X平台关注列表推文汇总
+
+**生成日期**: 2026-04-27T17:07:38.921884+00:00
+**数据来源**: Nitter RSS 订阅
+**时间范围**: 最近7天
+**账号总数**: 27 | **成功获取**: 21 | **推文总数**: 259
+
+---
+
+### ✅ @karpathy — Andrej Karpathy（1 条）
+
+**[2026-04-22T16:00:05+00:00]**
+> RT by @karpathy: Imagine every pixel on your screen, streamed live directly from a model. No HTML, no layout engine, no code. Just exactly what you want to see. @eddiejiao_obj, @drewocarr and I built…
+[原文链接](https://x.com/karpathy/status/2046982383430496444)
+
+---
+
+### ✅ @sama — Sam Altman（20 条）
+
+**[2026-04-27T13:24:26+00:00]**
+> we have updated our partnership with microsoft. microsoft will remain our primary cloud partner, but we are now able to make our products and services available across all clouds. will continue to pr…
+[原文链接](https://x.com/sama/status/2048755148361707946)
+
+**[2026-04-27T13:09:30+00:00]**
+> this is so good: https://paulgraham.com/kids.html
+[原文链接](https://x.com/sama/status/2048751392031203544)
+
+**[2026-04-27T00:05:31+00:00]**
+> so fun to see the reception to 5.5! there is almost nothing that feels more gratifying to me than builders saying they find our tools useful.
+[原文链接](https://x.com/sama/status/2048554097985593849)
+
+**[2026-04-26T23:59:53+00:00]**
+> Our Principles: Democratization, Empowerment, Universal Prosperity, Resilience, and Adaptability https://openai.com/index/our-principles/
+[原文链接](https://x.com/sama/status/2048552677433643427)
+
+**[2026-04-26T15:46:41+00:00]**
+> feels like a good time to seriously rethink how operating systems and user interfaces are designed (also the internet; there should be a protocol that is equally usable by people and agents)
+[原文链接](https://x.com/sama/status/2048428561481265539)
+
+**[2026-04-26T15:37:00+00:00]**
+> "post-AGI, no one is going to work and the economy is going to collapse" "i am switching to polyphasic sleep because GPT-5.5 in codex is so good that i can't afford to be sleeping for such long stret…
+[原文链接](https://x.com/sama/status/2048426122854228141)
+
+**[2026-04-26T02:15:19+00:00]**
+> RT by @sama: That's exactly my view too, roughly compresses 2 weeks of our previous jobs to 1 day
+[原文链接](https://x.com/sama/status/2048224374264885396)
+
+**[2026-04-25T22:20:08+00:00]**
+> how can they write code so fast?!
+[原文链接](https://x.com/sama/status/2048165186482389253)
+
+**[2026-04-25T22:01:18+00:00]**
+> R to @sama: (and we will fix the former)
+[原文链接](https://x.com/sama/status/2048160448340767038)
+
+**[2026-04-25T22:01:08+00:00]**
+> we still get looksmaxxed on frontend a little but we IQmog hard now
+[原文链接](https://x.com/sama/status/2048160404376105179)
+
+**[2026-04-25T15:31:08+00:00]**
+> 5.5 is so earnest "little engine that could" energy
+[原文链接](https://x.com/sama/status/2048062261584077149)
+
+**[2026-04-24T23:41:49+00:00]**
+> this was a good week. proud of the team. happy building!
+[原文链接](https://x.com/sama/status/2047823357635354814)
+
+**[2026-04-24T21:17:51+00:00]**
+> GPT-5.5 and GPT-5.5 Pro are now available in the API!
+[原文链接](https://x.com/sama/status/2047787124846653895)
+
+**[2026-04-24T14:27:13+00:00]**
+> 🫶
+[原文链接](https://x.com/sama/status/2047683787828703289)
+
+**[2026-04-24T00:33:16+00:00]**
+> RT by @sama: Today we open sourced many of OpenAI's monitorability evaluations. We hope that the research community and other model developers can build upon them and use them to evaluate the monitor…
+[原文链接](https://x.com/sama/status/2047473914528563592)
+
+**[2026-04-23T19:54:32+00:00]**
+> "don't retweet this, don't retweet this, don't retweet this..." ah fuck it, life imitates art.
+[原文链接](https://x.com/sama/status/2047403771416940715)
+
+**[2026-04-23T19:21:55+00:00]**
+> We tried a new thing with NVIDIA to roll out Codex across a whole company and it was awesome to see it work. Let us know if you'd like to do it at your company!
+[原文链接](https://x.com/sama/status/2047395562501411058)
+
+**[2026-04-23T19:09:11+00:00]**
+> embers
+[原文链接](https://x.com/sama/status/2047392357482639749)
+
+**[2026-04-23T18:47:43+00:00]**
+> RT by @sama: there are early signs of 5.5 being a competent ai research partner. several researchers let 5.5 run variations of experiments overnight given only a high level algorithmic idea, wake up …
+[原文链接](https://x.com/sama/status/2047386955550470245)
+
+**[2026-04-23T18:26:18+00:00]**
+> RT by @sama: New in the Codex app: - GPT-5.5 - Browser control - Sheets & Slides - Docs & PDFs - OS-wide dictation - Auto-review mode Enjoy!
+[原文链接](https://x.com/sama/status/2047381565534322694)
+
+---
+
+### ✅ @DarioAmodei — Dario Amodei（0 条）
+
+---
+
+### ✅ @AravSrinivas — Aravind Srinivas（10 条）
+
+**[2026-04-24T21:24:24+00:00]**
+> You would consume less computer credits (and be able to run more tasks as a result) if you switched to GPT-5.5 as your default orchestrator. This was the number one complaint about Computer (being cr…
+[原文链接](https://x.com/AravSrinivas/status/2047788775468908840)
+
+**[2026-04-24T19:03:21+00:00]**
+> We’re rolling out GPT 5.5 as the default orchestrator model for Perplexity Computer. We will be monitoring the user sentiment compared to Opus 4.7 as the default as the rollout expands. Let us know y…
+[原文链接](https://x.com/AravSrinivas/status/2047753276888854595)
+
+**[2026-04-24T18:44:19+00:00]**
+> RT by @AravSrinivas: GPT-5.5 is now available on Perplexity for Max subscribers. GPT-5.5 is also rolling out as the default orchestration model in Computer for both Pro and Max subscribers.
+[原文链接](https://x.com/AravSrinivas/status/2047748486767272243)
+
+**[2026-04-23T02:46:57+00:00]**
+> RT by @AravSrinivas: Kimi K2.6, the new state-of-the-art open-weight model from Moonshot, is now available for Pro and Max subscribers.
+[原文链接](https://x.com/AravSrinivas/status/2047145172337836139)
+
+**[2026-04-22T18:28:20+00:00]**
+> We’ve post trained a model on top of Qwen that achieves Pareto optimality on accuracy-cost curves. Unlike our previous post trained models, this model has been trained to be good at search and tool c…
+[原文链接](https://x.com/AravSrinivas/status/2047019688920756504)
+
+**[2026-04-22T18:15:16+00:00]**
+> RT by @AravSrinivas: We've published new research on how we post-train models for accurate search-augmented answers. Our SFT + RL pipeline improves search, citation quality, instruction following, an…
+[原文链接](https://x.com/AravSrinivas/status/2047016400292839808)
+
+**[2026-04-21T17:14:42+00:00]**
+> As agentic workloads expand, the best orchestration hybridizes centralized servers and CPUs for the ultimate continuity. Especially when you want your AI to use your local apps and messages.
+[原文链接](https://x.com/AravSrinivas/status/2046638770162995603)
+
+**[2026-04-21T15:06:26+00:00]**
+> ⌘ ⌘
+[原文链接](https://x.com/AravSrinivas/status/2046606492649091212)
+
+**[2026-04-21T02:43:37+00:00]**
+> RT by @AravSrinivas: Whoa 🤯
+[原文链接](https://x.com/AravSrinivas/status/2046419556424675677)
+
+**[2026-04-20T21:57:10+00:00]**
+> 
+[原文链接](https://x.com/AravSrinivas/status/2046347469488107839)
+
+---
+
+### ✅ @AndrewYNg — Andrew Ng（1 条）
+
+**[2026-04-27T15:58:13+00:00]**
+> AI-native software engineering teams operate very differently than traditional teams. The obvious difference is that AI-native teams use coding agents to build products much faster, but this leads to…
+[原文链接](https://x.com/AndrewYNg/status/2048793852702757151)
+
+---
+
+### ✅ @ylecun — Yann LeCun（19 条）
+
+**[2026-04-26T18:31:11+00:00]**
+> RT by @ylecun: Republicans have been making this argument my entire life. We had 8 years of Clinton, 8 years of Obama, 4 years of Biden— never became a socialism. But you know what we got? More jobs,…
+[原文链接](https://x.com/ylecun/status/2048469956627468510)
+
+**[2026-04-26T17:27:23+00:00]**
+> RT by @ylecun: Trump just fired all 24 members of the National Science Board. Every single one. By email. No warning. No reason given. The board has existed since 1950. The National Science Board is …
+[原文链接](https://x.com/ylecun/status/2048453901930660058)
+
+**[2026-04-26T16:03:04+00:00]**
+> RT by @ylecun: Existential risk mongers are a small, very vocal cult with a lot of very clever online astroturfing skills. Politicians never waste a good fake crisis, which is why they're perfect for…
+[原文链接](https://x.com/ylecun/status/2048432684930654430)
+
+**[2026-04-26T13:51:41+00:00]**
+> Shooting oneself in the foot? Nope. Shooting oneself in the prefrontal cortex.
+[原文链接](https://x.com/ylecun/status/2048399621492236615)
+
+**[2026-04-26T06:48:29+00:00]**
+> RT by @ylecun: Never let critical thinking get in the way of extremist fantasy stories. If you're on either side of this slider, congratulations, you may be a child in an adult costume body! Black an…
+[原文链接](https://x.com/ylecun/status/2048293118781296734)
+
+**[2026-04-25T19:15:22+00:00]**
+> RT by @ylecun: OPINION: "Trump’s mismanagement has resulted in death, destruction, wasted tax dollars, and a huge loss in respect for the United States — all to accomplish nothing." https://ebx.sh/V5…
+[原文链接](https://x.com/ylecun/status/2048118689258487857)
+
+**[2026-04-25T16:01:07+00:00]**
+> RT by @ylecun: When MTV News shut down, it felt like decades of culture vanished overnight 🕳️ But over 470,000 pages were already preserved. That history didn’t disappear. It was archived. 📚 Read VAN…
+[原文链接](https://x.com/ylecun/status/2048069805807128734)
+
+**[2026-04-24T20:50:37+00:00]**
+> RT by @ylecun: Number of people who go bankrupt every year because of medical bills or illness-related work loss: 🇦🇺 0 🇨🇦 0 🇩🇰 0 🇫🇮 0 🇫🇷 0 🇩🇪 0 🇮🇸 0 🇮🇪 0 🇮🇹 0 🇯🇵 0 🇳🇱 0 🇳🇴 0 🇵🇹 0 🇪🇸 0 🇸🇪 0 🇬🇧 0 🇺🇸 53…
+[原文链接](https://x.com/ylecun/status/2047780272297382384)
+
+**[2026-04-24T19:31:52+00:00]**
+> RT by @ylecun: New episode of The Information Bottleneck is out, this time with @liuzhuang1234 (Princeton). We talked about ConvNeXt and whether architecture still matters; dataset bias and what "goo…
+[原文链接](https://x.com/ylecun/status/2047760455679246500)
+
+**[2026-04-24T17:45:08+00:00]**
+> RT by @ylecun: The web is disappearing 🕳️ According to a Pew Research Center report, 26% of pages from 2013-2023 are no longer accessible. But that’s not the whole story. In a new study published in …
+[原文链接](https://x.com/ylecun/status/2047733594064408894)
+
+**[2026-04-24T15:23:18+00:00]**
+> RT by @ylecun: 图灵奖获得者、 AI 三大教父之一的 LeCun在达沃斯的发言，算是把整个硅谷的遮羞布扯了。 他说现在整个行业都被LLM彻底洗脑了，所有人都在同一条赛道上互相挖人，谁敢偏离主流谁就被骂落后。 这也是他离开Meta的真正原因，连Meta都已经LLM-pilled，他不想再跟风了。 最扎心的一句话是：纯生成式架构，不管是LLM、VLM还是VLA，永远造不出哪怕猫级的智能…
+[原文链接](https://x.com/ylecun/status/2047697898989572176)
+
+**[2026-04-24T14:14:06+00:00]**
+> RT by @ylecun: A mathematician who shared an office with Claude Shannon at Bell Labs gave one lecture in 1986 that explains why some people win Nobel Prizes and other equally smart people spend their…
+[原文链接](https://x.com/ylecun/status/2047680485208531152)
+
+**[2026-04-24T13:58:49+00:00]**
+> RT by @ylecun: Feel like very few serious people make the argument Britain should develop its own LLM? Certainly not an argument you see made in Westminster often during the sovereignty debate. Also …
+[原文链接](https://x.com/ylecun/status/2047676640059154653)
+
+**[2026-04-24T11:19:36+00:00]**
+> RT by @ylecun: 1. I never said LLMs were not useful. They are, particularly with all the bells and whistles that are being added to them. I use them. 2. A robot-rich future can't be built with AIs th…
+[原文链接](https://x.com/ylecun/status/2047636569767419951)
+
+**[2026-04-24T10:30:09+00:00]**
+> RT by @ylecun: 🎓 Register now for ML & Advanced Stats Summer School, an intensive set of courses on theoretical foundations & applications of ML methods & modern stats analysis techniques. With @ELLI…
+[原文链接](https://x.com/ylecun/status/2047624126047670758)
+
+**[2026-04-24T06:38:08+00:00]**
+> RT by @ylecun: 🔴 Trump vient de publier sur Truth Social un monologue de 1 500 mots sur le droit du sol, l'ACLU, les Indiens, les Chinois et la "Savage Nation". Ce texte inhabituellement long, inhabi…
+[原文链接](https://x.com/ylecun/status/2047565736382534091)
+
+**[2026-04-23T23:15:06+00:00]**
+> RT by @ylecun: Trump completely passed out, reawakened, then passed out again during today's pressor in the Oval Office. 😂🤣👇
+[原文链接](https://x.com/ylecun/status/2047454244781818205)
+
+**[202
+
+推文样本（JSON）：
+[{"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T16:54:21+00:00", "title": "Calling him “Scam” Altman is accurate. \n\nThis is very much worth reading.", "url": "https://x.com/elonmusk/status/2048807976991850953"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T16:39:59+00:00", "title": "RT by @elonmusk: Sam Altman cannot be trusted.\n\n• The OpenAI board fired him because he was not always honest with them. They said he should not control powerful AI.\n\n• A major report talked to over 100 people and saw secret papers. It says he has almost a sociopathic lack of con", "url": "https://x.com/elonmusk/status/2048804363595059425"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T16:31:33+00:00", "title": "Exactly", "url": "https://x.com/elonmusk/status/2048802239272169582"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T16:30:27+00:00", "title": "Pinned: Scam Altman and Greg Stockman stole a charity. Full stop. \n\nGreg got tens of billions of stock for himself and Scam got dozens of OpenAI side deals with a piece of the action for himself, Y Combinator style. After this lawsuit, Scam will also be awarded tens of billions i", "url": "https://x.com/elonmusk/status/2048801964457140540"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T16:21:30+00:00", "title": "Scam Altman", "url": "https://x.com/elonmusk/status/2048799712375902624"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-04-27T16:21:01+00:00", "title": "Americans spent over $109 billion on lottery tickets last year, which is more than they spent on movies, books, concerts and sports tickets - combined.", "url": "https://x.com/charliebilello/status/2048799590044852390"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-27T16:13:00+00:00", "title": "Imagine when you can take these on Uber (or own one), what it will do to real estate values?!? 🤯 \n\nFrom hill country ranches to Austin in ten minutes?! \n\nIf you could buy one for $2m, or lease for $5k a month, and commute into a city from the burbs?!? Wild. https://x.com/shaig/st", "url": "https://x.com/jason/status/2048797572014207114"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-27T16:10:40+00:00", "title": "10 minutes from manhattan to jfk is a game changer… \n\n… but the 5 minutes from my loft in Chelsea to Breezy Point in 7 minutes during the 90s would have been insane! \n\nImagine when you can take these on Uber (or own one), what it will do to real estate values?!? 🤯  https://x.com/", "url": "https://x.com/jason/status/2048796982227972344"}, {"handle": "AndrewYNg", "name": "Andrew Ng", "published_at": "2026-04-27T15:58:13+00:00", "title": "AI-native software engineering teams operate very differently than traditional teams. The obvious difference is that AI-native teams use coding agents to build products much faster, but this leads to many other changes in how we operate. For example, some great engineers now play", "url": "https://x.com/AndrewYNg/status/2048793852702757151"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T15:56:52+00:00", "title": "RT by @elonmusk: From space to your phone, Starlink Mobile is now available to deliver data, voice, video, and messaging to @docomo customers in Japan 🛰️❤️📱", "url": "https://x.com/elonmusk/status/2048793511701717143"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-27T15:56:20+00:00", "title": "RT by @Jason: update! the @twistartups AI sidebar is going well\n\nThe goal: a live AI sidebar with 4 personas watching the pod in real time\n\nProgress update: \n✅ Side bar (Chrome extension works with any website)\n✅ Two characters: comedian fox + troll alien\n✅ Ability to adjust freq", "url": "https://x.com/jason/status/2048793378511536538"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T15:50:31+00:00", "title": "If a major car company had AI fan boys and released a car with loose lug nuts and the wheels came off, after hyping it as the greatest thing ever, and a bunch of people died, those fan boys would say “y’all shoulda known”.", "url": "https://x.com/GaryMarcus/status/2048791912149295182"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T15:33:34+00:00", "title": "R to @GaryMarcus: that said, another tweet by the same user does correctly assess what’s wrong with most user’s model of what LLMs say.", "url": "https://x.com/GaryMarcus/status/2048787646206677207"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T15:31:37+00:00", "title": "This is totally wrong.\n\nBlaming the user is missing the point that (a) coding agents have been overhyped and (b) can’t reliably obey the rules given to them in system prompts and other guardrails.", "url": "https://x.com/GaryMarcus/status/2048787157536653627"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T15:26:33+00:00", "title": "RT by @elonmusk: .@shaunmmaguire says Elon Musk’s X acquisition was in service of civilizational-scale missions.\n\n\"I truly believe, like in my soul, that he is trying to help humanity.\"\n\n\"He has these goals. Like back up the biosphere by making us a multi-planetary species or ush", "url": "https://x.com/elonmusk/status/2048785882950549854"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T15:15:09+00:00", "title": "If extremely violent criminals are not imprisoned, eventually they will murder innocent people", "url": "https://x.com/elonmusk/status/2048783014075777369"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-27T15:03:32+00:00", "title": "Best accounts for following Austin air quality? @grok", "url": "https://x.com/jason/status/2048780089295302690"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T14:53:45+00:00", "title": "Excellent point", "url": "https://x.com/elonmusk/status/2048777628019032335"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T14:27:36+00:00", "title": "yep, that’s what I do. \n\nI am increasingly concerned that people in China are soaking up my wisdom, while a lot of people in the US try to dismiss me.\n\ni don’t think that is going to end well.", "url": "https://x.com/GaryMarcus/status/2048771044987777428"}, {"handle": "HarryStebbings", "name": "Harry Stebbings", "published_at": "2026-04-27T14:02:33+00:00", "title": "R to @HarryStebbings: Spotify  https://open.spotify.com/episode/5KPihKzCMKY2DnPeuSxXZ5\nApple Podcasts  https://podcasts.apple.com/us/podcast/20vc-applovin-%24160bn-market-cap-%245-48bn-revenue-%2410m/id958230465?i=1000763769440\nYoutube  https://youtu.be/dlPCz8Jwypw", "url": "https://x.com/HarryStebbings/status/2048764743205134644"}, {"handle": "HarryStebbings", "name": "Harry Stebbings", "published_at": "2026-04-27T14:02:33+00:00", "title": "Adam Foroughi is by far one of the best CEOs I have ever interviewed.\n\nCandidly he is insanely stern and cold but also obsessive, focused and utterly brilliant.\n\nWith Adam there is zero fluff, like none. He says what he means and means what he says.\n\nApplovin does $10M EBITDA per", "url": "https://x.com/HarryStebbings/status/2048764741435179442"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-04-27T13:50:42+00:00", "title": "2026 is following the same playbook as 2025. Only difference is traders have become much more immune to extreme rhetoric and have been more confident in buying the dip, sending the stock market quickly back to new all-time highs. $SPX\n\nVideo: https://www.youtube.com/watch?v=p5e0T", "url": "https://x.com/charliebilello/status/2048761760971096534"}, {"handle": "JeffDean", "name": "Jeff Dean", "published_at": "2026-04-27T13:40:08+00:00", "title": "The video of my conversation with Amin Vahdat, @gilbert, and @djrosent at Cloud Next last week is now up. \n\nhttps://youtu.be/BpnJYJmbXcM?si=vUY3hI_aDX8K6gco\n\nThanks for a great conversation!", "url": "https://x.com/JeffDean/status/2048759102390899142"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T13:32:43+00:00", "title": "⚠️ AI agents are wildly premature technology that is being rolled out way too fast. The deepest lesson about the vibe coded AI agent disaster story that is running around is NOT about losing your data. ⚠️\n\n𝗜𝘁’𝘀 𝗮𝗯𝗼𝘂𝘁 𝗔𝗜 𝘀𝗮𝗳𝗲𝘁𝘆. \n\nThe user wasn’t (totally) naive. He thought system", "url": "https://x.com/GaryMarcus/status/2048757233174122827"}, {"handle": "HarryStebbings", "name": "Harry Stebbings", "published_at": "2026-04-27T13:30:16+00:00", "title": "Two areas I would love to invest that are non-technical: \n\n1. Egg freezing clinics. In 10 years, strongly believe every 21 year old will freeze their eggs and it becomes the norm. \n\nAmazing business. Insane retention numbers. Super high margin. \n\n2. AI re-skilling facilities. Go ", "url": "https://x.com/HarryStebbings/status/2048756619622707452"}, {"handle": "soumithchintala", "name": "Soumith Chintala", "published_at": "2026-04-27T13:29:14+00:00", "title": "This is kinda interesting.\n\nAnthro probably needs to scale up Account Support via Claude or via humans (traditional account managers). Would be funny if they chose humans.\n\nAlternatively, more and more companies can probably go multi-AI with open harnesses. \n\nSimilar problems to ", "url": "https://x.com/soumithchintala/status/2048756358820827564"}, {"handle": "sama", "name": "Sam Altman", "published_at": "2026-04-27T13:24:26+00:00", "title": "we have updated our partnership with microsoft.\n\nmicrosoft will remain our primary cloud partner, but we are now able to make our products and services available across all clouds.\n\nwill continue to provide them with models and products until 2032, and a revenue share through 203", "url": "https://x.com/sama/status/2048755148361707946"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-04-27T13:16:36+00:00", "title": "The S&P 500's CAPE Ratio has moved up to 41, its highest level since 2000 and now above 99% of historical valuations. $SPX\n\nVideo: https://www.youtube.com/watch?v=p5e0ThPjIAg&t=36s", "url": "https://x.com/charliebilello/status/2048753179471323584"}, {"handle": "sama", "name": "Sam Altman", "published_at": "2026-04-27T13:09:30+00:00", "title": "this is so good:\n\nhttps://paulgraham.com/kids.html", "url": "https://x.com/sama/status/2048751392031203544"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-04-27T13:08:19+00:00", "title": "With 28% of companies reported, S&P 500 1st quarter earnings are up 15% over the prior year, the 13th consecutive quarter of positive YoY growth. $SPX\n\nVideo: https://www.youtube.com/watch?v=p5e0ThPjIAg&t=973s", "url": "https://x.com/charliebilello/status/2048751094671585397"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-04-27T12:53:00+00:00", "title": "RT by @charliebilello: Wondering which month is the best time to start investing?\nThe right answer is any month. Just start!", "url": "https://x.com/charliebilello/status/2048747238986305979"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T12:50:55+00:00", "title": "RT by @elonmusk: Today marks the start of the Elon Musk v.Sam Altman  trial.\n\nTwo opposing worldviews. \nSam Altman transformed a non-profit organization into one of the world's most profitable companies for his own enrichment.\n\n Elon Musk, who did everything he could to limit the", "url": "https://x.com/elonmusk/status/2048746715805581608"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T12:48:41+00:00", "title": "R to @GaryMarcus: Stop blaming the users. It’s not that simple:", "url": "https://x.com/GaryMarcus/status/2048746152749846549"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T12:40:59+00:00", "title": "RT by @elonmusk: 🚨 NEWS: Emirates upgrades its iconic A380 with Starlink high-speed Wi-Fi, delivering “better-than-home” internet at 40,000 feet.\n\n• Up to 3 Starlink antennas on each A380 for massive speed boost\n\n• Internet performance improved up to 1000x vs older systems\n\n• Ena", "url": "https://x.com/elonmusk/status/2048744214230712500"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T12:36:05+00:00", "title": "People keep blaming the users for the growing number of vibe-coded reasoners. Doing so is *half* right.\n\nUsers *are*screwing up - by letting vibe coded stuff access their files, without proper backups, without proper monitoring, without adequate sysadmin, etc.\n\nBut that’s *exactl", "url": "https://x.com/GaryMarcus/status/2048742983684784239"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T12:20:17+00:00", "title": "“Vibe coded disasters piling up on Reddit”", "url": "https://x.com/GaryMarcus/status/2048739005525877072"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T11:35:33+00:00", "title": "RT by @elonmusk: This is the 7th consecutive week with new reporting that ChatGPT was used in connection with murder or suicide. \n\nOpenAI doesn’t “benefit all of humanity.”", "url": "https://x.com/elonmusk/status/2048727747954868342"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T11:08:22+00:00", "title": "RT by @elonmusk: They arrested the President of the United States of America 4X, charged him 91X, indicted him 4X, spied on his campaign, sabotaged his first term, jailed his supporters, raided his private residence, censored him, gagged him, tried to bankrupt him, and attempted ", "url": "https://x.com/elonmusk/status/2048720909809156378"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-04-27T10:01:28+00:00", "title": "One of my favorite pictures. A guy I didn't know took it of us on a street in Palo Alto about 10 years ago.", "url": "https://x.com/paulg/status/2048704073356935676"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-04-27T09:50:40+00:00", "title": "You never need to describe something as a \"bad take.\" If it's false or irrelevant or omits something important, you can just say so. And if it's true, relevant, and complete, it's not a bad take.", "url": "https://x.com/paulg/status/2048701354672050286"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-04-27T08:17:48+00:00", "title": "Worrying that your startup will be eaten by the model companies is like worrying that your life will be constrained after you become a movie star. You're far more likely simply to fail.", "url": "https://x.com/paulg/status/2048677984106664227"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T08:14:21+00:00", "title": "😳", "url": "https://x.com/pmarca/status/2048677114480873657"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T08:07:29+00:00", "title": "cc @BrendanEich", "url": "https://x.com/pmarca/status/2048675385119019444"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T08:04:13+00:00", "title": "👀", "url": "https://x.com/pmarca/status/2048674564314685477"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T08:01:44+00:00", "title": "But \"A Disservice To Those Who Are Watching\" is the name of this show!", "url": "https://x.com/pmarca/status/2048673940072251670"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T07:59:56+00:00", "title": "cc @elonmusk", "url": "https://x.com/pmarca/status/2048673488383447437"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T04:43:41+00:00", "title": "When one thing becomes abundant and cheap, another thing becomes scarce and valuable.", "url": "https://x.com/pmarca/status/2048624098398650608"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T04:32:43+00:00", "title": "Overheard in Silicon Valley: \"Imagine if he heard how the world really worked. Wonder what manifesto would say then.\"", "url": "https://x.com/pmarca/status/2048621340408844368"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T04:29:26+00:00", "title": "Image", "url": "https://x.com/pmarca/status/2048620511912194339"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T04:10:44+00:00", "title": "The apps can rewrite the files. 👀", "url": "https://x.com/pmarca/status/2048615807190769738"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-04-27T04:08:42+00:00", "title": "RT by @paulg: Whenever I go to Paris to talk about investing in YC startups, I'm always amazed how much the French just LOVE Y Combinator.  Nous t'aimons aussi, France.\n\nMy French friend of @Fundoraclub wanted to see YC from the inside...and share it with the people of France.  T", "url": "https://x.com/paulg/status/2048615296613937201"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T04:07:00+00:00", "title": "Many such cases.", "url": "https://x.com/pmarca/status/2048614869352714619"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T04:06:10+00:00", "title": "🇺🇸", "url": "https://x.com/pmarca/status/2048614659595583651"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T04:04:46+00:00", "title": "Many such cases (in the universe).", "url": "https://x.com/pmarca/status/2048614305705386433"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T03:56:11+00:00", "title": "Concerning.", "url": "https://x.com/pmarca/status/2048612144871264609"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T03:49:14+00:00", "title": "Self recommending!", "url": "https://x.com/pmarca/status/2048610397243265189"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T03:39:49+00:00", "title": "RT by @GaryMarcus: The greatest con of the decade was calling autocomplete “AI”. \n\nThe second greatest is calling autocomplete-in-a-loop an “agent”.", "url": "https://x.com/GaryMarcus/status/2048608025464705084"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T03:11:45+00:00", "title": "Grok Imagine", "url": "https://x.com/elonmusk/status/2048600964102246438"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T03:01:18+00:00", "title": "Self recommending recommending.", "url": "https://x.com/pmarca/status/2048598334492033455"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T02:57:11+00:00", "title": "👀", "url": "https://x.com/pmarca/status/2048597298150875169"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T02:41:14+00:00", "title": "“Always keep a separate backup.” For sure, every experienced programmer should know this.\n\n𝘉𝘶𝘵 𝘸𝘦 𝘫𝘶𝘴𝘵 𝘤𝘳𝘦𝘢𝘵𝘦𝘥 𝘢 𝘸𝘩𝘰𝘭𝘦 𝘨𝘦𝘯𝘦𝘳𝘢𝘵𝘪𝘰𝘯 𝘰𝘧 𝘷𝘪𝘣𝘦 𝘤𝘰𝘥𝘦𝘳𝘴 𝘸𝘩𝘰 𝘥𝘰𝘯’𝘵.\n\nAnd we now have a legion of synthetic coding agents (like Cursor) that also apparently don’t always follow this basic princ", "url": "https://x.com/GaryMarcus/status/2048593283639894520"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T02:34:50+00:00", "title": "👀", "url": "https://x.com/pmarca/status/2048591674688037210"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-27T02:26:57+00:00", "title": "Curiosity & adventure are my philosophy\n\nhttps://grok.com/share/bGVnYWN5_d70e0164-cced-4096-99cb-38604067aa7a", "url": "https://x.com/elonmusk/status/2048589691054694406"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T02:25:10+00:00", "title": "RT by @GaryMarcus: “fails less often than a human does” is a terrible metric. \n \nWe build deterministic software and test it to destruction to ensure it’s 99.99999 reliable . That’s been the basis of every critical application such as accounting payroll and logistics.  \n\nLLMs can", "url": "https://x.com/GaryMarcus/status/2048589239915577837"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T02:25:08+00:00", "title": "Overheard in Silicon Valley: \"Did a Claw post this?\"", "url": "https://x.com/pmarca/status/2048589233095643240"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T01:59:04+00:00", "title": "RT by @GaryMarcus: the beauty of a jagged frontier\nis that every failure is the user's fault\nand every breakthrough is the model's glory", "url": "https://x.com/GaryMarcus/status/2048582672163995766"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-27T01:51:02+00:00", "title": "Incredible writing from @euphoriaHBO", "url": "https://x.com/jason/status/2048580651985604783"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T01:48:56+00:00", "title": "RT by @GaryMarcus: I mean AI influencers here and everywhere are screaming you shouldn't get hired if you don't use agentic AI because you're deliberatly slowing everyone down and the moment something goes wrong it's your fault because you didn't understand the tool?", "url": "https://x.com/GaryMarcus/status/2048580122521780676"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T01:44:47+00:00", "title": "RT by @GaryMarcus: The only AGI that Sam Altman is after is Adjusted Gross Income.", "url": "https://x.com/GaryMarcus/status/2048579079121555764"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T01:40:43+00:00", "title": "the difference is that we don’t *hype* giving 12 year-olds bulldozers.\n\n*of course* it’s a kind of user error when a model destroys all of user’s data and they didn’t have a backup. that’s the point.\n\nvibe coding without considerable experience is like driving without a license.", "url": "https://x.com/GaryMarcus/status/2048578055283880296"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-27T01:20:46+00:00", "title": "Overheard in Silicon Valley: \"Now, software is just the prompt for the next version of the software.\"", "url": "https://x.com/pmarca/status/2048573035616375134"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T01:09:02+00:00", "title": "RT by @GaryMarcus: Never ever use generative AI for anything critical. \n\nThe technology is probablistic all the way down and therefore inherently unreliable. \n\nWhy is this so hard to understand?  \n\nIt’s wild how many seemingly smart people have drunk the cool aid on this.", "url": "https://x.com/GaryMarcus/status/2048570082843082905"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T01:00:07+00:00", "title": "Generative AI as the Hindenberg", "url": "https://x.com/GaryMarcus/status/2048567837221089669"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T00:25:00+00:00", "title": "Is it me or X starting to look like a vibe coded mess?\n\nPolls are broken.\n\nAccounts are getting hacked.\n\nMy DMs are full of phishing scams.\n\nBasics that used to work no longer work.", "url": "https://x.com/GaryMarcus/status/2048558998325166498"}, {"handle": "sama", "name": "Sam Altman", "published_at": "2026-04-27T00:05:31+00:00", "title": "so fun to see the reception to 5.5!\n\nthere is almost nothing that feels more gratifying to me than builders saying they find our tools useful.", "url": "https://x.com/sama/status/2048554097985593849"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T00:02:43+00:00", "title": "R to @GaryMarcus: btw polling software is broken! votes aren’t showing, as many folks have noted. eg I see none:", "url": "https://x.com/GaryMarcus/status/2048553390540734479"}, {"handle": "GaryMarcus", "name": "Gary Marcus", "published_at": "2026-04-27T00:00:53+00:00", "title": "Total AI disaster, totally predictable", "url": "https://x.com/GaryMarcus/status/2048552931923013916"}, {"handle": "sama", "name": "Sam Altman", "published_at": "2026-04-26T23:59:53+00:00", "title": "Our Principles:\n\nDemocratization, Empowerment, Universal Prosperity, Resilience, and Adaptability\n\nhttps://openai.com/index/our-principles/", "url": "https://x.com/sama/status/2048552677433643427"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-26T23:22:48+00:00", "title": "Remember this", "url": "https://x.com/elonmusk/status/2048543344746250466"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-26T22:50:49+00:00", "title": "Grad school indoctrination camps", "url": "https://x.com/elonmusk/status/2048535299102265720"}, {"handle": "HarryStebbings", "name": "Harry Stebbings", "published_at": "2026-04-26T22:34:46+00:00", "title": "We hired someone for the investing team. \n\nSomething I never planned to do. \n\nThey sent the team 3 new deals per day for 90 days straight. \n\nAll aligned to our stage, geography and deal type. \n\nThat’s how you hustle and get a job in VC. \n\nStay tuned. Reveal to come.", "url": "https://x.com/HarryStebbings/status/2048531257399664920"}, {"handle": "pmarca", "name": "Marc Andreessen", "published_at": "2026-04-26T21:32:43+00:00", "title": "Many such cases.", "url": "https://x.com/pmarca/status/2048515643268567431"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-26T21:21:33+00:00", "title": "RT by @elonmusk: 🚨BREAKING: I found Cole Allen's archived tweets.\n\nHe predicted \"Kamala wins all swing states,\" compared Trump's win to “Nazis getting elected,” and moved to Bluesky.\n\nThe scary part: he retweeted every mainstream Democrat on this platform.\n\nThread below. 👇\n\nWhat ", "url": "https://x.com/elonmusk/status/2048512831692452091"}, {"handle": "DavidSacks", "name": "David Sacks", "published_at": "2026-04-26T20:42:24+00:00", "title": "MSM hoax factories like the Atlantic love to allege conflicts of interest without ever disclosing their own.", "url": "https://x.com/DavidSacks/status/2048502978626113625"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-26T19:42:30+00:00", "title": "I’ve invested in 700 private companies \n\nProviding liquidity and loans to high performing founders is completely standard. \n\nIn fact, investors encourage loans and secondary sales for founders to enable them to go for the Gold — which is exactly what SpaceX has done. \n\nThe @NYTim", "url": "https://x.com/jason/status/2048487905543237675"}, {"handle": "HarryStebbings", "name": "Harry Stebbings", "published_at": "2026-04-26T19:35:39+00:00", "title": "I have interviewed 1,000 of the best CEOs of the last 10 years. \n\nAdam Foroughi, Founder @AppLovin is easily top 3, ever. \n\n$160BN Market Cap \n\n$5.48BN Revenue\n\n$10M EBITDA per head \n\n82%+ margins\n\nJust 450 people in core business 🤯 \n\nNo other business on the planet has numbers l", "url": "https://x.com/HarryStebbings/status/2048486182904852537"}, {"handle": "ylecun", "name": "Yann LeCun", "published_at": "2026-04-26T18:31:11+00:00", "title": "RT by @ylecun: Republicans have been making this argument my entire life. We had 8 years of Clinton, 8 years of Obama, 4 years of Biden— never became a socialism. But you know what we got? More jobs, lower unemployment, higher GDP in Democratic administrations than every GOP admi", "url": "https://x.com/ylecun/status/2048469956627468510"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-26T18:14:04+00:00", "title": "Ok @Acosta, balls in your court", "url": "https://x.com/jason/status/2048465651723882972"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-26T18:05:09+00:00", "title": "The NYTimes focus last week was micro-looting, social murder and meaningless private company transactions designed to ferment class warfare.\n\nDisgraziad", "url": "https://x.com/jason/status/2048463405590225173"}, {"handle": "DavidSacks", "name": "David Sacks", "published_at": "2026-04-26T17:37:26+00:00", "title": "RT by @DavidSacks: Accurate", "url": "https://x.com/DavidSacks/status/2048456433981591867"}, {"handle": "ylecun", "name": "Yann LeCun", "published_at": "2026-04-26T17:27:23+00:00", "title": "RT by @ylecun: Trump just fired all 24 members of the National Science Board. Every single one. By email. No warning. No reason given. The board has existed since 1950.\n\nThe National Science Board is the independent body that oversees the National Science Foundation, the agency t", "url": "https://x.com/ylecun/status/2048453901930660058"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-26T17:13:01+00:00", "title": "Who made this?!", "url": "https://x.com/jason/status/2048450286902235560"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-26T16:21:34+00:00", "title": "I’m proud to announce I’m hosting an exhibition cage match between @Acosta and @mtracey on July 4th \n\n$100,000 cash prize \n\nVegas \n\n3, 3 minute rounds", "url": "https://x.com/jason/status/2048437340218044499"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-04-26T16:18:48+00:00", "title": "RT by @charliebilello: Does a government shutdown negatively impact the stock market?\n\nNo.\n\nThe S&P 500 has gained an average of 0.4% during prior shutdowns and is up 4.8% during the current shutdown which is the longest in history at 70 days and counting.\n\n$SPX", "url": "https://x.com/charliebilello/status/2048436641451155650"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-26T16:16:34+00:00", "title": "Once again, the substack party result in a Donnybrook — it’s like the source awards for wordmaxxers", "url": "https://x.com/jason/status/2048436081725464959"}, {"handle": "elonmusk", "name": "Elon Musk", "published_at": "2026-04-26T16:14:38+00:00", "title": "RT by @elonmusk: 25% of very liberal people say political violence can “sometimes be justified.”\n\nAmong very conservative people it’s just 3%.\n\nIn other words, the far left is 8x more likely to support political violence as the far right.\n\nStop pretending this is a “both sides” p", "url": "https://x.com/elonmusk/status/2048435593244237849"}, {"handle": "ylecun", "name": "Yann LeCun", "published_at": "2026-04-26T16:03:04+00:00", "title": "RT by @ylecun: Existential risk mongers are a small, very vocal cult with a lot of very clever online astroturfing skills. \n\nPoliticians never waste a good fake crisis, which is why they're perfect for Bernie to try to seize the means of production back from the private sphere.\n\n", "url": "https://x.com/ylecun/status/2048432684930654430"}, {"handle": "sama", "name": "Sam Altman", "published_at": "2026-04-26T15:46:41+00:00", "title": "feels like a good time to seriously rethink how operating systems and user interfaces are designed\n\n(also the internet; there should be a protocol that is equally usable by people and agents)", "url": "https://x.com/sama/status/2048428561481265539"}, {"handle": "sama", "name": "Sam Altman", "published_at": "2026-04-26T15:37:00+00:00", "title": "\"post-AGI, no one is going to work and the economy is going to collapse\"\n\n\"i am switching to polyphasic sleep because GPT-5.5 in codex is so good that i can't afford to be sleeping for such long stretches and miss out on working\"", "url": "https://x.com/sama/status/2048426122854228141"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-04-26T15:10:21+00:00", "title": "RT by @charliebilello: The 12.5% gain in the S&P 500 over the last 4 weeks was the 20th biggest 4-week advance for the index since 1950. $SPX\n\nVideo: https://www.youtube.com/watch?v=p5e0ThPjIAg&t=646s", "url": "https://x.com/charliebilello/status/2048419415222259820"}, {"handle": "HarryStebbings", "name": "Harry Stebbings", "published_at": "2026-04-26T15:07:55+00:00", "title": "Seeing two types of founders emerge in this moment:\n\nThe tourists and the terminators. \n\nThe terminators are salivating at the opportunity ahead. Hungrier than ever. More ambitious than ever. They want it more than ever. \n\nThe tourists. They want to sell. They are scared. They do", "url": "https://x.com/HarryStebbings/status/2048418806867870115"}, {"handle": "DavidSacks", "name": "David Sacks", "published_at": "2026-04-26T15:03:35+00:00", "title": "RT by @DavidSacks: Cole Allen, the gunman from last night’s WH Correspondents Dinner, maintained an active online presence, especially on the leftwing social media platform Bluesky where he went by the handle http://ColdForce.bsky.social with multiple references violence and guns", "url": "https://x.com/DavidSacks/status/2048417712439689346"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-04-26T14:48:06+00:00", "title": "RT by @paulg: Yeah okay, Lego bros, brodettes and brotheys are cooked with this one.\n\nGPT 2 Image can create full Lego sets! With actual Bricklink IDs so you can order the parts and build it.\n\nWhole new business opportunity here for the taking.", "url": "https://x.com/paulg/status/2048413815675539816"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-04-26T14:47:09+00:00", "title": "Every post, I block and report a couple accounts using AI-generated replies. It feels much the same as picking up litter on a city street; I don't know if it has any effect, but it feels like I ought to at least try to keep the site clean.", "url": "https://x.com/paulg/status/2048413578789634100"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-04-26T14:40:28+00:00", "title": "Durer was the original Dr Seuss.", "url": "https://x.com/paulg/status/2048411898081583547"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-04-26T14:36:59+00:00", "title": "Writing a talk to give in Stockholm. The prospect of speaking to a large group of people is no longer frightening, but writing a talk is as much work as ever. I'm no longer afraid of audiences, but I'm still just as afraid of making mistakes.", "url": "https://x.com/paulg/status/2048411021329453562"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-04-26T14:19:13+00:00", "title": "RT by @charliebilello: The stock market is at an all-time high.\n\nCredit spreads are near all-time lows.\n\nAnd inflation has been above the Fed's target level for 61 consecutive months, averaging 4% per year since 2019.\n\nSo why is the Fed expanding its balance sheet (QE)?\n\nVideo: h", "url": "https://x.com/charliebilello/status/2048406550897729561"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-04-26T14:00:02+00:00", "title": "RT by @charliebilello: On March 30, the S&P 500 was down 7% in 2026, the 12th worst start to a year in history. After one of the biggest 4-week rallies ever, it's now up +5% YTD and above the average year at this point in time (+3%). There is no impossible in markets.\n\nVideo: htt", "url": "https://x.com/charliebilello/status/2048401720540061794"}, {"handle": "HarryStebbings", "name": "Harry Stebbings", "published_at": "2026-04-26T13:56:31+00:00", "title": "The best founders I know all text their investors. \n\nNone of them email them. \n\nThe relationship will blossom and deepen in a matter of messages.", "url": "https://x.com/HarryStebbings/status/2048400836024283246"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-26T13:51:54+00:00", "title": "RT by @Jason: Random pic of @Jason protecting our $TAO bags", "url": "https://x.com/jason/status/2048399674269213067"}, {"handle": "ylecun", "name": "Yann LeCun", "published_at": "2026-04-26T13:51:41+00:00", "title": "Shooting oneself in the foot?\nNope.\nShooting oneself in the prefrontal cortex.", "url": "https://x.com/ylecun/status/2048399621492236615"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-04-26T13:45:00+00:00", "title": "RT by @charliebilello: Global Inflation Rates are on the RISE...\n\nVideo: https://www.youtube.com/watch?v=p5e0ThPjIAg&t=1433s", "url": "https://x.com/charliebilello/status/2048397937156518387"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-04-26T13:37:21+00:00", "title": "RT by @paulg: 'Action is now needed': Over 60 ex-U.K. ambassadors call to sanction Israel over West Bank\nhttps://www.haaretz.com/west-bank/2026-04-26/ty-article/.premium/over-60-ex-uk-ambassadors-call-to-sanction-israel-over-west-bank/0000019d-c950-d11b-a7df-ef5a5fba0000", "url": "https://x.com/paulg/status/2048396013816152216"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-04-26T13:30:00+00:00", "title": "RT by @charliebilello: With the exception of Bitcoin, every major asset class is now in positive territory on the year...\n\nVideo: https://www.youtube.com/watch?v=p5e0ThPjIAg&t=973s", "url": "https://x.com/charliebilello/status/2048394162366533935"}, {"handle": "charliebilello", "name": "Charlie Bilello", "published_at": "2026-04-26T13:14:49+00:00", "title": "RT by @charliebilello: The S&P 500 ended the week at another all-time high, its 9th of the year. $SPX\n\nVideo: https://www.youtube.com/watch?v=p5e0ThPjIAg&t=646s", "url": "https://x.com/charliebilello/status/2048390341221404827"}, {"handle": "paulg", "name": "Paul Graham", "published_at": "2026-04-26T11:57:10+00:00", "title": "Good use of camouflage by Biscuit.", "url": "https://x.com/paulg/status/2048370801833828507"}, {"handle": "JeffDean", "name": "Jeff Dean", "published_at": "2026-04-26T10:41:25+00:00", "title": "RT by @JeffDean: THE FIRST MAN IN HISTORY TO BREAK 2 HOURS IN A MARATHON!!!🤯🤯🤯\n\nSabastian Sawe 🇰🇪 has just shattered the World Record at the London Marathon, running 1:59:30!!!\n\nHe makes history as the first man to officially break 2 hours in the marathon.\n\nYomif Kejelcha 🇪🇹 in h", "url": "https://x.com/JeffDean/status/2048351736037826877"}, {"handle": "ylecun", "name": "Yann LeCun", "published_at": "2026-04-26T06:48:29+00:00", "title": "RT by @ylecun: Never let critical thinking get in the way of extremist fantasy stories.\n\nIf you're on either side of this slider, congratulations, you may be a child in an adult costume body!\n\nBlack and white thinking is for children. \n\nWhen you become an adult it's time to put a", "url": "https://x.com/ylecun/status/2048293118781296734"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-26T03:57:07+00:00", "title": "The left has a serious violence problem, which @DavidSacks called out early and often. \n\nThis generation of woke democratic socialists are morally bankrupt. \n\nThey believe in looting and violence as a political tool — and they’re vocal about it. \n\nIf you called out the violent me", "url": "https://x.com/jason/status/2048249992163242220"}, {"handle": "jason", "name": "Jason Calacanis", "published_at": "2026-04-26T03:46:17+00:00", "title": "If you’re not condemning these lunatics, you’re advocating for the end of the American empire. \n\nI’m not for canceling people, but the fact the @nytimes and @newyorker not only employees these individuals, but selects them to represent their brands, shows exactly how bankrupt the", "url": "https://x.com/jason/status/2048247267182658004"}]

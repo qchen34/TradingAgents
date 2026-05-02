@@ -1,0 +1,70 @@
+{
+  "target_indexes": [
+    437,
+    39,
+    88,
+    304,
+    439,
+    82,
+    32,
+    118,
+    67
+  ],
+  "target_count": 9,
+  "targets": [
+    {
+      "idx": 437,
+      "handle": "cursor_ai",
+      "url": "https://x.com/cursor_ai/status/2047764651363180839",
+      "title": "Introducing /multitask in the new Cursor 3 interface.\n\nCursor can now run async subagents to parallelize your requests instead of adding them to the queue.\n\nFor already queued messages, you can ask Cursor to multitask on them instead of waiting for the current run to finish."
+    },
+    {
+      "idx": 39,
+      "handle": "GoSailGlobal",
+      "url": "https://x.com/GoSailGlobal/status/2049327853469310984",
+      "title": "🔥 今日新鲜 Skills 精选 Top 10（4月29日）\n由 http://agentskillshub.top 整理！发现 67000+ AI Agent 工具，每日更新 🚀\n\nMozilla 出手做统一 LLM 接口 + 跨领域 MCP 扩张，今日生态边界被拓得最宽！！！\n\n1️⃣ mozilla-ai/any-llm\n⭐ 1928 | +1928\nMozilla AI 出品——一个接口跟所有 LLM provider 通信，挑战 LiteLLM\n🔗 https://github.com/mozilla-ai/any-llm\n🌐 https://agentskillshub.top/skill/mozilla-ai/any-llm/\n\n2️⃣ 🆕 nexu-io/open-design\n⭐ 1120 | +336\nAnthropic Claude Design 的本地化开源复刻，19 个 Skills + 71 个 brand-grade Designs\n🔗 https://github.com/nexu-io/open-design\n🌐 https://agentskillshub.top/skill/nexu-io/open-design/\n\n3️⃣ chainstacklabs/polyclaw\n⭐ 333 | +333\nPolymarket 交易 OpenClaw skill——浏览预测市场 + 执行交易 + 跟踪持仓\n🔗 https://github.com/chainstacklabs/polyclaw\n🌐 https://agentskillshub.top/skill/chainstacklabs/polyclaw/\n\n4️⃣ mkurman/zorai\n⭐ 294 | +294\n持久化、多 agent、可审计的学习型执行平台，daemon 守护 agent 协作\n🔗 https://github.com/mkurman/zorai\n🌐 https://agentskillshub.top/skill/mkurman/zorai/\n\n5️⃣ mcpware/cross-code-organizer\n⭐ 283 | +283\n跨 harness 的配置 dashboard——同时管 Claude Code/Codex/Cursor/Cline 配置\n🔗 https://github.com/mcpware/cross-code-organizer\n🌐 https://agentskillshub.top/skill/mcpware/cross-code-organizer/\n\n6️⃣ witchan/ios-mcp\n⭐ 217 | +217\niOS MCP for 越狱 iPhone——给开发者和 AI agent 的 iOS 设备管理\n🔗 https://github.com/witchan/ios-mcp\n🌐 https://agentskillshub.top/skill/witchan/ios-mcp/\n\n7️⃣ zhitongblog/solomd\n⭐ 193 | +193\nMarkdown editor + 内置 MCP server，本地优先，MIT，~15 MB\n🔗 https://github.com/zhitongblog/solomd\n🌐 https://agentskillshub.top/skill/zhitongblog/solomd/\n\n8️⃣ ghbalf/freecad-ai\n⭐ 167 | +167\nFreeCAD 的 AI workbench——自然语言生成 3D 模型\n🔗 https://github.com/ghbalf/freecad-ai\n🌐 https://agentskillshub.top/skill/ghbalf/freecad-ai/\n\n9️⃣ MinishLab/semble\n⭐ 112 | +86\n专为 Agent 设计的快速准确代码搜索引擎\n🔗 https://github.com/MinishLab/semble\n🌐 https://agentskillshub.top/skill/MinishLab/semble/\n\n🔟 🆕 trapoom555/claude-paperloom\n⭐ 47 | +4\nClaude Code 自维护学术知识图谱插件，对接 Obsidian\n🔗 https://github.com/trapoom555/claude-paperloom\n🌐 https://agentskillshub.top/skill/trapoom555/claude-paperloom/\n\n🎯 今日趋势：生态边界拓宽 — Mozilla（统一接口）/ Polymarket（金融预测）/ FreeCAD（3D 建模）/ iOS（移动越狱）/ Markdown 编辑器 / 学术知识图谱，全部有人在做 skill/MCP 接入 🔍"
+    },
+    {
+      "idx": 88,
+      "handle": "berryxia",
+      "url": "https://x.com/berryxia/status/2049247904536428805",
+      "title": "Claude 重磅连接创意专业工具！\n\n全新 Blender 和 Autodesk Fusion 连接器上线，通过对话直接调试场景、构建工具、修改3D模型，创意工作流直接搞起来！\n\n1. Blender 连接器：调试场景、批量应用变化、构建新工具，全在 Claude 中完成\n\n2. Autodesk Fusion 连接器：通过自然对话创建和修改3D模型，设计师和工程师效率拉满\n\n3.同日上线更多连接器：Adobe Creative Cloud、Ableton、Splice、Canva \nAffinity、SketchUp、Resolume\n\n4. 正式加入 Blender Development Fund，支持开源 3D 软件发展\n\n创意工作者和 3D/设计/音乐/视频玩家，这波更新太香了！"
+    },
+    {
+      "idx": 304,
+      "handle": "sama",
+      "url": "https://x.com/sama/status/2048755148361707946",
+      "title": "we have updated our partnership with microsoft.\n\nmicrosoft will remain our primary cloud partner, but we are now able to make our products and services available across all clouds.\n\nwill continue to provide them with models and products until 2032, and a revenue share through 2030."
+    },
+    {
+      "idx": 439,
+      "handle": "AravSrinivas",
+      "url": "https://x.com/AravSrinivas/status/2047753276888854595",
+      "title": "We’re rolling out GPT 5.5 as the default orchestrator model for Perplexity Computer. We will be monitoring the user sentiment compared to Opus 4.7 as the default as the rollout expands. Let us know your feedback!"
+    },
+    {
+      "idx": 82,
+      "handle": "berryxia",
+      "url": "https://x.com/berryxia/status/2049253021159403786",
+      "title": "NVIDIA 重磅发布！🚀 \n\nNemotron 3 Nano Omni 多模态开源模型来了！\n\n🔥 30B 参数\n🔥 256K 超长上下文\n🔥 最高效开放多模态模型（语言+视觉+语音+视频+音频一体化）\n🔥 专为 subagents / Agentic 任务设计\n🔥 完全开源（权重 + 数据 + 配方），领跑多项榜单\n\n可通过 NVIDIA NIM API 免费试用！完美 powering 多代理工作流。"
+    },
+    {
+      "idx": 32,
+      "handle": "paulg",
+      "url": "https://x.com/paulg/status/2049333482271260710",
+      "title": "RT by @paulg: MIT student asked a question earlier today that a lot of young founders are quietly wondering about:\n\n\"Won’t the frontier labs just do everything?\"\n\nYes it's true that OAI/Ant are shipping at incredible pace, but it's quite easy to avoid their blast radius and build amazing startups:\n\nOpenAI is not going to build a cattle-herding drone, buy an old F-150 and drive from ranch to ranch like the founder of one of the fastest-growing YC W26 startups, Graze Mate.\n\nAnthropic is not going to integrate with dental insurance verification systems (Lance).\n\nGoogle is not going to navigate NATO procurement (Milliray).\n\nThe value is in the last mile, not the model. Sales cycles require humans who understand the customer. And most importantly, the market is expanding, not shrinking: AI isn't cannibalizing the existing 1% software spend — it's unlocking the other 5-6% that was going to humans. That's a much bigger market for startups yet-to-be-founded than the one the labs are playing in.\n\nNow, what DOES seem risky?\n\nA thin UI layer on top of ChatGPT with no domain expertise; a general-purpose chatbot or assistant; or a product that gets obsolete when model capabilities improve.\n\nBut — tools for specific industries; \"full-stack\" AI companies that actually are the service (AI law firm, AI accounting firm, AI uranium exploration company); or generally products where the customer doesn't want a tool but an outcome — are defensible ideas for startups."
+    },
+    {
+      "idx": 118,
+      "handle": "pmarca",
+      "url": "https://x.com/pmarca/status/2049193915249574141",
+      "title": "The AI we thought we’d get was bloodless alien machine intelligence. The AI we actually got was the complete knowledge and culture of our civilization reflected back at us. Of course we will love it deeply."
+    },
+    {
+      "idx": 67,
+      "handle": "HarryStebbings",
+      "url": "https://x.com/HarryStebbings/status/2049278741583643076",
+      "title": "\"No, layoffs alone will not fix the problem.\n\nIf a company has become bloated, simply cutting 50% often just leaves you with half the same mediocrity.\n\nThe real issue is culture and talent quality, and fixing that usually requires a full rebuild, which is extremely hard, especially for public companies.\"\n\nDo you think that layoffs will solve the problem of many doing them @jasonlk @AnjneyMidha @GergelyOrosz @AustinGeorgas"
+    }
+  ]
+}

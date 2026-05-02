@@ -1,0 +1,1782 @@
+{
+  "generated_at": "2026-04-27T13:44:13.237379+00:00",
+  "period": {
+    "days": 7,
+    "start_utc": "2026-04-20T13:43:39.630597+00:00",
+    "end_utc": "2026-04-27T13:44:13.237379+00:00",
+    "month_tag": "202604"
+  },
+  "overview": {
+    "total_accounts": 33,
+    "active_accounts": 17,
+    "total_tweets": 145,
+    "failed_accounts": 4
+  },
+  "accounts": [
+    {
+      "handle": "sama",
+      "account": "@sama",
+      "name": "Sam Altman",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "gregbrockman",
+      "account": "@gregbrockman",
+      "name": "Greg Brockman",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 0,
+      "error": ""
+    },
+    {
+      "handle": "andrejkarpathy",
+      "account": "@andrejkarpathy",
+      "name": "Andrej Karpathy",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "error",
+      "tweets_count": 0,
+      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>"
+    },
+    {
+      "handle": "ylecun",
+      "account": "@ylecun",
+      "name": "Yann LeCun",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "GaryMarcus",
+      "account": "@GaryMarcus",
+      "name": "Gary Marcus",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "elonmusk",
+      "account": "@elonmusk",
+      "name": "Elon Musk",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "paulg",
+      "account": "@paulg",
+      "name": "Paul Graham",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "naval",
+      "account": "@naval",
+      "name": "Naval Ravikant",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "eladgil",
+      "account": "@eladgil",
+      "name": "Elad Gil",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "DavidSacks",
+      "account": "@DavidSacks",
+      "name": "David Sacks",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "jason",
+      "account": "@jason",
+      "name": "Jason Calacanis",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "HarryStebbings",
+      "account": "@HarryStebbings",
+      "name": "Harry Stebbings",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "lmsqueegie",
+      "account": "@lmsqueegie",
+      "name": "Lars Nielsen",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "error",
+      "tweets_count": 0,
+      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>"
+    },
+    {
+      "handle": "david__tian",
+      "account": "@david__tian",
+      "name": "David Tian",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 0,
+      "error": ""
+    },
+    {
+      "handle": "Bitking_",
+      "account": "@Bitking_",
+      "name": "BTCKing",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "error",
+      "tweets_count": 0,
+      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>"
+    },
+    {
+      "handle": "CryptoCred",
+      "account": "@CryptoCred",
+      "name": "Credible Crypto",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 1,
+      "error": ""
+    },
+    {
+      "handle": "AltcoinBuzz",
+      "account": "@AltcoinBuzz",
+      "name": "Altcoin Buzz",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 0,
+      "error": ""
+    },
+    {
+      "handle": "TradingGods",
+      "account": "@TradingGods",
+      "name": "Trading Gods",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 0,
+      "error": ""
+    },
+    {
+      "handle": "Warrior_Trading",
+      "account": "@Warrior_Trading",
+      "name": "Warrior Trading",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 0,
+      "error": ""
+    },
+    {
+      "handle": "ProfTrading",
+      "account": "@ProfTrading",
+      "name": "Profitable Trading",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 0,
+      "error": ""
+    },
+    {
+      "handle": "SatoshiBun",
+      "account": "@SatoshiBun",
+      "name": "Satoshi",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "直播带逛Tommy",
+      "account": "@直播带逛Tommy",
+      "name": "Tommy",
+      "category": "",
+      "score": "",
+      "skip_reason": "invalid_handle_for_nitter",
+      "status": "skipped",
+      "tweets_count": 0,
+      "error": "invalid_handle_for_nitter"
+    },
+    {
+      "handle": "AndrewYNg",
+      "account": "@AndrewYNg",
+      "name": "Andrew Ng",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 0,
+      "error": ""
+    },
+    {
+      "handle": "JeffDean",
+      "account": "@JeffDean",
+      "name": "Jeff Dean",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "soumithchintala",
+      "account": "@soumithchintala",
+      "name": "Soumith Chintala",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 4,
+      "error": ""
+    },
+    {
+      "handle": "MikeAI",
+      "account": "@MikeAI",
+      "name": "Michael",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "error",
+      "tweets_count": 0,
+      "error": "URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>"
+    },
+    {
+      "handle": "Ronald_vanLoon",
+      "account": "@Ronald_vanLoon",
+      "name": "Ronald van Loon",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 10,
+      "error": ""
+    },
+    {
+      "handle": "erikbryn",
+      "account": "@erikbryn",
+      "name": "Erik Brynjolfsson",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 7,
+      "error": ""
+    },
+    {
+      "handle": "liuliu",
+      "account": "@liuliu",
+      "name": "刘进",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 3,
+      "error": ""
+    },
+    {
+      "handle": "二级炒家",
+      "account": "@二级炒家",
+      "name": "二级炒家",
+      "category": "",
+      "score": "",
+      "skip_reason": "invalid_handle_for_nitter",
+      "status": "skipped",
+      "tweets_count": 0,
+      "error": "invalid_handle_for_nitter"
+    },
+    {
+      "handle": "王川",
+      "account": "@王川",
+      "name": "王川",
+      "category": "",
+      "score": "",
+      "skip_reason": "invalid_handle_for_nitter",
+      "status": "skipped",
+      "tweets_count": 0,
+      "error": "invalid_handle_for_nitter"
+    },
+    {
+      "handle": "老胡",
+      "account": "@老胡",
+      "name": "老胡",
+      "category": "",
+      "score": "",
+      "skip_reason": "invalid_handle_for_nitter",
+      "status": "skipped",
+      "tweets_count": 0,
+      "error": "invalid_handle_for_nitter"
+    },
+    {
+      "handle": "比特币超级玩家",
+      "account": "@比特币超级玩家",
+      "name": "超级玩家",
+      "category": "",
+      "score": "",
+      "skip_reason": "invalid_handle_for_nitter",
+      "status": "skipped",
+      "tweets_count": 0,
+      "error": "invalid_handle_for_nitter"
+    }
+  ],
+  "tweets": [
+    {
+      "handle": "JeffDean",
+      "account": "@JeffDean",
+      "name": "Jeff Dean",
+      "title": "The video of my conversation with Amin Vahdat, @gilbert, and @djrosent at Cloud Next last week is now up. \n\nhttps://youtu.be/BpnJYJmbXcM?si=vUY3hI_aDX8K6gco\n\nThanks for a great conversation!",
+      "url": "https://nitter.net/JeffDean/status/2048759102390899142#m",
+      "published_at": "2026-04-27T13:40:08+00:00"
+    },
+    {
+      "handle": "GaryMarcus",
+      "account": "@GaryMarcus",
+      "name": "Gary Marcus",
+      "title": "⚠️ AI agents are wildly premature technology that is being rolled out way too fast. The deepest lesson about the vibe coded AI agent disaster story that is running around is NOT about losing your data. ⚠️\n\n𝗜𝘁’𝘀 𝗮𝗯𝗼𝘂𝘁 𝗔𝗜 𝘀𝗮𝗳𝗲𝘁𝘆. \n\nThe user wasn’t (totally) naive. He thought system prompts and guardrails would save him. They didn’t. \n\nIn this case he lost data. Eventually people will lose lives.",
+      "url": "https://nitter.net/GaryMarcus/status/2048757233174122827#m",
+      "published_at": "2026-04-27T13:32:43+00:00"
+    },
+    {
+      "handle": "HarryStebbings",
+      "account": "@HarryStebbings",
+      "name": "Harry Stebbings",
+      "title": "Two areas I would love to invest that are non-technical: \n\n1. Egg freezing clinics. In 10 years, strongly believe every 21 year old will freeze their eggs and it becomes the norm. \n\nAmazing business. Insane retention numbers. Super high margin. \n\n2. AI re-skilling facilities. Go to Canary Wharf, set up AI training centre. Partner with Goldman, JP Morgan etc etc. Sign enterprise agreement with them to train all new employees. \n\nBoth absolute goldmines!",
+      "url": "https://nitter.net/HarryStebbings/status/2048756619622707452#m",
+      "published_at": "2026-04-27T13:30:16+00:00"
+    },
+    {
+      "handle": "soumithchintala",
+      "account": "@soumithchintala",
+      "name": "Soumith Chintala",
+      "title": "This is kinda interesting.\n\nAnthro probably needs to scale up Account Support via Claude or via humans (traditional account managers). Would be funny if they chose humans.\n\nAlternatively, more and more companies can probably go multi-AI with open harnesses. \n\nSimilar problems to the cloud era enterprise pains. I'm sure these issues would apply to all the other AI providers.\n\nhttps://www.reddit.com/r/ClaudeAI/comments/1sspwz2/psa_anthropic_bans_organizations_without_warning/",
+      "url": "https://nitter.net/soumithchintala/status/2048756358820827564#m",
+      "published_at": "2026-04-27T13:29:14+00:00"
+    },
+    {
+      "handle": "sama",
+      "account": "@sama",
+      "name": "Sam Altman",
+      "title": "we have updated our partnership with microsoft.\n\nmicrosoft will remain our primary cloud partner, but we are now able to make our products and services available across all clouds.\n\nwill continue to provide them with models and products until 2032, and a revenue share through 2030.",
+      "url": "https://nitter.net/sama/status/2048755148361707946#m",
+      "published_at": "2026-04-27T13:24:26+00:00"
+    },
+    {
+      "handle": "Ronald_vanLoon",
+      "account": "@Ronald_vanLoon",
+      "name": "Ronald van Loon",
+      "title": "Dual-Arm Tracked Humanoid Begins Real-World Industrial Trials\nvia @IlirAliu_\n \n#Robotics #ArtificialIntelligence #ML #Innovation #Technology",
+      "url": "https://nitter.net/Ronald_vanLoon/status/2048751798735835629#m",
+      "published_at": "2026-04-27T13:11:07+00:00"
+    },
+    {
+      "handle": "sama",
+      "account": "@sama",
+      "name": "Sam Altman",
+      "title": "this is so good:\n\nhttps://paulgraham.com/kids.html",
+      "url": "https://nitter.net/sama/status/2048751392031203544#m",
+      "published_at": "2026-04-27T13:09:30+00:00"
+    },
+    {
+      "handle": "Ronald_vanLoon",
+      "account": "@Ronald_vanLoon",
+      "name": "Ronald van Loon",
+      "title": "R to @Ronald_vanLoon: My view is simple:\n\nThe winners in enterprise AI will not be the companies with access to the most models.\n\nThey will be the ones that build the best intelligent systems around them.\n\nIf you want the full breakdown, watch the video and tell me what part of your AI stack you are rethinking first.\n\nWhat do you think becomes the real source of advantage in the next 12 months, the model itself, or the orchestration layer around it?\n\nCheck out the full article: https://www.linkedin.com/pulse/agentic-ai-reshaping-enterprise-strategy-faster-than-you-van-loon-9rfme",
+      "url": "https://nitter.net/Ronald_vanLoon/status/2048749087323820198#m",
+      "published_at": "2026-04-27T13:00:20+00:00"
+    },
+    {
+      "handle": "Ronald_vanLoon",
+      "account": "@Ronald_vanLoon",
+      "name": "Ronald van Loon",
+      "title": "R to @Ronald_vanLoon: The second misconception I keep seeing:\n\nToo many teams think they have to choose between open models and proprietary models.\n\nThey do not.\n\nThe smarter path is hybrid.\n\n→ proprietary models for scale and broad capability\n→ open models for flexibility and control\n→ orchestration layers to route each task to the best-fit model in real time\n\nThat is how you balance performance, cost, and governance without locking yourself into one lane.",
+      "url": "https://nitter.net/Ronald_vanLoon/status/2048749084446515253#m",
+      "published_at": "2026-04-27T13:00:20+00:00"
+    },
+    {
+      "handle": "Ronald_vanLoon",
+      "account": "@Ronald_vanLoon",
+      "name": "Ronald van Loon",
+      "title": "R to @Ronald_vanLoon: My biggest takeaway:\n\nModels are becoming components, not products.\n\nWhat matters now is the system around them:\n\n→ runtimes\n→ memory\n→ tool access\n→ orchestration\n→ secure execution environments\n\nThat is what turns a model into an agent, and an agent into something the business can actually deploy across functions.",
+      "url": "https://nitter.net/Ronald_vanLoon/status/2048749081464287511#m",
+      "published_at": "2026-04-27T13:00:19+00:00"
+    },
+    {
+      "handle": "Ronald_vanLoon",
+      "account": "@Ronald_vanLoon",
+      "name": "Ronald van Loon",
+      "title": "Most enterprise AI strategies are already behind.\n\nNot because they picked the wrong model, but because they are still thinking at the model layer.\n\nThe real shift is happening one level up, where AI becomes a system that can reason, use tools, retain context, and execute work inside secure environments.\n\nThat changes enterprise strategy faster than most leaders realize.\n\nA thread, with insights from my latest video with NVIDIA…\n\n#NVIDIAPartner #NVIDIAGTC",
+      "url": "https://nitter.net/Ronald_vanLoon/status/2048749077911736401#m",
+      "published_at": "2026-04-27T13:00:18+00:00"
+    },
+    {
+      "handle": "Ronald_vanLoon",
+      "account": "@Ronald_vanLoon",
+      "name": "Ronald van Loon",
+      "title": "Shape-Shifting Wheels by KIMM Let Wheelchairs Climb Stairs and Conquer Any Terrain\nby @spaceandtech_\n\n#Innovation #EmergingTech #Technology",
+      "url": "https://nitter.net/Ronald_vanLoon/status/2048746516324487529#m",
+      "published_at": "2026-04-27T12:50:08+00:00"
+    },
+    {
+      "handle": "GaryMarcus",
+      "account": "@GaryMarcus",
+      "name": "Gary Marcus",
+      "title": "R to @GaryMarcus: Stop blaming the users. It’s not that simple:",
+      "url": "https://nitter.net/GaryMarcus/status/2048746152749846549#m",
+      "published_at": "2026-04-27T12:48:41+00:00"
+    },
+    {
+      "handle": "GaryMarcus",
+      "account": "@GaryMarcus",
+      "name": "Gary Marcus",
+      "title": "People keep blaming the users for the growing number of vibe-coded reasoners. Doing so is *half* right.\n\nUsers *are*screwing up - by letting vibe coded stuff access their files, without proper backups, without proper monitoring, without adequate sysadmin, etc.\n\nBut that’s *exactly why* we still need software engineers — and why what Dario recently said about software engineers disappearing is so absurd.\n\nSkilled coders can use vibe-coded tools, with careful oversight.\n\nBut amateurs using vibe-coding tools are asking for trouble. \n\nUsing them without a strong prior working knowledge in coding and sysadmin *is* the mistake.",
+      "url": "https://nitter.net/GaryMarcus/status/2048742983684784239#m",
+      "published_at": "2026-04-27T12:36:05+00:00"
+    },
+    {
+      "handle": "GaryMarcus",
+      "account": "@GaryMarcus",
+      "name": "Gary Marcus",
+      "title": "“Vibe coded disasters piling up on Reddit”",
+      "url": "https://nitter.net/GaryMarcus/status/2048739005525877072#m",
+      "published_at": "2026-04-27T12:20:17+00:00"
+    },
+    {
+      "handle": "Ronald_vanLoon",
+      "account": "@Ronald_vanLoon",
+      "name": "Ronald van Loon",
+      "title": "AI Q: The Emotion-Reading Humanoid #Robot That Reacts Like a Real Being\nvia @XRoboHub\n\n#Robots #ArtificialIntelligence #Innovation #Technology #Tech",
+      "url": "https://nitter.net/Ronald_vanLoon/status/2048738501798121537#m",
+      "published_at": "2026-04-27T12:18:17+00:00"
+    },
+    {
+      "handle": "Ronald_vanLoon",
+      "account": "@Ronald_vanLoon",
+      "name": "Ronald van Loon",
+      "title": "Skild Brain Pairs With Jetson Thor to Power Next-Gen #Robotics Intelligence\nby @CyberRobooo\n  \n#Robot #Engineering #Innovation #Technology",
+      "url": "https://nitter.net/Ronald_vanLoon/status/2048723908744954357#m",
+      "published_at": "2026-04-27T11:20:17+00:00"
+    },
+    {
+      "handle": "paulg",
+      "account": "@paulg",
+      "name": "Paul Graham",
+      "title": "One of my favorite pictures. A guy I didn't know took it of us on a street in Palo Alto about 10 years ago.",
+      "url": "https://nitter.net/paulg/status/2048704073356935676#m",
+      "published_at": "2026-04-27T10:01:28+00:00"
+    },
+    {
+      "handle": "paulg",
+      "account": "@paulg",
+      "name": "Paul Graham",
+      "title": "You never need to describe something as a \"bad take.\" If it's false or irrelevant or omits something important, you can just say so. And if it's true, relevant, and complete, it's not a bad take.",
+      "url": "https://nitter.net/paulg/status/2048701354672050286#m",
+      "published_at": "2026-04-27T09:50:40+00:00"
+    },
+    {
+      "handle": "paulg",
+      "account": "@paulg",
+      "name": "Paul Graham",
+      "title": "Worrying that your startup will be eaten by the model companies is like worrying that your life will be constrained after you become a movie star. You're far more likely simply to fail.",
+      "url": "https://nitter.net/paulg/status/2048677984106664227#m",
+      "published_at": "2026-04-27T08:17:48+00:00"
+    },
+    {
+      "handle": "paulg",
+      "account": "@paulg",
+      "name": "Paul Graham",
+      "title": "RT by @paulg: Whenever I go to Paris to talk about investing in YC startups, I'm always amazed how much the French just LOVE Y Combinator.  Nous t'aimons aussi, France.\n\nMy French friend of @Fundoraclub wanted to see YC from the inside...and share it with the people of France.  This is the result: a 90 minute insiders documentary.  \n\nI don't work for Y Combinator itself, but I'll give you the experience I've had as a founder, alumni, investor etc.  He showed up in March with cameras, videographers, newscasters, youtubers.  He brought half the French tech press. \n\nWe spent 4 full days visiting YC founder offices and hacker houses.  Going to pre-demo day practice sessions.  Late night bar hopping with YC founders.  Interviews with YC partners.  \n\nIt was real.  It was unfiltered.  And it was inspiring.\n\nI went to Paris last week with my daughter Callie to watch it in a packed movie theater.  This crowd of 500+ French investors got inspired about investing into YC startups.  After watching this movie, they understand what I wish everyone understood:  YC founders are incredibly capable and resilient builders that want to solve problems and YC helps them become formidable founders.  It's impossible to not be inspired by them.\n\nAlan and Bradley Lafond just released the movie on Youtube (link below).  Enjoy it!  J'espère que vous l'apprécierez!\n\nA big thank you to @dessaigne, @garrytan, Victoria Holst and everyone at YC for helping us.  This wasn't an official YC event (our fund and Fundora are not a part of YC to be clear).  But they were so welcoming and generous!\n\nIt's an honor to share with France (and now with y'all) the experience I've gotten from YC.  Our fund Orange Collective exists to help spread the YC love.  If you were thinking of joining us as an investor for Fund I, contact me now before the final close on June 1st.  If you're in France, contact Fundora. \n\nAnd big thank you to @nico_laqua, @qhoang09, @gregpr07, @mamagnus00, @smthomas3, @abhiaiyer, @marieschneegans, Veiga Management, Fundora and all the YC founders that hosted us!",
+      "url": "https://nitter.net/jasonfreedman/status/2048615296613937201#m",
+      "published_at": "2026-04-27T04:08:42+00:00"
+    },
+    {
+      "handle": "GaryMarcus",
+      "account": "@GaryMarcus",
+      "name": "Gary Marcus",
+      "title": "RT by @GaryMarcus: The greatest con of the decade was calling autocomplete “AI”. \n\nThe second greatest is calling autocomplete-in-a-loop an “agent”.",
+      "url": "https://nitter.net/atmoio/status/2048608025464705084#m",
+      "published_at": "2026-04-27T03:39:49+00:00"
+    },
+    {
+      "handle": "elonmusk",
+      "account": "@elonmusk",
+      "name": "Elon Musk",
+      "title": "Grok Imagine",
+      "url": "https://nitter.net/elonmusk/status/2048600964102246438#m",
+      "published_at": "2026-04-27T03:11:45+00:00"
+    },
+    {
+      "handle": "GaryMarcus",
+      "account": "@GaryMarcus",
+      "name": "Gary Marcus",
+      "title": "“Always keep a separate backup.” For sure, every experienced programmer should know this.\n\n𝘉𝘶𝘵 𝘸𝘦 𝘫𝘶𝘴𝘵 𝘤𝘳𝘦𝘢𝘵𝘦𝘥 𝘢 𝘸𝘩𝘰𝘭𝘦 𝘨𝘦𝘯𝘦𝘳𝘢𝘵𝘪𝘰𝘯 𝘰𝘧 𝘷𝘪𝘣𝘦 𝘤𝘰𝘥𝘦𝘳𝘴 𝘸𝘩𝘰 𝘥𝘰𝘯’𝘵.\n\nAnd we now have a legion of synthetic coding agents (like Cursor) that also apparently don’t always follow this basic principle, either.\n\n𝗪𝗵𝗶𝗰𝗵 𝗶𝘀 *𝗲𝘅𝗮𝗰𝘁𝗹𝘆* 𝘄𝗵𝘆 𝘄𝗲 𝘀𝗵𝗼𝘂𝗹𝗱 𝗻𝗼𝘁 𝘁𝗿𝘂𝘀𝘁 𝗰𝗼𝗱𝗶𝗻𝗴 𝗮𝗴𝗲𝗻𝘁𝘀.",
+      "url": "https://nitter.net/GaryMarcus/status/2048593283639894520#m",
+      "published_at": "2026-04-27T02:41:14+00:00"
+    },
+    {
+      "handle": "elonmusk",
+      "account": "@elonmusk",
+      "name": "Elon Musk",
+      "title": "Curiosity & adventure are my philosophy\n\nhttps://grok.com/share/bGVnYWN5_d70e0164-cced-4096-99cb-38604067aa7a",
+      "url": "https://nitter.net/elonmusk/status/2048589691054694406#m",
+      "published_at": "2026-04-27T02:26:57+00:00"
+    },
+    {
+      "handle": "GaryMarcus",
+      "account": "@GaryMarcus",
+      "name": "Gary Marcus",
+      "title": "RT by @GaryMarcus: “fails less often than a human does” is a terrible metric. \n \nWe build deterministic software and test it to destruction to ensure it’s 99.99999 reliable . That’s been the basis of every critical application such as accounting payroll and logistics.  \n\nLLMs can’t get even close.",
+      "url": "https://nitter.net/SteveStricklan6/status/2048589239915577837#m",
+      "published_at": "2026-04-27T02:25:10+00:00"
+    },
+    {
+      "handle": "GaryMarcus",
+      "account": "@GaryMarcus",
+      "name": "Gary Marcus",
+      "title": "RT by @GaryMarcus: the beauty of a jagged frontier\nis that every failure is the user's fault\nand every breakthrough is the model's glory",
+      "url": "https://nitter.net/suchenzang/status/2048582672163995766#m",
+      "published_at": "2026-04-27T01:59:04+00:00"
+    },
+    {
+      "handle": "jason",
+      "account": "@jason",
+      "name": "Jason Calacanis",
+      "title": "Incredible writing from @euphoriaHBO",
+      "url": "https://nitter.net/Jason/status/2048580651985604783#m",
+      "published_at": "2026-04-27T01:51:02+00:00"
+    },
+    {
+      "handle": "GaryMarcus",
+      "account": "@GaryMarcus",
+      "name": "Gary Marcus",
+      "title": "RT by @GaryMarcus: I mean AI influencers here and everywhere are screaming you shouldn't get hired if you don't use agentic AI because you're deliberatly slowing everyone down and the moment something goes wrong it's your fault because you didn't understand the tool?",
+      "url": "https://nitter.net/BlackHackOfDoom/status/2048580122521780676#m",
+      "published_at": "2026-04-27T01:48:56+00:00"
+    },
+    {
+      "handle": "GaryMarcus",
+      "account": "@GaryMarcus",
+      "name": "Gary Marcus",
+      "title": "RT by @GaryMarcus: The only AGI that Sam Altman is after is Adjusted Gross Income.",
+      "url": "https://nitter.net/FrankRundatz/status/2048579079121555764#m",
+      "published_at": "2026-04-27T01:44:47+00:00"
+    },
+    {
+      "handle": "sama",
+      "account": "@sama",
+      "name": "Sam Altman",
+      "title": "so fun to see the reception to 5.5!\n\nthere is almost nothing that feels more gratifying to me than builders saying they find our tools useful.",
+      "url": "https://nitter.net/sama/status/2048554097985593849#m",
+      "published_at": "2026-04-27T00:05:31+00:00"
+    },
+    {
+      "handle": "sama",
+      "account": "@sama",
+      "name": "Sam Altman",
+      "title": "Our Principles:\n\nDemocratization, Empowerment, Universal Prosperity, Resilience, and Adaptability\n\nhttps://openai.com/index/our-principles/",
+      "url": "https://nitter.net/sama/status/2048552677433643427#m",
+      "published_at": "2026-04-26T23:59:53+00:00"
+    },
+    {
+      "handle": "elonmusk",
+      "account": "@elonmusk",
+      "name": "Elon Musk",
+      "title": "Remember this",
+      "url": "https://nitter.net/elonmusk/status/2048543344746250466#m",
+      "published_at": "2026-04-26T23:22:48+00:00"
+    },
+    {
+      "handle": "elonmusk",
+      "account": "@elonmusk",
+      "name": "Elon Musk",
+      "title": "Grad school indoctrination camps",
+      "url": "https://nitter.net/elonmusk/status/2048535299102265720#m",
+      "published_at": "2026-04-26T22:50:49+00:00"
+    },
+    {
+      "handle": "HarryStebbings",
+      "account": "@HarryStebbings",
+      "name": "Harry Stebbings",
+      "title": "We hired someone for the investing team. \n\nSomething I never planned to do. \n\nThey sent the team 3 new deals per day for 90 days straight. \n\nAll aligned to our stage, geography and deal type. \n\nThat’s how you hustle and get a job in VC. \n\nStay tuned. Reveal to come.",
+      "url": "https://nitter.net/HarryStebbings/status/2048531257399664920#m",
+      "published_at": "2026-04-26T22:34:46+00:00"
+    },
+    {
+      "handle": "elonmusk",
+      "account": "@elonmusk",
+      "name": "Elon Musk",
+      "title": "RT by @elonmusk: 🚨BREAKING: I found Cole Allen's archived tweets.\n\nHe predicted \"Kamala wins all swing states,\" compared Trump's win to “Nazis getting elected,” and moved to Bluesky.\n\nThe scary part: he retweeted every mainstream Democrat on this platform.\n\nThread below. 👇\n\nWhat radicalized him were the same talking points repeated every day on the left.",
+      "url": "https://nitter.net/KanekoaTheGreat/status/2048512831692452091#m",
+      "published_at": "2026-04-26T21:21:33+00:00"
+    },
+    {
+      "handle": "DavidSacks",
+      "account": "@DavidSacks",
+      "name": "David Sacks",
+      "title": "MSM hoax factories like the Atlantic love to allege conflicts of interest without ever disclosing their own.",
+      "url": "https://nitter.net/DavidSacks/status/2048502978626113625#m",
+      "published_at": "2026-04-26T20:42:24+00:00"
+    },
+    {
+      "handle": "jason",
+      "account": "@jason",
+      "name": "Jason Calacanis",
+      "title": "I’ve invested in 700 private companies \n\nProviding liquidity and loans to high performing founders is completely standard. \n\nIn fact, investors encourage loans and secondary sales for founders to enable them to go for the Gold — which is exactly what SpaceX has done. \n\nThe @NYTimesPR is presenting this as a controversy, when in fact it’s the private company playbook in 2026. \n\nAnother hit job from the NYT",
+      "url": "https://nitter.net/Jason/status/2048487905543237675#m",
+      "published_at": "2026-04-26T19:42:30+00:00"
+    },
+    {
+      "handle": "HarryStebbings",
+      "account": "@HarryStebbings",
+      "name": "Harry Stebbings",
+      "title": "I have interviewed 1,000 of the best CEOs of the last 10 years. \n\nAdam Foroughi, Founder @AppLovin is easily top 3, ever. \n\n$160BN Market Cap \n\n$5.48BN Revenue\n\n$10M EBITDA per head \n\n82%+ margins\n\nJust 450 people in core business 🤯 \n\nNo other business on the planet has numbers like this. \n\nEpisode tomorrow 👇",
+      "url": "https://nitter.net/HarryStebbings/status/2048486182904852537#m",
+      "published_at": "2026-04-26T19:35:39+00:00"
+    },
+    {
+      "handle": "ylecun",
+      "account": "@ylecun",
+      "name": "Yann LeCun",
+      "title": "RT by @ylecun: Republicans have been making this argument my entire life. We had 8 years of Clinton, 8 years of Obama, 4 years of Biden— never became a socialism. But you know what we got? More jobs, lower unemployment, higher GDP in Democratic administrations than every GOP administration in the last 3 decades. Without fail.",
+      "url": "https://nitter.net/briantylercohen/status/2048469956627468510#m",
+      "published_at": "2026-04-26T18:31:11+00:00"
+    },
+    {
+      "handle": "jason",
+      "account": "@jason",
+      "name": "Jason Calacanis",
+      "title": "Ok @Acosta, balls in your court",
+      "url": "https://nitter.net/Jason/status/2048465651723882972#m",
+      "published_at": "2026-04-26T18:14:04+00:00"
+    },
+    {
+      "handle": "jason",
+      "account": "@jason",
+      "name": "Jason Calacanis",
+      "title": "The NYTimes focus last week was micro-looting, social murder and meaningless private company transactions designed to ferment class warfare.\n\nDisgraziad",
+      "url": "https://nitter.net/Jason/status/2048463405590225173#m",
+      "published_at": "2026-04-26T18:05:09+00:00"
+    },
+    {
+      "handle": "elonmusk",
+      "account": "@elonmusk",
+      "name": "Elon Musk",
+      "title": "Accurate",
+      "url": "https://nitter.net/elonmusk/status/2048456433981591867#m",
+      "published_at": "2026-04-26T17:37:26+00:00"
+    },
+    {
+      "handle": "DavidSacks",
+      "account": "@DavidSacks",
+      "name": "David Sacks",
+      "title": "RT by @DavidSacks: Accurate",
+      "url": "https://nitter.net/elonmusk/status/2048456433981591867#m",
+      "published_at": "2026-04-26T17:37:26+00:00"
+    },
+    {
+      "handle": "elonmusk",
+      "account": "@elonmusk",
+      "name": "Elon Musk",
+      "title": "RT by @elonmusk: Falcon 9 launches 25 @Starlink satellites from California",
+      "url": "https://nitter.net/SpaceX/status/2048453949381091634#m",
+      "published_at": "2026-04-26T17:27:34+00:00"
+    },
+    {
+      "handle": "ylecun",
+      "account": "@ylecun",
+      "name": "Yann LeCun",
+      "title": "RT by @ylecun: Trump just fired all 24 members of the National Science Board. Every single one. By email. No warning. No reason given. The board has existed since 1950.\n\nThe National Science Board is the independent body that oversees the National Science Foundation, the agency that distributes $9 billion in research grants every year. \n\nIts members are scientists and engineers from universities and industry. They serve six-year staggered terms specifically so they cross presidential administrations and stay independent of whoever is in power.\n\nOn Friday, every single one of them got the same boilerplate email from Mary Sprowls of the Presidential Personnel Office: \"On behalf of President Donald J Trump, I am writing to inform you that your position as a member of the National Science Board is terminated, effective immediately. Thank you for your service.\"\n\nThat's it. That's the whole letter. For 76 years of institutional independence.\n\nThe NSF funds the basic science behind MRIs. Cellphones. LASIK eye surgery. GPS. The internet itself. The Antarctic research stations. The deep-space telescopes. The research vessels mapping the ocean floor. Every breakthrough that made America the world's leader in science for the better part of a century traces back through grants this agency made and this board approved.\n\nThe board chair, Victor McCrary, was actively advising Congress on Trump's proposed 55% cut to NSF's budget. The board was helping fight back. So Trump fired the board.\n\nMarvi Matos Rodriguez, one of the fired members, told reporters she had been reviewing an 80-page report as part of her board duties just days before being terminated. \n\nKeivan Stassun, a physicist at Vanderbilt, said NSF's leadership had already stopped responding to board oversight requests months ago. \"We would ask them, 'Are you following board governance directives?' And their answer would be, in effect, 'We don't listen to you anymore.'\"\n\nNow there's no board to answer to.\n\nRep. Zoe Lofgren of California, the top Democrat on the House Science Committee, called it \"the latest stupid move made by a president who continues to harm science and American innovation. Will the president fill the NSB with MAGA loyalists who won't stand up to him as he hands over our leadership in science to our adversaries?\"\n\nThat's the actual question. \n\nBecause while Trump is firing American scientists, China is building research universities at a rate we cannot match. The CDC just buried a study showing vaccines work.\n\n RFK Jr. runs HHS. The EPA is gutted. The Forest Service is being broken. Half of American children are breathing dangerous air. And now the people who decide what gets researched in the United States have all been fired by email on a Friday afternoon.",
+      "url": "https://nitter.net/Gianl1974/status/2048453901930660058#m",
+      "published_at": "2026-04-26T17:27:23+00:00"
+    },
+    {
+      "handle": "jason",
+      "account": "@jason",
+      "name": "Jason Calacanis",
+      "title": "Who made this?!",
+      "url": "https://nitter.net/Jason/status/2048450286902235560#m",
+      "published_at": "2026-04-26T17:13:01+00:00"
+    },
+    {
+      "handle": "elonmusk",
+      "account": "@elonmusk",
+      "name": "Elon Musk",
+      "title": "RT by @elonmusk: In shocking news, calling your political opponents Nazis makes crazy people want to kill them. Who could have predicted this?",
+      "url": "https://nitter.net/KonstantinKisin/status/2048448438715445382#m",
+      "published_at": "2026-04-26T17:05:40+00:00"
+    },
+    {
+      "handle": "jason",
+      "account": "@jason",
+      "name": "Jason Calacanis",
+      "title": "I’m proud to announce I’m hosting an exhibition cage match between @Acosta and @mtracey on July 4th \n\n$100,000 cash prize \n\nVegas \n\n3, 3 minute rounds",
+      "url": "https://nitter.net/Jason/status/2048437340218044499#m",
+      "published_at": "2026-04-26T16:21:34+00:00"
+    },
+    {
+      "handle": "jason",
+      "account": "@jason",
+      "name": "Jason Calacanis",
+      "title": "Once again, the substack party result in a Donnybrook — it’s like the source awards for wordmaxxers",
+      "url": "https://nitter.net/Jason/status/2048436081725464959#m",
+      "published_at": "2026-04-26T16:16:34+00:00"
+    },
+    {
+      "handle": "elonmusk",
+      "account": "@elonmusk",
+      "name": "Elon Musk",
+      "title": "RT by @elonmusk: 25% of very liberal people say political violence can “sometimes be justified.”\n\nAmong very conservative people it’s just 3%.\n\nIn other words, the far left is 8x more likely to support political violence as the far right.\n\nStop pretending this is a “both sides” problem. It’s not.",
+      "url": "https://nitter.net/RobertMSterling/status/2048435593244237849#m",
+      "published_at": "2026-04-26T16:14:38+00:00"
+    },
+    {
+      "handle": "ylecun",
+      "account": "@ylecun",
+      "name": "Yann LeCun",
+      "title": "RT by @ylecun: Existential risk mongers are a small, very vocal cult with a lot of very clever online astroturfing skills. \n\nPoliticians never waste a good fake crisis, which is why they're perfect for Bernie to try to seize the means of production back from the private sphere.\n\nImagine if a mainstream politician put the Heaven's Gate suicide cult on the platform in 1997?\n\nThat's where we are in American politics at the edges today. \n\nWe've jumped the shark into the absurd and we've completely lost the thread of reality in America today.\n\nAnd it isn't AI that caused this madness. It is good old fashioned human hallucination, story telling and delusion.\n\nSociety should never make policy about imaginary future threats that have no actual basis in reality. AI is already used by billions and it is nothing like what people imagined it to be and we're all still here and the problems have been ridiculously minimal even by the standards of past tech revolutions.\n\nIf I told you there was a technology where 1.5 million people would die every year and injure 50 million would you sign up for that tech? The answer is yes because it's cars. You probably got in one today and accepted that risk and never even thought about it.\n\nIn contrast, the amount of people who died or were injured by AI is a tiny fraction of a percent and even those cases are probably specious at best.\n\nIn fact, AI has actually saved countless lives. It's saved lives through drug discovery by helping create the COVID and flu vaccines. It's saved lives through anti-lock breaks. It's saved lives with self driving cars that are 10X safer than human drivers and yet the only thing you read about self driving cars in the news are the incredibly rare stories of the very few times it did actually kill a dog or injure someone.\n\nIf that sounds irrational and insane that's because it is.\n\nWe're worried about a technology with a nearly perfect track record of safety and are totally fine with a technology that kills people every day?\n\nWelcome to the irrationality of the human mind!\n\nIf the pause AI cult had their way we'd still be stuck on GPT2 which was a hallucinating mess and we'd have made no progress to the much more sound and highly aligned and intelligent and useful models we have now.\n\nThat's because you can't make progress by imagining it in your mind or writing idiotic essays on Less Wrong to other mental masturbators. \n\nYou solve problems in the real world through trial and error. \n\nThe way to make AI safe is by building it and iterating in the real world. \n\nThere is no other way.",
+      "url": "https://nitter.net/Dan_Jeffries1/status/2048432684930654430#m",
+      "published_at": "2026-04-26T16:03:04+00:00"
+    },
+    {
+      "handle": "sama",
+      "account": "@sama",
+      "name": "Sam Altman",
+      "title": "feels like a good time to seriously rethink how operating systems and user interfaces are designed\n\n(also the internet; there should be a protocol that is equally usable by people and agents)",
+      "url": "https://nitter.net/sama/status/2048428561481265539#m",
+      "published_at": "2026-04-26T15:46:41+00:00"
+    },
+    {
+      "handle": "sama",
+      "account": "@sama",
+      "name": "Sam Altman",
+      "title": "\"post-AGI, no one is going to work and the economy is going to collapse\"\n\n\"i am switching to polyphasic sleep because GPT-5.5 in codex is so good that i can't afford to be sleeping for such long stretches and miss out on working\"",
+      "url": "https://nitter.net/sama/status/2048426122854228141#m",
+      "published_at": "2026-04-26T15:37:00+00:00"
+    },
+    {
+      "handle": "HarryStebbings",
+      "account": "@HarryStebbings",
+      "name": "Harry Stebbings",
+      "title": "Seeing two types of founders emerge in this moment:\n\nThe tourists and the terminators. \n\nThe terminators are salivating at the opportunity ahead. Hungrier than ever. More ambitious than ever. They want it more than ever. \n\nThe tourists. They want to sell. They are scared. They do not want to commit 10 years to such uncertainty. \n\nPack is separating.",
+      "url": "https://nitter.net/HarryStebbings/status/2048418806867870115#m",
+      "published_at": "2026-04-26T15:07:55+00:00"
+    },
+    {
+      "handle": "DavidSacks",
+      "account": "@DavidSacks",
+      "name": "David Sacks",
+      "title": "RT by @DavidSacks: Cole Allen, the gunman from last night’s WH Correspondents Dinner, maintained an active online presence, especially on the leftwing social media platform Bluesky where he went by the handle http://ColdForce.bsky.social with multiple references violence and guns.\n\nIn one post he calls President Trump the Antichrist.\n\nIn another he recommends buying guns in reaction to Trump’s DOJ exploring ways to ban firearm purchases from transgenders.\n\nIn one post he calls Trump a sociopathic mob boss and in another referred to him as a traitor with known connections to Putin, repeating a favorite leftwing Russian Hoax talking point.\n\nHe also attacks JD Vance for advocating an end to America’s funding the war in Ukraine and for his criticisms of the Pope. He seems pretty fixated on Ukraine more generally.\n\nHe also frequently interacts with Will Stancil’s Bluesky account, among others.",
+      "url": "https://nitter.net/AndrewKolvet/status/2048417712439689346#m",
+      "published_at": "2026-04-26T15:03:35+00:00"
+    },
+    {
+      "handle": "paulg",
+      "account": "@paulg",
+      "name": "Paul Graham",
+      "title": "RT by @paulg: Yeah okay, Lego bros, brodettes and brotheys are cooked with this one.\n\nGPT 2 Image can create full Lego sets! With actual Bricklink IDs so you can order the parts and build it.\n\nWhole new business opportunity here for the taking.",
+      "url": "https://nitter.net/DennisonBertram/status/2048413815675539816#m",
+      "published_at": "2026-04-26T14:48:06+00:00"
+    },
+    {
+      "handle": "paulg",
+      "account": "@paulg",
+      "name": "Paul Graham",
+      "title": "Every post, I block and report a couple accounts using AI-generated replies. It feels much the same as picking up litter on a city street; I don't know if it has any effect, but it feels like I ought to at least try to keep the site clean.",
+      "url": "https://nitter.net/paulg/status/2048413578789634100#m",
+      "published_at": "2026-04-26T14:47:09+00:00"
+    },
+    {
+      "handle": "paulg",
+      "account": "@paulg",
+      "name": "Paul Graham",
+      "title": "Durer was the original Dr Seuss.",
+      "url": "https://nitter.net/paulg/status/2048411898081583547#m",
+      "published_at": "2026-04-26T14:40:28+00:00"
+    },
+    {
+      "handle": "paulg",
+      "account": "@paulg",
+      "name": "Paul Graham",
+      "title": "Writing a talk to give in Stockholm. The prospect of speaking to a large group of people is no longer frightening, but writing a talk is as much work as ever. I'm no longer afraid of audiences, but I'm still just as afraid of making mistakes.",
+      "url": "https://nitter.net/paulg/status/2048411021329453562#m",
+      "published_at": "2026-04-26T14:36:59+00:00"
+    },
+    {
+      "handle": "HarryStebbings",
+      "account": "@HarryStebbings",
+      "name": "Harry Stebbings",
+      "title": "The best founders I know all text their investors. \n\nNone of them email them. \n\nThe relationship will blossom and deepen in a matter of messages.",
+      "url": "https://nitter.net/HarryStebbings/status/2048400836024283246#m",
+      "published_at": "2026-04-26T13:56:31+00:00"
+    },
+    {
+      "handle": "jason",
+      "account": "@jason",
+      "name": "Jason Calacanis",
+      "title": "RT by @Jason: Random pic of @Jason protecting our $TAO bags",
+      "url": "https://nitter.net/nordin_eth/status/2048399674269213067#m",
+      "published_at": "2026-04-26T13:51:54+00:00"
+    },
+    {
+      "handle": "ylecun",
+      "account": "@ylecun",
+      "name": "Yann LeCun",
+      "title": "Shooting oneself in the foot?\nNope.\nShooting oneself in the prefrontal cortex.",
+      "url": "https://nitter.net/ylecun/status/2048399621492236615#m",
+      "published_at": "2026-04-26T13:51:41+00:00"
+    },
+    {
+      "handle": "paulg",
+      "account": "@paulg",
+      "name": "Paul Graham",
+      "title": "RT by @paulg: 'Action is now needed': Over 60 ex-U.K. ambassadors call to sanction Israel over West Bank\nhttps://www.haaretz.com/west-bank/2026-04-26/ty-article/.premium/over-60-ex-uk-ambassadors-call-to-sanction-israel-over-west-bank/0000019d-c950-d11b-a7df-ef5a5fba0000",
+      "url": "https://nitter.net/haaretzcom/status/2048396013816152216#m",
+      "published_at": "2026-04-26T13:37:21+00:00"
+    },
+    {
+      "handle": "elonmusk",
+      "account": "@elonmusk",
+      "name": "Elon Musk",
+      "title": "RT by @elonmusk: How do you think the left redistributes wealth?\n\nViolence\n\nHow do you think the left seizes the means of production?\n\nViolence\n\nHow do you think they censor and surveil opponents?\n\nViolence\n\nWhat do you think the left means by “the struggle”?\n\nViolence",
+      "url": "https://nitter.net/TheAliceSmith/status/2048390094529216982#m",
+      "published_at": "2026-04-26T13:13:50+00:00"
+    },
+    {
+      "handle": "JeffDean",
+      "account": "@JeffDean",
+      "name": "Jeff Dean",
+      "title": "RT by @JeffDean: THE FIRST MAN IN HISTORY TO BREAK 2 HOURS IN A MARATHON!!!🤯🤯🤯\n\nSabastian Sawe 🇰🇪 has just shattered the World Record at the London Marathon, running 1:59:30!!!\n\nHe makes history as the first man to officially break 2 hours in the marathon.\n\nYomif Kejelcha 🇪🇹 in his debut ran 1:59:41 to become 2nd fastest alltime, while Jacob Kiplimo 🇺🇬 finished in 2:00:28.\n\nAll under the previous World Record.",
+      "url": "https://nitter.net/TrackGazette/status/2048351736037826877#m",
+      "published_at": "2026-04-26T10:41:25+00:00"
+    },
+    {
+      "handle": "ylecun",
+      "account": "@ylecun",
+      "name": "Yann LeCun",
+      "title": "RT by @ylecun: Never let critical thinking get in the way of extremist fantasy stories.\n\nIf you're on either side of this slider, congratulations, you may be a child in an adult costume body!\n\nBlack and white thinking is for children. \n\nWhen you become an adult it's time to put away childish things.",
+      "url": "https://nitter.net/Dan_Jeffries1/status/2048293118781296734#m",
+      "published_at": "2026-04-26T06:48:29+00:00"
+    },
+    {
+      "handle": "jason",
+      "account": "@jason",
+      "name": "Jason Calacanis",
+      "title": "The left has a serious violence problem, which @DavidSacks called out early and often. \n\nThis generation of woke democratic socialists are morally bankrupt. \n\nThey believe in looting and violence as a political tool — and they’re vocal about it. \n\nIf you called out the violent members of the January 6th riots, you also have to call out the radical left. \n\n#ballsandstrikes  https://x.com/EndWokeness/status/2048217117221065201/video/1",
+      "url": "https://nitter.net/Jason/status/2048249992163242220#m",
+      "published_at": "2026-04-26T03:57:07+00:00"
+    },
+    {
+      "handle": "jason",
+      "account": "@jason",
+      "name": "Jason Calacanis",
+      "title": "If you’re not condemning these lunatics, you’re advocating for the end of the American empire. \n\nI’m not for canceling people, but the fact the @nytimes and @newyorker not only employees these individuals, but selects them to represent their brands, shows exactly how bankrupt they are.",
+      "url": "https://nitter.net/Jason/status/2048247267182658004#m",
+      "published_at": "2026-04-26T03:46:17+00:00"
+    },
+    {
+      "handle": "eladgil",
+      "account": "@eladgil",
+      "name": "Elad Gil",
+      "title": "Saturday song\n\nhttps://youtu.be/D8MoLNxLE98?si=yRsm9viuy3NYvnJ0",
+      "url": "https://nitter.net/eladgil/status/2048230781739581745#m",
+      "published_at": "2026-04-26T02:40:47+00:00"
+    },
+    {
+      "handle": "sama",
+      "account": "@sama",
+      "name": "Sam Altman",
+      "title": "RT by @sama: That's exactly my view too, roughly compresses 2 weeks of our previous jobs to 1 day",
+      "url": "https://nitter.net/SebastienBubeck/status/2048224374264885396#m",
+      "published_at": "2026-04-26T02:15:19+00:00"
+    },
+    {
+      "handle": "sama",
+      "account": "@sama",
+      "name": "Sam Altman",
+      "title": "how can they write code so fast?!",
+      "url": "https://nitter.net/sama/status/2048165186482389253#m",
+      "published_at": "2026-04-25T22:20:08+00:00"
+    },
+    {
+      "handle": "sama",
+      "account": "@sama",
+      "name": "Sam Altman",
+      "title": "R to @sama: (and we will fix the former)",
+      "url": "https://nitter.net/sama/status/2048160448340767038#m",
+      "published_at": "2026-04-25T22:01:18+00:00"
+    },
+    {
+      "handle": "sama",
+      "account": "@sama",
+      "name": "Sam Altman",
+      "title": "we still get looksmaxxed on frontend a little but we IQmog hard now",
+      "url": "https://nitter.net/sama/status/2048160404376105179#m",
+      "published_at": "2026-04-25T22:01:08+00:00"
+    },
+    {
+      "handle": "ylecun",
+      "account": "@ylecun",
+      "name": "Yann LeCun",
+      "title": "RT by @ylecun: OPINION: \"Trump’s mismanagement has resulted in death, destruction, wasted tax dollars, and a huge loss in respect for the United States — all to accomplish nothing.\" https://ebx.sh/V5TJjQ",
+      "url": "https://nitter.net/PhillyInquirer/status/2048118689258487857#m",
+      "published_at": "2026-04-25T19:15:22+00:00"
+    },
+    {
+      "handle": "DavidSacks",
+      "account": "@DavidSacks",
+      "name": "David Sacks",
+      "title": "RT by @DavidSacks: .@POTUS: \"We want to beat China at the industry. We're leading with crypto, we're leading with AI, and I really feel I have an obligation... as a President, I have to be able to make sure that all of our industries do well. Crypto's a big industry.\"",
+      "url": "https://nitter.net/RapidResponse47/status/2048111588930986354#m",
+      "published_at": "2026-04-25T18:47:09+00:00"
+    },
+    {
+      "handle": "ylecun",
+      "account": "@ylecun",
+      "name": "Yann LeCun",
+      "title": "RT by @ylecun: When MTV News shut down, it felt like decades of culture vanished overnight 🕳️\n\nBut over 470,000 pages were already preserved.\n\nThat history didn’t disappear.\nIt was archived.\n\n📚 Read VANISHING CULTURE to see why it matters\n📖 Download & read: https://archive.org/details/vanishing-culture-2026\n🛒 Purchase in print: https://www.betterworldbooks.com/product/detail/vanishing-culture-a-report-on-our-fragile-cultural-record-9798995425014/new\n\n#VanishingCulture #DigitalMemory #InternetArchive #MTVNews #BookTwitter",
+      "url": "https://nitter.net/internetarchive/status/2048069805807128734#m",
+      "published_at": "2026-04-25T16:01:07+00:00"
+    },
+    {
+      "handle": "SatoshiBun",
+      "account": "@SatoshiBun",
+      "name": "Satoshi",
+      "title": "RT by @satoshibun: Another big reason why I don’t necessarily agree with changing the base designs, I think they’re perfect for a medium budget kids cartoon, Qwel’s new art style making them look more marshmallowy and cuddly proves that imo",
+      "url": "https://nitter.net/images_i_love3/status/2048061157685010444#m",
+      "published_at": "2026-04-25T15:26:45+00:00"
+    },
+    {
+      "handle": "paulg",
+      "account": "@paulg",
+      "name": "Paul Graham",
+      "title": "RT by @paulg: Journalists worldwide should stand up for colleagues who are murdered.",
+      "url": "https://nitter.net/NickKristof/status/2048043843690561556#m",
+      "published_at": "2026-04-25T14:17:57+00:00"
+    },
+    {
+      "handle": "DavidSacks",
+      "account": "@DavidSacks",
+      "name": "David Sacks",
+      "title": "RT by @DavidSacks: Probably the best take I have heard on why there is so much fear around software exposure in private equity and credit because of AI\n\nFrom David Sacks\n\n\"Historically we only had two good exits for software businesses. One was IPO. The other was M&A. Then these big private equity shops came along and gave us a third potential exit. You would sell to them and then they would raise the capital based on one third equity and two third debt. So it was debt financed buyouts. \n\nIt is something that has been around in the non technology part of the economy for a long time but was a relatively new entrant in the world of technology. And the reason for that is if you have debt financed a purchase, you need to have very stable cash flows. \n\nBecause if you miss and you cant pay your interest on the debt, you will lose all your equity because the debt holders will foreclose. \n\nIt was belief for a long time that software did have predictable cash flows, at least for the mature businesses.\"",
+      "url": "https://nitter.net/BoringBiz_/status/2048037985765949537#m",
+      "published_at": "2026-04-25T13:54:41+00:00"
+    },
+    {
+      "handle": "DavidSacks",
+      "account": "@DavidSacks",
+      "name": "David Sacks",
+      "title": "RT by @DavidSacks: Incredible return on investment! 💰💰💰",
+      "url": "https://nitter.net/elonmusk/status/2047877294476116184#m",
+      "published_at": "2026-04-25T03:16:09+00:00"
+    },
+    {
+      "handle": "erikbryn",
+      "account": "@erikbryn",
+      "name": "Erik Brynjolfsson",
+      "title": "Steve Jurvetson has a knack for seeing the future more clearly than just about anyone.  \n\nHere are some of his insights from his visit to my Lab.\n\n@FutureJurvetson  @Stanford @DigEconLab",
+      "url": "https://nitter.net/erikbryn/status/2047874760542200042#m",
+      "published_at": "2026-04-25T03:06:05+00:00"
+    },
+    {
+      "handle": "DavidSacks",
+      "account": "@DavidSacks",
+      "name": "David Sacks",
+      "title": "SPLC invested $270k in Charlottesville and got $81 million in additional donations. Extraordinary returns.",
+      "url": "https://nitter.net/DavidSacks/status/2047871382923469241#m",
+      "published_at": "2026-04-25T02:52:39+00:00"
+    },
+    {
+      "handle": "DavidSacks",
+      "account": "@DavidSacks",
+      "name": "David Sacks",
+      "title": "Marc Benioff is the apex cloud founder. He and Salesforce have turned every previous technology wave to their advantage. Cloud, social, mobile, big data. I predict AI will be no different.",
+      "url": "https://nitter.net/DavidSacks/status/2047867592790946189#m",
+      "published_at": "2026-04-25T02:37:36+00:00"
+    },
+    {
+      "handle": "DavidSacks",
+      "account": "@DavidSacks",
+      "name": "David Sacks",
+      "title": "RT by @DavidSacks: SACKS: “We're really lucky that [Trump] is President … when this AI revolution is happening.”\n\nJASON: “What would happen if Kamala ‘Ding Dong’ was in right now?”\n\nSACKS: “We'd have no data centers, they'd be using AI to censor us, and they'd be promoting DEI values through AI.”",
+      "url": "https://nitter.net/TheChiefNerd/status/2047842000632713369#m",
+      "published_at": "2026-04-25T00:55:54+00:00"
+    },
+    {
+      "handle": "DavidSacks",
+      "account": "@DavidSacks",
+      "name": "David Sacks",
+      "title": "RT by @DavidSacks: David Sacks: We're lucky that Trump's the President when this AI revolution is happening.\n\n@Jason \"Do an alt history, Sacks, what would happen if Kamala Ding Dong was in right now?\"\n\n@DavidSacks \"We'd have no data centers, and they'd be using AI to censor us, and they'd be promoting DEI values through AI. That was in the Biden executive order.\n\nPresident Trump just wants the country to win and be successful.",
+      "url": "https://nitter.net/jayplemons/status/2047823154655932696#m",
+      "published_at": "2026-04-24T23:41:01+00:00"
+    },
+    {
+      "handle": "erikbryn",
+      "account": "@erikbryn",
+      "name": "Erik Brynjolfsson",
+      "title": "RT by @erikbryn: Interesting study by @erikbryn  and @avi_collis  showing big consumer welfare gains from AI. Reminds us that large portion of the economic value of AI will not show up in traditional economic indicators. https://digitaleconomy.stanford.edu/publication/what-is-generative-ai-worth/",
+      "url": "https://nitter.net/RonnieChatterji/status/2047821064437424288#m",
+      "published_at": "2026-04-24T23:32:43+00:00"
+    },
+    {
+      "handle": "HarryStebbings",
+      "account": "@HarryStebbings",
+      "name": "Harry Stebbings",
+      "title": "This week I got to sit down with two truly generational CEOs and ask them anything: \n\n@tobi @Shopify ($160BN Market Cap)\n\nAdam Foroughi @AppLovin ($160BN Market Cap)\n\nI have the best job in the world.",
+      "url": "https://nitter.net/HarryStebbings/status/2047792195868967172#m",
+      "published_at": "2026-04-24T21:38:00+00:00"
+    },
+    {
+      "handle": "SatoshiBun",
+      "account": "@SatoshiBun",
+      "name": "Satoshi",
+      "title": "RT by @satoshibun: Baby’s first con",
+      "url": "https://nitter.net/Aaron_Margolin/status/2047748882952778044#m",
+      "published_at": "2026-04-24T18:45:53+00:00"
+    },
+    {
+      "handle": "eladgil",
+      "account": "@eladgil",
+      "name": "Elad Gil",
+      "title": "RT by @eladgil: Adopting Claude speak in my regular life, episode 1:\n\nPartner: Did you do the dishes tonight?\nMe: Yes they're done.\nPartner: Why are they still dirty?\nMe: You're right to push back. I didn't actually do them.",
+      "url": "https://nitter.net/awnihannun/status/2047748613976264835#m",
+      "published_at": "2026-04-24T18:44:49+00:00"
+    },
+    {
+      "handle": "SatoshiBun",
+      "account": "@SatoshiBun",
+      "name": "Satoshi",
+      "title": "RT by @satoshibun: Bring home a bundle of cuteness with the #tokidoki Baby Unicorno Series! 🦄🍼💖 Available on our website!",
+      "url": "https://nitter.net/tokidoki/status/2047723587528782152#m",
+      "published_at": "2026-04-24T17:05:22+00:00"
+    },
+    {
+      "handle": "SatoshiBun",
+      "account": "@SatoshiBun",
+      "name": "Satoshi",
+      "title": "RT by @satoshibun: Good morning! Rise and shine, gamers!",
+      "url": "https://nitter.net/shopculturefly/status/2047711254379393160#m",
+      "published_at": "2026-04-24T16:16:22+00:00"
+    },
+    {
+      "handle": "HarryStebbings",
+      "account": "@HarryStebbings",
+      "name": "Harry Stebbings",
+      "title": "How Claude Design Will Hurt Figma\n\n\"Claude Design will not replace Figma directly, but it will chip away at it.\n\nIt removes the need to wait for designers by letting people go straight from idea to product.\n\nThat bypass is the real threat, not a head-on competitor.\" @jasonlk\n\nLove to hear your thoughts on this @zoink @andrew__reed @karrisaarinen",
+      "url": "https://nitter.net/HarryStebbings/status/2047693043080261672#m",
+      "published_at": "2026-04-24T15:04:00+00:00"
+    },
+    {
+      "handle": "ylecun",
+      "account": "@ylecun",
+      "name": "Yann LeCun",
+      "title": "RT by @ylecun: A mathematician who shared an office with Claude Shannon at Bell Labs gave one lecture in 1986 that explains why some people win Nobel Prizes and other equally smart people spend their whole lives doing forgettable work.\n\nHis name was Richard Hamming. He won the Turing Award. He invented error-correcting codes that made modern computing possible. And he spent 30 years at Bell Labs sitting in a cafeteria at lunch watching which scientists became legendary and which ones faded into nothing.\n\nIn March 1986, he walked into a Bellcore auditorium in front of 200 researchers and told them exactly what he had seen.\n\nHere's the framework that has been quoted by every serious scientist for the last 40 years.\n\nHis opening line landed like a punch. He said most scientists he worked with at Bell Labs were just as smart as the Nobel Prize winners. Just as hardworking. Just as credentialed. And yet at the end of a 40-year career, one group had changed entire fields and the other group was forgotten by the time they retired.\n\nHe wanted to know what the difference actually was. And he said it wasn't luck. It wasn't IQ. It was a specific set of habits that almost nobody is willing to follow.\n\nThe first habit was the one that hurts the most to hear. He said most scientists deliberately avoid the most important problem in their field because the odds of failure are too high. They pick a safe adjacent problem, solve it cleanly, publish it, and move on. And because they never swing at the hard problem, they never hit it. He said if you do not work on an important problem, it is unlikely you will do important work. That is not a motivational line. That is a logical one.\n\nThe second habit was about doors. Literal doors. He noticed that the scientists at Bell Labs who kept their office doors closed got more done in the short term because they had no interruptions. But the scientists who kept their doors open got more done over a career. The open-door scientists were interrupted constantly. They also absorbed every new idea passing through the hallway. Ten years in, they were working on problems the closed-door scientists did not even know existed.\n\nThe third habit was inversion. When Bell Labs refused to give him the team of programmers he wanted, Hamming sat with the rejection for weeks. Then he flipped the question. Instead of asking for programmers to write the programs, he asked why machines could not write the programs themselves. That single inversion pushed him into the frontier of computer science. He said the pattern repeats everywhere. What looks like a defect, if you flip it correctly, becomes the exact thing that pushes you ahead of everyone else.\n\nThe fourth habit was the one that hit me the hardest. He said knowledge and productivity compound like interest. Someone who works 10 percent harder than you does not produce 10 percent more over a career. They produce twice as much. The gap doesn't add. It multiplies. And it compounds silently for years before anyone notices.\n\nHe finished the lecture with a line I have never been able to shake.\n\nHe said Pasteur's famous quote is right. Luck favors the prepared mind. But he meant it literally. You don't hope for luck. You engineer the conditions where luck can land on you. Open doors. Important problems. Inverted questions. Compounded hours. Those are not traits. Those are choices you make every single day.\n\nThe transcript has been sitting on the University of Virginia's computer science website for almost 30 years. The video is free on YouTube. Stripe Press reprinted the full lectures as a book in 2020 and Bret Victor wrote the foreword.\n\nHamming died in 1998. He gave his final lecture a few weeks before. He was 82.\n\nThe lecture that explains why some careers become legendary and others disappear is still free. Most people who could benefit from it will never open it.",
+      "url": "https://nitter.net/ihtesham2005/status/2047680485208531152#m",
+      "published_at": "2026-04-24T14:14:06+00:00"
+    },
+    {
+      "handle": "ylecun",
+      "account": "@ylecun",
+      "name": "Yann LeCun",
+      "title": "RT by @ylecun: Feel like very few serious people make the argument Britain should develop its own LLM? Certainly not an argument you see made in Westminster often during the sovereignty debate. \n\nAlso some other eyebrow-raising sections in this interview.",
+      "url": "https://nitter.net/Discoplomacy/status/2047676640059154653#m",
+      "published_at": "2026-04-24T13:58:49+00:00"
+    },
+    {
+      "handle": "JeffDean",
+      "account": "@JeffDean",
+      "name": "Jeff Dean",
+      "title": "R to @JeffDean: The Arxiv for the new Decoupled DiLoCo paper is now up: https://arxiv.org/abs/2604.21428v1",
+      "url": "https://nitter.net/JeffDean/status/2047665074471387456#m",
+      "published_at": "2026-04-24T13:12:52+00:00"
+    },
+    {
+      "handle": "naval",
+      "account": "@naval",
+      "name": "Naval Ravikant",
+      "title": "RT by @naval: Fundrise VCX is exactly why USVC needs to exist.\n\nRetail wants access to OpenAI, Anthropic, SpaceX, xAI, etc. That demand is not going away.\n\nVCX turned that demand into a liquid public wrapper that still trades around 4-5x NAV.\n\nAt today’s ~$90 price vs. recent NAV references around ~$19, buyers may be paying roughly $4-5 for every $1 of actual private tech exposure.\n\nAccess at the wrong price is not access. It’s just scarcity monetized.\n\nYes, venture has fees. It always has. You pay for access, selection, and portfolio construction.\n\nBut paying venture fees is very different from paying 4-5x NAV for the wrapper before the venture return even happens.\n\nThe companies inside VCX can be great and retail can still get wrecked if the premium collapses.\n\nUSVC is the cleaner answer: diversified private tech exposure, SEC-registered, available to unaccredited investors, and bought around NAV instead of through a hyped public wrapper trading miles above its assets.\n\nThe real test for me is simple: my mom wants to invest in startups/private tech.\n\nI would rather she do USVC 100x over VCX, because at least with USVC I can understand the structure, explain the tradeoffs, and know she is not just paying a massive public-market hype premium for the wrapper.\n\nIn venture, access matters.\n\nBut the wrapper can still ruin the investment. And right now, some products are monetizing retail demand for private AI/startup exposure more than they are solving it.\n\nUSVC is at least aimed at the right problem.",
+      "url": "https://nitter.net/alexbass/status/2047645157080658335#m",
+      "published_at": "2026-04-24T11:53:43+00:00"
+    },
+    {
+      "handle": "SatoshiBun",
+      "account": "@SatoshiBun",
+      "name": "Satoshi",
+      "title": "Im genuinely this  Close  to  killing myself   rn  &  this  Shit  happens  like Okay",
+      "url": "https://nitter.net/satoshibun/status/2047641832624893993#m",
+      "published_at": "2026-04-24T11:40:30+00:00"
+    },
+    {
+      "handle": "SatoshiBun",
+      "account": "@SatoshiBun",
+      "name": "Satoshi",
+      "title": "RT by @satoshibun: How do Delilah Defenders actively defend her actions with these Toons literally existing.\n\nI just don't get it",
+      "url": "https://nitter.net/DaCapTainXD/status/2047633324676440561#m",
+      "published_at": "2026-04-24T11:06:42+00:00"
+    },
+    {
+      "handle": "SatoshiBun",
+      "account": "@SatoshiBun",
+      "name": "Satoshi",
+      "title": "RT by @satoshibun: 😾",
+      "url": "https://nitter.net/aaa___kanato/status/2047606779677376714#m",
+      "published_at": "2026-04-24T09:21:13+00:00"
+    },
+    {
+      "handle": "SatoshiBun",
+      "account": "@SatoshiBun",
+      "name": "Satoshi",
+      "title": "RT by @satoshibun: ♦️━━━━━━━━━━━━━♣️\n⠀⠀⠀⠀⠀⠀⠀『#文字化化』\n⠀「不思議の国のアリス」テーマ\n⠀グラフアート新商品発売決定！\n♠️━━━━━━━━━━━━━♥️\n\n📅5/23～6/5\n📍eeo Store 池袋本店\n🛒通販でも販売開始！：https://eeo.today/store/101/title/6785?utm_source=twitter&utm_medium=social&utm_campaign=20260424_MJBK\n\n商品詳細はURLとツリーをチェック🎩🐰\n\n#Homicipher",
+      "url": "https://nitter.net/eeo_store/status/2047586383519531500#m",
+      "published_at": "2026-04-24T08:00:10+00:00"
+    },
+    {
+      "handle": "naval",
+      "account": "@naval",
+      "name": "Naval Ravikant",
+      "title": "R to @naval: x.com/avlok/status/204754692…",
+      "url": "https://nitter.net/naval/status/2047550896670908809#m",
+      "published_at": "2026-04-24T05:39:10+00:00"
+    },
+    {
+      "handle": "naval",
+      "account": "@naval",
+      "name": "Naval Ravikant",
+      "title": "RT by @naval: I’ve seen a lot of questions about USVC, AngelList’s newest product. First, don’t invest in venture capital if you can’t afford to lose your money. Put your savings somewhere safer. But if you’re considering USVC, here’s a thread that answers the most common questions and explains how it works:",
+      "url": "https://nitter.net/avlok/status/2047546920747307466#m",
+      "published_at": "2026-04-24T05:23:22+00:00"
+    },
+    {
+      "handle": "liuliu",
+      "account": "@liuliu",
+      "name": "刘进",
+      "title": "I've been thinking about local LLMs a lot these days.",
+      "url": "https://nitter.net/liuliu/status/2047527371486658814#m",
+      "published_at": "2026-04-24T04:05:41+00:00"
+    },
+    {
+      "handle": "naval",
+      "account": "@naval",
+      "name": "Naval Ravikant",
+      "title": "Hari nails it:\n\n“Don’t listen to people who don’t know how private markets work.”",
+      "url": "https://nitter.net/naval/status/2047520212787015748#m",
+      "published_at": "2026-04-24T03:37:14+00:00"
+    },
+    {
+      "handle": "naval",
+      "account": "@naval",
+      "name": "Naval Ravikant",
+      "title": "R to @naval: x.com/haridigresses/status/2…",
+      "url": "https://nitter.net/naval/status/2047519250433421604#m",
+      "published_at": "2026-04-24T03:33:25+00:00"
+    },
+    {
+      "handle": "naval",
+      "account": "@naval",
+      "name": "Naval Ravikant",
+      "title": "R to @naval: x.com/nivi/status/2047471220…",
+      "url": "https://nitter.net/naval/status/2047510419565420779#m",
+      "published_at": "2026-04-24T02:58:19+00:00"
+    },
+    {
+      "handle": "eladgil",
+      "account": "@eladgil",
+      "name": "Elad Gil",
+      "title": "New life plan-\n \nMove to Brooklyn\nGet neck tat\nRide bike everywhere\nCold brew own coffee (also start drinking coffee)\nAdopt 12 year old stray cat, name him Nietzsche\nVape mango pods, but ironically\nWear scarf everywhere during summer",
+      "url": "https://nitter.net/eladgil/status/2047489459378397604#m",
+      "published_at": "2026-04-24T01:35:02+00:00"
+    },
+    {
+      "handle": "naval",
+      "account": "@naval",
+      "name": "Naval Ravikant",
+      "title": "RT by @naval: USVC is a new fund being offered by Naval, it's been discussed widely on X. I have some thoughts and why people should look into it. I have no connection with it and not being paid to shill. \n\nBack when I started dating my wife, I told her to set up a Roth IRA and buy Apple. Every year, I'd have her put the max limit into a Roth IRA and buy Apple. Apple was $20 or so. When I checked it earlier this year, I was blown away. It was a small mount of money that grew into something nice.\n\nApple, Facebook, Nvidia, Tesla, etc. would IPO early. You could have MASSIVE outsized gains if you were investing in the early 2010's. \n\nYou couldn't get into them pre-IPO unless you had a connection. There are people on this site who pretend to be geniuses because a friend hooked them up with a tag-along investment into the seed round of Uber. It was a bro favor, good for them, they do leave that part out tho and let the false narrative of being a genius investor flow through. \n\nYou used to be able to buy in pre-IPO with a small check. Now it's almost impossible unless you have a friend, and they set up an SPV, they are usually doing you a favor, because huge funds and institutional investors gobble it all up. (This has also lead to the VC class screwing themselves over, because if you can't buy today's version of Apple at $20, because all the big gains are sucked up before the public offering, then why do you have buy in into this entire system?)\n\nYou could, as a small investor, get huge results pre-IPO via a small check, or also do well after the IPO, because companies IPO'ed earlier. Ie Apple at $20, Amazon in the 20's, etc.\n\nIt's very hard to get big gains now, because companies remain private much longer. Many companies don't want to IPO and then deal with the hassle of lawfare. Look at what happened to Elon in Delaware. \n\nFor us, as an ordinary person, this means that by the time a company goes public, we are \"last money in.\" This is why I always tell friends and family to buy SPY (or FXAIX) and QQQM. Don't day trade. You won't beat the market. (Everyone who claims they do are lying, they use a short timeline and never mention all of the losing trades. Or they are insider trading or beating the market by a relatively small amount. For most of us, day trading is the way of death.) \n\nWith USVC, regular people can get into some of the companies that will IPO, eventually, at high valuations still, but pre-IPO.\n\nI've read all of the negative commentary about the fund. I don't understand the \"illiquid\" complaint. If you started your own business and bought equipment, you wouldn't be paying yourself. If you really had to expand, you might not pay yourself for years. When you put your money in, it's locked up, you grow out the company for several years. Hopefully you can afford to pay yourself after a couple of years. If you QSBS'ed it, maybe you sell in 5-10. Who knows. In the meantime, yes, your money is gone. Every business owner knows this feeling. Your company is \"worth\" some amounts on paper, and you pay yourself a salary to live on. That's if things are going well.\n\nThere's also a lot of discussion around carry and fees. The question is will those fees be less than what the post-IPO price of the companies will be is. That's up to everyone to decide for themselves.\n\nIn any case, I have no financial interest into this fund. I am not telling you to buy into or not. \n\nI do like to flag stuff like this for people who read me, operating under the rule that, \"Cerno writes for the version of Cerno who did not understand any of this stuff, but sure would have liked to have.\" As an example, I didn't know what QSBS was until it was too late. [Frown face.] \n\nAnd I didn't buy Tesla at $2 [panic attack], despite wanting to, because a financial adviser friend told me, \"You shouldn't invest on a feeling, you don't have any edge here.\" \n\nI would tell my prior self: You can't invest EVERYTHING based on vibes, but you can and should absolutely do so now and then. (Note: If you have an addictive personality, this is bad advice. But I am only addicted to X and See's Candies.)\n\nBut I will post the negative comments about the fund. I don't want anyone to ever read me and obtain bad information.\n\nEveryone has to decide for themselves what to do.\n\nI've also learned from experience that if something goes well, nobody sends me money or a box of cigars as a thank you. It was their brilliance that led them to the big gains. If it goes wrong, then the fault is all mine and people hate me for it.\n\nThat's also why I don't even want to post about the fund at all, but here goes.",
+      "url": "https://nitter.net/Cernovich/status/2047481012826124516#m",
+      "published_at": "2026-04-24T01:01:28+00:00"
+    },
+    {
+      "handle": "naval",
+      "account": "@naval",
+      "name": "Naval Ravikant",
+      "title": "RT by @naval: I spent the morning digging into USVC fees.\n\nTLDR: In my opinion, there is no lower-cost way to invest in VC other than becoming one. I’m expecting to pay the same or less than it costs to invest in a good VC fund. And a lot less than investing in a fund-of-funds. All while getting the benefits of a fund-of-funds that can do direct, secondary, and fund investments.\n\nCarry. If USVC invests in a fund or SPV, I will pay that manager’s ~20% carry. That’s what I expected. All fund-of-funds do it this way. I’m glad to pay carry to invest with good managers. USVC doesn’t charge additional carry.\n\nDirect investments. There is no underlying carry on USVC’s direct investments and they aim to make this a major portion of the portfolio. This would bring down the blended cost of USVC substantially, compared to a VC fund.\n\nFees. The annual fee in the first year is capped at 2.5%. This includes the fees of the underlying funds that USVC invests in, which is a huge deal. Just investing in a VC fund costs 2-2.5% a year. Also, the fee would be 3.6% but AngelList is subsidizing it in the first year.\n\nThere’s a possibility the annual fee could go up in the future and I’ve told the team that this is extremely confusing and weird, and they are working on it with haste.\n\nOverall, I’m expecting to pay the same or less than it costs to invest in a good VC fund, but I’m actually getting access to a fund-of-funds that can do direct, secondary, and fund investments. A typical fund-of-funds charges another 1/10 (fees/carry) on top of the VC’s 2/20, for a total of 3/30.\n\nSome other things I learned:\n\nEarly-stage. Early-stage deals are planned. I would rather invest now in case those early-stage investments get marked up quickly. These deals will be riskier and more illiquid, so there’s no free lunch here. The current portfolio includes late-stage (OpenAI, Anthropic, xAI) and mid-stage (Sierra, Vercel, Crusoe, Legora).\n\nIlliquidity. This is venture capital. The underlying investments are illiquid. Don’t invest if you’re uncomfortable with illiquidity. That said, USVC is working on redemptions of up to 5% of the fund every quarter. It’s not guaranteed, but if it’s offered, you can choose to get partial liquidity along the way.\n\nInternational. There is a lot of demand from international investors. USVC is not yet set up to accept international investors at scale, but they’re working on it.\n\nSales load. There is no sales load. USVC is only available on usvc dot com and the sales load is waived if you buy through the site. In the future, brokers that list USVC may charge up to a ~3% sales load; that’s how they make their money.\n\nDisclosure: I’m a co-founder of AngelList and have shares in the business.",
+      "url": "https://nitter.net/nivi/status/2047471220451578132#m",
+      "published_at": "2026-04-24T00:22:33+00:00"
+    },
+    {
+      "handle": "HarryStebbings",
+      "account": "@HarryStebbings",
+      "name": "Harry Stebbings",
+      "title": "Why the biggest fintech players are in for a shock.\n\n\"The shift is from human UX to agent UX.\n\nIn the past, you won with dashboards, design and user experience.\n\nNow, the buyer is an AI agent, and it only cares about APIs, performance and integration.\n\nThat breaks traditional moats and puts even the biggest fintech players at risk.\" @jasonlk\n\nLove to hear your thoughts @pedroh96 @awxjack @sebatklarna @fintechjunkie",
+      "url": "https://nitter.net/HarryStebbings/status/2047461264998478113#m",
+      "published_at": "2026-04-23T23:43:00+00:00"
+    },
+    {
+      "handle": "ylecun",
+      "account": "@ylecun",
+      "name": "Yann LeCun",
+      "title": "RT by @ylecun: Trump completely passed out, reawakened, then passed out again during today's pressor in the Oval Office. 😂🤣👇",
+      "url": "https://nitter.net/maddenifico/status/2047454244781818205#m",
+      "published_at": "2026-04-23T23:15:06+00:00"
+    },
+    {
+      "handle": "HarryStebbings",
+      "account": "@HarryStebbings",
+      "name": "Harry Stebbings",
+      "title": "I used to think MAUs and WAUs were the dumbest metric. Now I think it's the most important.\n\n\"I used to think MAUs and WAUs did not matter, now I think they are critical.\n\nIn the AI era, usage is the leading indicator of value.\n\nIf your usage is growing faster than revenue, you are building something people truly want.\" @jasonlk\n\nLove to hear your thoughts on this @joshelman @kirbyman01 @Joshuabrowder @an21m @mignano and how your thoughts on what matters changed?",
+      "url": "https://nitter.net/HarryStebbings/status/2047426032840634830#m",
+      "published_at": "2026-04-23T21:23:00+00:00"
+    },
+    {
+      "handle": "eladgil",
+      "account": "@eladgil",
+      "name": "Elad Gil",
+      "title": "RT by @eladgil: How does one make sense of SF?\n\nWe are living through the craziest computing revolution of the last 2 decades....and 95% of the value being created is within a 4-mile radius in SF (h/t @eladgil )\n\nIt's just hard to understand....why is the concentration so high?\n\nWhat is it about this place? There are good reasons that people will offer...good universities, great companies, talent networks, venture capital yada yada yada\n\nBut all of that is hard to emotionally understand.\n\nI tend to try to answer these questions through my own lived experience.\n\nTwo things happened this week that brought it home for me.\n\nOn Wed evening, two GOATS of the design world (@soleio  and @rsms ) did a design talk at SPC.\n\nI saw some other GOATS at the talk (@aaron_ , @benbarry )\n\nAnd you realize that these GOATS are just so curious about the world. They just want to build and learn. And give back. And with an air of humility and passion. It's so so cool and inspiring.\n\nAnd then this week we had someone release a mind-bendingly amazing demo of every pixel being generated.\n\nhttps://x.com/zan2434/status/2046982383430496444\n\nPeople were blown away but @eddiejiao_obj  and @zan2434  had been jamming creatively for a bunch of time @southpkcommons . \n\nAnd in that entire time, they were surrounded by a culture and environment and ecosystem that says \"that is crazy but my god, if it works, then what could happen\"\n\nThere is wonder, amazement and curiosity.\n\nAnd passion.\n\nI wish this city were cleaner and better governed (but Dan Lurie is crushing).\n\nWe are so lucky to be surrounded by weirdos who love to build.\n\nThis is why we are who we are.",
+      "url": "https://nitter.net/adityaag/status/2047421448449630379#m",
+      "published_at": "2026-04-23T21:04:47+00:00"
+    },
+    {
+      "handle": "HarryStebbings",
+      "account": "@HarryStebbings",
+      "name": "Harry Stebbings",
+      "title": "Slightly soppy bromance post but Jason believed in me when I was 18 and at law school still. \n\nThere were next to no signs 20VC was or would be a success. \n\nHe has been a dear friend ever since!",
+      "url": "https://nitter.net/HarryStebbings/status/2047413285675290984#m",
+      "published_at": "2026-04-23T20:32:21+00:00"
+    },
+    {
+      "handle": "JeffDean",
+      "account": "@JeffDean",
+      "name": "Jeff Dean",
+      "title": "R to @JeffDean: It's worth pointing out that we have been pushing on large-scale training and asynchronous techniques for the last ~14 years.  Here's our NeurIPS 2012 paper where we demonstrated that this approach could be used to train very large neural networks (for the time: 30X larger than any previous neural network), and to spread the training out across thousands of machines in a fault-tolerant manner.\n\nPDF: https://static.googleusercontent.com/media/research.google.com/en//archive/large_deep_networks_nips2012.pdf\n\nhttps://static.googleusercontent.com/media/research.google.com/en//archive/large_deep_networks_nips2012.pdf\n\n(This paper doesn't get as much attention because we neglected to put it on Arxiv at the time: oops!)",
+      "url": "https://nitter.net/JeffDean/status/2047408945950802186#m",
+      "published_at": "2026-04-23T20:15:06+00:00"
+    },
+    {
+      "handle": "JeffDean",
+      "account": "@JeffDean",
+      "name": "Jeff Dean",
+      "title": "R to @JeffDean: TPU 8i is co-designed with our Gemini research team to support low latency inference.  Among the attributes that support this are large amounts of on-chip SRAM, enabling more computations to be done on chip without having to go to HBM for weights or KVCache state as often.\n\nThe boardfly network topology (see image below) offers a much lower diameter network to connect all 1152 chips in an 8i pod, by fully connecting all 4 chips on the board together, fully connecting groups of 8 boards together, and then fully connecting 36 groups of 8 boards together.  In addition, there is specialized Collectives Acceleration Engine (CAE) circuitry on each chip to offload various kinds of reductions and other global operations from the main computational portion of each chip, reducing on-chip latency by up to 5x.\n\nTogether, these features will offer very high throughput for large-scale models (including MoEs, which often require mapping onto many chips for inference), and will do so at very low latency.  This will make agentic workloads and interactive usage really shine on the TPU 8i.",
+      "url": "https://nitter.net/JeffDean/status/2047407537566495033#m",
+      "published_at": "2026-04-23T20:09:30+00:00"
+    },
+    {
+      "handle": "JeffDean",
+      "account": "@JeffDean",
+      "name": "Jeff Dean",
+      "title": "R to @JeffDean: First, let's talk about TPU 8t, which is designed for large-scale training and inference throughput.\n\nThe pod size is increased slightly to 9600 chips, and provides ~3X the FP4 performance per pod vs. Ironwood (8t has 121 exaflops/pod vs. 42.5 exaflops/pod for Ironwood).  In addition, the ICI network bandwidth is 2X higher per chip and the scale out datacenter networking is 4X higher per chip.\n\nImportantly, this system also offers 2X the performance / watt, continuing the trend of significant energy effiency improvements that we've had for many generations of TPUs (8t offers ~60X the performance/watt as TPU v2).",
+      "url": "https://nitter.net/JeffDean/status/2047405389856297387#m",
+      "published_at": "2026-04-23T20:00:58+00:00"
+    },
+    {
+      "handle": "JeffDean",
+      "account": "@JeffDean",
+      "name": "Jeff Dean",
+      "title": "I had a good time discussing yesterday's Google TPU v8t and v8i announcement at Cloud Next with Amin Vahdat along with @AcquiredFM hosts @gilbert\nand @djrosent.\n\nThe blog post announcement has lots of details about these new chips:\n\nhttps://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/\n\nHere's a thread of some particular things I'm excited about:",
+      "url": "https://nitter.net/JeffDean/status/2047403921912873257#m",
+      "published_at": "2026-04-23T19:55:08+00:00"
+    },
+    {
+      "handle": "SatoshiBun",
+      "account": "@SatoshiBun",
+      "name": "Satoshi",
+      "title": "RT by @satoshibun: Shadow Milk Cookie’s Mind Blown Jester",
+      "url": "https://nitter.net/breadstickz1/status/2047389262253855041#m",
+      "published_at": "2026-04-23T18:56:53+00:00"
+    },
+    {
+      "handle": "erikbryn",
+      "account": "@erikbryn",
+      "name": "Erik Brynjolfsson",
+      "title": "RT by @erikbryn: Congratulations to Lab Digital Fellow Angela Aristidou, Digital Fellow @avi_collis, and Research Scientist @d_vidnguyen for being a part of @GoogleAI's inaugural group of global economic scholars!\n\nhttps://ai.google/economy/ai-economy-researchers/",
+      "url": "https://nitter.net/DigEconLab/status/2047378514240999569#m",
+      "published_at": "2026-04-23T18:14:10+00:00"
+    },
+    {
+      "handle": "liuliu",
+      "account": "@liuliu",
+      "name": "刘进",
+      "title": "I still think on usability-wise, there is a big gap between \"your thing in the training data\" v.s. \"your thing in the SKILL.md\". Prove me wrong otherwise.",
+      "url": "https://nitter.net/liuliu/status/2047374234004115719#m",
+      "published_at": "2026-04-23T17:57:10+00:00"
+    },
+    {
+      "handle": "eladgil",
+      "account": "@eladgil",
+      "name": "Elad Gil",
+      "title": "Entrepreneurship is a distributed search job across the surface of commercial opportunities",
+      "url": "https://nitter.net/eladgil/status/2047373700643844303#m",
+      "published_at": "2026-04-23T17:55:03+00:00"
+    },
+    {
+      "handle": "eladgil",
+      "account": "@eladgil",
+      "name": "Elad Gil",
+      "title": "Big congrats",
+      "url": "https://nitter.net/eladgil/status/2047365014500389353#m",
+      "published_at": "2026-04-23T17:20:32+00:00"
+    },
+    {
+      "handle": "eladgil",
+      "account": "@eladgil",
+      "name": "Elad Gil",
+      "title": "My view is the AI boom will only accelerate and is a once in a lifetime transformation\n\nThis is orthogonal to whether many AI companies should exit in next 12-18 months, as some may lack durability vs labs, new entrants, or weird market shifts\n\nhttps://www.businessinsider.com/ai-startup-founders-warning-elad-gilsell-while-boom-lasts-2026-4",
+      "url": "https://nitter.net/eladgil/status/2047364865527075139#m",
+      "published_at": "2026-04-23T17:19:56+00:00"
+    },
+    {
+      "handle": "JeffDean",
+      "account": "@JeffDean",
+      "name": "Jeff Dean",
+      "title": "It's been a delight to provide small amounts of advice and suggestions to people working on the Decoupled DiLoCo training system.  This approach enables graceful handling of failures in large scale training jobs, by allowing (N-1) / N units to proceed when one fails.\n\nThread ⬇️",
+      "url": "https://nitter.net/JeffDean/status/2047339995682529313#m",
+      "published_at": "2026-04-23T15:41:07+00:00"
+    },
+    {
+      "handle": "naval",
+      "account": "@naval",
+      "name": "Naval Ravikant",
+      "title": "RT by @naval: We launched USVC yesterday and it was one of the most fun days of my career\n\nThousands of people ended up subscribing for literally tens of millions of dollars\n\nWhile most of the reception was positive, there was some interrogation on a few important topics:\n\n1 - The USVC fee structure\n2 - The Investment Strategy\n3 - Support for International Investors\n\nLet's talk about them\n\nThe USVC Fee Structure\n\nIf you have followed me for any amount of time, you'll know this is a personal topic for me.\n\nI've frequently complained about fees in financial services. From VC funds to wealth advisors, I've taken no prisoners in calling these out.\n\nThe last venture capital fund I ran was the only VC fund I know of that raised more than 50M and didn't charge a penny of management fees.\n\nSo how much does USVC actually charge and why it is so much?\n\nUSVC costs 2.5% all-in to investors today\n\nThere are some misconceptions based on reading our prospectus, including:\n\n- A 3% sales load\nPlatforms that offer USVC could charge this if they wanted, but we don't. If you buy on http://USVC.com as everyone yesterday did, you pay no sales load.\n\n- Underlying fund fees\nEarly investments from USVC have been in funds that have their own fees, and these fees are paid by USVC. However, these management fees are already included in the net expense ratio of 2.5%.\n\nIn time, I'm planning to move a meaningful chunk of the portfolio to be direct investments in startups on the cap table which will have 0 underlying fees or carry.\n\nThe 2.5% fee is inclusive of everything, including our management fee.\n\n- The advertised 3.61% today\nRight now, even though you pay 2.5%, it costs us 3.61% to service this product.\n\nThere are two big reasons for this - the underlying fund fees (which we're working to improve with direct investments) and the fact that operationally running these types of funds is very expensive.\n\nWe've decided to absorb the fees excess of 2.5% for at least the first year.\n\nDuring the time, we're going to make more efficient investments and wait for economies of scale to kick in on operational costs.\n\nNow... you may ask: isn't 2.5% still very expensive?\n\nThe answer is... it depends.\n\nTop venture capital firms charge that just on their management fees, and force you to pay that for 10 years.\n\nAnd then they charge 20% of profits on top of that!\n\nWe charge no carry on our direct investments at all, which makes this 2.5% fee attractive for the asset class.\n\nIt's ironic to call this a cash grab when we are subsidizing this product out of our pocket to keep the fees in line\n\nI encourage everyone to go read the full disclosures and prospectus at http://usvc.com.\n\nStay tuned for Part 2 later today on Investment Strategy",
+      "url": "https://nitter.net/ankurnagpal/status/2047334901033123913#m",
+      "published_at": "2026-04-23T15:20:52+00:00"
+    },
+    {
+      "handle": "SatoshiBun",
+      "account": "@SatoshiBun",
+      "name": "Satoshi",
+      "title": "RT by @satoshibun: OH MYG GDOODOISU #moeoverload 🥹",
+      "url": "https://nitter.net/cuckuke/status/2047325302771061148#m",
+      "published_at": "2026-04-23T14:42:44+00:00"
+    },
+    {
+      "handle": "Ronald_vanLoon",
+      "account": "@Ronald_vanLoon",
+      "name": "Ronald van Loon",
+      "title": "RT by @Ronald_vanLoon: China Deploys Solar #Robot to De-Ice Power Lines in Extreme Mountain Conditions\nby @IntEngineering\n\n#Robotics #Engineering #Innovation #Technology",
+      "url": "https://nitter.net/Ronald_vanLoon/status/2047208118723936306#m",
+      "published_at": "2026-04-23T06:57:05+00:00"
+    },
+    {
+      "handle": "Ronald_vanLoon",
+      "account": "@Ronald_vanLoon",
+      "name": "Ronald van Loon",
+      "title": "RT by @Ronald_vanLoon: Treventus Scan #Robot Digitizes Up to 2,500 Pages Per Hour\nby @AadityaAnand_11\n\n#Robotics #Innovation #EmergingTech #Technology",
+      "url": "https://nitter.net/Ronald_vanLoon/status/2047199600872665579#m",
+      "published_at": "2026-04-23T06:23:14+00:00"
+    },
+    {
+      "handle": "soumithchintala",
+      "account": "@soumithchintala",
+      "name": "Soumith Chintala",
+      "title": "RT by @soumithchintala: Incredible work by Sony published in @Nature today! 🏓\n\nThey’ve built “Ace”, an autonomous ping-pong robot that uses RL and Sony’s vision sensors to achieve expert-level play in ping pong. A huge leap forward for adaptive robotics.\n\nhttps://www.nature.com/articles/s41586-026-10338-5",
+      "url": "https://nitter.net/hardmaru/status/2047191747793649805#m",
+      "published_at": "2026-04-23T05:52:02+00:00"
+    },
+    {
+      "handle": "CryptoCred",
+      "account": "@CryptoCred",
+      "name": "Credible Crypto",
+      "title": "Dev is posting about price",
+      "url": "https://nitter.net/CryptoCred/status/2047079463750377958#m",
+      "published_at": "2026-04-22T22:25:51+00:00"
+    },
+    {
+      "handle": "eladgil",
+      "account": "@eladgil",
+      "name": "Elad Gil",
+      "title": "<3 @infisical",
+      "url": "https://nitter.net/eladgil/status/2047052737762980083#m",
+      "published_at": "2026-04-22T20:39:39+00:00"
+    },
+    {
+      "handle": "naval",
+      "account": "@naval",
+      "name": "Naval Ravikant",
+      "title": "Introducing USVC - a single basket of high-growth venture capital, for everyone. \n\nNo accreditation required, SEC-registered, and a very low $500 minimum. \n\nIncludes OpenAI, Anthropic, xAI, Sierra, Crusoe, Legora, and Vercel. As USVC adds more companies, investors will own a piece of that too. \n\nLiquidity typically comes when companies exit, but we’re aiming to let investors redeem up to 5% of the fund every quarter. This isn’t guaranteed, but if we can make it work, you won’t be locked up like in a traditional venture fund.\n\nIt runs on AngelList, which already supports $125 billion of investor capital. \n\nAnd I’ve joined USVC as the Chairman of its Investment Committee.\n—\n\nGo back to the 1500s, you set sail for the new world to find tons of gold - that was adventure capital. \n\nEarly-stage technology is the modern version. It says we are going to create something new, and it’s risky. It’s daring.\n\nBut ordinary people can’t invest until it’s old, until it’s no longer interesting, until everybody has access to it. By the time a stock IPOs, most of the alpha is gone. The adventure is gone. Public market investors are literally last in line.\n\nThis problem has become farcical in the last decade. Startups are reaching trillion dollar valuations in the private markets while ordinary investors have their noses up to the glass, wondering when they’ll be let in.\n\nInvesting in private markets isn’t easy. You need feet on the ground. You need judgment built over years. Most people don’t have the patience to wait ten or twenty years for an investment to come to fruition.\n\nBut there is no more productive, harder-working way to deploy a dollar than in true venture capital.\n\nUSVC enables you to invest in venture capital in a broad, accessible, professionally-managed way, through a single basket of innovation, focused on high-growth startups, at all stages. \n\nIt is how you bet on the future of tech: the smartest young people in the world, working insane hours, leveraged to the max, with code, hardware, capital, media, and community. Your dollar doesn’t work harder anywhere.\n\nThere is an old line - in the future, either you are telling a computer what to do, or a computer is telling you what to do. You don’t want to be on the wrong side of that transaction.\n\nUSVC lets you buy the future, but you buy it now. Then you wait, and if you are right, you get paid.\n\nGet access here:\n\nhttp://usvc.com",
+      "url": "https://nitter.net/naval/status/2046991137022648800#m",
+      "published_at": "2026-04-22T16:34:52+00:00"
+    },
+    {
+      "handle": "liuliu",
+      "account": "@liuliu",
+      "name": "刘进",
+      "title": "Ask Codex about Ulysses attention: wow, you know so much and can help me get this communication+spda thing work!\nAsk Codex to implement a segmented file downloader: didn’t even get the completion block hooked up right.",
+      "url": "https://nitter.net/liuliu/status/2046986486629986435#m",
+      "published_at": "2026-04-22T16:16:24+00:00"
+    },
+    {
+      "handle": "erikbryn",
+      "account": "@erikbryn",
+      "name": "Erik Brynjolfsson",
+      "title": "RT by @erikbryn: Thanks for coming in today, and for sharing your feedback on my team’s idea!\n\nYour optimistic take on the value that humans will continue to deliver was so refreshing.",
+      "url": "https://nitter.net/TejuAdeyinka/status/2046761422148018260#m",
+      "published_at": "2026-04-22T01:22:04+00:00"
+    },
+    {
+      "handle": "eladgil",
+      "account": "@eladgil",
+      "name": "Elad Gil",
+      "title": "What a time to be alive",
+      "url": "https://nitter.net/eladgil/status/2046722094348771758#m",
+      "published_at": "2026-04-21T22:45:48+00:00"
+    },
+    {
+      "handle": "erikbryn",
+      "account": "@erikbryn",
+      "name": "Erik Brynjolfsson",
+      "title": "RT by @erikbryn: How do AI agents influence knowledge work?\n\n@SuproteemSarkar's (@UChicago) talk at the DEL Seminar Series is now available on YouTube! Moderated by @erikbryn, Sarkar discusses three projects on the Economics of Applied AI.\n\nWatch here: https://youtu.be/4_T4aTLWtwY",
+      "url": "https://nitter.net/DigEconLab/status/2046698761221783753#m",
+      "published_at": "2026-04-21T21:13:05+00:00"
+    },
+    {
+      "handle": "eladgil",
+      "account": "@eladgil",
+      "name": "Elad Gil",
+      "title": "👀",
+      "url": "https://nitter.net/eladgil/status/2046695194054320150#m",
+      "published_at": "2026-04-21T20:58:54+00:00"
+    },
+    {
+      "handle": "JeffDean",
+      "account": "@JeffDean",
+      "name": "Jeff Dean",
+      "title": "RT by @JeffDean: My friend @JeffDean encouraged me to speak at this event so come join me on May 26 in San Jose! https://bauplanlabs.github.io/SAO-workshop/",
+      "url": "https://nitter.net/ceo_clickhouse/status/2046673188193701901#m",
+      "published_at": "2026-04-21T19:31:28+00:00"
+    },
+    {
+      "handle": "erikbryn",
+      "account": "@erikbryn",
+      "name": "Erik Brynjolfsson",
+      "title": "RT by @erikbryn: Excited to speak at my friend @erikbryn’s ECON 295/CS 323\nclass at @Stanford today. Questions?",
+      "url": "https://nitter.net/saranormous/status/2046637828025835983#m",
+      "published_at": "2026-04-21T17:10:57+00:00"
+    },
+    {
+      "handle": "JeffDean",
+      "account": "@JeffDean",
+      "name": "Jeff Dean",
+      "title": "RT by @JeffDean: Following positive feedback from other venues, like STOC and ICML, NeurIPS is pleased to announce a new initiative in partnership with Google: for NeurIPS 2026, authors will have access to Google's Paper Assistant Tool (PAT) to help improve their submissions. \n\nThis program offers authors the opportunity to receive free, automated, and actionable feedback on their manuscripts before the final deadline, private to the authors. It is a completely optional service that is kept strictly private to the authors and will not be used in the review process.\n\nRead more in our blog post: https://blog.neurips.cc/2026/04/21/neurips-supports-authors-with-googles-paper-assistant-tool-pat/",
+      "url": "https://nitter.net/NeurIPSConf/status/2046632664493384060#m",
+      "published_at": "2026-04-21T16:50:26+00:00"
+    },
+    {
+      "handle": "soumithchintala",
+      "account": "@soumithchintala",
+      "name": "Soumith Chintala",
+      "title": "RT by @soumithchintala: Dwarkesh is not an AGI party bro. He's been pretty diverse in how he seeks alpha from across a wide variety of industries. I enjoy the hell out of a lot of his podcasts.\nThis podcast though, his questions and narrative are very AGI Party takes, because I think they're very low-rank. That's my opinion.",
+      "url": "https://nitter.net/soumithchintala/status/2046282944139215141#m",
+      "published_at": "2026-04-20T17:40:46+00:00"
+    },
+    {
+      "handle": "soumithchintala",
+      "account": "@soumithchintala",
+      "name": "Soumith Chintala",
+      "title": "The Jensen + @dwarkesh_sp podcast was fantastic. \nJensen is someone who understood how ecosystems work and someone who understands real-world trade, policy and controls work. And in some deeper sense how AI will actually diffuse into the world.\nIn this podcast, Dwarkesh came off as someone who picked up talking points from an AGI party in the SF Mission District.\nAnd the contrast was so evident.\nAs someone who understood ecosystems relatively deepy, maybe I understood Jensen's take more than others did (idk).\n\nMythos, that Dwarkesh kept bringing up, is not a single absolute turning point in the AI development landscape. Take a state-of-the-art Chinese open-source model, and give it three orders of magnitude more test-time compute + post-training algorithmic advances that haven't been published yet. That's the baseline. It was evident that in whatever bubble Dwarkesh is in, that is seen as a naive or illogical baseline.\n\nWhen AI has such a complex development cycle, it's evident that America needs many levers of policy intervention across multiple layers in a dominant ecosystem that ideally the Western world controls.\n\nThe entire premise that a particular model with AI development will have a critical phase change is neither correct nor does evidence point to it. OpenAI made this point with GPT-4, Anthropic made this point with Mythos, but neither stood / will stand the test of time.\n\nI think Jensen's repeated emphasis within the podcast to try to make this point mostly didn't get Dwarkesh's attention. And Dwarkesh (in this podcast) represents an entire cult of AI researchers and decision-makers that are going to influence policy.\n\nThe thing with policy interventions is that if you do too much too early, you shoot yourself in the foot. There's a good reason American foreign policy and general sanctions of all kinds are measured and continuous.\n\nDespite Jensen's attempt at educating the \"Anthro\" audience how ecosystems work, I'm also not super hopeful a lot of people who've taken the extreme position will change their thought after listening to this podcast. I do think there's a certain religiousness that has permeated some of that community that would make it hard to understand ecosystems at a deeper level.",
+      "url": "https://nitter.net/soumithchintala/status/2046265830908870983#m",
+      "published_at": "2026-04-20T16:32:46+00:00"
+    },
+    {
+      "handle": "erikbryn",
+      "account": "@erikbryn",
+      "name": "Erik Brynjolfsson",
+      "title": "Here's a crisp summary by @EconChrisClarke  of some of the key findings of our Canaries in the Coal Mine, the counter arguments, the counter-counter arguments and the complementary research by others.  @BharatKChandar @RuyuChen",
+      "url": "https://nitter.net/erikbryn/status/2046244291945927102#m",
+      "published_at": "2026-04-20T15:07:11+00:00"
+    }
+  ],
+  "top_themes": [
+    {
+      "title": "其他",
+      "count": 100
+    },
+    {
+      "title": "模型能力",
+      "count": 27
+    },
+    {
+      "title": "投融资与并购",
+      "count": 8
+    },
+    {
+      "title": "交易与市场",
+      "count": 7
+    },
+    {
+      "title": "算力与芯片",
+      "count": 3
+    }
+  ],
+  "modules": {
+    "themes": [
+      {
+        "id": "t1",
+        "title": "AI技术多元化部署",
+        "subtitle": "云服务与系统设计新方向",
+        "bullets": [
+          "科技公司与全球多云服务商达成协议",
+          "操作系统/互联网协议需适应AI代理协同",
+          "AI安全性和经济影响成为核心讨论议题"
+        ]
+      },
+      {
+        "id": "t2",
+        "title": "初创企业生存挑战",
+        "subtitle": "市场策略与投资关系",
+        "bullets": [
+          "创始人需平衡技术创新与商业落地",
+          "风险资本对初创企业的筛选标准变化",
+          "竞争对手的威胁度评估与创新动力"
+        ]
+      },
+      {
+        "id": "t3",
+        "title": "媒体生态与意见对抗",
+        "subtitle": "信息战中的技术审计",
+        "bullets": [
+          "主流媒体遭遇AI内容管理难题",
+          "政治观点呈现极端化表现特征",
+          "独立媒体通过存档机制进行博弈"
+        ]
+      }
+    ],
+    "p0_events": [
+      {
+        "id": "p01",
+        "title": "OpenAI与微软合作模式升级",
+        "meta": "2026-04-27T13:24:26+00:00",
+        "summary": "多云部署协议延长至2032年，含模型与产品收益分成",
+        "url": "https://nitter.net/sama/status/2048755148361707946#m"
+      },
+      {
+        "id": "p02",
+        "title": "Transformer架构里程碑",
+        "meta": "2026-04-27T13:29:14+00:00",
+        "summary": "企业级AI系统部署需要组合开放与专有模型",
+        "url": "https://nitter.net/soumithchintala/status/2048756358820827564#m"
+      },
+      {
+        "id": "p03",
+        "title": "特朗普解雇科学委员会",
+        "meta": "2026-04-26T17:27:23+00:00",
+        "summary": "美国国家科学委员会全体成员被单方面解职",
+        "url": "https://nitter.net/Gianl1974/status/2048453901930660058#m"
+      },
+      {
+        "id": "p04",
+        "title": "AI代理安全风险警示",
+        "meta": "2026-04-27T12:48:41+00:00",
+        "summary": "将自动补全误标为AI的风险尺度评估升级",
+        "url": "https://nitter.net/GaryMarcus/status/2048746152749846549#m"
+      },
+      {
+        "id": "p05",
+        "title": "Starlink部署升级",
+        "meta": "2026-04-26T17:27:34+00:00",
+        "summary": "TPU v8t/v8i芯片推动规模化卫星发射",
+        "url": "https://nitter.net/SpaceX/status/2048453949381091634#m"
+      }
+    ],
+    "top_quotes": [
+      {
+        "id": "q1",
+        "quote": "AI代理灾难故事的根源也在用户身上，不是他们被欺骗了数据，而是他们根本没意识到AI目前处于玩具阶段",
+        "speaker": "Gary Marcus",
+        "date": "2026-04-27T02:25:10+00:00",
+        "note": "对AI可靠性标准的重新定义",
+        "url": "https://nitter.net/SteveStricklan6/status/2048589239915577837#m"
+      },
+      {
+        "id": "q2",
+        "quote": "生产力革命最大的受益者永远是使用者，最深的教训是每个失败都归于用户错误，每次突破都归功于模型",
+        "speaker": "Paul Graham",
+        "date": "2026-04-26T14:36:59+00:00",
+        "note": "AI开发中的利益分配哲学",
+        "url": "https://nitter.net/suchenzang/status/2048582672163995766#m"
+      },
+      {
+        "id": "q3",
+        "quote": "推动操作系统和网络协议的根本性重构，这样人类用户与AI代理才能成为平等参与者",
+        "speaker": "Sam Altman",
+        "date": "2026-04-26T15:46:41+00:00",
+        "note": "人机交互基础设施革新",
+        "url": "https://nitter.net/sama/status/2048428561481265539#m"
+      }
+    ],
+    "category_updates": [
+      {
+        "id": "c1",
+        "title": "模型合作伙伴",
+        "subtitle": "OpenAI生态扩展",
+        "level": "P0",
+        "items": [
+          {
+            "text": "多云部署协议详情披露",
+            "url": "https://nitter.net/sama/status/2048755148361707946#m"
+          },
+          {
+            "text": "用户界面安全更新说明",
+            "url": "https://nitter.net/sama/status/2048552677433643427#m"
+          }
+        ]
+      },
+      {
+        "id": "c2",
+        "title": "技术观点",
+        "subtitle": "AI安全学界观察",
+        "level": "WARN",
+        "items": [
+          {
+            "text": "关于灾难性管理风险的公开信",
+            "url": "https://nitter.net/Dan_Jeffries1/status/2048293118781296734#m"
+          },
+          {
+            "text": "基于原则的开发宣言",
+            "url": "https://nitter.net/sama/status/2048552677433643427#m"
+          }
+        ]
+      },
+      {
+        "id": "c3",
+        "title": "机器人进步",
+        "subtitle": "工业部署加速",
+        "level": "P1",
+        "items": [
+          {
+            "text": "双臂轮式人形机器人试运行",
+            "url": "https://nitter.net/Ronald_vanLoon/status/2048751798735835629#m"
+          },
+          {
+            "text": "Skild Brain芯片技术整合",
+            "url": "https://nitter.net/CyberRobooo/status/2048723908744954357#m"
+          }
+        ]
+      },
+      {
+        "id": "c4",
+        "title": "企业战略",
+        "subtitle": "投资与转型要点",
+        "level": "P1",
+        "items": [
+          {
+            "text": "价值投资新方法论文档",
+            "url": "https://nitter.net/HarryStebbings/status/2048531257399664920#m"
+          },
+          {
+            "text": "AI对赌游戏数据解读",
+            "url": "https://nitter.net/BlackHackOfDoom/status/2048580122521780676#m"
+          }
+        ]
+      },
+      {
+        "id": "c5",
+        "title": "AI监管",
+        "subtitle": "国际合作进展",
+        "level": "P0",
+        "items": [
+          {
+            "text": "跨平台存证技术标准发布",
+            "url": "https://nitter.net/EADS/status/2047481012826124516#m"
+          },
+          {
+            "text": "全球技术话语权终止协议",
+            "url": "https://nitter.net/Bluesky/status/2048118689258487857#m"
+          }
+        ]
+      }
+    ],
+    "risk_signals": [
+      {
+        "id": "r1",
+        "level": "HIGH",
+        "title": "生成内容毒性蔓延",
+        "detail": "AI生成回复的伦理边界问题，需立即制定平台内容安全准则"
+      },
+      {
+        "id": "r2",
+        "level": "MID",
+        "title": "政治两极分化加剧",
+        "detail": "极端言论引发的AI内容传播风险，涉及社会稳定性建模"
+      },
+      {
+        "id": "r3",
+        "level": "OPP",
+        "title": "开放式模型商业机会",
+        "summary": "新兴企业建立超级AI用户界面系统",
+        "detail": "当模型组件化后需构建智能化开发环境，现有系统存在市场空缺"
+      },
+      {
+        "id": "r4",
+        "level": "HIGH",
+        "title": "工作伦理崩坏危机",
+        "detail": "多相睡眠工作制度侵蚀专业人才培养体系"
+      },
+      {
+        "id": "r5",
+        "level": "MID",
+        "title": "金融科技生态重构风险",
+        "detail": "数字财富重新分配机制导致传统金融业务萎缩"
+      }
+    ]
+  },
+  "tweet_summary_md": "# X平台关注列表推文汇总\n\n**生成日期**: 2026-04-27T13:44:13.237379+00:00\n**数据来源**: Nitter RSS 订阅\n**时间范围**: 最近7天\n**账号总数**: 33 | **成功获取**: 17 | **推文总数**: 145\n\n---\n\n### ✅ @sama — Sam Altman（10 条）\n\n**[2026-04-27T13:24:26+00:00]**\n> we have updated our partnership with microsoft. microsoft will remain our primary cloud partner, but we are now able to make our products and services available across all clouds. will continue to pr…\n[原文链接](https://nitter.net/sama/status/2048755148361707946#m)\n\n**[2026-04-27T13:09:30+00:00]**\n> this is so good: https://paulgraham.com/kids.html\n[原文链接](https://nitter.net/sama/status/2048751392031203544#m)\n\n**[2026-04-27T00:05:31+00:00]**\n> so fun to see the reception to 5.5! there is almost nothing that feels more gratifying to me than builders saying they find our tools useful.\n[原文链接](https://nitter.net/sama/status/2048554097985593849#m)\n\n**[2026-04-26T23:59:53+00:00]**\n> Our Principles: Democratization, Empowerment, Universal Prosperity, Resilience, and Adaptability https://openai.com/index/our-principles/\n[原文链接](https://nitter.net/sama/status/2048552677433643427#m)\n\n**[2026-04-26T15:46:41+00:00]**\n> feels like a good time to seriously rethink how operating systems and user interfaces are designed (also the internet; there should be a protocol that is equally usable by people and agents)\n[原文链接](https://nitter.net/sama/status/2048428561481265539#m)\n\n**[2026-04-26T15:37:00+00:00]**\n> \"post-AGI, no one is going to work and the economy is going to collapse\" \"i am switching to polyphasic sleep because GPT-5.5 in codex is so good that i can't afford to be sleeping for such long stret…\n[原文链接](https://nitter.net/sama/status/2048426122854228141#m)\n\n**[2026-04-26T02:15:19+00:00]**\n> RT by @sama: That's exactly my view too, roughly compresses 2 weeks of our previous jobs to 1 day\n[原文链接](https://nitter.net/SebastienBubeck/status/2048224374264885396#m)\n\n**[2026-04-25T22:20:08+00:00]**\n> how can they write code so fast?!\n[原文链接](https://nitter.net/sama/status/2048165186482389253#m)\n\n**[2026-04-25T22:01:18+00:00]**\n> R to @sama: (and we will fix the former)\n[原文链接](https://nitter.net/sama/status/2048160448340767038#m)\n\n**[2026-04-25T22:01:08+00:00]**\n> we still get looksmaxxed on frontend a little but we IQmog hard now\n[原文链接](https://nitter.net/sama/status/2048160404376105179#m)\n\n---\n\n### ✅ @gregbrockman — Greg Brockman（0 条）\n\n---\n\n### ⚠️ @andrejkarpathy — Andrej Karpathy（获取失败）\n\n- 错误: URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>\n\n### ✅ @ylecun — Yann LeCun（10 条）\n\n**[2026-04-26T18:31:11+00:00]**\n> RT by @ylecun: Republicans have been making this argument my entire life. We had 8 years of Clinton, 8 years of Obama, 4 years of Biden— never became a socialism. But you know what we got? More jobs,…\n[原文链接](https://nitter.net/briantylercohen/status/2048469956627468510#m)\n\n**[2026-04-26T17:27:23+00:00]**\n> RT by @ylecun: Trump just fired all 24 members of the National Science Board. Every single one. By email. No warning. No reason given. The board has existed since 1950. The National Science Board is …\n[原文链接](https://nitter.net/Gianl1974/status/2048453901930660058#m)\n\n**[2026-04-26T16:03:04+00:00]**\n> RT by @ylecun: Existential risk mongers are a small, very vocal cult with a lot of very clever online astroturfing skills. Politicians never waste a good fake crisis, which is why they're perfect for…\n[原文链接](https://nitter.net/Dan_Jeffries1/status/2048432684930654430#m)\n\n**[2026-04-26T13:51:41+00:00]**\n> Shooting oneself in the foot? Nope. Shooting oneself in the prefrontal cortex.\n[原文链接](https://nitter.net/ylecun/status/2048399621492236615#m)\n\n**[2026-04-26T06:48:29+00:00]**\n> RT by @ylecun: Never let critical thinking get in the way of extremist fantasy stories. If you're on either side of this slider, congratulations, you may be a child in an adult costume body! Black an…\n[原文链接](https://nitter.net/Dan_Jeffries1/status/2048293118781296734#m)\n\n**[2026-04-25T19:15:22+00:00]**\n> RT by @ylecun: OPINION: \"Trump’s mismanagement has resulted in death, destruction, wasted tax dollars, and a huge loss in respect for the United States — all to accomplish nothing.\" https://ebx.sh/V5…\n[原文链接](https://nitter.net/PhillyInquirer/status/2048118689258487857#m)\n\n**[2026-04-25T16:01:07+00:00]**\n> RT by @ylecun: When MTV News shut down, it felt like decades of culture vanished overnight 🕳️ But over 470,000 pages were already preserved. That history didn’t disappear. It was archived. 📚 Read VAN…\n[原文链接](https://nitter.net/internetarchive/status/2048069805807128734#m)\n\n**[2026-04-24T14:14:06+00:00]**\n> RT by @ylecun: A mathematician who shared an office with Claude Shannon at Bell Labs gave one lecture in 1986 that explains why some people win Nobel Prizes and other equally smart people spend their…\n[原文链接](https://nitter.net/ihtesham2005/status/2047680485208531152#m)\n\n**[2026-04-24T13:58:49+00:00]**\n> RT by @ylecun: Feel like very few serious people make the argument Britain should develop its own LLM? Certainly not an argument you see made in Westminster often during the sovereignty debate. Also …\n[原文链接](https://nitter.net/Discoplomacy/status/2047676640059154653#m)\n\n**[2026-04-23T23:15:06+00:00]**\n> RT by @ylecun: Trump completely passed out, reawakened, then passed out again during today's pressor in the Oval Office. 😂🤣👇\n[原文链接](https://nitter.net/maddenifico/status/2047454244781818205#m)\n\n---\n\n### ✅ @GaryMarcus — Gary Marcus（10 条）\n\n**[2026-04-27T13:32:43+00:00]**\n> ⚠️ AI agents are wildly premature technology that is being rolled out way too fast. The deepest lesson about the vibe coded AI agent disaster story that is running around is NOT about losing your dat…\n[原文链接](https://nitter.net/GaryMarcus/status/2048757233174122827#m)\n\n**[2026-04-27T12:48:41+00:00]**\n> R to @GaryMarcus: Stop blaming the users. It’s not that simple:\n[原文链接](https://nitter.net/GaryMarcus/status/2048746152749846549#m)\n\n**[2026-04-27T12:36:05+00:00]**\n> People keep blaming the users for the growing number of vibe-coded reasoners. Doing so is *half* right. Users *are*screwing up - by letting vibe coded stuff access their files, without proper backups…\n[原文链接](https://nitter.net/GaryMarcus/status/2048742983684784239#m)\n\n**[2026-04-27T12:20:17+00:00]**\n> “Vibe coded disasters piling up on Reddit”\n[原文链接](https://nitter.net/GaryMarcus/status/2048739005525877072#m)\n\n**[2026-04-27T03:39:49+00:00]**\n> RT by @GaryMarcus: The greatest con of the decade was calling autocomplete “AI”. The second greatest is calling autocomplete-in-a-loop an “agent”.\n[原文链接](https://nitter.net/atmoio/status/2048608025464705084#m)\n\n**[2026-04-27T02:41:14+00:00]**\n> “Always keep a separate backup.” For sure, every experienced programmer should know this. 𝘉𝘶𝘵 𝘸𝘦 𝘫𝘶𝘴𝘵 𝘤𝘳𝘦𝘢𝘵𝘦𝘥 𝘢 𝘸𝘩𝘰𝘭𝘦 𝘨𝘦𝘯𝘦𝘳𝘢𝘵𝘪𝘰𝘯 𝘰𝘧 𝘷𝘪𝘣𝘦 𝘤𝘰𝘥𝘦𝘳𝘴 𝘸𝘩𝘰 𝘥𝘰𝘯’𝘵. And we now have a legion of synthetic coding…\n[原文链接](https://nitter.net/GaryMarcus/status/2048593283639894520#m)\n\n**[2026-04-27T02:25:10+00:00]**\n> RT by @GaryMarcus: “fails less often than a human does” is a terrible metric. We build deterministic software and test it to destruction to ensure it’s 99.99999 reliable . That’s been the basis of ev…\n[原文链接](https://nitter.net/SteveStricklan6/status/2048589239915577837#m)\n\n**[2026-04-27T01:59:04+00:00]**\n> RT by @GaryMarcus: the beauty of a jagged frontier is that every failure is the user's fault and every breakthrough is the model's glory\n[原文链接](https://nitter.net/suchenzang/status/2048582672163995766#m)\n\n**[2026-04-27T01:48:56+00:00]**\n> RT by @GaryMarcus: I mean AI influencers here and everywhere are screaming you shouldn't get hired if you don't use agentic AI because you're deliberatly slowing everyone down and the moment somethin…\n[原文链接](https://nitter.net/BlackHackOfDoom/status/2048580122521780676#m)\n\n**[2026-04-27T01:44:47+00:00]**\n> RT by @GaryMarcus: The only AGI that Sam Altman is after is Adjusted Gross Income.\n[原文链接](https://nitter.net/FrankRundatz/status/2048579079121555764#m)\n\n---\n\n### ✅ @elonmusk — Elon Musk（10 条）\n\n**[2026-04-27T03:11:45+00:00]**\n> Grok Imagine\n[原文链接](https://nitter.net/elonmusk/status/2048600964102246438#m)\n\n**[2026-04-27T02:26:57+00:00]**\n> Curiosity & adventure are my philosophy https://grok.com/share/bGVnYWN5_d70e0164-cced-4096-99cb-38604067aa7a\n[原文链接](https://nitter.net/elonmusk/status/2048589691054694406#m)\n\n**[2026-04-26T23:22:48+00:00]**\n> Remember this\n[原文链接](https://nitter.net/elonmusk/status/2048543344746250466#m)\n\n**[2026-04-26T22:50:49+00:00]**\n> Grad school indoctrination camps\n[原文链接](https://nitter.net/elonmusk/status/2048535299102265720#m)\n\n**[2026-04-26T21:21:33+00:00]**\n> RT by @elonmusk: 🚨BREAKING: I found Cole Allen's archived tweets. He predicted \"Kamala wins all swing states,\" compared Trump's win to “Nazis getting elected,” and moved to Bluesky. The scary part: h…\n[原文链接](https://nitter.net/KanekoaTheGreat/status/2048512831692452091#m)\n\n**[2026-04-26T17:37:26+00:00]**\n> Accurate\n[原文链接](https://nitter.net/elonmusk/status/2048456433981591867#m)\n\n**[2026-04-26T17:27:34+00:00]**\n> RT by @elonmusk: Falcon 9 launches 25 @Starlink satellites from California\n[原文链接](https://nitter.net/SpaceX/status/2048453949381091634#m)\n\n**[2026-04-26T17:05:40+00:00]**\n> RT by @elonmusk: In shocking news, calling your political opponents Nazis makes crazy people want to kill them. Who could have predicted this?\n[原文链接](https://nitter.net/KonstantinKisin/status/2048448438715445382#m)\n\n**[2026-04-26T16:14:38+00:00]**\n> RT by @elonmusk: 25% of very liberal people say political violence can “sometimes be justified.” Among very conservative people it’s just 3%. In other words, the far left is 8x more likely to support…\n[原文链接](https://nitter.net/RobertMSterling/status/2048435593244237849#m)\n\n**[2026-04-26T13:13:50+00:00]**\n> RT by @elonmusk: How do you think the left redistributes wealth? Violence How do you think the left seizes the means of production? Violence How do you think they censor and surveil opponents? Violen…\n[原文链接](https://nitter.net/TheAliceSmith/status/2048390094529216982#m)\n\n---\n\n### ✅ @paulg — Paul Graham（10 条）\n\n**[2026-04-27T10:01:28+00:00]**\n> One of my favorite pictures. A guy I didn't know took it of us on a street in Palo Alto about 10 years ago.\n[原文链接](https://nitter.net/paulg/status/2048704073356935676#m)\n\n**[2026-04-27T09:50:40+00:00]**\n> You never need to describe something as a \"bad take.\" If it's false or irrelevant or omits something important, you can just say so. And if it's true, relevant, and complete, it's not a bad take.\n[原文链接](https://nitter.net/paulg/status/2048701354672050286#m)\n\n**[2026-04-27T08:17:48+00:00]**\n> Worrying that your startup will be eaten by the model companies is like worrying that your life will be constrained after you become a movie star. You're far more likely simply to fail.\n[原文链接](https://nitter.net/paulg/status/2048677984106664227#m)\n\n**[2026-04-27T04:08:42+00:00]**\n> RT by @paulg: Whenever I go to Paris to talk about investing in YC startups, I'm always amazed how much the French just LOVE Y Combinator. Nous t'aimons aussi, France. My French friend of @Fundoraclu…\n[原文链接](https://nitter.net/jasonfreedman/status/2048615296613937201#m)\n\n**[2026-04-26T14:48:06+00:00]**\n> RT by @paulg: Yeah okay, Lego bros, brodettes and brotheys are cooked with this one. GPT 2 Image can create full Lego sets! With actual Bricklink IDs so you can order the parts and build it. Whole ne…\n[原文链接](https://nitter.net/DennisonBertram/status/2048413815675539816#m)\n\n**[2026-04-26T14:47:09+00:00]**\n> Every post, I block and report a couple accounts using AI-generated replies. It feels much the same as picking up litter on a city street; I don't know if it has any effect, but it feels like I ought…\n[原文链接](https://nitter.net/paulg/status/2048413578789634100#m)\n\n**[2026-04-26T14:40:28+00:00]**\n> Durer was the original Dr Seuss.\n[原文链接](https://nitter.net/paulg/status/2048411898081583547#m)\n\n**[2026-04-26T14:36:59+00:00]**\n> Writing a talk to give in Stockholm. The prospect of speaking to a large group of people is no longer frightening, but writing a talk is as much work as ever. I'm no longer afraid of audiences, but I…\n[原文链接](https://nitter.net/paulg/status/2048411021329453562#m)\n\n**[2026-04-26T13:37:21+00:00]**\n> RT by @paulg: 'Action is now needed': Over 60 ex-U.K. ambassadors call to sanction Israel over West Bank https://www.haaretz.com/west-bank/2026-04-26/ty-article/.premium/over-60-ex-uk-ambassadors-cal…\n[原文链接](https://nitter.net/haaretzcom/status/2048396013816152216#m)\n\n**[2026-04-25T14:17:57+00:00]**\n> RT by @paulg: Journalists worldwide should stand up for colleagues who are murdered.\n[原文链接](https://nitter.net/NickKristof/status/2048043843690561556#m)\n\n---\n\n### ✅ @naval — Naval Ravikant（10 条）\n\n**[2026-04-24T11:53:43+00:00]**\n> RT by @naval: Fundrise VCX is exactly why USVC needs to exist. Retail wants access to OpenAI, Anthropic, SpaceX, xAI, etc. That demand is not going away. VCX turned that demand into a liquid public w…\n[原文链接](https://nitter.net/alexbass/status/2047645157080658335#m)\n\n**[2026-04-24T05:39:10+00:00]**\n> R to @naval: x.com/avlok/status/204754692…\n[原文链接](https://nitter.net/naval/status/2047550896670908809#m)\n\n**[2026-04-24T05:23:22+00:00]**\n> RT by @naval: I’ve seen a lot of questions about USVC, AngelList’s newest product. First, don’t invest in venture capital if you can’t afford to lose your money. Put your savings somewhere safer. But…\n[原文链接](https://nitter.net/avlok/status/2047546920747307466#m)\n\n**[2026-04-24T03:37:14+00:00]**\n> Hari nails it: “Don’t listen to people who don’t know how private markets work.”\n[原文链接](https://nitter.net/naval/status/2047520212787015748#m)\n\n**[2026-04-24T03:33:25+00:00]**\n> R to @naval: x.com/haridigresses/status/2…\n[原文链接](https://nitter.net/naval/status/2047519250433421604#m)\n\n**[2026-04-24T02:58:19+00:00]**\n> R to @naval: x.com/nivi/status/2047471220…\n[原文链接](https://nitter.net/naval/status/2047510419565420779#m)\n\n**[2026-04-24T01:01:28+00:00]**\n> RT by @naval: USVC is a new fund being offered by Naval, it's been discussed widely on X. I have some thoughts and why people should look into it. I have no connection with it and not being paid to s…\n[原文链接](https://nitter.net/Cernovich/status/2047481012826124516#m)\n\n**[2026-04-24T00:22:33+00:00]**\n> RT by @naval: I spent the morning digging into USVC fees. TLDR: In my opinion, there is no lower-cost way to invest in VC other than becoming one. I’m expecting to pay the same or less than it costs …\n[原文链接](https://nitter.net/nivi/status/2047471220451578132#m)\n\n**[2026-04-23T15:20:52+00:00]**\n> RT by @naval: We launched USVC yesterday and it was one of the most fun days of my career Thousands of people ended up subscribing for literally tens of millions of dollars While most of the receptio…\n[原文链接](https://nitter.net/ankurnagpal/status/2047334901033123913#m)\n\n**[2026-04-22T16:34:52+00:00]**\n> Introducing USVC - a single basket of high-growth venture capital, for everyone. No accreditation required, SEC-registered, and a very low $500 minimum. Includes OpenAI, Anthropic, xAI, Sierra, Cruso…\n[原文链接](https://nitter.net/naval/status/2046991137022648800#m)\n\n---\n\n### ✅ @eladgil — Elad Gil（10 条）\n\n**[2026-04-26T02:40:47+00:00]**\n> Saturday song https://youtu.be/D8MoLNxLE98?si=yRsm9viuy3NYvnJ0\n[原文链接](https://nitter.net/eladgil/status/2048230781739581745#m)\n\n**[2026-04-24T18:44:49+00:00]**\n> RT by @eladgil: Adopting Claude speak in my regular life, episode 1: Partner: Did you do the dishes tonight? Me: Yes they're done. Partner: Why are they still dirty? Me: You're right to push back. I …\n[原文链接](https://nitter.net/awnihannun/status/2047748613976264835#m)\n\n**[2026-04-24T01:35:02+00:00]**\n> New life plan- Move to Brooklyn Get neck tat Ride bike everywhere Cold brew own coffee (also start drinking coffee) Adopt 12 year old stray cat, name him Nietzsche Vape mango pods, but ironically Wea…\n[原文链接](https://nitter.net/eladgil/status/2047489459378397604#m)\n\n**[2026-04-23T21:04:47+00:00]**\n> RT by @eladgil: How does one make sense of SF? We are living through the craziest computing revolution of the last 2 decades....and 95% of the value being created is within a 4-mile radius in SF (h/t…\n[原文链接](https://nitter.net/adityaag/status/2047421448449630379#m)\n\n**[2026-04-23T17:55:03+00:00]**\n> Entrepreneurship is a distributed search job across the surface of commercial opportunities\n[原文链接](https://nitter.net/eladgil/status/2047373700643844303#m)\n\n**[2026-04-23T17:20:32+00:00]**\n> Big congrats\n[原文链接](https://nitter.net/eladgil/status/2047365014500389353#m)\n\n**[2026-04-23T17:19:56+00:00]**\n> My view is the AI boom will only accelerate and is a once in a lifetime transformation This is orthogonal to whether many AI companies should exit in next 12-18 months, as some may lack durability vs…\n[原文链接](https://nitter.net/eladgil/status/2047364865527075139#m)\n\n**[2026-04-22T20:39:39+00:00]**\n> <3 @infisical\n[原文链接](https://nitter.net/eladgil/status/2047052737762980083#m)\n\n**[2026-04-21T22:45:48+00:00]**\n> What a time to be alive\n[原文链接](https://nitter.net/eladgil/status/2046722094348771758#m)\n\n**[2026-04-21T20:58:54+00:00]**\n> 👀\n[原文链接](https://nitter.net/eladgil/status/2046695194054320150#m)\n\n---\n\n### ✅ @DavidSacks — David Sacks（10 条）\n\n**[2026-04-26T20:42:24+00:00]**\n> MSM hoax factories like the Atlantic love to allege conflicts of interest without ever disclosing their own.\n[原文链接](https://nitter.net/DavidSacks/status/2048502978626113625#m)\n\n**[2026-04-26T17:37:26+00:00]**\n> RT by @DavidSacks: Accurate\n[原文链接](https://nitter.net/elonmusk/status/2048456433981591867#m)\n\n**[2026-04-26T15:03:35+00:00]**\n> RT by @DavidSacks: Cole Allen, the gunman from last night’s WH Correspondents Dinner, maintained an active online presence, especially on the leftwing social media platform Bluesky where he went by t…\n[原文链接](https://nitter.net/AndrewKolvet/status/2048417712439689346#m)\n\n**[2026-04-25T18:47:09+00:00]**\n> RT by @DavidSacks: .@POTUS: \"We want to beat China at the industry. We're leading with crypto, we're leading with AI, and I really feel I have an obligation... as a President, I have to be able to ma…\n[原文链接](https://nitter.net/RapidResponse47/status/2048111588930986354#m)\n\n**[2026-04-25T13:54:41+00:00]**\n> RT by @DavidSacks: Probably the best take I have heard on why there is so much fear around software exposure in private equity and credit because of AI From David Sacks \"Historically we only had two …\n[原文链接](https://nitter.net/BoringBiz_/status/2048037985765949537#m)\n\n**[2026-04-25T03:16:09+00:00]**\n> RT by @DavidSacks: Incredible return on investment! 💰💰💰\n[原文链接](https://nitter.net/elonmusk/status/2047877294476116184#m)\n\n**[2026-04-25T02:52:39+00:00]**\n> SPLC invested $270k in Charlottesville and got $81 million in additional donations. Extraordinary returns.\n[原文链接](https://nitter.net/DavidSacks/status/2047871382923469241#m)\n\n**[2026-04-25T02:37:36+00:00]**\n> Marc Benioff is the apex cloud founder. He and Salesforce have turned every previous technology wave to their advantage. Cloud, social, mobile, big data. I predict AI will be no different.\n[原文链接](https://nitter.net/DavidSacks/status/2047867592790946189#m)\n\n**[2026-04-25T00:55:54+00:00]**\n> RT by @DavidSacks: SACKS: “We're really lucky that [Trump] is President … when this AI revolution is happening.” JASON: “What would happen if Kamala ‘Ding Dong’ was in right now?” SACKS: “We'd have n…\n[原文链接](https://nitter.net/TheChiefNerd/status/2047842000632713369#m)\n\n**[2026-04-24T23:41:01+00:00]**\n> RT by @DavidSacks: David Sacks: We're lucky that Trump's the President when this AI revolution is happening. @Jason \"Do an alt history, Sacks, what would happen if Kamala Ding Dong was in right now?\"…\n[原文链接](https://nitter.net/jayplemons/status/2047823154655932696#m)\n\n---\n\n### ✅ @jason — Jason Calacanis（10 条）\n\n**[2026-04-27T01:51:02+00:00]**\n> Incredible writing from @euphoriaHBO\n[原文链接](https://nitter.net/Jason/status/2048580651985604783#m)\n\n**[2026-04-26T19:42:30+00:00]**\n> I’ve invested in 700 private companies Providing liquidity and loans to high performing founders is completely standard. In fact, investors encourage loans and secondary sales for founders to enable …\n[原文链接](https://nitter.net/Jason/status/2048487905543237675#m)\n\n**[2026-04-26T18:14:04+00:00]**\n> Ok @Acosta, balls in your court\n[原文链接](https://nitter.net/Jason/status/2048465651723882972#m)\n\n**[2026-04-26T18:05:09+00:00]**\n> The NYTimes focus last week was micro-looting, social murder and meaningless private company transactions designed to ferment class warfare. Disgraziad\n[原文链接](https://nitter.net/Jason/status/2048463405590225173#m)\n\n**[2026-04-26T17:13:01+00:00]**\n> Who made this?!\n[原文链接](https://nitter.net/Jason/status/2048450286902235560#m)\n\n**[2026-04-26T16:21:34+00:00]**\n> I’m proud to announce I’m hosting an exhibition cage match between @Acosta and @mtracey on July 4th $100,000 cash prize Vegas 3, 3 minute rounds\n[原文链接](https://nitter.net/Jason/status/2048437340218044499#m)\n\n**[2026-04-26T16:16:34+00:00]**\n> Once again, the substack party result in a Donnybrook — it’s like the source awards for wordmaxxers\n[原文链接](https://nitter.net/Jason/status/2048436081725464959#m)\n\n**[2026-04-26T13:51:54+00:00]**\n> RT by @Jason: Random pic of @Jason protecting our $TAO bags\n[原文链接](https://nitter.net/nordin_eth/status/2048399674269213067#m)\n\n**[2026-04-26T03:57:07+00:00]**\n> The left has a serious violence problem, which @DavidSacks called out early and often. This generation of woke democratic socialists are morally bankrupt. They believe in looting and violence as a po…\n[原文链接](https://nitter.net/Jason/status/2048249992163242220#m)\n\n**[2026-04-26T03:46:17+00:00]**\n> If you’re not condemning these lunatics, you’re advocating for the end of the American empire. I’m not for canceling people, but the fact the @nytimes and @newyorker not only employees these individu…\n[原文链接](https://nitter.net/Jason/status/2048247267182658004#m)\n\n---\n\n### ✅ @HarryStebbings — Harry Stebbings（10 条）\n\n**[2026-04-27T13:30:16+00:00]**\n> Two areas I would love to invest that are non-technical: 1. Egg freezing clinics. In 10 years, strongly believe every 21 year old will freeze their eggs and it becomes the norm. Amazing business. Ins…\n[原文链接](https://nitter.net/HarryStebbings/status/2048756619622707452#m)\n\n**[2026-04-26T22:34:46+00:00]**\n> We hired someone for the investing team. Something I never planned to do. They sent the team 3 new deals per day for 90 days straight. All aligned to our stage, geography and deal type. That’s how yo…\n[原文链接](https://nitter.net/HarryStebbings/status/2048531257399664920#m)\n\n**[2026-04-26T19:35:39+00:00]**\n> I have interviewed 1,000 of the best CEOs of the last 10 years. Adam Foroughi, Founder @AppLovin is easily top 3, ever. $160BN Market Cap $5.48BN Revenue $10M EBITDA per head 82%+ margins Just 450 pe…\n[原文链接](https://nitter.net/HarryStebbings/status/2048486182904852537#m)\n\n**[2026-04-26T15:07:55+00:00]**\n> Seeing two types of founders emerge in this moment: The tourists and the terminators. The terminators are salivating at the opportunity ahead. Hungrier than ever. More ambitious than ever. They want …\n[原文链接](https://nitter.net/HarryStebbings/status/2048418806867870115#m)\n\n**[2026-04-26T13:56:31+00:00]**\n> The best founders I know all text their investors. None of them email them. The relationship will blossom and deepen in a matter of messages.\n[原文链接](https://nitter.net/HarryStebbings/status/2048400836024283246#m)\n\n**[2026-04-24T21:38:00+00:00]**\n> This week I got to sit down with two truly generational CEOs and ask them anything: @tobi @Shopify ($160BN Market Cap) Adam Foroughi @AppLovin ($160BN Market Cap) I have the best job in the world.\n[原文链接](https://nitter.net/HarryStebbings/status/2047792195868967172#m)\n\n**[2026-04-24T15:04:00+00:00]**\n> How Claude Design Will Hurt Figma \"Claude Design will not replace Figma directly, but it will chip away at it. It removes the need to wait for designers by letting people go straight from idea to pro…\n[原文链接](https://nitter.net/HarryStebbings/status/2047693043080261672#m)\n\n**[2026-04-23T23:43:00+00:00]**\n> Why the biggest fintech players are in for a shock. \"The shift is from human UX to agent UX. In the past, you won with dashboards, design and user experience. Now, the buyer is an AI agent, and it on…\n[原文链接](https://nitter.net/HarryStebbings/status/2047461264998478113#m)\n\n**[2026-04-23T21:23:00+00:00]**\n> I used to think MAUs and WAUs were the dumbest metric. Now I think it's the most important. \"I used to think MAUs and WAUs did not matter, now I think they are critical. In the AI era, usage is the l…\n[原文链接](https://nitter.net/HarryStebbings/status/2047426032840634830#m)\n\n**[2026-04-23T20:32:21+00:00]**\n> Slightly soppy bromance post but Jason believed in me when I was 18 and at law school still. There were next to no signs 20VC was or would be a success. He has been a dear friend ever since!\n[原文链接](https://nitter.net/HarryStebbings/status/2047413285675290984#m)\n\n---\n\n### ⚠️ @lmsqueegie — Lars Nielsen（获取失败）\n\n- 错误: URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>\n\n### ✅ @david__tian — David Tian（0 条）\n\n---\n\n### ⚠️ @Bitking_ — BTCKing（获取失败）\n\n- 错误: URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>\n\n### ✅ @CryptoCred — Credible Crypto（1 条）\n\n**[2026-04-22T22:25:51+00:00]**\n> Dev is posting about price\n[原文链接](https://nitter.net/CryptoCred/status/2047079463750377958#m)\n\n---\n\n### ✅ @AltcoinBuzz — Altcoin Buzz（0 条）\n\n---\n\n### ✅ @TradingGods — Trading Gods（0 条）\n\n---\n\n### ✅ @Warrior_Trading — Warrior Trading（0 条）\n\n---\n\n### ✅ @ProfTrading — Profitable Trading（0 条）\n\n---\n\n### ✅ @SatoshiBun — Satoshi（10 条）\n\n**[2026-04-25T15:26:45+00:00]**\n> RT by @satoshibun: Another big reason why I don’t necessarily agree with changing the base designs, I think they’re perfect for a medium budget kids cartoon, Qwel’s new art style making them look mor…\n[原文链接](https://nitter.net/images_i_love3/status/2048061157685010444#m)\n\n**[2026-04-24T18:45:53+00:00]**\n> RT by @satoshibun: Baby’s first con\n[原文链接](https://nitter.net/Aaron_Margolin/status/2047748882952778044#m)\n\n**[2026-04-24T17:05:22+00:00]**\n> RT by @satoshibun: Bring home a bundle of cuteness with the #tokidoki Baby Unicorno Series! 🦄🍼💖 Available on our website!\n[原文链接](https://nitter.net/tokidoki/status/2047723587528782152#m)\n\n**[2026-04-24T16:16:22+00:00]**\n> RT by @satoshibun: Good morning! Rise and shine, gamers!\n[原文链接](https://nitter.net/shopculturefly/status/2047711254379393160#m)\n\n**[2026-04-24T11:40:30+00:00]**\n> Im genuinely this Close to killing myself rn & this Shit happens like Okay\n[原文链接](https://nitter.net/satoshibun/status/2047641832624893993#m)\n\n**[2026-04-24T11:06:42+00:00]**\n> RT by @satoshibun: How do Delilah Defenders actively defend her actions with these Toons literally existing. I just don't get it\n[原文链接](https://nitter.net/DaCapTainXD/status/2047633324676440561#m)\n\n**[2026-04-24T09:21:13+00:00]**\n> RT by @satoshibun: 😾\n[原文链接](https://nitter.net/aaa___kanato/status/2047606779677376714#m)\n\n**[2026-04-24T08:00:10+00:00]**\n> RT by @satoshibun: ♦️━━━━━━━━━━━━━♣️ ⠀⠀⠀⠀⠀⠀⠀『#文字化化』 ⠀「不思議の国のアリス」テーマ ⠀グラフアート新商品発売決定！ ♠️━━━━━━━━━━━━━♥️ 📅5/23～6/5 📍eeo Store 池袋本店 🛒通販でも販売開始！：https://eeo.today/store/101/title/6785?utm_source=twitter&ut…\n[原文链接](https://nitter.net/eeo_store/status/2047586383519531500#m)\n\n**[2026-04-23T18:56:53+00:00]**\n> RT by @satoshibun: Shadow Milk Cookie’s Mind Blown Jester\n[原文链接](https://nitter.net/breadstickz1/status/2047389262253855041#m)\n\n**[2026-04-23T14:42:44+00:00]**\n> RT by @satoshibun: OH MYG GDOODOISU #moeoverload 🥹\n[原文链接](https://nitter.net/cuckuke/status/2047325302771061148#m)\n\n---\n\n### ⚠️ @直播带逛Tommy — Tommy（获取失败）\n\n- 错误: invalid_handle_for_nitter\n\n### ✅ @AndrewYNg — Andrew Ng（0 条）\n\n---\n\n### ✅ @JeffDean — Jeff Dean（10 条）\n\n**[2026-04-27T13:40:08+00:00]**\n> The video of my conversation with Amin Vahdat, @gilbert, and @djrosent at Cloud Next last week is now up. https://youtu.be/BpnJYJmbXcM?si=vUY3hI_aDX8K6gco Thanks for a great conversation!\n[原文链接](https://nitter.net/JeffDean/status/2048759102390899142#m)\n\n**[2026-04-26T10:41:25+00:00]**\n> RT by @JeffDean: THE FIRST MAN IN HISTORY TO BREAK 2 HOURS IN A MARATHON!!!🤯🤯🤯 Sabastian Sawe 🇰🇪 has just shattered the World Record at the London Marathon, running 1:59:30!!! He makes history as the…\n[原文链接](https://nitter.net/TrackGazette/status/2048351736037826877#m)\n\n**[2026-04-24T13:12:52+00:00]**\n> R to @JeffDean: The Arxiv for the new Decoupled DiLoCo paper is now up: https://arxiv.org/abs/2604.21428v1\n[原文链接](https://nitter.net/JeffDean/status/2047665074471387456#m)\n\n**[2026-04-23T20:15:06+00:00]**\n> R to @JeffDean: It's worth pointing out that we have been pushing on large-scale training and asynchronous techniques for the last ~14 years. Here's our NeurIPS 2012 paper where we demonstrated that …\n[原文链接](https://nitter.net/JeffDean/status/2047408945950802186#m)\n\n**[2026-04-23T20:09:30+00:00]**\n> R to @JeffDean: TPU 8i is co-designed with our Gemini research team to support low latency inference. Among the attributes that support this are large amounts of on-chip SRAM, enabling more computati…\n[原文链接](https://nitter.net/JeffDean/status/2047407537566495033#m)\n\n**[2026-04-23T20:00:58+00:00]**\n> R to @JeffDean: First, let's talk about TPU 8t, which is designed for large-scale training and inference throughput. The pod size is increased slightly to 9600 chips, and provides ~3X the FP4 perform…\n[原文链接](https://nitter.net/JeffDean/status/2047405389856297387#m)\n\n**[2026-04-23T19:55:08+00:00]**\n> I had a good time discussing yesterday's Google TPU v8t and v8i announcement at Cloud Next with Amin Vahdat along with @AcquiredFM hosts @gilbert and @djrosent. The blog post announcement has lots of…\n[原文链接](https://nitter.net/JeffDean/status/2047403921912873257#m)\n\n**[2026-04-23T15:41:07+00:00]**\n> It's been a delight to provide small amounts of advice and suggestions to people working on the Decoupled DiLoCo training system. This approach enables graceful handling of failures in large scale tr…\n[原文链接](https://nitter.net/JeffDean/status/2047339995682529313#m)\n\n**[2026-04-21T19:31:28+00:00]**\n> RT by @JeffDean: My friend @JeffDean encouraged me to speak at this event so come join me on May 26 in San Jose! https://bauplanlabs.github.io/SAO-workshop/\n[原文链接](https://nitter.net/ceo_clickhouse/status/2046673188193701901#m)\n\n**[2026-04-21T16:50:26+00:00]**\n> RT by @JeffDean: Following positive feedback from other venues, like STOC and ICML, NeurIPS is pleased to announce a new initiative in partnership with Google: for NeurIPS 2026, authors will have acc…\n[原文链接](https://nitter.net/NeurIPSConf/status/2046632664493384060#m)\n\n---\n\n### ✅ @soumithchintala — Soumith Chintala（4 条）\n\n**[2026-04-27T13:29:14+00:00]**\n> This is kinda interesting. Anthro probably needs to scale up Account Support via Claude or via humans (traditional account managers). Would be funny if they chose humans. Alternatively, more and more…\n[原文链接](https://nitter.net/soumithchintala/status/2048756358820827564#m)\n\n**[2026-04-23T05:52:02+00:00]**\n> RT by @soumithchintala: Incredible work by Sony published in @Nature today! 🏓 They’ve built “Ace”, an autonomous ping-pong robot that uses RL and Sony’s vision sensors to achieve expert-level play in…\n[原文链接](https://nitter.net/hardmaru/status/2047191747793649805#m)\n\n**[2026-04-20T17:40:46+00:00]**\n> RT by @soumithchintala: Dwarkesh is not an AGI party bro. He's been pretty diverse in how he seeks alpha from across a wide variety of industries. I enjoy the hell out of a lot of his podcasts. This …\n[原文链接](https://nitter.net/soumithchintala/status/2046282944139215141#m)\n\n**[2026-04-20T16:32:46+00:00]**\n> The Jensen + @dwarkesh_sp podcast was fantastic. Jensen is someone who understood how ecosystems work and someone who understands real-world trade, policy and controls work. And in some deeper sense …\n[原文链接](https://nitter.net/soumithchintala/status/2046265830908870983#m)\n\n---\n\n### ⚠️ @MikeAI — Michael（获取失败）\n\n- 错误: URLError: <urlopen error [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1006)>\n\n### ✅ @Ronald_vanLoon — Ronald van Loon（10 条）\n\n**[2026-04-27T13:11:07+00:00]**\n> Dual-Arm Tracked Humanoid Begins Real-World Industrial Trials via @IlirAliu_ #Robotics #ArtificialIntelligence #ML #Innovation #Technology\n[原文链接](https://nitter.net/Ronald_vanLoon/status/2048751798735835629#m)\n\n**[2026-04-27T13:00:20+00:00]**\n> R to @Ronald_vanLoon: My view is simple: The winners in enterprise AI will not be the companies with access to the most models. They will be the ones that build the best intelligent systems around th…\n[原文链接](https://nitter.net/Ronald_vanLoon/status/2048749087323820198#m)\n\n**[2026-04-27T13:00:20+00:00]**\n> R to @Ronald_vanLoon: The second misconception I keep seeing: Too many teams think they have to choose between open models and proprietary models. They do not. The smarter path is hybrid. → proprieta…\n[原文链接](https://nitter.net/Ronald_vanLoon/status/2048749084446515253#m)\n\n**[2026-04-27T13:00:19+00:00]**\n> R to @Ronald_vanLoon: My biggest takeaway: Models are becoming components, not products. What matters now is the system around them: → runtimes → memory → tool access → orchestration → secure executi…\n[原文链接](https://nitter.net/Ronald_vanLoon/status/2048749081464287511#m)\n\n**[2026-04-27T13:00:18+00:00]**\n> Most enterprise AI strategies are already behind. Not because they picked the wrong model, but because they are still thinking at the model layer. The real shift is happening one level up, where AI b…\n[原文链接](https://nitter.net/Ronald_vanLoon/status/2048749077911736401#m)\n\n**[2026-04-27T12:50:08+00:00]**\n> Shape-Shifting Wheels by KIMM Let Wheelchairs Climb Stairs and Conquer Any Terrain by @spaceandtech_ #Innovation #EmergingTech #Technology\n[原文链接](https://nitter.net/Ronald_vanLoon/status/2048746516324487529#m)\n\n**[2026-04-27T12:18:17+00:00]**\n> AI Q: The Emotion-Reading Humanoid #Robot That Reacts Like a Real Being via @XRoboHub #Robots #ArtificialIntelligence #Innovation #Technology #Tech\n[原文链接](https://nitter.net/Ronald_vanLoon/status/2048738501798121537#m)\n\n**[2026-04-27T11:20:17+00:00]**\n> Skild Brain Pairs With Jetson Thor to Power Next-Gen #Robotics Intelligence by @CyberRobooo #Robot #Engineering #Innovation #Technology\n[原文链接](https://nitter.net/Ronald_vanLoon/status/2048723908744954357#m)\n\n**[2026-04-23T06:57:05+00:00]**\n> RT by @Ronald_vanLoon: China Deploys Solar #Robot to De-Ice Power Lines in Extreme Mountain Conditions by @IntEngineering #Robotics #Engineering #Innovation #Technology\n[原文链接](https://nitter.net/Ronald_vanLoon/status/2047208118723936306#m)\n\n**[2026-04-23T06:23:14+00:00]**\n> RT by @Ronald_vanLoon: Treventus Scan #Robot Digitizes Up to 2,500 Pages Per Hour by @AadityaAnand_11 #Robotics #Innovation #EmergingTech #Technology\n[原文链接](https://nitter.net/Ronald_vanLoon/status/2047199600872665579#m)\n\n---\n\n### ✅ @erikbryn — Erik Brynjolfsson（7 条）\n\n**[2026-04-25T03:06:05+00:00]**\n> Steve Jurvetson has a knack for seeing the future more clearly than just about anyone. Here are some of his insights from his visit to my Lab. @FutureJurvetson @Stanford @DigEconLab\n[原文链接](https://nitter.net/erikbryn/status/2047874760542200042#m)\n\n**[2026-04-24T23:32:43+00:00]**\n> RT by @erikbryn: Interesting study by @erikbryn and @avi_collis showing big consumer welfare gains from AI. Reminds us that large portion of the economic value of AI will not show up in traditional e…\n[原文链接](https://nitter.net/RonnieChatterji/status/2047821064437424288#m)\n\n**[2026-04-23T18:14:10+00:00]**\n> RT by @erikbryn: Congratulations to Lab Digital Fellow Angela Aristidou, Digital Fellow @avi_collis, and Research Scientist @d_vidnguyen for being a part of @GoogleAI's inaugural group of global econ…\n[原文链接](https://nitter.net/DigEconLab/status/2047378514240999569#m)\n\n**[2026-04-22T01:22:04+00:00]**\n> RT by @erikbryn: Thanks for coming in today, and for sharing your feedback on my team’s idea! Your optimistic take on the value that humans will continue to deliver was so refreshing.\n[原文链接](https://nitter.net/TejuAdeyinka/status/2046761422148018260#m)\n\n**[2026-04-21T21:13:05+00:00]**\n> RT by @erikbryn: How do AI agents influence knowledge work? @SuproteemSarkar's (@UChicago) talk at the DEL Seminar Series is now available on YouTube! Moderated by @erikbryn, Sarkar discusses three p…\n[原文链接](https://nitter.net/DigEconLab/status/2046698761221783753#m)\n\n**[2026-04-21T17:10:57+00:00]**\n> RT by @erikbryn: Excited to speak at my friend @erikbryn’s ECON 295/CS 323 class at @Stanford today. Questions?\n[原文链接](https://nitter.net/saranormous/status/2046637828025835983#m)\n\n**[2026-04-20T15:07:11+00:00]**\n> Here's a crisp summary by @EconChrisClarke of some of the key findings of our Canaries in the Coal Mine, the counter arguments, the counter-counter arguments and the complementary research by others.…\n[原文链接](https://nitter.net/erikbryn/status/2046244291945927102#m)\n\n---\n\n### ✅ @liuliu — 刘进（3 条）\n\n**[2026-04-24T04:05:41+00:00]**\n> I've been thinking about local LLMs a lot these days.\n[原文链接](https://nitter.net/liuliu/status/2047527371486658814#m)\n\n**[2026-04-23T17:57:10+00:00]**\n> I still think on usability-wise, there is a big gap between \"your thing in the training data\" v.s. \"your thing in the SKILL.md\". Prove me wrong otherwise.\n[原文链接](https://nitter.net/liuliu/status/2047374234004115719#m)\n\n**[2026-04-22T16:16:24+00:00]**\n> Ask Codex about Ulysses attention: wow, you know so much and can help me get this communication+spda thing work! Ask Codex to implement a segmented file downloader: didn’t even get the completion blo…\n[原文链接](https://nitter.net/liuliu/status/2046986486629986435#m)\n\n---\n\n### ⚠️ @二级炒家 — 二级炒家（获取失败）\n\n- 错误: invalid_handle_for_nitter\n\n### ⚠️ @王川 — 王川（获取失败）\n\n- 错误: invalid_handle_for_nitter\n\n### ⚠️ @老胡 — 老胡（获取失败）\n\n- 错误: invalid_handle_for_nitter\n\n### ⚠️ @比特币超级玩家 — 超级玩家（获取失败）\n\n- 错误: invalid_handle_for_nitter\n",
+  "monthly_analysis_md": "# X平台资讯深度分析报告\n\n**报告日期**: 2026-04-27T13:44:13.237379+00:00\n**分析账号**: 33个 | **活跃账号**: 17个 | **推文总量**: 145条\n\n---\n\n## 一、总体概览\n\n- 本报告基于 X 关注列表近30天 RSS 数据自动生成。\n- 默认口径：按账号聚合、按推文主题词粗分层。\n\n## 二、主题分布\n\n- **其他**：100 条\n- **模型能力**：27 条\n- **投融资与并购**：8 条\n- **交易与市场**：7 条\n- **算力与芯片**：3 条\n\n## 三、活跃账号 Top10\n\n- @JeffDean: 10 条\n- @GaryMarcus: 10 条\n- @HarryStebbings: 10 条\n- @sama: 10 条\n- @Ronald_vanLoon: 10 条\n- @paulg: 10 条\n- @elonmusk: 10 条\n- @jason: 10 条\n- @DavidSacks: 10 条\n- @ylecun: 10 条\n\n## 四、代表性推文\n\n- @JeffDean | 2026-04-27T13:40:08+00:00\n  - The video of my conversation with Amin Vahdat, @gilbert, and @djrosent at Cloud Next last week is now up. https://youtu.be/BpnJYJmbXcM?si=vUY3hI_aDX8K6gco Thanks for a great conve…\n  - https://nitter.net/JeffDean/status/2048759102390899142#m\n- @GaryMarcus | 2026-04-27T13:32:43+00:00\n  - ⚠️ AI agents are wildly premature technology that is being rolled out way too fast. The deepest lesson about the vibe coded AI agent disaster story that is running around is NOT a…\n  - https://nitter.net/GaryMarcus/status/2048757233174122827#m\n- @HarryStebbings | 2026-04-27T13:30:16+00:00\n  - Two areas I would love to invest that are non-technical: 1. Egg freezing clinics. In 10 years, strongly believe every 21 year old will freeze their eggs and it becomes the norm. A…\n  - https://nitter.net/HarryStebbings/status/2048756619622707452#m\n- @soumithchintala | 2026-04-27T13:29:14+00:00\n  - This is kinda interesting. Anthro probably needs to scale up Account Support via Claude or via humans (traditional account managers). Would be funny if they chose humans. Alternat…\n  - https://nitter.net/soumithchintala/status/2048756358820827564#m\n- @sama | 2026-04-27T13:24:26+00:00\n  - we have updated our partnership with microsoft. microsoft will remain our primary cloud partner, but we are now able to make our products and services available across all clouds.…\n  - https://nitter.net/sama/status/2048755148361707946#m\n- @Ronald_vanLoon | 2026-04-27T13:11:07+00:00\n  - Dual-Arm Tracked Humanoid Begins Real-World Industrial Trials via @IlirAliu_ #Robotics #ArtificialIntelligence #ML #Innovation #Technology\n  - https://nitter.net/Ronald_vanLoon/status/2048751798735835629#m\n- @sama | 2026-04-27T13:09:30+00:00\n  - this is so good: https://paulgraham.com/kids.html\n  - https://nitter.net/sama/status/2048751392031203544#m\n- @Ronald_vanLoon | 2026-04-27T13:00:20+00:00\n  - R to @Ronald_vanLoon: My view is simple: The winners in enterprise AI will not be the companies with access to the most models. They will be the ones that build the best intellige…\n  - https://nitter.net/Ronald_vanLoon/status/2048749087323820198#m\n- @Ronald_vanLoon | 2026-04-27T13:00:20+00:00\n  - R to @Ronald_vanLoon: The second misconception I keep seeing: Too many teams think they have to choose between open models and proprietary models. They do not. The smarter path is…\n  - https://nitter.net/Ronald_vanLoon/status/2048749084446515253#m\n- @Ronald_vanLoon | 2026-04-27T13:00:19+00:00\n  - R to @Ronald_vanLoon: My biggest takeaway: Models are becoming components, not products. What matters now is the system around them: → runtimes → memory → tool access → orchestrat…\n  - https://nitter.net/Ronald_vanLoon/status/2048749081464287511#m\n- @Ronald_vanLoon | 2026-04-27T13:00:18+00:00\n  - Most enterprise AI strategies are already behind. Not because they picked the wrong model, but because they are still thinking at the model layer. The real shift is happening one …\n  - https://nitter.net/Ronald_vanLoon/status/2048749077911736401#m\n- @Ronald_vanLoon | 2026-04-27T12:50:08+00:00\n  - Shape-Shifting Wheels by KIMM Let Wheelchairs Climb Stairs and Conquer Any Terrain by @spaceandtech_ #Innovation #EmergingTech #Technology\n  - https://nitter.net/Ronald_vanLoon/status/2048746516324487529#m\n- @GaryMarcus | 2026-04-27T12:48:41+00:00\n  - R to @GaryMarcus: Stop blaming the users. It’s not that simple:\n  - https://nitter.net/GaryMarcus/status/2048746152749846549#m\n- @GaryMarcus | 2026-04-27T12:36:05+00:00\n  - People keep blaming the users for the growing number of vibe-coded reasoners. Doing so is *half* right. Users *are*screwing up - by letting vibe coded stuff access their files, wi…\n  - https://nitter.net/GaryMarcus/status/2048742983684784239#m\n- @GaryMarcus | 2026-04-27T12:20:17+00:00\n  - “Vibe coded disasters piling up on Reddit”\n  - https://nitter.net/GaryMarcus/status/2048739005525877072#m\n- @Ronald_vanLoon | 2026-04-27T12:18:17+00:00\n  - AI Q: The Emotion-Reading Humanoid #Robot That Reacts Like a Real Being via @XRoboHub #Robots #ArtificialIntelligence #Innovation #Technology #Tech\n  - https://nitter.net/Ronald_vanLoon/status/2048738501798121537#m\n- @Ronald_vanLoon | 2026-04-27T11:20:17+00:00\n  - Skild Brain Pairs With Jetson Thor to Power Next-Gen #Robotics Intelligence by @CyberRobooo #Robot #Engineering #Innovation #Technology\n  - https://nitter.net/Ronald_vanLoon/status/2048723908744954357#m\n- @paulg | 2026-04-27T10:01:28+00:00\n  - One of my favorite pictures. A guy I didn't know took it of us on a street in Palo Alto about 10 years ago.\n  - https://nitter.net/paulg/status/2048704073356935676#m\n- @paulg | 2026-04-27T09:50:40+00:00\n  - You never need to describe something as a \"bad take.\" If it's false or irrelevant or omits something important, you can just say so. And if it's true, relevant, and complete, it's…\n  - https://nitter.net/paulg/status/2048701354672050286#m\n- @paulg | 2026-04-27T08:17:48+00:00\n  - Worrying that your startup will be eaten by the model companies is like worrying that your life will be constrained after you become a movie star. You're far more likely simply to…\n  - https://nitter.net/paulg/status/2048677984106664227#m\n\n---\n\n*本报告由系统自动生成，供月度复盘使用。*\n",
+  "paths": {
+    "tweet_summary_md": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/Claude_input/x资讯/推文汇总_202604.md",
+    "monthly_analysis_md": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/Claude_input/x资讯/月度深度分析_202604.md"
+  }
+}

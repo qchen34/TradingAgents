@@ -1,0 +1,42 @@
+{
+  "target_indexes": [
+    97,
+    26,
+    8,
+    27,
+    21
+  ],
+  "target_count": 5,
+  "targets": [
+    {
+      "idx": 97,
+      "handle": "sama",
+      "url": "https://x.com/sama/status/2048428561481265539",
+      "title": "feels like a good time to seriously rethink how operating systems and user interfaces are designed\n\n(also the internet; there should be a protocol that is equally usable by people and agents)"
+    },
+    {
+      "idx": 26,
+      "handle": "sama",
+      "url": "https://x.com/sama/status/2048755148361707946",
+      "title": "we have updated our partnership with microsoft.\n\nmicrosoft will remain our primary cloud partner, but we are now able to make our products and services available across all clouds.\n\nwill continue to provide them with models and products until 2032, and a revenue share through 2030."
+    },
+    {
+      "idx": 8,
+      "handle": "AndrewYNg",
+      "url": "https://x.com/AndrewYNg/status/2048793852702757151",
+      "title": "AI-native software engineering teams operate very differently than traditional teams. The obvious difference is that AI-native teams use coding agents to build products much faster, but this leads to many other changes in how we operate. For example, some great engineers now play broader roles than just writing code. They are partly product managers, designers, sometimes marketers. Further, small teams who work in the same office, where they can communicate face-to-face, can move incredibly quickly.\n\nBecause we can now build fast, a greater fraction of time must be spent deciding what to build. To deal with this project-management bottleneck, some teams are pushing engineer:product manager (PM) some teams are pushing engineer:product manager (PM) ratios downward from, say, 8:1 to as low as 1:1. But we can do even better: If we have one PM who decides what to build and one engineer who builds it, the communication between them becomes a bottleneck. This is why the fastest-moving teams I see tend to have engineers who know how to do some product work (and, optionally, some PMs who know how to do some engineering work). When an engineer understands users and can make decisions on what to build and build it directly, they can execute incredibly quickly.\n\nI’ve seen engineers successfully expand their roles to including making product decisions, and PMs expand their roles to building software. The tech industry has more engineers than PMs, but both are promising paths. If you are an engineer, you’ll find it useful to learn some product management skills, and if you’re a PM, please learn to build!\n\nLooking beyond the product-management bottleneck, I also see bottlenecks in design, marketing, legal compliance, and much more. When we speed up coding 10x or 100x, everything else becomes slow in comparison. For example, some of my teams have built great features so quickly that the marketing organization was left scrambling to figure out how to communicate them to users — a marketing bottleneck. Or when a team can build software in a day that the legal department needs a week to review, that’s a legal compliance bottleneck. In this way, agentic coding isn’t just changing the workflow of software engineering, it’s also changing all the teams around it.\n\nWhen smaller, AI-enabled teams can get more done, generalists excel. Traditional companies need to pull together people from many specialties — engineering, product management, design, marketing, legal, etc. — to execute projects and create value. This has resulted in large teams of specialists who work together. But if a team of 2 persons is to get work done that require 5 different specialities, then some of those individuals must play roles outside a single speciality. In some small teams, individuals do have deep specializations. For example, one might be a great engineer and another a great PM. But they also understand the other key functions needed to move a project forward, and can jump into thinking through other kinds of problems as needed. Of course, proficiency with AI tools is a big help, since it helps us to think through problems that involve different roles.\n\nEven in a two-person team, to move fast, communication bottlenecks also must be minimized. This is why I value teams that work in the same location. Remote teams can perform well too, but the highest speed is achieved by having everyone in the room, able to communicate instantaneously to solve problems.\n\nThis post focuses on AI-native teams with around 2-10 persons, but not everything can be done by a small team. I'll address the coordination of larger teams in the future.\n\nI realize these shifts to job roles are tough to navigate for many people. At the same time, I am encouraged that individuals and small teams who are willing to learn the relevant skills are now able to get far more done than was possible before. This is the golden age of learning and building!\n\n[Original text: https://www.deeplearning.ai/the-batch/issue-349/ ]"
+    },
+    {
+      "idx": 27,
+      "handle": "charliebilello",
+      "url": "https://x.com/charliebilello/status/2048753179471323584",
+      "title": "The S&P 500's CAPE Ratio has moved up to 41, its highest level since 2000 and now above 99% of historical valuations. $SPX\n\nVideo: https://www.youtube.com/watch?v=p5e0ThPjIAg&t=36s"
+    },
+    {
+      "idx": 21,
+      "handle": "charliebilello",
+      "url": "https://x.com/charliebilello/status/2048761760971096534",
+      "title": "2026 is following the same playbook as 2025. Only difference is traders have become much more immune to extreme rhetoric and have been more confident in buying the dip, sending the stock market quickly back to new all-time highs. $SPX\n\nVideo: https://www.youtube.com/watch?v=p5e0ThPjIAg&t=973s"
+    }
+  ]
+}

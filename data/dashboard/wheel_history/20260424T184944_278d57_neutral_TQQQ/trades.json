@@ -1,0 +1,110 @@
+[
+  {
+    "date": "2025-09-03 00:00:00",
+    "type": "PUT",
+    "action": "TP_Close",
+    "strike": 39.74,
+    "spot": 44.36949920654297,
+    "premium": 0.5536159877961406,
+    "close_cost": 0.03495383585154532,
+    "pnl": 45.886215194459524,
+    "hold_days": 14,
+    "result": "Win"
+  },
+  {
+    "date": "2025-10-20 00:00:00",
+    "type": "PUT",
+    "action": "TP_Close",
+    "strike": 44.03,
+    "spot": 53.771759033203125,
+    "premium": 0.7966187749534139,
+    "close_cost": 0.05749347645129843,
+    "pnl": 67.93252985021155,
+    "hold_days": 10,
+    "result": "Win"
+  },
+  {
+    "date": "2025-11-25 00:00:00",
+    "type": "PUT",
+    "action": "TP_Close",
+    "strike": 48.48,
+    "spot": 51.84297180175781,
+    "premium": 1.778766330702327,
+    "close_cost": 0.1473346610213957,
+    "pnl": 157.16316696809312,
+    "hold_days": 19,
+    "result": "Win"
+  },
+  {
+    "date": "2025-12-23 00:00:00",
+    "type": "PUT",
+    "action": "TP_Close",
+    "strike": 47.91,
+    "spot": 54.83333969116211,
+    "premium": 1.0365927316800434,
+    "close_cost": 0.06827979046142785,
+    "pnl": 90.85129412186156,
+    "hold_days": 11,
+    "result": "Win"
+  },
+  {
+    "date": "2026-01-09 00:00:00",
+    "type": "PUT",
+    "action": "TP_Close",
+    "strike": 47.56,
+    "spot": 55.6679573059082,
+    "premium": 0.5702405787526459,
+    "close_cost": 0.10914421850859846,
+    "pnl": 40.129636024404746,
+    "hold_days": 7,
+    "result": "Win"
+  },
+  {
+    "date": "2026-02-05 00:00:00",
+    "type": "PUT",
+    "action": "SL_Close",
+    "strike": 47.71,
+    "spot": 47.561363220214844,
+    "premium": 0.7215057151762458,
+    "close_cost": 2.419175603087396,
+    "pnl": -175.746988791115,
+    "hold_days": 2,
+    "result": "Loss"
+  },
+  {
+    "date": "2026-03-11 00:00:00",
+    "type": "PUT",
+    "action": "TP_Close",
+    "strike": 45.23,
+    "spot": 49.26853942871094,
+    "premium": 1.0610637306577004,
+    "close_cost": 0.17795843012527435,
+    "pnl": 82.33053005324261,
+    "hold_days": 15,
+    "result": "Win"
+  },
+  {
+    "date": "2026-03-20 00:00:00",
+    "type": "PUT",
+    "action": "SL_Close",
+    "strike": 43.75,
+    "spot": 43.00889205932617,
+    "premium": 0.8460148560320597,
+    "close_cost": 2.6650036731767415,
+    "pnl": -187.87888171446818,
+    "hold_days": 3,
+    "result": "Loss"
+  },
+  {
+    "date": "2026-04-13 00:00:00",
+    "type": "PUT",
+    "action": "TP_Close",
+    "strike": 40.18,
+    "spot": 50.65999984741211,
+    "premium": 1.4108038692109268,
+    "close_cost": 0.26249808042923695,
+    "pnl": 108.85057887816899,
+    "hold_days": 6,
+    "result": "Win"
+  }
+]

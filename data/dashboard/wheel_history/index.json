@@ -1,0 +1,132 @@
+[
+  {
+    "report_id": "20260424T205423_326207",
+    "style": "aggressive",
+    "ticker": "TQQQ",
+    "run_at": "2026-04-24 20:54:23",
+    "start": "2021-04-01",
+    "end": "2026-04-24",
+    "engine_version": "wheel-v3-split",
+    "rule_version": "tqqq-wheel-manual-v1.1",
+    "path": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T205423_326207_aggressive_TQQQ",
+    "charts": {
+      "equity": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T205423_326207_aggressive_TQQQ/charts/equity.png",
+      "drawdown": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T205423_326207_aggressive_TQQQ/charts/drawdown.png",
+      "monthly": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T205423_326207_aggressive_TQQQ/charts/monthly.png",
+      "indicators": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T205423_326207_aggressive_TQQQ/charts/indicators.png"
+    },
+    "total_return": 22.376311911285395,
+    "sharpe": 0.18207740240393414,
+    "max_dd": -12.670101265549032
+  },
+  {
+    "report_id": "20260424T205311_5c7b8e",
+    "style": "aggressive",
+    "ticker": "TQQQ",
+    "run_at": "2026-04-24 20:53:11",
+    "start": "2025-04-24",
+    "end": "2026-04-24",
+    "engine_version": "wheel-v3-split",
+    "rule_version": "tqqq-wheel-manual-v1.1",
+    "path": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T205311_5c7b8e_aggressive_TQQQ",
+    "charts": {
+      "equity": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T205311_5c7b8e_aggressive_TQQQ/charts/equity.png",
+      "drawdown": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T205311_5c7b8e_aggressive_TQQQ/charts/drawdown.png",
+      "monthly": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T205311_5c7b8e_aggressive_TQQQ/charts/monthly.png",
+      "indicators": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T205311_5c7b8e_aggressive_TQQQ/charts/indicators.png"
+    },
+    "total_return": 13.682463255870015,
+    "sharpe": 2.857837373795672,
+    "max_dd": -2.073090936612936
+  },
+  {
+    "report_id": "20260424T185137_70fe1c",
+    "style": "aggressive",
+    "ticker": "TQQQ",
+    "run_at": "2026-04-24 18:51:37",
+    "start": "2021-04-24",
+    "end": "2026-04-24",
+    "path": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185137_70fe1c_aggressive_TQQQ",
+    "charts": {
+      "equity": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185137_70fe1c_aggressive_TQQQ/charts/equity.png",
+      "drawdown": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185137_70fe1c_aggressive_TQQQ/charts/drawdown.png",
+      "monthly": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185137_70fe1c_aggressive_TQQQ/charts/monthly.png",
+      "indicators": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185137_70fe1c_aggressive_TQQQ/charts/indicators.png"
+    },
+    "total_return": 21.203246816790934,
+    "sharpe": 0.15407662226007332,
+    "max_dd": -12.80745424951754
+  },
+  {
+    "report_id": "20260424T185104_8b7c45",
+    "style": "aggressive",
+    "ticker": "TQQQ",
+    "run_at": "2026-04-24 18:51:04",
+    "start": "2021-04-24",
+    "end": "2026-04-24",
+    "path": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185104_8b7c45_aggressive_TQQQ",
+    "charts": {
+      "equity": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185104_8b7c45_aggressive_TQQQ/charts/equity.png",
+      "drawdown": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185104_8b7c45_aggressive_TQQQ/charts/drawdown.png",
+      "monthly": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185104_8b7c45_aggressive_TQQQ/charts/monthly.png",
+      "indicators": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185104_8b7c45_aggressive_TQQQ/charts/indicators.png"
+    },
+    "total_return": 22.733742227955787,
+    "sharpe": 0.1856543053754313,
+    "max_dd": -12.24209072332098
+  },
+  {
+    "report_id": "20260424T185005_c7f829",
+    "style": "conservative",
+    "ticker": "TQQQ",
+    "run_at": "2026-04-24 18:50:05",
+    "start": "2025-04-24",
+    "end": "2026-04-24",
+    "path": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185005_c7f829_conservative_TQQQ",
+    "charts": {
+      "equity": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185005_c7f829_conservative_TQQQ/charts/equity.png",
+      "drawdown": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185005_c7f829_conservative_TQQQ/charts/drawdown.png",
+      "monthly": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185005_c7f829_conservative_TQQQ/charts/monthly.png",
+      "indicators": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T185005_c7f829_conservative_TQQQ/charts/indicators.png"
+    },
+    "total_return": 5.458408550097382,
+    "sharpe": 2.031983303515009,
+    "max_dd": -0.6003518878697439
+  },
+  {
+    "report_id": "20260424T184944_278d57",
+    "style": "neutral",
+    "ticker": "TQQQ",
+    "run_at": "2026-04-24 18:49:44",
+    "start": "2025-04-24",
+    "end": "2026-04-24",
+    "path": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T184944_278d57_neutral_TQQQ",
+    "charts": {
+      "equity": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T184944_278d57_neutral_TQQQ/charts/equity.png",
+      "drawdown": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T184944_278d57_neutral_TQQQ/charts/drawdown.png",
+      "monthly": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T184944_278d57_neutral_TQQQ/charts/monthly.png",
+      "indicators": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T184944_278d57_neutral_TQQQ/charts/indicators.png"
+    },
+    "total_return": 5.328146325585448,
+    "sharpe": 0.5849740422340445,
+    "max_dd": -2.5196350839124597
+  },
+  {
+    "report_id": "20260424T184855_48a5b2",
+    "style": "neutral",
+    "ticker": "TQQQ",
+    "run_at": "2026-04-24 18:48:55",
+    "start": "2025-04-24",
+    "end": "2026-04-24",
+    "path": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T184855_48a5b2_neutral_TQQQ",
+    "charts": {
+      "equity": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T184855_48a5b2_neutral_TQQQ/charts/equity.png",
+      "drawdown": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T184855_48a5b2_neutral_TQQQ/charts/drawdown.png",
+      "monthly": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T184855_48a5b2_neutral_TQQQ/charts/monthly.png",
+      "indicators": "/Users/qiwei/Desktop/Desktop - Qiwei’s MacBook Pro M1/Final cut projects/fin_bilibili/TradingAgents/TradingAgents/data/dashboard/wheel_history/20260424T184855_48a5b2_neutral_TQQQ/charts/indicators.png"
+    },
+    "total_return": 3.2482335125425754,
+    "sharpe": 0.09896699284613594,
+    "max_dd": -2.619957219409812
+  }
+]

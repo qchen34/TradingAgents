@@ -1,0 +1,267 @@
+{
+  "raw_text": "\n\n{\"headline\":\"GPT-5.5发布会定档；Cursor SDK开放；Karpathy：Software 3.0拐点已至\",\"trending_keywords\":[\"GPT-5.5\",\"Cursor SDK\",\"Software 3.0\",\"Claude Code优化\",\"纳斯达克25000\"],\"themes\":[{\"id\":\"t1\",\"title\":\"Sam Altman亲承：OpenAI没有护城河，GPT-5.5发布会定档5月5日\",\"subtitle\":\"Altman称AI的switching costs正在崩塌，宣布GPT-5.5-Cyber网络安全模型即将上线\",\"priority\":\"P0\",\"bullets\":[\"Sam Altman：希望OpenAI做\\\"forever low margin\\\"公司，类比水电煤公用事业\",\"Switching costs正在崩塌，Altman认为AI真正价值是\\\"省掉不该做的事\\\"而非\\\"把某件事做得更好\\\"\",\"GPT-5.5发布会定档5月5日5:55 PM，GPT-5.5-Cyber前沿网络安全模型即将向关键网络防御者推出\"],\"samples\":[{\"text\":\"use codex or claude code, whatever works best for you\",\"url\":\"https://x.com/sama/status/2050274547061129577\",\"handle\":\"sama\",\"date\":\"2026-05-01\"},{\"text\":\"Switching costs are collapsing in AI.\",\"url\":\"https://x.com/sama/status/2049653810558353746\",\"handle\":\"sama\",\"date\":\"2026-05-01\"},{\"text\":\"Sam Altman 在和 Stripe 联合创始人 Patrick Collison 的访谈里亲口承认：OpenAI 没有护城河，而且永远不会有。\",\"url\":\"https://x.com/Pluvio9yte/status/2050221337424408733\",\"handle\":\"Pluvio9yte\",\"date\":\"2026-05-01\"}]},{\"id\":\"t2\",\"title\":\"Cursor SDK正式开放：可构建自定义背景Agent\",\"subtitle\":\"Cursor面向Teams和Enterprise推出Security Review，支持自定义安全Agent\",\"priority\":\"P0\",\"bullets\":[\"Cursor SDK发布：可使用Cursor相同的runtime、harness和模型构建Agent\",\"开源三个 starter projects：coding agent CLI、prototyping tool、agent-powered kanban board\",\"Cursor Security Review现支持Teams和Enterprise：PR漏洞检查 Agent + 漏洞追踪 Agent\"],\"samples\":[{\"text\":\"Announcing Cursor SDK: Build agents with the same runtime, harness, and models as Cursor.\",\"url\":\"https://x.com/cursor_ai/status/2049499866217185492\",\"handle\":\"cursor_ai\",\"date\":\"2026-05-01\"},{\"text\":\"Cursor Security Review for Teams and Enterprise is now available.\",\"url\":\"https://x.com/cursor_ai/status/2049926283061035254\",\"handle\":\"cursor_ai\",\"date\":\"2026-05-01\"}]},{\"id\":\"t3\",\"title\":\"Karpathy：AI编程拐点已至，Software 3.0时代来临\",\"subtitle\":\"在Sequoia AI Ascent 2026峰会上提出Software 1.0/2.0/3.0范式演进\",\"priority\":\"P0\",\"bullets\":[\"2025-12是拐点：生成代码块变大变连贯，编程最小单位从\\\"写代码\\\"升级到\\\"委派任务\\\"\",\"神经网络正成为主计算层，未来不是CPU上跑神经网络，是神经网络当主进程\",\"验证性成为新瓶颈：能生成代码≠能生成正确、安全、可维护的软件\"],\"samples\":[{\"text\":\"Karpathy：2025-12是AI编程拐点，Software 3.0时代来临\",\"url\":\"https://x.com/Pluvio9yte/status/2050059618043543563\",\"handle\":\"Pluvio9yte\",\"date\":\"2026-05-01\"},{\"text\":\"神经网络会成主计算层，未来不是CPU上跑神经网络，是神经网络当主进程\",\"url\":\"https://x.com/runes_leo/status/2050096487967695197\",\"handle\":\"runes_leo\",\"date\":\"2026-05-01\"}]}],\"p0_events\":[{\"id\":\"p01\",\"title\":\"Claude Code大更新：/resume提速67%，MCP支持并发连接\",\"meta\":\"runes_leo\",\"summary\":\"Claude Code针对长session进行专项优化：/resume在40MB+ session上提速67%，50MB的/branch上限提升；MCP servers改为并发连接，启动不再卡在最慢那个\",\"url\":\"https://x.com/runes_leo/status/2050229609795407876\",\"handle\":\"runes_leo\",\"date\":\"2026-05-01\"},{\"id\":\"p02\",\"title\":\"纳斯达克首次突破25000点\",\"meta\":\"charliebilello\",\"summary\":\"纳斯达克指数首次站上25000点大关，一年 ago为18000，5年前14000，10年前4800\",\"url\":\"https://x.com/charliebilello/status/2050210847650132146\",\"handle\":\"charliebilello\",\"date\":\"2026-05-01\"},{\"id\":\"p03\",\"title\":\"NVIDIA过去10年涨幅22875%，比特币17205%\",\"meta\":\"charliebilello\",\"summary\":\"过去10年资产回报率对比：NVIDIA+22875%，比特币+17205%，AMD+10030%，Tesla+2362%，苹果+1233%\",\"url\":\"https://x.com/charliebilello/status/2050263578188333549\",\"handle\":\"charliebilello\",\"date\":\"2026-05-01\"},{\"id\":\"p04\",\"title\":\"美国汽油价格创30年最大涨幅\",\"meta\":\"charliebilello\",\"summary\":\"美国汽油价格升至4.39美元/加仑，为2022年7月以来最高，过去9周从2.98涨至4.39，涨幅47%为30年最大\",\"url\":\"https://x.com/charliebilello/status/2050196201014718675\",\"handle\":\"charliebilello\",\"date\":\"2026-05-01\"},{\"id\":\"p05\",\"title\":\"Anthropic发布BioMysteryBench：Claude在生物信息学领域突破\",\"meta\":\"Pluvio9yte\",\"summary\":\"BioMysteryBench将99个来自真实研究的生物信息学难题交给AI，Claude Mythos Preview搞定30%硬骨头，Opus 4.6准确率81%\",\"url\":\"https://x.com/Pluvio9yte/status/2050063821377810451\",\"handle\":\"Pluvio9yte\",\"date\":\"2026-05-01\"},{\"id\":\"p06\",\"title\":\"OpenAI Codex升级：非编程计算机工作提速42%\",\"meta\":\"sama\",\"summary\":\"Codex今日重大升级：Computer Use运行速度提升42%，支持非编程计算机工作\",\"url\":\"https://x.com/sama/status/2049946120441520624\",\"handle\":\"sama\",\"date\":\"2026-05-01\"}],\"top_quotes\":[{\"id\":\"q1\",\"quote\":\"Don't join a company or industry that has contempt for its customers. You can make a lot of money that way, and of course it gives you a feeling of superiority, but you'll never do great work for a market you despise.\",\"speaker\":\"Paul Graham\",\"date\":\"2026-05-01\",\"note\":\"Sam Altman转发\",\"url\":\"https://x.com/paulg/status/2050233324963008553\",\"handle\":\"paulg\"},{\"id\":\"q2\",\"quote\":\"we want to build tools to augment and elevate people, not entities to replace them.\",\"speaker\":\"Sam Altman\",\"date\":\"2026-05-01\",\"note\":\"Altman回应AI导致失业担忧\",\"url\":\"https://x.com/sama/status/2050229058425045178\",\"handle\":\"sama\"},{\"id\":\"q3\",\"quote\":\"All the Doomers and hawks are lining up behind this distillation \\\"attack\\\" farce because they want to see open source banned.\",\"speaker\":\"Yann LeCun\",\"date\":\"2026-05-01\",\"note\":\"LeCun再次力挺开源，炮轰AI限制派\",\"url\":\"https://x.com/ylecun/status/2050162348891979817\",\"handle\":\"ylecun\"}],\"category_updates\":[{\"id\":\"c1\",\"title\":\"AI编程工具\",\"subtitle\":\"Cursor SDK开放构建自定义Agent\",\"level\":\"P0\",\"items\":[{\"text\":\"Cursor SDK发布，可构建自定义背景Agent\",\"url\":\"https://x.com/cursor_ai/status/2049499866217185492\"},{\"text\":\"Cursor 3.2：/multitask并行子代理、multi-root跨仓库工作区、worktrees并行任务\",\"url\":\"https://x.com/cursor_ai/status/2049926283061035254\"}]},{\"id\":\"c2\",\"title\":\"模型与产品\",\"subtitle\":\"GPT-5.5发布会定档\",\"level\":\"P0\",\"items\":[{\"text\":\"GPT-5.5发布会5/5 5:55 PM在OpenAI SF总部\",\"url\":\"https://x.com/sama/status/2049653810558353746\"},{\"text\":\"GPT-5.5-Cyber网络安全模型即将推出\",\"url\":\"https://x.com/sama/status/2049712078836170843\"}]},{\"id\":\"c3\",\"title\":\"投资与宏观\",\"subtitle\":\"纳斯达克里程碑+能源价格飙升\",\"level\":\"P1\",\"items\":[{\"text\":\"纳斯达克首破25000点\",\"url\":\"https://x.com/charliebilello/status/2050210847650132146\"},{\"text\":\"美国汽油价格创30年最大涨幅，9周涨47%至4.39美元/加仑\",\"url\":\"https://x.com/charliebilello/status/2050196201014718675\"}]},{\"id\":\"c4\",\"title\":\"AI研究突破\",\"subtitle\":\"Karpathy Software 3.0 + Anthropic生物Bench\",\"level\":\"P1\",\"items\":[{\"text\":\"Karpathy：2025-12是AI编程拐点，最小单位从\\\"写代码\\\"升级为\\\"委派任务\\\"\",\"url\":\"https://x.com/Pluvio9yte/status/2050059618043543563\"},{\"text\":\"Anthropic BioMysteryBench：Claude Opus 4.6在生物信息学难题准确率81%\",\"url\":\"https://x.com/Pluvio9yte/status/2050063821377810451\"}]},{\"id\":\"c5\",\"title\":\"开源与生态\",\"subtitle\":\"LeCun再杠开源限制\",\"level\":\"P2\",\"items\":[{\"text\":\"LeCun：Doomers想通过\\\"蒸馏攻击\\\"封禁开源，是在剥夺选择权\",\"url\":\"https://x.com/ylecun/status/2050162348891979817\"},{\"text\":\"匿名实验：Claude Code对含特定关键词的仓库报错\\\"out of extra usage\\\"\",\"url\":\"https://x.com/runes_leo/status/2050127414630469937\"}]},{\"id\":\"c6\",\"title\":\"华语圈热点\",\"subtitle\":\"中文博主实操分享\",\"level\":\"P2\",\"items\":[{\"text\":\"铁锤人：Apple Support App用Claude Code打包\",\"url\":\"https://x.com/lxfater/status/2050240636020732015\"},{\"text\":\"0xAA：Cursor额度$150已用光，正在找循环任务消耗剩余$10000额度\",\"url\":\"https://x.com/0xAA_Science/status/2050244250563182801\"}]}],\"risk_signals\":[{\"id\":\"r1\",\"level\":\"MID\",\"title\":\"Gary Marcus：AI对齐尚未解决，大规模部署风险极高\",\"detail\":\"Marcus认为从LLM获取真正对齐是痴心妄想，在没有健壮解决方案的情况下大规模部署LLM极其危险\",\"url\":\"https://x.com/GaryMarcus/status/2050296366161940584\"},{\"id\":\"r2\",\"level\":\"MID\",\"title\":\"Gary Marcus：AI对GDP的贡献类似\\\"挖坑填坑\\\"\",\"detail\":\"引用David Sacks观点：付钱让人挖坑再填回去GDP也会涨，AI当前对GDP的贡献可能同样没有真正价值\",\"url\":\"https://x.com/GaryMarcus/status/2050284439343862266\"},{\"id\":\"r3\",\"level\":\"OPP\",\"title\":\"用户隐私争议再起\",\"detail\":\"Gary Marcus：Meta就是Black Mirror的化身，用户隐私问题持续引发担忧\",\"url\":\"https://x.com/GaryMarcus/status/2050275183223857462\"}]}",
+  "parsed_modules": {
+    "headline": "GPT-5.5发布会定档；Cursor SDK开放；Karpathy：Software 3.0拐点已至",
+    "trending_keywords": [
+      "GPT-5.5",
+      "Cursor SDK",
+      "Software 3.0",
+      "Claude Code优化",
+      "纳斯达克25000"
+    ],
+    "themes": [
+      {
+        "id": "t1",
+        "title": "Sam Altman亲承：OpenAI没有护城河，GPT-5.5发布会定档5月5日",
+        "subtitle": "Altman称AI的switching costs正在崩塌，宣布GPT-5.5-Cyber网络安全模型即将上线",
+        "priority": "P0",
+        "bullets": [
+          "Sam Altman：希望OpenAI做\"forever low margin\"公司，类比水电煤公用事业",
+          "Switching costs正在崩塌，Altman认为AI真正价值是\"省掉不该做的事\"而非\"把某件事做得更好\"",
+          "GPT-5.5发布会定档5月5日5:55 PM，GPT-5.5-Cyber前沿网络安全模型即将向关键网络防御者推出"
+        ],
+        "samples": [
+          {
+            "text": "use codex or claude code, whatever works best for you",
+            "url": "https://x.com/sama/status/2050274547061129577",
+            "handle": "sama",
+            "date": "2026-05-01"
+          },
+          {
+            "text": "Switching costs are collapsing in AI.",
+            "url": "https://x.com/sama/status/2049653810558353746",
+            "handle": "sama",
+            "date": "2026-05-01"
+          },
+          {
+            "text": "Sam Altman 在和 Stripe 联合创始人 Patrick Collison 的访谈里亲口承认：OpenAI 没有护城河，而且永远不会有。",
+            "url": "https://x.com/Pluvio9yte/status/2050221337424408733",
+            "handle": "Pluvio9yte",
+            "date": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "id": "t2",
+        "title": "Cursor SDK正式开放：可构建自定义背景Agent",
+        "subtitle": "Cursor面向Teams和Enterprise推出Security Review，支持自定义安全Agent",
+        "priority": "P0",
+        "bullets": [
+          "Cursor SDK发布：可使用Cursor相同的runtime、harness和模型构建Agent",
+          "开源三个 starter projects：coding agent CLI、prototyping tool、agent-powered kanban board",
+          "Cursor Security Review现支持Teams和Enterprise：PR漏洞检查 Agent + 漏洞追踪 Agent"
+        ],
+        "samples": [
+          {
+            "text": "Announcing Cursor SDK: Build agents with the same runtime, harness, and models as Cursor.",
+            "url": "https://x.com/cursor_ai/status/2049499866217185492",
+            "handle": "cursor_ai",
+            "date": "2026-05-01"
+          },
+          {
+            "text": "Cursor Security Review for Teams and Enterprise is now available.",
+            "url": "https://x.com/cursor_ai/status/2049926283061035254",
+            "handle": "cursor_ai",
+            "date": "2026-05-01"
+          }
+        ]
+      },
+      {
+        "id": "t3",
+        "title": "Karpathy：AI编程拐点已至，Software 3.0时代来临",
+        "subtitle": "在Sequoia AI Ascent 2026峰会上提出Software 1.0/2.0/3.0范式演进",
+        "priority": "P0",
+        "bullets": [
+          "2025-12是拐点：生成代码块变大变连贯，编程最小单位从\"写代码\"升级到\"委派任务\"",
+          "神经网络正成为主计算层，未来不是CPU上跑神经网络，是神经网络当主进程",
+          "验证性成为新瓶颈：能生成代码≠能生成正确、安全、可维护的软件"
+        ],
+        "samples": [
+          {
+            "text": "Karpathy：2025-12是AI编程拐点，Software 3.0时代来临",
+            "url": "https://x.com/Pluvio9yte/status/2050059618043543563",
+            "handle": "Pluvio9yte",
+            "date": "2026-05-01"
+          },
+          {
+            "text": "神经网络会成主计算层，未来不是CPU上跑神经网络，是神经网络当主进程",
+            "url": "https://x.com/runes_leo/status/2050096487967695197",
+            "handle": "runes_leo",
+            "date": "2026-05-01"
+          }
+        ]
+      }
+    ],
+    "p0_events": [
+      {
+        "id": "p01",
+        "title": "Claude Code大更新：/resume提速67%，MCP支持并发连接",
+        "meta": "runes_leo",
+        "summary": "Claude Code针对长session进行专项优化：/resume在40MB+ session上提速67%，50MB的/branch上限提升；MCP servers改为并发连接，启动不再卡在最慢那个",
+        "url": "https://x.com/runes_leo/status/2050229609795407876",
+        "handle": "runes_leo",
+        "date": "2026-05-01"
+      },
+      {
+        "id": "p02",
+        "title": "纳斯达克首次突破25000点",
+        "meta": "charliebilello",
+        "summary": "纳斯达克指数首次站上25000点大关，一年 ago为18000，5年前14000，10年前4800",
+        "url": "https://x.com/charliebilello/status/2050210847650132146",
+        "handle": "charliebilello",
+        "date": "2026-05-01"
+      },
+      {
+        "id": "p03",
+        "title": "NVIDIA过去10年涨幅22875%，比特币17205%",
+        "meta": "charliebilello",
+        "summary": "过去10年资产回报率对比：NVIDIA+22875%，比特币+17205%，AMD+10030%，Tesla+2362%，苹果+1233%",
+        "url": "https://x.com/charliebilello/status/2050263578188333549",
+        "handle": "charliebilello",
+        "date": "2026-05-01"
+      },
+      {
+        "id": "p04",
+        "title": "美国汽油价格创30年最大涨幅",
+        "meta": "charliebilello",
+        "summary": "美国汽油价格升至4.39美元/加仑，为2022年7月以来最高，过去9周从2.98涨至4.39，涨幅47%为30年最大",
+        "url": "https://x.com/charliebilello/status/2050196201014718675",
+        "handle": "charliebilello",
+        "date": "2026-05-01"
+      },
+      {
+        "id": "p05",
+        "title": "Anthropic发布BioMysteryBench：Claude在生物信息学领域突破",
+        "meta": "Pluvio9yte",
+        "summary": "BioMysteryBench将99个来自真实研究的生物信息学难题交给AI，Claude Mythos Preview搞定30%硬骨头，Opus 4.6准确率81%",
+        "url": "https://x.com/Pluvio9yte/status/2050063821377810451",
+        "handle": "Pluvio9yte",
+        "date": "2026-05-01"
+      },
+      {
+        "id": "p06",
+        "title": "OpenAI Codex升级：非编程计算机工作提速42%",
+        "meta": "sama",
+        "summary": "Codex今日重大升级：Computer Use运行速度提升42%，支持非编程计算机工作",
+        "url": "https://x.com/sama/status/2049946120441520624",
+        "handle": "sama",
+        "date": "2026-05-01"
+      }
+    ],
+    "top_quotes": [
+      {
+        "id": "q1",
+        "quote": "Don't join a company or industry that has contempt for its customers. You can make a lot of money that way, and of course it gives you a feeling of superiority, but you'll never do great work for a market you despise.",
+        "speaker": "Paul Graham",
+        "date": "2026-05-01",
+        "note": "Sam Altman转发",
+        "url": "https://x.com/paulg/status/2050233324963008553",
+        "handle": "paulg"
+      },
+      {
+        "id": "q2",
+        "quote": "we want to build tools to augment and elevate people, not entities to replace them.",
+        "speaker": "Sam Altman",
+        "date": "2026-05-01",
+        "note": "Altman回应AI导致失业担忧",
+        "url": "https://x.com/sama/status/2050229058425045178",
+        "handle": "sama"
+      },
+      {
+        "id": "q3",
+        "quote": "All the Doomers and hawks are lining up behind this distillation \"attack\" farce because they want to see open source banned.",
+        "speaker": "Yann LeCun",
+        "date": "2026-05-01",
+        "note": "LeCun再次力挺开源，炮轰AI限制派",
+        "url": "https://x.com/ylecun/status/2050162348891979817",
+        "handle": "ylecun"
+      }
+    ],
+    "category_updates": [
+      {
+        "id": "c1",
+        "title": "AI编程工具",
+        "subtitle": "Cursor SDK开放构建自定义Agent",
+        "level": "P0",
+        "items": []
+      },
+      {
+        "id": "c2",
+        "title": "模型与产品",
+        "subtitle": "GPT-5.5发布会定档",
+        "level": "P0",
+        "items": [
+          {
+            "text": "GPT-5.5-Cyber网络安全模型即将推出",
+            "url": "https://x.com/sama/status/2049712078836170843"
+          }
+        ]
+      },
+      {
+        "id": "c3",
+        "title": "投资与宏观",
+        "subtitle": "纳斯达克里程碑+能源价格飙升",
+        "level": "P1",
+        "items": []
+      },
+      {
+        "id": "c4",
+        "title": "AI研究突破",
+        "subtitle": "Karpathy Software 3.0 + Anthropic生物Bench",
+        "level": "P1",
+        "items": []
+      },
+      {
+        "id": "c5",
+        "title": "开源与生态",
+        "subtitle": "LeCun再杠开源限制",
+        "level": "P2",
+        "items": [
+          {
+            "text": "匿名实验：Claude Code对含特定关键词的仓库报错\"out of extra usage\"",
+            "url": "https://x.com/runes_leo/status/2050127414630469937"
+          }
+        ]
+      },
+      {
+        "id": "c6",
+        "title": "华语圈热点",
+        "subtitle": "中文博主实操分享",
+        "level": "P2",
+        "items": [
+          {
+            "text": "铁锤人：Apple Support App用Claude Code打包",
+            "url": "https://x.com/lxfater/status/2050240636020732015"
+          },
+          {
+            "text": "0xAA：Cursor额度$150已用光，正在找循环任务消耗剩余$10000额度",
+            "url": "https://x.com/0xAA_Science/status/2050244250563182801"
+          }
+        ]
+      }
+    ],
+    "risk_signals": [
+      {
+        "id": "r1",
+        "level": "MID",
+        "title": "Gary Marcus：AI对齐尚未解决，大规模部署风险极高",
+        "detail": "Marcus认为从LLM获取真正对齐是痴心妄想，在没有健壮解决方案的情况下大规模部署LLM极其危险",
+        "url": "https://x.com/GaryMarcus/status/2050296366161940584"
+      },
+      {
+        "id": "r2",
+        "level": "MID",
+        "title": "Gary Marcus：AI对GDP的贡献类似\"挖坑填坑\"",
+        "detail": "引用David Sacks观点：付钱让人挖坑再填回去GDP也会涨，AI当前对GDP的贡献可能同样没有真正价值",
+        "url": "https://x.com/GaryMarcus/status/2050284439343862266"
+      },
+      {
+        "id": "r3",
+        "level": "OPP",
+        "title": "用户隐私争议再起",
+        "detail": "Gary Marcus：Meta就是Black Mirror的化身，用户隐私问题持续引发担忧",
+        "url": "https://x.com/GaryMarcus/status/2050275183223857462"
+      }
+    ]
+  }
+}

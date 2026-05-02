@@ -130,7 +130,7 @@ def render_sidebar_navigation(page_names: list[str], current_page: str) -> str:
 
     active_page = str(selected) if selected else (current_page if current_page in page_names else page_names[0])
     if active_page == PAGE_STRATEGY:
-        strategy_options = ["LRS TQQQ策略", "TQQQ Wheel策略", "SOXL Wheel策略"]
+        strategy_options = ["LRS TQQQ策略", "Wheel策略"]
         default_sub = str(st.session_state.get("strategy_sub_menu", strategy_options[0]))
         try:
             sub_idx = strategy_options.index(default_sub)
@@ -139,7 +139,7 @@ def render_sidebar_navigation(page_names: list[str], current_page: str) -> str:
         sub_selected = option_menu(
             "子策略",
             strategy_options,
-            icons=["bullseye", "arrow-repeat", "cpu"],
+            icons=["bullseye", "arrow-repeat"],
             menu_icon="chevron-double-right",
             default_index=sub_idx,
             orientation="vertical",

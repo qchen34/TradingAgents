@@ -1,0 +1,63 @@
+{
+  "target_indexes": [
+    168,
+    80,
+    35,
+    68,
+    66,
+    60,
+    16,
+    248
+  ],
+  "target_count": 8,
+  "targets": [
+    {
+      "idx": 168,
+      "handle": "sama",
+      "url": "https://x.com/sama/status/2049712078836170843",
+      "title": "we're starting rollout of GPT-5.5-Cyber, a frontier cybersecurity model, to critical cyber defenders in the next few days.\n\nwe will work with the entire ecosystem and the government to figure out trusted access for cyber; we want to rapidly help secure companies/infrastructure."
+    },
+    {
+      "idx": 80,
+      "handle": "DavidSacks",
+      "url": "https://x.com/DavidSacks/status/2049907993588769006",
+      "title": "It’s time to demystify Mythos. \n\nMythos is not magic. It’s not a doomsday device. It’s the first of many models that can automate cyber tasks (just like coding). \n\nOpenAI’s GPT-5.5-cyber can now do the same. And all the frontier models (including those from China) will be there within approximately 6 months. \n\nIt’s important to recognize that these models do not create vulnerabilities; they discover them. The bugs are already in the code. Using AI to discover and patch them will actually harden these systems.\n\nThe leap from pre-AI cyber to post-AI cyber means that there will be a big upgrade cycle. After that, however, the market is likely to reach a new equilibrium between AI-powered cyber-offense and AI-powered cyber-defense.  \n\nObviously it’s important that cyber defenders get access before cyber attackers. That process is already underway but needs to happen quickly (see point above about Chinese models).  \n\nUnlike Mythos, GPT-5.5-cyber appears not to be token constrained so it may be the first cyber model that defenders actually get to use."
+    },
+    {
+      "idx": 35,
+      "handle": "berryxia",
+      "url": "https://x.com/berryxia/status/2049987993193402677",
+      "title": "David Sacks 在 X 平台上发布了一条推文，对 AI Security Institute 刚刚发布的公告进行了回应。\n\nAI Security Institute 宣布 OpenAI 的 GPT-5.5 模型（cyber 版本）成功完成了他们设计的“多步网络攻击模拟”。\n\n也成为第二个能端到端完成整个攻击链的模型（第一个是 Anthropic 的 Mythos）。  \n\n在推文中，David Sacks 表示，是时候揭开 Mythos 的神秘面纱了。\n\n他强调，Mythos 并非什么魔法，也不是末日武器，它只是众多能够自动化网络安全任务的模型中的第一个，就像 AI 已经能自动编写代码一样。\n\n现在 OpenAI 的 GPT-5.5-cyber 也达到了同样的水平，而所有前沿模型（包括来自中国的模型）预计将在大约 6 个月内跟上这一步伐。  \n\nDavid Sacks 进一步指出，这些模型并不会创造新的漏洞，它们只是发现已有的漏洞。\n\n代码中的 bug 本来就存在，使用 AI 来发现并修补它们，反而会让系统变得更加坚固。\n\n他认为，从前 AI 时代的网络安全到后 AI 时代的网络安全，将经历一次大规模的升级周期。\n\n升级完成后，市场很可能会达到 AI 驱动的网络进攻与 AI 驱动的网络防御之间的新的平衡状态。  \n\n他特别提醒，必须确保网络防御方先获得这些强大模型的访问权限，而非让攻击方抢先一步。\n\n这个过程已经启动，但需要迅速推进，尤其考虑到中国模型即将跟上的现实。\n\n此外，与 Mythos 不同，GPT-5.5-cyber 似乎没有 token 限制，因此它可能是第一个防御方能够实际投入使用的网络安全模型。  \n\nDavid Sacks 的整体立场是：AI 在网络攻击能力上的提升是不可避免的，但并非那么可怕，反而会推动整个网络安全生态的全面升级，前提是防御方必须领先一步。\n\n他通过这条推文，既澄清了外界对 Mythos 的过度神化，也为 OpenAI 的 GPT-5.5-cyber 提供了实际支持```​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​。"
+    },
+    {
+      "idx": 68,
+      "handle": "cursor_ai",
+      "url": "https://x.com/cursor_ai/status/2049926283061035254",
+      "title": "Cursor Security Review is now available for Teams and Enterprise plans.\n\nRun two types of always-on agents:\n1. Security Reviewer checks every PR for vulnerabilities and leaves comments.\n2. Vulnerability Scanner runs scheduled scans of your codebase and posts findings in Slack."
+    },
+    {
+      "idx": 66,
+      "handle": "cursor_ai",
+      "url": "https://x.com/cursor_ai/status/2049926287439929475",
+      "title": "R to @cursor_ai: We’re continuing to improve the runtime, harness, and models powering Cursor Security Review for a strong out-of-the-box experience.\n\nSecurity agents draw from your existing usage pool. \n\nLearn more: http://cursor.com/docs/security-review"
+    },
+    {
+      "idx": 60,
+      "handle": "sama",
+      "url": "https://x.com/sama/status/2049946120441520624",
+      "title": "big upgrade for codex today!\n\ntry it for non-coding computer work."
+    },
+    {
+      "idx": 16,
+      "handle": "AravSrinivas",
+      "url": "https://x.com/AravSrinivas/status/2050007015616135365",
+      "title": "RT by @AravSrinivas: $AAPL CFO:\n\n“Leading AI developers like Perplexity are choosing Mac as their preferred platform to build enterprise-grade AI assistants that power autonomous agents and boost workplace productivity.”"
+    },
+    {
+      "idx": 248,
+      "handle": "sama",
+      "url": "https://x.com/sama/status/2049493609028923826",
+      "title": "feels like codex is having a chatgpt moment"
+    }
+  ]
+}

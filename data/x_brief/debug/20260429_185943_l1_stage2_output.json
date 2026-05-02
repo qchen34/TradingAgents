@@ -1,0 +1,267 @@
+{
+  "raw_text": "\n\n{\"headline\":\"AI编程工具爆发：Warp开源、Cursor 3.2携GPT-5.5登场，Claude接 Blender MCP 打通创意工作流\",\"trending_keywords\":[\"Warp开源\",\"Cursor 3.2\",\"GPT-5.5\",\"Claude Blender MCP\",\"Nemotron 3 Nano\",\"Matt Pocock Skills\"],\"themes\":[{\"id\":\"t1\",\"title\":\"AI编程工具军备竞赛升级\",\"subtitle\":\"Warp开源、Cursor 3.2、Claude Code三路夹击，开发者工作流正在被重新定义\",\"priority\":\"P0\",\"bullets\":[\"Warp昨晚开源：AGPL协议，38k+星，定位ADE，内置Agent支持Claude Code/Codex/Gemini CLI\",\"Cursor 3.2发布：GPT-5.5强势入驻（CursorBench 72.8%），/multitask并行任务支持，多仓库workspace\"],\"samples\":[{\"text\":\"Warp开源38k+星，AGPL协议，定位ADE\",\"url\":\"https://github.com/warpdotdev/warp\",\"handle\":\"berryxia\",\"date\":\"2026-04-28\"},{\"text\":\"Cursor 3.2发布：GPT-5.5入驻\",\"url\":\"https://x.com/cursor_ai/status/2047744579127185843\",\"handle\":\"cursor_ai\",\"date\":\"2026-04-28\"}]},{\"id\":\"t2\",\"title\":\"Claude打通创意工具链\",\"subtitle\":\"Blender MCP上线+9个创意连接器，AI从代码生成延伸到3D设计和创意工作流\",\"priority\":\"P1\",\"bullets\":[\"Claude上线Blender MCP连接器：自然语言直接操控Blender Python API，批量改物体/调场景无需写代码\",\"Anthropic同时加入Blender基金会当赞助商\",\"同日上线Adobe Creative Cloud、Ableton、Canva等9个创意工具连接器\"],\"samples\":[{\"text\":\"Claude上线Blender MCP连接器\",\"url\":\"https://x.com/Pluvio9yte/status/2049403423813140571\",\"handle\":\"Pluvio9yte\",\"date\":\"2026-04-29\"},{\"text\":\"Claude打通创意工具链\",\"url\":\"https://x.com/berryxia/status/2049247904536428805\",\"handle\":\"berryxia\",\"date\":\"2026-04-28\"}]},{\"id\":\"t3\",\"title\":\"开源生态的冷数据：67,196个Agent项目分析\",\"subtitle\":\"Jason Zhu跑通全网Agent工具库，揭示极度不均衡的分布\",\"priority\":\"P1\",\"bullets\":[\"基尼系数0.983破纪录，54.1%项目0 star，Top1%占83% stars\",\"2026年3月单月新增27,720个项目，是2024年月均的45倍\",\"Matt Pocock开源Skill框架：16个工程师级实战技能，38K stars\"],\"samples\":[{\"text\":\"67,196个Agent项目分析\",\"url\":\"https://x.com/GoSailGlobal/status/2049415194372342164\",\"handle\":\"GoSailGlobal\",\"date\":\"2026-04-29\"},{\"text\":\"Matt Pocock Skills 38K stars\",\"url\":\"https://x.com/GoSailGlobal/status/2049339826877665496\",\"handle\":\"GoSailGlobal\",\"date\":\"2026-04-29\"}]}],\"p0_events\":[{\"id\":\"p01\",\"title\":\"OpenAI全系正式登陆AWS\",\"meta\":\"2026-04-29 | 来自@GoSailGlobal\",\"summary\":\"GPT + Codex + 托管Agent一并上线AWS，企业级AI服务再下一城\",\"url\":\"https://x.com/GoSailGlobal/status/2049327989951967546\"},{\"id\":\"p02\",\"title\":\"Nvidia发布Nemotron 3 Nano Omni\",\"meta\":\"2026-04-28 | 来自@berryxia\",\"summary\":\"30B参数多模态开源模型，256K上下文，专为subagents设计，完全开源\",\"url\":\"https://x.com/berryxia/status/2049253021159403786\"},{\"id\":\"p03\",\"title\":\"Anthropic拒接军方合作\",\"meta\":\"2026-04-29 | 来自@GoSailGlobal\",\"summary\":\"Google顺势签下五角大楼新合同，AI厂商在政府合同上分化\",\"url\":\"https://x.com/GoSailGlobal/status/2049327989951967546\"},{\"id\":\"p04\",\"title\":\"Claude Code系统提示Bug\",\"meta\":\"2026-04-29 | 来自@GoSailGlobal\",\"summary\":\"托管Agent失效+用户token被空转烧光，需关注\",\"url\":\"https://x.com/GoSailGlobal/status/2049327989951967546\"},{\"id\":\"p05\",\"title\":\"美联储维持利率3.50-3.75%\",\"meta\":\"2026-04-28 | 来自@charliebilello\",\"summary\":\"伊朗战争影响经济和通胀预期，利率决策观望\",\"url\":\"https://x.com/charliebilello/status/2049214106352107778\"},{\"id\":\"p06\",\"title\":\"Perplexity全面切换GPT-5.5\",\"meta\":\"2026-04-24 | 来自@AravSrinivas\",\"summary\":\"GPT-5.5作为默认orchestrator模型，性能和成本优化\",\"url\":\"https://x.com/AravSrinivas/status/2047753276888854595\"}],\"top_quotes\":[{\"id\":\"q1\",\"quote\":\"feels like a good time to seriously rethink how operating systems and user interfaces are designed\",\"speaker\":\"Sam Altman\",\"date\":\"2026-04-26\",\"note\":\"对OS和UI设计的反思，暗示AI将改变人机交互范式\",\"url\":\"https://x.com/sama/status/2048428561481265539\"},{\"id\":\"q2\",\"quote\":\"Warp 不只是个终端，定位是 ADE（Agentic Development Environment）\",\"speaker\":\"泊舟\",\"date\":\"2026-04-29\",\"note\":\"Warp开源定位解读，AGPL防白嫖\",\"url\":\"https://x.com/bozhou_ai/status/2049436870963085429\"},{\"id\":\"q3\",\"quote\":\"The real issue is culture and talent quality, and fixing that usually requires a full rebuild\",\"speaker\":\"Harry Stebbings\",\"date\":\"2026-04-29\",\"note\":\"关于AI时代团队重建的洞见，裁员不能解决文化问题\",\"url\":\"https://x.com/HarryStebbings/status/2049298621951058341\"}],\"category_updates\":[{\"id\":\"c1\",\"title\":\"开源工具爆发\",\"subtitle\":\"Warp开源+Matt Pocock Skills+Poolside Laguna\",\"level\":\"P0\",\"items\":[{\"text\":\"Warp开源38k+星，AGPL协议\",\"url\":\"https://github.com/warpdotdev/warp\"},{\"text\":\"Matt Pocock Skills 38K stars\",\"url\":\"https://github.com/mattpocock/skills\"},{\"text\":\"前GitHub CTO团队Poolside开源Laguna\",\"url\":\"https://x.com/berryxia/status/2049250710492160228\"}]},{\"id\":\"c2\",\"title\":\"AI编程工具更新\",\"subtitle\":\"Cursor 3.2 + Claude Code + Codex\",\"level\":\"P0\",\"items\":[{\"text\":\"Cursor 3.2: GPT-5.5入驻，/multitask并行\",\"url\":\"https://x.com/cursor_ai/status/2047744579127185843\"},{\"text\":\"Codex获Sam Altman点赞\\\"escape velocity\\\"\",\"url\":\"https://x.com/GoSailGlobal/status/2049327989951967546\"}]},{\"id\":\"c3\",\"title\":\"3D/创意工作流\",\"subtitle\":\"Claude Blender MCP + SATO网格生成\",\"level\":\"P1\",\"items\":[{\"text\":\"Claude接Blender等9个创意工具\",\"url\":\"https://x.com/berryxia/status/2049247904536428805\"},{\"text\":\"SATO: 3D网格生成重磅突破\",\"url\":\"https://x.com/berryxia/status/2049255217603178794\"}]},{\"id\":\"c4\",\"title\":\"大模型进展\",\"subtitle\":\"Nvidia Nemotron + MiniCPM-o 4.5\",\"level\":\"P1\",\"items\":[{\"text\":\"Nemotron 3 Nano 30B多模态开源\",\"url\":\"https://x.com/berryxia/status/2049253021159403786\"},{\"text\":\"MiniCPM-o 4.5: 边缘AI突破\",\"url\":\"https://x.com/berryxia/status/2049274065610027362\"}]},{\"id\":\"c5\",\"title\":\"宏观与能源\",\"subtitle\":\"伊朗战争对能源价格的影响\",\"level\":\"P1\",\"items\":[{\"text\":\"Jet Fuel +70%, 原油+48-52%, 化肥+23%\",\"url\":\"https://x.com/charliebilello/status/2049298490489004357\"}]},{\"id\":\"c6\",\"title\":\"华语圈热点\",\"subtitle\":\"小米送token、联通查PCDN\",\"level\":\"P2\",\"items\":[{\"text\":\"小米百万亿token补贴\",\"url\":\"https://x.com/realNyarime/status/2049296454905393361\"},{\"text\":\"长沙联通上门查PCDN\",\"url\":\"https://x.com/realNyarime/status/2049408651660755063\"}]}],\"risk_signals\":[{\"id\":\"r1\",\"level\":\"HIGH\",\"title\":\"Claude Code系统提示Bug\",\"detail\":\"托管Agent失效+用户token被空转烧光，使用Claude Code需留意\",\"url\":\"https://x.com/GoSailGlobal/status/2049327989951967546\"},{\"id\":\"r2\",\"level\":\"MID\",\"title\":\"Anthropic与军方合作分歧\",\"detail\":\"Anthropic拒接军方合作，Google签下五角大楼合同，AI厂商在政府合同上分化，可能影响未来市场格局\",\"url\":\"https://x.com/GoSailGlobal/status/2049327989951967546\"},{\"id\":\"r3\",\"level\":\"OPP\",\"title\":\"AI安全争议持续\",\"detail\":\"Gary Marcus持续质疑AI公司，OpenAI庭审中Musk与Altman矛盾公开化\",\"url\":\"https://x.com/GaryMarcus/status/2049243406380237116\"},{\"id\":\"r4\",\"level\":\"MID\",\"title\":\"美股估值与退出困境\",\"detail\":\"Harry Stebbings警示 VC支持的科技创新公司 IPO门槛高（需5亿收入），退出选项有限\",\"url\":\"https://x.com/HarryStebbings/status/2049237538901020767\"},{\"id\":\"r5\",\"level\":\"WARN\",\"title\":\"美国房价增速放缓\",\"detail\":\"全美房价同比仅增0.7%（2023年6月以来最慢），卖家数量创纪录 比买家多46%，若无政府干预价格将下行\",\"url\":\"https://x.com/charliebilello/status/2049306480071873011\"},{\"id\":\"r6\",\"level\":\"MID\",\"title\":\"开源bot的护城河危机\",\"detail\":\"Leo：AI时代护城河从\\\"代码会写\\\"变成\\\"策略会想\\\"，以前两个月重写架构变成两小时\",\"url\":\"https://x.com/runes_leo/status/2049311708330459226\"}]}",
+  "parsed_modules": {
+    "headline": "AI编程工具爆发：Warp开源、Cursor 3.2携GPT-5.5登场，Claude接 Blender MCP 打通创意工作流",
+    "trending_keywords": [
+      "Warp开源",
+      "Cursor 3.2",
+      "GPT-5.5",
+      "Claude Blender MCP",
+      "Nemotron 3 Nano",
+      "Matt Pocock Skills"
+    ],
+    "themes": [
+      {
+        "id": "t1",
+        "title": "AI编程工具军备竞赛升级",
+        "subtitle": "Warp开源、Cursor 3.2、Claude Code三路夹击，开发者工作流正在被重新定义",
+        "priority": "P0",
+        "bullets": [
+          "Warp昨晚开源：AGPL协议，38k+星，定位ADE，内置Agent支持Claude Code/Codex/Gemini CLI",
+          "Cursor 3.2发布：GPT-5.5强势入驻（CursorBench 72.8%），/multitask并行任务支持，多仓库workspace"
+        ],
+        "samples": [
+          {
+            "text": "Warp开源38k+星，AGPL协议，定位ADE",
+            "url": "https://github.com/warpdotdev/warp",
+            "handle": "berryxia",
+            "date": "2026-04-28"
+          },
+          {
+            "text": "Cursor 3.2发布：GPT-5.5入驻",
+            "url": "https://x.com/cursor_ai/status/2047744579127185843",
+            "handle": "cursor_ai",
+            "date": "2026-04-28"
+          }
+        ]
+      },
+      {
+        "id": "t2",
+        "title": "Claude打通创意工具链",
+        "subtitle": "Blender MCP上线+9个创意连接器，AI从代码生成延伸到3D设计和创意工作流",
+        "priority": "P1",
+        "bullets": [
+          "Claude上线Blender MCP连接器：自然语言直接操控Blender Python API，批量改物体/调场景无需写代码",
+          "Anthropic同时加入Blender基金会当赞助商",
+          "同日上线Adobe Creative Cloud、Ableton、Canva等9个创意工具连接器"
+        ],
+        "samples": [
+          {
+            "text": "Claude上线Blender MCP连接器",
+            "url": "https://x.com/Pluvio9yte/status/2049403423813140571",
+            "handle": "Pluvio9yte",
+            "date": "2026-04-29"
+          },
+          {
+            "text": "Claude打通创意工具链",
+            "url": "https://x.com/berryxia/status/2049247904536428805",
+            "handle": "berryxia",
+            "date": "2026-04-28"
+          }
+        ]
+      },
+      {
+        "id": "t3",
+        "title": "开源生态的冷数据：67,196个Agent项目分析",
+        "subtitle": "Jason Zhu跑通全网Agent工具库，揭示极度不均衡的分布",
+        "priority": "P1",
+        "bullets": [
+          "基尼系数0.983破纪录，54.1%项目0 star，Top1%占83% stars",
+          "2026年3月单月新增27,720个项目，是2024年月均的45倍",
+          "Matt Pocock开源Skill框架：16个工程师级实战技能，38K stars"
+        ],
+        "samples": [
+          {
+            "text": "67,196个Agent项目分析",
+            "url": "https://x.com/GoSailGlobal/status/2049415194372342164",
+            "handle": "GoSailGlobal",
+            "date": "2026-04-29"
+          },
+          {
+            "text": "Matt Pocock Skills 38K stars",
+            "url": "https://x.com/GoSailGlobal/status/2049339826877665496",
+            "handle": "GoSailGlobal",
+            "date": "2026-04-29"
+          }
+        ]
+      }
+    ],
+    "p0_events": [
+      {
+        "id": "p01",
+        "title": "OpenAI全系正式登陆AWS",
+        "meta": "2026-04-29 | 来自@GoSailGlobal",
+        "summary": "GPT + Codex + 托管Agent一并上线AWS，企业级AI服务再下一城",
+        "url": "https://x.com/GoSailGlobal/status/2049327989951967546"
+      },
+      {
+        "id": "p02",
+        "title": "Nvidia发布Nemotron 3 Nano Omni",
+        "meta": "2026-04-28 | 来自@berryxia",
+        "summary": "30B参数多模态开源模型，256K上下文，专为subagents设计，完全开源",
+        "url": "https://x.com/berryxia/status/2049253021159403786"
+      },
+      {
+        "id": "p05",
+        "title": "美联储维持利率3.50-3.75%",
+        "meta": "2026-04-28 | 来自@charliebilello",
+        "summary": "伊朗战争影响经济和通胀预期，利率决策观望",
+        "url": "https://x.com/charliebilello/status/2049214106352107778"
+      },
+      {
+        "id": "p06",
+        "title": "Perplexity全面切换GPT-5.5",
+        "meta": "2026-04-24 | 来自@AravSrinivas",
+        "summary": "GPT-5.5作为默认orchestrator模型，性能和成本优化",
+        "url": "https://x.com/AravSrinivas/status/2047753276888854595"
+      }
+    ],
+    "top_quotes": [
+      {
+        "id": "q1",
+        "quote": "feels like a good time to seriously rethink how operating systems and user interfaces are designed",
+        "speaker": "Sam Altman",
+        "date": "2026-04-26",
+        "note": "对OS和UI设计的反思，暗示AI将改变人机交互范式",
+        "url": "https://x.com/sama/status/2048428561481265539"
+      },
+      {
+        "id": "q2",
+        "quote": "Warp 不只是个终端，定位是 ADE（Agentic Development Environment）",
+        "speaker": "泊舟",
+        "date": "2026-04-29",
+        "note": "Warp开源定位解读，AGPL防白嫖",
+        "url": "https://x.com/bozhou_ai/status/2049436870963085429"
+      },
+      {
+        "id": "q3",
+        "quote": "The real issue is culture and talent quality, and fixing that usually requires a full rebuild",
+        "speaker": "Harry Stebbings",
+        "date": "2026-04-29",
+        "note": "关于AI时代团队重建的洞见，裁员不能解决文化问题",
+        "url": "https://x.com/HarryStebbings/status/2049298621951058341"
+      }
+    ],
+    "category_updates": [
+      {
+        "id": "c1",
+        "title": "开源工具爆发",
+        "subtitle": "Warp开源+Matt Pocock Skills+Poolside Laguna",
+        "level": "P0",
+        "items": [
+          {
+            "text": "Matt Pocock Skills 38K stars",
+            "url": "https://github.com/mattpocock/skills"
+          },
+          {
+            "text": "前GitHub CTO团队Poolside开源Laguna",
+            "url": "https://x.com/berryxia/status/2049250710492160228"
+          }
+        ]
+      },
+      {
+        "id": "c2",
+        "title": "AI编程工具更新",
+        "subtitle": "Cursor 3.2 + Claude Code + Codex",
+        "level": "P0",
+        "items": []
+      },
+      {
+        "id": "c3",
+        "title": "3D/创意工作流",
+        "subtitle": "Claude Blender MCP + SATO网格生成",
+        "level": "P1",
+        "items": [
+          {
+            "text": "SATO: 3D网格生成重磅突破",
+            "url": "https://x.com/berryxia/status/2049255217603178794"
+          }
+        ]
+      },
+      {
+        "id": "c4",
+        "title": "大模型进展",
+        "subtitle": "Nvidia Nemotron + MiniCPM-o 4.5",
+        "level": "P1",
+        "items": [
+          {
+            "text": "MiniCPM-o 4.5: 边缘AI突破",
+            "url": "https://x.com/berryxia/status/2049274065610027362"
+          }
+        ]
+      },
+      {
+        "id": "c5",
+        "title": "宏观与能源",
+        "subtitle": "伊朗战争对能源价格的影响",
+        "level": "P1",
+        "items": [
+          {
+            "text": "Jet Fuel +70%, 原油+48-52%, 化肥+23%",
+            "url": "https://x.com/charliebilello/status/2049298490489004357"
+          }
+        ]
+      },
+      {
+        "id": "c6",
+        "title": "华语圈热点",
+        "subtitle": "小米送token、联通查PCDN",
+        "level": "P2",
+        "items": [
+          {
+            "text": "小米百万亿token补贴",
+            "url": "https://x.com/realNyarime/status/2049296454905393361"
+          },
+          {
+            "text": "长沙联通上门查PCDN",
+            "url": "https://x.com/realNyarime/status/2049408651660755063"
+          }
+        ]
+      }
+    ],
+    "risk_signals": [
+      {
+        "id": "r1",
+        "level": "HIGH",
+        "title": "Claude Code系统提示Bug",
+        "detail": "托管Agent失效+用户token被空转烧光，使用Claude Code需留意",
+        "url": "https://x.com/GoSailGlobal/status/2049327989951967546"
+      },
+      {
+        "id": "r2",
+        "level": "MID",
+        "title": "Anthropic与军方合作分歧",
+        "detail": "Anthropic拒接军方合作，Google签下五角大楼合同，AI厂商在政府合同上分化，可能影响未来市场格局",
+        "url": "https://x.com/GoSailGlobal/status/2049327989951967546"
+      },
+      {
+        "id": "r3",
+        "level": "OPP",
+        "title": "AI安全争议持续",
+        "detail": "Gary Marcus持续质疑AI公司，OpenAI庭审中Musk与Altman矛盾公开化",
+        "url": "https://x.com/GaryMarcus/status/2049243406380237116"
+      },
+      {
+        "id": "r4",
+        "level": "MID",
+        "title": "美股估值与退出困境",
+        "detail": "Harry Stebbings警示 VC支持的科技创新公司 IPO门槛高（需5亿收入），退出选项有限",
+        "url": "https://x.com/HarryStebbings/status/2049237538901020767"
+      },
+      {
+        "id": "r5",
+        "level": "WARN",
+        "title": "美国房价增速放缓",
+        "detail": "全美房价同比仅增0.7%（2023年6月以来最慢），卖家数量创纪录 比买家多46%，若无政府干预价格将下行",
+        "url": "https://x.com/charliebilello/status/2049306480071873011"
+      },
+      {
+        "id": "r6",
+        "level": "MID",
+        "title": "开源bot的护城河危机",
+        "detail": "Leo：AI时代护城河从\"代码会写\"变成\"策略会想\"，以前两个月重写架构变成两小时",
+        "url": "https://x.com/runes_leo/status/2049311708330459226"
+      }
+    ]
+  }
+}

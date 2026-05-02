@@ -1,0 +1,15 @@
+{
+  "start": "2021-04-01",
+  "end": "2026-04-24",
+  "style": "aggressive",
+  "underlying_ticker": "TQQQ",
+  "signal_ticker": "QQQ",
+  "put_otm_pct": 6.0,
+  "call_otm_pct": 2.0,
+  "put_tp_pct": 50.0,
+  "call_tp_pct": 80.0,
+  "put_sl_pct": null,
+  "call_sl_pct": null,
+  "engine_version": "wheel-v3-split",
+  "rule_version": "tqqq-wheel-manual-v1.1"
+}

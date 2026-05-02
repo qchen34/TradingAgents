@@ -1,0 +1,15 @@
+{
+  "total_return": 5.458408550097382,
+  "final_value": 10545.84085500974,
+  "cagr": 5.477657356105814,
+  "sharpe": 2.031983303515009,
+  "max_dd": -0.6003518878697439,
+  "n_trades": 3,
+  "wins": 3,
+  "losses": 0,
+  "win_rate": 100.0,
+  "avg_win": 81.69156838518819,
+  "avg_loss": 0.0,
+  "chain_quotes": 0,
+  "bs_quotes": 21
+}

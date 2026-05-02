@@ -1,0 +1,207 @@
+{
+  "raw_text": "\n\n{\"themes\":[{\"id\":\"t1\",\"title\":\"Sam Altman：重新思考操作系统和UI设计\",\"subtitle\":\"Altman暗示AI将改变人机交互范式\",\"bullets\":[\"微软仍是主要云伙伴，但OpenAI产品将可在所有云上使用\",\"认为现在是认真重新思考操作系统和用户界面设计的好时机\",\"提出应有一个人类和AI代理都能使用的协议\"],\"samples\":[{\"text\":\"feels like a good time to seriously rethink how operating systems and user interfaces are designed\\n\\n(also the internet; there should be a protocol that is equally usable by people and agents)\",\"url\":\"https://x.com/sama/status/2048428561481265539\",\"handle\":\"sama\",\"date\":\"2026-04-26\"},{\"text\":\"we have updated our partnership with microsoft.\\n\\nmicrosoft will remain our primary cloud partner, but we are now able to make our products and services available across all clouds.\\n\\nwill continue to provide them with models and products until 2032, and a revenue share through 203\",\"url\":\"https://x.com/sama/status/2048755148361707946\",\"handle\":\"sama\",\"date\":\"2026-04-27\"}]},{\"id\":\"t2\",\"title\":\"AI-native工程团队的工作方式演进\",\"subtitle\":\"Andrew Ng深度分析AI编程带来的变化\",\"bullets\":[\"AI-native团队使用编码代理构建产品速度更快\",\"不仅改变开发速度，还改变了团队运营方式\",\"高质量工程师角色转变为更多监督和审查\"],\"samples\":[{\"text\":\"AI-native software engineering teams operate very differently than traditional teams. The obvious difference is that AI-native teams use coding agents to build products much faster, but this leads to many other changes in how we operate. For example, some great engineers now play\",\"url\":\"https://x.com/AndrewYNg/status/2048793852702757151\",\"handle\":\"AndrewYNg\",\"date\":\"2026-04-27\"}]},{\"id\":\"t3\",\"title\":\"宏观叙事：美股估值与央行政策\",\"subtitle\":\"Charlie Bilello警示市场信号\",\"bullets\":[\"S&P 500的CAPE比率升至41，创2000年以来最高，超过99%历史估值\",\"美联储扩张资产负债表（QE），但市场仍创新高\",\"2026年跟随2025剧本，交易员对极端言论免疫，更自信抄底\"],\"samples\":[{\"text\":\"The S&P 500's CAPE Ratio has moved up to 41, its highest level since 2000 and now above 99% of historical valuations. $SPX\",\"url\":\"https://x.com/charliebilello/status/2048753179471323584\",\"handle\":\"charliebilello\",\"date\":\"2026-04-27\"},{\"text\":\"2026 is following the same playbook as 2025. Only difference is traders have become much more immune to extreme rhetoric and have been more confident in buying the dip, sending the stock market quickly back to new all-time highs. $SPX\",\"url\":\"https://x.com/charliebilello/status/2048761760971096534\",\"handle\":\"charliebilello\",\"date\":\"2026-04-27\"}]}],\"p0_events\":[{\"id\":\"p01\",\"title\":\"OpenAI与微软更新合作\",\"meta\":\"2026-04-27 | @sama\",\"summary\":\"微软仍为主要云伙伴，OpenAI产品可跨所有云使用，合作延续至2032年\",\"url\":\"https://x.com/sama/status/2048755148361707946\"},{\"id\":\"p02\",\"title\":\"AI-native软件工程团队运作差异\",\"meta\":\"2026-04-27 | @AndrewYNg\",\"summary\":\"AI团队使用编码代理构建产品更快，运营方式发生根本变化\",\"url\":\"https://x.com/AndrewYNg/status/2048793852702757151\"},{\"id\":\"p03\",\"title\":\"S&P 500 CAPE比率创2000年来新高\",\"meta\":\"2026-04-27 | @charliebilello\",\"summary\":\"估值达41，超过99%历史水平，央行QE持续但市场无视风险\",\"url\":\"https://x.com/charliebilello/status/2048753179471323584\"},{\"id\":\"p04\",\"title\":\"GPT-5.5成为Perplexity默认编排模型\",\"meta\":\"2026-04-24 | @AravSrinivas\",\"summary\":\"用户消耗更少算力 credits，可运行更多任务\",\"url\":\"https://x.com/AravSrinivas/status/2047788775468908840\"},{\"id\":\"p05\",\"title\":\"Paul Graham：初创公司不必担心被模型公司吞噬\",\"meta\":\"2026-04-27 | @paulg\",\"summary\":\"担心被模型公司吃掉就像担心成为明星后生活受限\",\"url\":\"https://x.com/paulg/status/2048677984106664227\"},{\"id\":\"p06\",\"title\":\"Marc Andreessen：软件即提示\",\"meta\":\"2026-04-27 | @pmarca\",\"summary\":\"软件只是下一个版本软件的提示\",\"url\":\"https://x.com/pmarca/status/2048573035616375134\"}],\"top_quotes\":[{\"id\":\"q1\",\"quote\":\"feels like a good time to seriously rethink how operating systems and user interfaces are designed\",\"speaker\":\"Sam Altman\",\"date\":\"2026-04-26\",\"note\":\"暗示AI将重塑人机交互范式，提议建立人与代理均可使用的协议\",\"url\":\"https://x.com/sama/status/2048428561481265539\"},{\"id\":\"q2\",\"quote\":\"When one thing becomes abundant and cheap, another thing becomes scarce and valuable.\",\"speaker\":\"Marc Andreessen\",\"date\":\"2026-04-27\",\"note\":\"一句话道出AI时代的价值转移逻辑\",\"url\":\"https://x.com/pmarca/status/2048624098398650608\"},{\"id\":\"q3\",\"quote\":\"Worrying that your startup will be eaten by the model companies is like worrying that your life will be constrained after you become a movie star. You're far more likely simply to fail.\",\"speaker\":\"Paul Graham\",\"date\":\"2026-04-27\",\"note\":\"对AI焦虑的经典回应\",\"url\":\"https://x.com/paulg/status/2048677984106664227\"}],\"category_updates\":[{\"id\":\"c1\",\"title\":\"AI模型进展\",\"subtitle\":\"行业持续快速迭代\",\"level\":\"P0\",\"items\":[{\"text\":\"GPT-5.5发布反响热烈\",\"url\":\"https://x.com/sama/status/2048554097985593849\"},{\"text\":\"Perplexity默认模型切换至GPT-5.5\",\"url\":\"https://x.com/AravSrinivas/status/2047753276888854595\"}]},{\"id\":\"c2\",\"title\":\"AI编程工具\",\"subtitle\":\"编码代理实战表现\",\"level\":\"P0\",\"items\":[{\"text\":\"Codex在企业内部部署效果显著\",\"url\":\"https://x.com/sama/status/2048165186482389253\"},{\"text\":\"研究人员让GPT-5.5独立运行实验\",\"url\":\"https://x.com/sama/status/2047386955550470245\"}]},{\"id\":\"c3\",\"title\":\"宏观市场\",\"subtitle\":\"美股风险信号积累\",\"level\":\"P1\",\"items\":[{\"text\":\"CAPE估值创25年新高\",\"url\":\"https://x.com/charliebilello/status/2048753179471323584\"},{\"text\":\"通胀持续高于美联储目标61个月\",\"url\":\"https://x.com/charliebilello/status/2048406550897729561\"}]},{\"id\":\"c4\",\"title\":\"AI安全与批评\",\"subtitle\":\"GaryMarcus持续警示\",\"level\":\"P2\",\"items\":[{\"text\":\"AI代理是过早技术，推广太快\",\"url\":\"https://x.com/GaryMarcus/status/2048757233174122827\"},{\"text\":\"vibe coding一代不懂备份\",\"url\":\"https://x.com/GaryMarcus/status/2048593283639894520\"}]},{\"id\":\"c5\",\"title\":\"VC视角\",\"subtitle\":\"行业方向判断\",\"level\":\"P1\",\"items\":[{\"text\":\"Paul Graham淡化AI焦虑\",\"url\":\"https://x.com/paulg/status/2048677984106664227\"},{\"text\":\"Marc Andreessen谈资源稀缺性\",\"url\":\"https://x.com/pmarca/status/2048624098398650608\"}]},{\"id\":\"c6\",\"title\":\"华语圈\",\"subtitle\":\"待采集\",\"level\":\"P2\",\"items\":[{\"text\":\"中文账号需X API获取，暂无可用数据\",\"url\":\"\"}]}],\"risk_signals\":[{\"id\":\"r1\",\"level\":\"HIGH\",\"title\":\"美股估值极端化\",\"detail\":\"CAPE比率41创25年新高，超过99%历史水平，但美联储仍在QE，市场过于乐观\"},{\"id\":\"r2\",\"level\":\"MID\",\"title\":\"AI代理安全隐患\",\"detail\":\"GaryMarcus指出vibe-coded AI代理频繁造成数据丢失，用户缺乏必要的技术经验\"},{\"id\":\"r3\",\"level\":\"OPP\",\"title\":\"AI编程效率提升显著\",\"detail\":\"研究人员可让GPT-5.5独立运行实验vernight，构建效率大幅提升，验证了Andrew Ng的观点\"}]}",
+  "parsed_modules": {
+    "themes": [
+      {
+        "id": "t1",
+        "title": "Sam Altman：重新思考操作系统和UI设计",
+        "subtitle": "Altman暗示AI将改变人机交互范式",
+        "bullets": [
+          "微软仍是主要云伙伴，但OpenAI产品将可在所有云上使用",
+          "认为现在是认真重新思考操作系统和用户界面设计的好时机",
+          "提出应有一个人类和AI代理都能使用的协议"
+        ],
+        "samples": [
+          {
+            "text": "feels like a good time to seriously rethink how operating systems and user interfaces are designed\n\n(also the internet; there should be a protocol that is equally usable by people and agents)",
+            "url": "https://x.com/sama/status/2048428561481265539",
+            "handle": "sama",
+            "date": "2026-04-26"
+          },
+          {
+            "text": "we have updated our partnership with microsoft.\n\nmicrosoft will remain our primary cloud partner, but we are now able to make our products and services available across all clouds.\n\nwill continue to provide them with models and products until 2032, and a revenue share through 203",
+            "url": "https://x.com/sama/status/2048755148361707946",
+            "handle": "sama",
+            "date": "2026-04-27"
+          }
+        ]
+      },
+      {
+        "id": "t2",
+        "title": "AI-native工程团队的工作方式演进",
+        "subtitle": "Andrew Ng深度分析AI编程带来的变化",
+        "bullets": [
+          "AI-native团队使用编码代理构建产品速度更快",
+          "不仅改变开发速度，还改变了团队运营方式",
+          "高质量工程师角色转变为更多监督和审查"
+        ],
+        "samples": [
+          {
+            "text": "AI-native software engineering teams operate very differently than traditional teams. The obvious difference is that AI-native teams use coding agents to build products much faster, but this leads to many other changes in how we operate. For example, some great engineers now play",
+            "url": "https://x.com/AndrewYNg/status/2048793852702757151",
+            "handle": "AndrewYNg",
+            "date": "2026-04-27"
+          }
+        ]
+      },
+      {
+        "id": "t3",
+        "title": "宏观叙事：美股估值与央行政策",
+        "subtitle": "Charlie Bilello警示市场信号",
+        "bullets": [
+          "S&P 500的CAPE比率升至41，创2000年以来最高，超过99%历史估值",
+          "美联储扩张资产负债表（QE），但市场仍创新高",
+          "2026年跟随2025剧本，交易员对极端言论免疫，更自信抄底"
+        ],
+        "samples": [
+          {
+            "text": "The S&P 500's CAPE Ratio has moved up to 41, its highest level since 2000 and now above 99% of historical valuations. $SPX",
+            "url": "https://x.com/charliebilello/status/2048753179471323584",
+            "handle": "charliebilello",
+            "date": "2026-04-27"
+          },
+          {
+            "text": "2026 is following the same playbook as 2025. Only difference is traders have become much more immune to extreme rhetoric and have been more confident in buying the dip, sending the stock market quickly back to new all-time highs. $SPX",
+            "url": "https://x.com/charliebilello/status/2048761760971096534",
+            "handle": "charliebilello",
+            "date": "2026-04-27"
+          }
+        ]
+      }
+    ],
+    "p0_events": [
+      {
+        "id": "p04",
+        "title": "GPT-5.5成为Perplexity默认编排模型",
+        "meta": "2026-04-24 | @AravSrinivas",
+        "summary": "用户消耗更少算力 credits，可运行更多任务",
+        "url": "https://x.com/AravSrinivas/status/2047788775468908840"
+      },
+      {
+        "id": "p05",
+        "title": "Paul Graham：初创公司不必担心被模型公司吞噬",
+        "meta": "2026-04-27 | @paulg",
+        "summary": "担心被模型公司吃掉就像担心成为明星后生活受限",
+        "url": "https://x.com/paulg/status/2048677984106664227"
+      },
+      {
+        "id": "p06",
+        "title": "Marc Andreessen：软件即提示",
+        "meta": "2026-04-27 | @pmarca",
+        "summary": "软件只是下一个版本软件的提示",
+        "url": "https://x.com/pmarca/status/2048573035616375134"
+      }
+    ],
+    "top_quotes": [
+      {
+        "id": "q2",
+        "quote": "When one thing becomes abundant and cheap, another thing becomes scarce and valuable.",
+        "speaker": "Marc Andreessen",
+        "date": "2026-04-27",
+        "note": "一句话道出AI时代的价值转移逻辑",
+        "url": "https://x.com/pmarca/status/2048624098398650608"
+      }
+    ],
+    "category_updates": [
+      {
+        "id": "c1",
+        "title": "AI模型进展",
+        "subtitle": "行业持续快速迭代",
+        "level": "P0",
+        "items": [
+          {
+            "text": "GPT-5.5发布反响热烈",
+            "url": "https://x.com/sama/status/2048554097985593849"
+          },
+          {
+            "text": "Perplexity默认模型切换至GPT-5.5",
+            "url": "https://x.com/AravSrinivas/status/2047753276888854595"
+          }
+        ]
+      },
+      {
+        "id": "c2",
+        "title": "AI编程工具",
+        "subtitle": "编码代理实战表现",
+        "level": "P0",
+        "items": [
+          {
+            "text": "Codex在企业内部部署效果显著",
+            "url": "https://x.com/sama/status/2048165186482389253"
+          },
+          {
+            "text": "研究人员让GPT-5.5独立运行实验",
+            "url": "https://x.com/sama/status/2047386955550470245"
+          }
+        ]
+      },
+      {
+        "id": "c3",
+        "title": "宏观市场",
+        "subtitle": "美股风险信号积累",
+        "level": "P1",
+        "items": [
+          {
+            "text": "通胀持续高于美联储目标61个月",
+            "url": "https://x.com/charliebilello/status/2048406550897729561"
+          }
+        ]
+      },
+      {
+        "id": "c4",
+        "title": "AI安全与批评",
+        "subtitle": "GaryMarcus持续警示",
+        "level": "P2",
+        "items": [
+          {
+            "text": "AI代理是过早技术，推广太快",
+            "url": "https://x.com/GaryMarcus/status/2048757233174122827"
+          },
+          {
+            "text": "vibe coding一代不懂备份",
+            "url": "https://x.com/GaryMarcus/status/2048593283639894520"
+          }
+        ]
+      },
+      {
+        "id": "c5",
+        "title": "VC视角",
+        "subtitle": "行业方向判断",
+        "level": "P1",
+        "items": []
+      },
+      {
+        "id": "c6",
+        "title": "华语圈",
+        "subtitle": "待采集",
+        "level": "P2",
+        "items": [
+          {
+            "text": "中文账号需X API获取，暂无可用数据",
+            "url": ""
+          }
+        ]
+      }
+    ],
+    "risk_signals": [
+      {
+        "id": "r1",
+        "level": "HIGH",
+        "title": "美股估值极端化",
+        "detail": "CAPE比率41创25年新高，超过99%历史水平，但美联储仍在QE，市场过于乐观"
+      },
+      {
+        "id": "r2",
+        "level": "MID",
+        "title": "AI代理安全隐患",
+        "detail": "GaryMarcus指出vibe-coded AI代理频繁造成数据丢失，用户缺乏必要的技术经验"
+      },
+      {
+        "id": "r3",
+        "level": "OPP",
+        "title": "AI编程效率提升显著",
+        "detail": "研究人员可让GPT-5.5独立运行实验vernight，构建效率大幅提升，验证了Andrew Ng的观点"
+      }
+    ]
+  }
+}

@@ -6,7 +6,6 @@ from typing import Any
 
 from langchain_core.messages import HumanMessage
 
-from web.config_ui import PROVIDER_URL
 from tradingagents.default_config import DEFAULT_CONFIG
 from tradingagents.llm_clients.base_client import normalize_content
 from tradingagents.llm_clients.factory import create_llm_client
@@ -15,13 +14,22 @@ from tradingagents.llm_clients.model_catalog import MODEL_OPTIONS
 # 仪表盘 LLM 默认：SiliconFlow + catalog 中首个 quick（与 Web 表单选 SiliconFlow 时第一项一致）
 _DASHBOARD_DEFAULT_PROVIDER = "siliconflow"
 _DASHBOARD_DEFAULT_QUICK = MODEL_OPTIONS[_DASHBOARD_DEFAULT_PROVIDER]["quick"][0][1]
+_PROVIDER_URL = {
+    "openai": "https://api.openai.com/v1",
+    "siliconflow": "https://api.siliconflow.cn/v1",
+    "google": "https://generativelanguage.googleapis.com/v1",
+    "anthropic": "https://api.anthropic.com/",
+    "xai": "https://api.x.ai/v1",
+    "openrouter": "https://openrouter.ai/api/v1",
+    "ollama": "http://localhost:11434/v1",
+}
 
 
 def build_llm_config(last_params: dict[str, Any] | None) -> dict[str, Any]:
     cfg = DEFAULT_CONFIG.copy()
     cfg["llm_provider"] = _DASHBOARD_DEFAULT_PROVIDER
     cfg["quick_think_llm"] = _DASHBOARD_DEFAULT_QUICK
-    cfg["backend_url"] = PROVIDER_URL[_DASHBOARD_DEFAULT_PROVIDER]
+    cfg["backend_url"] = _PROVIDER_URL[_DASHBOARD_DEFAULT_PROVIDER]
     if last_params:
         cfg["llm_provider"] = last_params.get("llm_provider", cfg["llm_provider"])
         cfg["quick_think_llm"] = last_params.get("quick_model", cfg["quick_think_llm"])

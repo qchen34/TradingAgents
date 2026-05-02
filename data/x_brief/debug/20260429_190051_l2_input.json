@@ -1,0 +1,42 @@
+{
+  "target_indexes": [
+    445,
+    16,
+    97,
+    9,
+    38
+  ],
+  "target_count": 5,
+  "targets": [
+    {
+      "idx": 445,
+      "handle": "cursor_ai",
+      "url": "https://x.com/cursor_ai/status/2047744579127185843",
+      "title": "GPT-5.5 is now available in Cursor!\n\nIt's currently the top model on CursorBench at 72.8%.\n\nWe've partnered with OpenAI to offer it for 50% off through May 2."
+    },
+    {
+      "idx": 16,
+      "handle": "Pluvio9yte",
+      "url": "https://x.com/Pluvio9yte/status/2049403423813140571",
+      "title": "兄弟们，搞3D的直接冲🤩🤩🤩\n\nClaude上线了Blender MCP连接器，\n自然语言直接操控Blender的Python API，\n调场景、批量改物体、写自定义工具，不用会一行代码，\n\n我之前在Blender写个批量脚本至少折腾半小时，\n现在一句话就搞定了，\n\n更狠的是Anthropic同时砸钱加入了Blender基金会当赞助商，\n这波是总共9个创意工具连接器一起上线"
+    },
+    {
+      "idx": 97,
+      "handle": "berryxia",
+      "url": "https://x.com/berryxia/status/2049247904536428805",
+      "title": "Claude 重磅连接创意专业工具！\n\n全新 Blender 和 Autodesk Fusion 连接器上线，通过对话直接调试场景、构建工具、修改3D模型，创意工作流直接搞起来！\n\n1. Blender 连接器：调试场景、批量应用变化、构建新工具，全在 Claude 中完成\n\n2. Autodesk Fusion 连接器：通过自然对话创建和修改3D模型，设计师和工程师效率拉满\n\n3.同日上线更多连接器：Adobe Creative Cloud、Ableton、Splice、Canva \nAffinity、SketchUp、Resolume\n\n4. 正式加入 Blender Development Fund，支持开源 3D 软件发展\n\n创意工作者和 3D/设计/音乐/视频玩家，这波更新太香了！"
+    },
+    {
+      "idx": 9,
+      "handle": "GoSailGlobal",
+      "url": "https://x.com/GoSailGlobal/status/2049415194372342164",
+      "title": "做了 2 个月的事：把 GitHub 上每一个 Claude Skill / MCP server / 开源 Agent 工具都索引下来\n\n数据库现在 67,196 个项目\n\n跑了一遍分布分析，结果让我自己愣了 30 秒：\n\n- 基尼系数 0.983（破 AppStore、npm、YouTube 纪录）\n- 54.1% 的项目是 0 star——不是「少 star」，是 0\n- Top 1% 占走了 83% 的 stars\n- 2026 年 3 月单月新增 27,720 个项目，是 2024 月均的 45 倍\n\n写了一篇 1800 字英文长文讲完所有发现，含 3 个我自己当初判断错的事。\n\nhttp://dev.to/gosailglobal/i-indexed-67000-open-source-ai-agent-projects-heres-whats-actually-inside-edg\n\n完整数据 + 12 章免费书：\n1️⃣ http://agentskillshub.top\n2️⃣ https://github.com/zhuyansen/skill-blue-book"
+    },
+    {
+      "idx": 38,
+      "handle": "GoSailGlobal",
+      "url": "https://x.com/GoSailGlobal/status/2049339826877665496",
+      "title": "Matt Pocock 的 Skill 框架 · 跟其他三家的差异\n\n项目链接：http://github.com/mattpocock/skills · 38K stars · MIT · 单人维护、日活更新\n\n一句话：把资深工程师的纪律装进 Claude Code，让 vibe coder 也能写出能上线的代码。\n\n含 16 个 skill：tdd / diagnose / improve-codebase-architecture / to-prd / to-issues / triage / grill-me / zoom-out / git-guardrails / write-a-skill / caveman 等。\n\n1️⃣ vs anthropic/skills · 「格式」vs「流程」\n\nanthropic 做的:    pdf · xlsx · docx · pptx · skill-creator\n             ↑ 文件格式 skill — 给 Agent 加「读写文件」的能力\n\n差别：Anthropic 给四肢，Matt 给教练笔记。前者扩展能力边界，后者塑造行为模式。装 anthropic 之后你的 Claude 能做更多事；装 Matt 之后你的 Claude 做事方式不一样了\n\n2️⃣ vs obra/superpowers · 「小而精 + 哲学」 vs 「包罗万象」\n\nmattpocock superpowers     Skill 数 16 \n50+   设计风格 引用 Pragmatic Programmer / DDD / Ousterhout 的经典原则 自创规则、自成体系   \n\n每个 skill 的「为什么」 配一段经典书摘做锚点 没有   强制度 高 极高（DO NOT 列表更长）   \n\n启动时间 / Token 消耗 3.8s / 2,580 tok 8.7s / 4,820 tok\n\n差别：Matt 把 skill 框成「编码的智慧」，Jesse 把 skill 框成「合规的流程」。前者优雅、可读；后者严苛、稳定。Matt 的 16 个 skill 你能记得住，superpowers 的 50+ 你只记得「装上之后什么都得跑一圈」\n\n3️⃣ vs kentcdodds/compound-engineering · 「solo-dev 纪律」vs 「agent 编排」\n\nmattpocock compound-engineering     服务对象 一个人 Agent 集群   价值机制 即刻见效 复利累积（6 个月才显化）   \n\n状态 无状态 自我反思 + improvements.log   6 月留存率 ~55% 78%（4 框架最高）   上手难度 低 高\n\n差别：Matt 解决「我现在该怎么动手」，Kent 解决「我的 Agent 该怎么变聪明」。前者实用主义、立即生效；后者长期主义、未来主义。Matt 的 skill 装上 5 分钟就有用，compound-engineering 要等半年看复利\n\n🌟 一句话定位\nanthropic 给工具，Matt 给纪律，Jesse 给流水线，Kent 给成长机制\n\n这 4 个框架不是替代关系：重度用户通常装 anthropic（工具）+ Matt（纪律）+ superpowers（关键代码段） 三件套"
+    }
+  ]
+}

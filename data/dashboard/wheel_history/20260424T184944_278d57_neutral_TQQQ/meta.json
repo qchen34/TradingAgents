@@ -1,0 +1,13 @@
+{
+  "start": "2025-04-24",
+  "end": "2026-04-24",
+  "style": "neutral",
+  "underlying_ticker": "TQQQ",
+  "signal_ticker": "QQQ",
+  "put_otm_pct": 9.0,
+  "call_otm_pct": 6.0,
+  "put_tp_pct": 80.0,
+  "call_tp_pct": 50.0,
+  "put_sl_pct": 200.0,
+  "call_sl_pct": null
+}

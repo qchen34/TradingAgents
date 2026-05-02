@@ -1,0 +1,258 @@
+{
+  "raw_text": "\n\n{\"headline\":\"OpenAI全云部署 + Claude/MCP连接器爆发，AI编程工具生态进入\\\" agent 网络\\\"新时代\",\"themes\":[{\"id\":\"t1\",\"title\":\"AI 编程工具生态爆发：多连接器 + 多 Agent 协同\",\"subtitle\":\"Cursor 3.2、Claude Blender/Fusion连接器、Mozilla统一接口同天上架，agent正在从单点工具进化为可协作的网络\",\"bullets\":[\"Cursor 3.2发布：支持/multitask并行子Agent + 跨仓库多根工作区；GPT-5.5登顶CursorBench达72.8%，50%折扣持续至5月2日\",\"Claude新增9个创意工具MCP：Blender、Autodesk Fusion、Adobe Creative Cloud、Ableton、Splice、Canva、Affinity、Sketchup、Resodium\",\"Mozilla发布any-llm：统一接口连接所有LLM provider，挑战LiteLLM，发布首日即获1928 stars\",\"前GitHub CTO团队开源Laguna：33B参数MoE模型，专为Agentic Coding设计，单GPU可运行\"],\"sample_urls\":[\"https://x.com/cursor_ai/status/2047764651363180839\",\"https://x.com/GoSailGlobal/status/2049327853469310984\",\"https://x.com/berryxia/status/2049247904536428805\"]},{\"id\":\"t2\",\"title\":\"OpenAI全云部署 + 开源模型军备竞赛\",\"subtitle\":\"微软合作升级解除云限制；Moonshot Kimi k2.6发布；NVIDIA Nemotron Omni开源；国产模型token价格战开打\",\"bullets\":[\"OpenAI更新与微软合作：微软仍是主要云伙伴，但OpenAI产品现已可在所有云上使用\",\"Perplexity将GPT-5.5设为默认编排模型，Kimi k2.6成开源SOTA；NVIDIA Nemotron 3 Nano Omni开源，30B参数支持5种模态\",\"小米推出百万亿token补贴计划；罗福莉团队送100T tokens grant，表单对中文builder极友好\"],\"sample_urls\":[\"https://x.com/sama/status/2048755148361707946\",\"https://x.com/AravSrinivas/status/2047753276888854595\",\"https://x.com/berryxia/status/2049253021159403786\"]},{\"id\":\"t3\",\"title\":\"AI投资与生存指南：vc视角的务实判断\",\"subtitle\":\"Paul Graham：避开前沿实验室的\\\" blast radius\\\"；Marc Andreessen：AI是文明知识的镜像而非外星机器智能\",\"bullots\":[\"Paul Graham：前沿实验室确实在高速发布，但初创公司可以避开它们的攻击范围，关键在于选择正确的细分领域\",\"Marc Andreessen：预期的AI是血腥的外星机器智能，实际得到的AI是我们文明知识和文化的全面镜像，当然会深深爱上它\",\"Harry Stebbings：单纯裁员不能解决问题，文化和人才质量才是核心，需全体系重建\"],\"sample_urls\":[\"https://x.com/paulg/status/2049333482271260710\",\"https://x.com/pmarca/status/2049193915249574141\",\"https://x.com/HarryStebbings/status/2049278741583643076\"]}],\"p0_events\":[{\"id\":\"p01\",\"title\":\"Cursor 3.2 /multitask + GPT-5.5可用\",\"meta\":\"cursor_ai | 2026-04-24\",\"summary\":\"Cursor 3.2新增4大功能：/multitask并行子Agent、多根工作区(跨仓库修改)、GPT-5.5登顶CursorBench 72.8%，50%折扣至5月2日\",\"url\":\"https://x.com/cursor_ai/status/2047764651363180839\"},{\"id\":\"p02\",\"title\":\"Claude MCP连接器爆发：Blender/Fusion等9个创意工具上架\",\"meta\":\"berryxia | 2026-04-28\",\"summary\":\"Anthropic同日发布9个MCP连接器，包括Blender(自然语言操控Python API)、Autodesk Fusion、Adobe Creative Cloud等，创意工作流可直接在Claude中完成\",\"url\":\"https://x.com/berryxia/status/2049247904536428805\"},{\"id\":\"p03\",\"title\":\"OpenAI全云部署，解除微软绑定\",\"meta\":\"sama | 2026-04-27\",\"summary\":\"OpenAI与微软合作升级：微软保持主要云伙伴身份，但OpenAI产品和API现可在所有云上使用\",\"url\":\"https://x.com/sama/status/2048755148361707946\"},{\"id\":\"p04\",\"title\":\"Warp终端正式开源\",\"meta\":\"berryxia | 2026-04-28\",\"summary\":\"知名现代终端Warp宣布全面开源，GitHub/Roadmap/贡献流程全开放，OpenAI Devs担任founding sponsor\",\"url\":\"https://x.com/berryxia/status/2049254052840812960\"},{\"id\":\"p05\",\"title\":\"AgentSkillsHub索引67,196个项目：基尼系数0.983创纪录\",\"meta\":\"GoSailGlobal | 2026-04-29\",\"summary\":\"索引GitHub上所有Claude Skill/MCP/开源Agent工具，54.1%项目零star，Top 1%占83% stars，2026年3月新增27,720个项目是2024年月均45倍\",\"url\":\"https://x.com/GoSailGlobal/status/2049415194372342164\"},{\"id\":\"p06\",\"title\":\"NVIDIA Nemotron 3 Nano Omni开源：30B参数5模态Agent专用\",\"meta\":\"berryxia | 2026-04-28\",\"summary\":\"256K超长上下文，语言+视觉+语音+视频+音频一体化，专为subagents/Agentic任务设计，完全开源(权重+数据+配方)\",\"url\":\"https://x.com/berryxia/status/2049253021159403786\"}],\"top_quotes\":[{\"id\":\"q1\",\"quote\":\"The AI we thought we'd get was bloodless alien machine intelligence. The AI we actually got was the complete knowledge and culture of our civilization reflected back at us. Of course we will love it deeply.\",\"speaker\":\"Marc Andreessen\",\"date\":\"2026-04-28\",\"note\":\"a16z联合创始人重新定义AI本质：我们得到的是文明知识的镜像而非外星智能\",\"url\":\"https://x.com/pmarca/status/2049193915249574141\"},{\"id\":\"q2\",\"quote\":\"Yes it's true that OAI/Ant are shipping at incredible pace, but it's quite easy to avoid their blast radius and build something valuable.\",\"speaker\":\"Paul Graham\",\"date\":\"2026-04-29\",\"note\":\"PG对创始人的建议：避开前沿实验室的攻击范围，选择正确细分领域即可\",\"url\":\"https://x.com/paulg/status/2049333482271260710\"},{\"id\":\"q3\",\"quote\":\"GPT-5.5 is now available in Cursor! It's currently the top model on CursorBench at 72.8%.\",\"speaker\":\"Cursor\",\"date\":\"2026-04-24\",\"note\":\"GPT-5.5在Cursor编程助手登顶评测榜，CursorBench 72.8%\",\"url\":\"https://x.com/cursor_ai/status/2047744579127185843\"}],\"category_updates\":[{\"id\":\"c1\",\"title\":\"AI编程工具实测\",\"subtitle\":\"Cursor + Claude Code 工作流\",\"level\":\"P0\",\"item_urls\":[\"https://x.com/cursor_ai/status/2047744579127185843\",\"https://x.com/berryxia/status/2049247904536428805\",\"https://x.com/Pluvio9yte/status/2049403423813140571\"],\"item_texts\":[\"Cursor 3.2发布/multitask并行子Agent\",\"Claude Blender MCP一句话操控3D场景\",\"GPT-5.5登顶CursorBench 72.8%\"]},{\"id\":\"c2\",\"title\":\"开源模型生态\",\"subtitle\":\"多模态与Agent专用\",\"level\":\"P0\",\"item_urls\":[\"https://x.com/berryxia/status/2049253021159403786\",\"https://x.com/berryxia/status/2049250710492160228\",\"https://x.com/AravSrinivas/status/2047145172337836139\"],\"item_texts\":[\"NVIDIA Nemotron 3 Nano Omni开源30B（5模态）\",\"前GitHub CTO团队开源Laguna 33B MoE\",\"Moonshot Kimi k2.6成开源SOTA\"]},{\"id\":\"c3\",\"title\":\"国产模型与Token补贴\",\"subtitle\":\"中文开发者福利\",\"level\":\"P1\",\"item_urls\":[\"https://x.com/realNyarime/status/2049296454905393361\",\"https://x.com/runes_leo/status/2049402305217241384\"],\"item_texts\":[\"小米百万亿token补贴到账7亿\",\"罗福莉团队100T tokens grant开放申请\"]},{\"id\":\"c4\",\"title\":\"AI编程学习资源\",\"subtitle\":\"Skill框架与实操教程\",\"level\":\"P1\",\"item_urls\":[\"https://x.com/GoSailGlobal/status/2049339826877665496\",\"https://x.com/GoSailGlobal/status/2049327853469310984\"],\"item_texts\":[\"Matt Pocock开源38K stars的Skill框架\",\"Composio发布awesome-codex-skills即插即用\"]},{\"id\":\"c5\",\"title\":\"宏观与市场信号\",\"subtitle\":\"能源与房产\",\"level\":\"P2\",\"item_urls\":[\"https://x.com/charliebilello/status/2049298490489004357\",\"https://x.com/charliebilello/status/2049306480071873011\"],\"item_texts\":[\"伊朗战争以来：航空燃油+70%、布伦特原油+52%、尿素+48%\",\"美国房价年增0.7%创2023年6月以来最慢，卖家数量创纪录高出买家46%\"]},{\"id\":\"c6\",\"title\":\"新终端与开发工具\",\"subtitle\":\"Warp开源 + 垂直Tab\",\"level\":\"P1\",\"item_urls\":[\"https://x.com/dingyi/status/2049304499093946479\",\"https://x.com/berryxia/status/2049254052840812960\"],\"item_texts\":[\"Warp正式开源，重大转折点\",\"Ghostty离开GitHub，Warp垂直Tab更好用\"]}],\"risk_signals\":[{\"id\":\"r1\",\"level\":\"HIGH\",\"title\":\"Claude Code系统提示Bug：托管Agent失效+用户token被空转烧光\",\"detail\":\"托管Agent因系统提示问题失效，用户token被空转消耗，需密切关注官方修复进展\",\"url\":\"https://x.com/GoSailGlobal/status/2049327989951967546\"},{\"id\":\"r2\",\"level\":\"MID\",\"title\":\"Anthropic拒接军方合作，Google签下五角大楼新合同\",\"detail\":\"AI公司军事合作态度分化，Google趁机填补空缺，可能影响未来AI安全叙事\",\"url\":\"https://x.com/GoSailGlobal/status/2049327989951967546\"},{\"id\":\"r3\",\"level\":\"OPP\",\"title\":\"AI项目严重长尾：54%项目零star，Top1%占83% stars\",\"detail\":\"开源AI agent项目严重分布不均，大部分项目缺乏曝光，生态存在价值发现难题\",\"url\":\"https://x.com/GoSailGlobal/status/2049415194372342164\"},{\"id\":\"r4\",\"level\":\"MID\",\"title\":\"VC退出路径收窄：IPO门槛$500M revenue\",\"detail\":\"Harry Stebbings指出当前VC退出选项受限，IPO需$500M revenue才能进行，并购条件愈发苛刻\",\"url\":\"https://x.com/HarryStebbings/status/2049237538901020767\"},{\"id\":\"r5\",\"level\":\"MID\",\"title\":\"SBC稀释风险：股价下跌时3%年化稀释可飙至10%\",\"detail\":\"股权补偿在股价下跌时稀释爆炸，Harry Stebbings警告下行螺旋风险\",\"url\":\"https://x.com/HarryStebbings/status/2049298621951058341\"},{\"id\":\"r6\",\"level\":\"OPP\",\"title\":\"美国房价将迎来调整\",\"detail\":\"Charlie Bilello：房价年增0.7%创新低，卖家数量创纪录高出买家46%，无政府干预房价将下行\",\"url\":\"https://x.com/charliebilello/status/2049306480071873011\"}]}",
+  "parsed_draft": {
+    "headline": "OpenAI全云部署 + Claude/MCP连接器爆发，AI编程工具生态进入\" agent 网络\"新时代",
+    "themes": [
+      {
+        "id": "t1",
+        "title": "AI 编程工具生态爆发：多连接器 + 多 Agent 协同",
+        "subtitle": "Cursor 3.2、Claude Blender/Fusion连接器、Mozilla统一接口同天上架，agent正在从单点工具进化为可协作的网络",
+        "bullets": [
+          "Cursor 3.2发布：支持/multitask并行子Agent + 跨仓库多根工作区；GPT-5.5登顶CursorBench达72.8%，50%折扣持续至5月2日",
+          "Claude新增9个创意工具MCP：Blender、Autodesk Fusion、Adobe Creative Cloud、Ableton、Splice、Canva、Affinity、Sketchup、Resodium",
+          "Mozilla发布any-llm：统一接口连接所有LLM provider，挑战LiteLLM，发布首日即获1928 stars",
+          "前GitHub CTO团队开源Laguna：33B参数MoE模型，专为Agentic Coding设计，单GPU可运行"
+        ],
+        "sample_urls": [
+          "https://x.com/cursor_ai/status/2047764651363180839",
+          "https://x.com/GoSailGlobal/status/2049327853469310984",
+          "https://x.com/berryxia/status/2049247904536428805"
+        ]
+      },
+      {
+        "id": "t2",
+        "title": "OpenAI全云部署 + 开源模型军备竞赛",
+        "subtitle": "微软合作升级解除云限制；Moonshot Kimi k2.6发布；NVIDIA Nemotron Omni开源；国产模型token价格战开打",
+        "bullets": [
+          "OpenAI更新与微软合作：微软仍是主要云伙伴，但OpenAI产品现已可在所有云上使用",
+          "Perplexity将GPT-5.5设为默认编排模型，Kimi k2.6成开源SOTA；NVIDIA Nemotron 3 Nano Omni开源，30B参数支持5种模态",
+          "小米推出百万亿token补贴计划；罗福莉团队送100T tokens grant，表单对中文builder极友好"
+        ],
+        "sample_urls": [
+          "https://x.com/sama/status/2048755148361707946",
+          "https://x.com/AravSrinivas/status/2047753276888854595",
+          "https://x.com/berryxia/status/2049253021159403786"
+        ]
+      },
+      {
+        "id": "t3",
+        "title": "AI投资与生存指南：vc视角的务实判断",
+        "subtitle": "Paul Graham：避开前沿实验室的\" blast radius\"；Marc Andreessen：AI是文明知识的镜像而非外星机器智能",
+        "bullots": [
+          "Paul Graham：前沿实验室确实在高速发布，但初创公司可以避开它们的攻击范围，关键在于选择正确的细分领域",
+          "Marc Andreessen：预期的AI是血腥的外星机器智能，实际得到的AI是我们文明知识和文化的全面镜像，当然会深深爱上它",
+          "Harry Stebbings：单纯裁员不能解决问题，文化和人才质量才是核心，需全体系重建"
+        ],
+        "sample_urls": [
+          "https://x.com/paulg/status/2049333482271260710",
+          "https://x.com/pmarca/status/2049193915249574141",
+          "https://x.com/HarryStebbings/status/2049278741583643076"
+        ]
+      }
+    ],
+    "p0_events": [
+      {
+        "id": "p01",
+        "title": "Cursor 3.2 /multitask + GPT-5.5可用",
+        "meta": "cursor_ai | 2026-04-24",
+        "summary": "Cursor 3.2新增4大功能：/multitask并行子Agent、多根工作区(跨仓库修改)、GPT-5.5登顶CursorBench 72.8%，50%折扣至5月2日",
+        "url": "https://x.com/cursor_ai/status/2047764651363180839"
+      },
+      {
+        "id": "p02",
+        "title": "Claude MCP连接器爆发：Blender/Fusion等9个创意工具上架",
+        "meta": "berryxia | 2026-04-28",
+        "summary": "Anthropic同日发布9个MCP连接器，包括Blender(自然语言操控Python API)、Autodesk Fusion、Adobe Creative Cloud等，创意工作流可直接在Claude中完成",
+        "url": "https://x.com/berryxia/status/2049247904536428805"
+      },
+      {
+        "id": "p03",
+        "title": "OpenAI全云部署，解除微软绑定",
+        "meta": "sama | 2026-04-27",
+        "summary": "OpenAI与微软合作升级：微软保持主要云伙伴身份，但OpenAI产品和API现可在所有云上使用",
+        "url": "https://x.com/sama/status/2048755148361707946"
+      },
+      {
+        "id": "p04",
+        "title": "Warp终端正式开源",
+        "meta": "berryxia | 2026-04-28",
+        "summary": "知名现代终端Warp宣布全面开源，GitHub/Roadmap/贡献流程全开放，OpenAI Devs担任founding sponsor",
+        "url": "https://x.com/berryxia/status/2049254052840812960"
+      },
+      {
+        "id": "p05",
+        "title": "AgentSkillsHub索引67,196个项目：基尼系数0.983创纪录",
+        "meta": "GoSailGlobal | 2026-04-29",
+        "summary": "索引GitHub上所有Claude Skill/MCP/开源Agent工具，54.1%项目零star，Top 1%占83% stars，2026年3月新增27,720个项目是2024年月均45倍",
+        "url": "https://x.com/GoSailGlobal/status/2049415194372342164"
+      },
+      {
+        "id": "p06",
+        "title": "NVIDIA Nemotron 3 Nano Omni开源：30B参数5模态Agent专用",
+        "meta": "berryxia | 2026-04-28",
+        "summary": "256K超长上下文，语言+视觉+语音+视频+音频一体化，专为subagents/Agentic任务设计，完全开源(权重+数据+配方)",
+        "url": "https://x.com/berryxia/status/2049253021159403786"
+      }
+    ],
+    "top_quotes": [
+      {
+        "id": "q1",
+        "quote": "The AI we thought we'd get was bloodless alien machine intelligence. The AI we actually got was the complete knowledge and culture of our civilization reflected back at us. Of course we will love it deeply.",
+        "speaker": "Marc Andreessen",
+        "date": "2026-04-28",
+        "note": "a16z联合创始人重新定义AI本质：我们得到的是文明知识的镜像而非外星智能",
+        "url": "https://x.com/pmarca/status/2049193915249574141"
+      },
+      {
+        "id": "q2",
+        "quote": "Yes it's true that OAI/Ant are shipping at incredible pace, but it's quite easy to avoid their blast radius and build something valuable.",
+        "speaker": "Paul Graham",
+        "date": "2026-04-29",
+        "note": "PG对创始人的建议：避开前沿实验室的攻击范围，选择正确细分领域即可",
+        "url": "https://x.com/paulg/status/2049333482271260710"
+      },
+      {
+        "id": "q3",
+        "quote": "GPT-5.5 is now available in Cursor! It's currently the top model on CursorBench at 72.8%.",
+        "speaker": "Cursor",
+        "date": "2026-04-24",
+        "note": "GPT-5.5在Cursor编程助手登顶评测榜，CursorBench 72.8%",
+        "url": "https://x.com/cursor_ai/status/2047744579127185843"
+      }
+    ],
+    "category_updates": [
+      {
+        "id": "c1",
+        "title": "AI编程工具实测",
+        "subtitle": "Cursor + Claude Code 工作流",
+        "level": "P0",
+        "item_urls": [
+          "https://x.com/cursor_ai/status/2047744579127185843",
+          "https://x.com/berryxia/status/2049247904536428805",
+          "https://x.com/Pluvio9yte/status/2049403423813140571"
+        ],
+        "item_texts": [
+          "Cursor 3.2发布/multitask并行子Agent",
+          "Claude Blender MCP一句话操控3D场景",
+          "GPT-5.5登顶CursorBench 72.8%"
+        ]
+      },
+      {
+        "id": "c2",
+        "title": "开源模型生态",
+        "subtitle": "多模态与Agent专用",
+        "level": "P0",
+        "item_urls": [
+          "https://x.com/berryxia/status/2049253021159403786",
+          "https://x.com/berryxia/status/2049250710492160228",
+          "https://x.com/AravSrinivas/status/2047145172337836139"
+        ],
+        "item_texts": [
+          "NVIDIA Nemotron 3 Nano Omni开源30B（5模态）",
+          "前GitHub CTO团队开源Laguna 33B MoE",
+          "Moonshot Kimi k2.6成开源SOTA"
+        ]
+      },
+      {
+        "id": "c3",
+        "title": "国产模型与Token补贴",
+        "subtitle": "中文开发者福利",
+        "level": "P1",
+        "item_urls": [
+          "https://x.com/realNyarime/status/2049296454905393361",
+          "https://x.com/runes_leo/status/2049402305217241384"
+        ],
+        "item_texts": [
+          "小米百万亿token补贴到账7亿",
+          "罗福莉团队100T tokens grant开放申请"
+        ]
+      },
+      {
+        "id": "c4",
+        "title": "AI编程学习资源",
+        "subtitle": "Skill框架与实操教程",
+        "level": "P1",
+        "item_urls": [
+          "https://x.com/GoSailGlobal/status/2049339826877665496",
+          "https://x.com/GoSailGlobal/status/2049327853469310984"
+        ],
+        "item_texts": [
+          "Matt Pocock开源38K stars的Skill框架",
+          "Composio发布awesome-codex-skills即插即用"
+        ]
+      },
+      {
+        "id": "c5",
+        "title": "宏观与市场信号",
+        "subtitle": "能源与房产",
+        "level": "P2",
+        "item_urls": [
+          "https://x.com/charliebilello/status/2049298490489004357",
+          "https://x.com/charliebilello/status/2049306480071873011"
+        ],
+        "item_texts": [
+          "伊朗战争以来：航空燃油+70%、布伦特原油+52%、尿素+48%",
+          "美国房价年增0.7%创2023年6月以来最慢，卖家数量创纪录高出买家46%"
+        ]
+      },
+      {
+        "id": "c6",
+        "title": "新终端与开发工具",
+        "subtitle": "Warp开源 + 垂直Tab",
+        "level": "P1",
+        "item_urls": [
+          "https://x.com/dingyi/status/2049304499093946479",
+          "https://x.com/berryxia/status/2049254052840812960"
+        ],
+        "item_texts": [
+          "Warp正式开源，重大转折点",
+          "Ghostty离开GitHub，Warp垂直Tab更好用"
+        ]
+      }
+    ],
+    "risk_signals": [
+      {
+        "id": "r1",
+        "level": "HIGH",
+        "title": "Claude Code系统提示Bug：托管Agent失效+用户token被空转烧光",
+        "detail": "托管Agent因系统提示问题失效，用户token被空转消耗，需密切关注官方修复进展",
+        "url": "https://x.com/GoSailGlobal/status/2049327989951967546"
+      },
+      {
+        "id": "r2",
+        "level": "MID",
+        "title": "Anthropic拒接军方合作，Google签下五角大楼新合同",
+        "detail": "AI公司军事合作态度分化，Google趁机填补空缺，可能影响未来AI安全叙事",
+        "url": "https://x.com/GoSailGlobal/status/2049327989951967546"
+      },
+      {
+        "id": "r3",
+        "level": "OPP",
+        "title": "AI项目严重长尾：54%项目零star，Top1%占83% stars",
+        "detail": "开源AI agent项目严重分布不均，大部分项目缺乏曝光，生态存在价值发现难题",
+        "url": "https://x.com/GoSailGlobal/status/2049415194372342164"
+      },
+      {
+        "id": "r4",
+        "level": "MID",
+        "title": "VC退出路径收窄：IPO门槛$500M revenue",
+        "detail": "Harry Stebbings指出当前VC退出选项受限，IPO需$500M revenue才能进行，并购条件愈发苛刻",
+        "url": "https://x.com/HarryStebbings/status/2049237538901020767"
+      },
+      {
+        "id": "r5",
+        "level": "MID",
+        "title": "SBC稀释风险：股价下跌时3%年化稀释可飙至10%",
+        "detail": "股权补偿在股价下跌时稀释爆炸，Harry Stebbings警告下行螺旋风险",
+        "url": "https://x.com/HarryStebbings/status/2049298621951058341"
+      },
+      {
+        "id": "r6",
+        "level": "OPP",
+        "title": "美国房价将迎来调整",
+        "detail": "Charlie Bilello：房价年增0.7%创新低，卖家数量创纪录高出买家46%，无政府干预房价将下行",
+        "url": "https://x.com/charliebilello/status/2049306480071873011"
+      }
+    ]
+  }
+}

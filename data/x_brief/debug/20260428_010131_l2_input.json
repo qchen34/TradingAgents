@@ -1,0 +1,28 @@
+{
+  "target_indexes": [
+    0,
+    1,
+    2
+  ],
+  "target_count": 3,
+  "targets": [
+    {
+      "idx": 0,
+      "handle": "elonmusk",
+      "url": "https://x.com/elonmusk/status/2048807976991850953",
+      "title": "Calling him “Scam” Altman is accurate. \n\nThis is very much worth reading."
+    },
+    {
+      "idx": 1,
+      "handle": "elonmusk",
+      "url": "https://x.com/elonmusk/status/2048804363595059425",
+      "title": "RT by @elonmusk: Sam Altman cannot be trusted.\n\n• The OpenAI board fired him because he was not always honest with them. They said he should not control powerful AI.\n\n• A major report talked to over 100 people and saw secret papers. It says he has almost a sociopathic lack of concern for the truth. People who worked with him say he lies easily but still wants everyone to like him.\n\n• Top scientist Ilya made 70 pages of notes before the firing. They showed Sam was not honest with the team and board about safety rules.\n\n• He changed OpenAI from a nonprofit that Elon helped start to a for profit money making business. It was meant to be open for everyone with no personal gain.\n\n• He trained OpenAI on Twitter data without permission.\n\n• He keeps lying and shows a lack of transparency.\n\n• He poached xAI staff and took sensitive info illegally.\n\n• He dropped core safety promises to race for growth and money. Old team members say his big expensive AI projects around the world are too dangerous.\n\n• An ex OpenAI board member flat out called him a liar.\n\nThis is not just talk. It is what the people closest to him said and what the facts show. When the folks who worked with him say he cannot be trusted."
+    },
+    {
+      "idx": 2,
+      "handle": "elonmusk",
+      "url": "https://x.com/elonmusk/status/2048802239272169582",
+      "title": "Exactly"
+    }
+  ]
+}

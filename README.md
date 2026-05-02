@@ -109,8 +109,26 @@ cp .env.example .env
 streamlit run app.py
 ```
 
+### 2) 启动 npm 前端 + Python API
+
+```bash
+# API
+python -m uvicorn backend.api.main:app --host 127.0.0.1 --port 8000 --reload
+
+# Frontend（新终端）
+cd frontend
+npm install
+npm run dev
+```
+
+### 3) 一键并行启动（Streamlit + FastAPI + Next.js）
+
+```bash
+bash scripts/start_dual_stack.sh
+```
+
 ### 或
-### 2) 启动 CLI
+### 4) 启动 CLI
 
 ```bash
 python -m cli.main
