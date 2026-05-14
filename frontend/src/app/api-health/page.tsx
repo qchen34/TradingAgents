@@ -5,7 +5,12 @@ import { useEffect, useState } from "react";
 export default function ApiHealthPage() {
   const [health, setHealth] = useState("checking");
   useEffect(() => {
-    fetch(`${process.env.NEXT_PUBLIC_API_BASE ?? "http://127.0.0.1:8000"}/health`)
+    const apiBase = process.env.NEXT_PUBLIC_API_BASE?.trim();
+    if (!apiBase) {
+      setHealth("missing NEXT_PUBLIC_API_BASE");
+      return;
+    }
+    fetch(`${apiBase}/health`)
       .then((r) => r.json())
       .then(() => setHealth("ok"))
       .catch(() => setHealth("failed"));

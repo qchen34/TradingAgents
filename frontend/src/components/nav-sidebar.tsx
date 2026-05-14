@@ -9,6 +9,7 @@ const NAV = [
   { href: "/strategy", label: "策略", icon: "query_stats" },
   { href: "/x-brief", label: "X资讯简报", icon: "newspaper" },
   { href: "/stock-detail", label: "股票详情", icon: "monitoring" },
+  { href: "/trading-agents", label: "TradingAgents", icon: "psychology" },
   { href: "/portfolio", label: "持仓", icon: "account_balance_wallet" },
   { href: "/backtesting", label: "策略回测", icon: "timeline" },
 ];

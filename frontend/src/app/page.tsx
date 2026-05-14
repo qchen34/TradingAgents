@@ -10,12 +10,32 @@ type FollowRow = {
   ticker: string;
   note: string;
   sourceCode?: string;
+  rank?: number;
+  layer?: string;
+  reason?: string;
+  action?: string;
 };
 
-type FutuWatchlistRow = {
-  group_name: string;
-  code: string;
-  name: string;
+type AiComputeTicker = {
+  ticker: string;
+  name?: string;
+  rank?: number;
+  layer?: string;
+  reason?: string;
+  action?: string;
+};
+
+type AiComputeGroup = {
+  id: string;
+  label: string;
+  order: number;
+  description?: string;
+  focus?: string;
+  tickers: AiComputeTicker[];
+};
+
+type AiComputeWatchlist = {
+  groups: AiComputeGroup[];
 };
 
 export default function DashboardPage() {
@@ -60,23 +80,32 @@ export default function DashboardPage() {
   }, []);
 
   useEffect(() => {
-    fetch("/api/follows/source")
+    fetch("/api/follows/ai-compute")
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
-      .then((rows: FutuWatchlistRow[]) => {
-        const grouped: Record<string, FollowRow[]> = {};
-        rows.forEach((r) => {
-          const group = (r.group_name || "未分组").trim();
-          const ticker = normalizeFutuCode(r.code);
-          const note = (r.name || r.code || "").trim();
-          if (!ticker) return;
-          if (!grouped[group]) grouped[group] = [];
-          grouped[group].push({ ticker, note, sourceCode: r.code });
-        });
-        const groups = Object.keys(grouped);
+      .then((data: AiComputeWatchlist) => {
+        const groups = [...(data.groups ?? [])].sort(
+          (a, b) => (a.order ?? 0) - (b.order ?? 0),
+        );
         if (groups.length === 0) return;
+        const grouped: Record<string, FollowRow[]> = {};
+        const labels: string[] = [];
+        groups.forEach((g) => {
+          const rows: FollowRow[] = (g.tickers ?? []).map((t) => ({
+            ticker: t.ticker.toUpperCase(),
+            note: t.name || t.ticker,
+            sourceCode: t.ticker.toUpperCase(),
+            rank: t.rank,
+            layer: t.layer,
+            reason: t.reason,
+            action: t.action,
+          }));
+          if (rows.length === 0) return;
+          grouped[g.label] = rows;
+          labels.push(g.label);
+        });
         setWatchlistByGroup(grouped);
-        setWatchlistGroups(groups);
-        setActiveWatchlistGroup((prev) => (prev && grouped[prev] ? prev : groups[0]));
+        setWatchlistGroups(labels);
+        setActiveWatchlistGroup((prev) => (prev && grouped[prev] ? prev : labels[0]));
       })
       .catch(() => {
         // 保留本地默认 watchlist，避免 API 未就绪时页面报错
@@ -179,14 +208,6 @@ export default function DashboardPage() {
       setFollowsTab("positions");
     };
     reader.readAsText(file, "utf-8");
-  }
-
-  function normalizeFutuCode(code: string): string {
-    const c = (code || "").trim().toUpperCase();
-    if (!c) return "";
-    if (c.startsWith("US..")) return `^${c.slice(4)}`;
-    if (c.startsWith("US.")) return c.slice(3);
-    return c;
   }
 
   const displayedRows =
@@ -402,13 +423,25 @@ export default function DashboardPage() {
                 mapHit ||
                 (snapshot?.indexes ?? []).find((x) => x.ticker === f.ticker) ||
                 (snapshot?.top6_sectors ?? []).find((x) => x.ticker === f.ticker);
+              const tooltipParts = [
+                f.layer ? `层级: ${f.layer}` : "",
+                f.reason ? `加入理由: ${f.reason}` : "",
+                f.action ? `当前动作: ${f.action}` : "",
+              ].filter(Boolean);
+              const tooltip = tooltipParts.join("\n");
               return (
                 <div
                   className={`flex items-center border-b border-[#2B2F36] px-2 py-1.5 ${heatBgByPct(hit?.change_pct)}`}
-                  key={`${followsTab}-${f.ticker}`}
+                  key={`${followsTab}-${activeWatchlistGroup || "default"}-${f.ticker}`}
+                  title={tooltip || undefined}
                 >
                   <div className="w-[42%]">
-                    <div className="truncate text-[11px] font-semibold text-[#f0f2ff]">{f.note}</div>
+                    <div className="flex items-center gap-1 truncate text-[11px] font-semibold text-[#f0f2ff]">
+                      {f.rank !== undefined && (
+                        <span className="rounded bg-[#2B2F36] px-1 font-mono text-[9px] text-[#dce1ff]">#{f.rank}</span>
+                      )}
+                      <span className="truncate">{f.note}</span>
+                    </div>
                     <div className="font-mono text-[10px] text-[#8d90a2]">{f.ticker}</div>
                   </div>
                   <div className="w-[20%] text-right font-mono text-[12px] text-[#e1e2e7]">{num(hit?.price)}</div>

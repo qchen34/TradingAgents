@@ -8,6 +8,11 @@ const __dirname = path.dirname(__filename);
 const nextConfig = {
   reactStrictMode: true,
   outputFileTracingRoot: __dirname,
+  // Avoid webpack persistent cache on slow/cloud-sync filesystems (macOS ETIMEDOUT on `.next/cache`).
+  webpack: (config) => {
+    config.cache = false;
+    return config;
+  },
 };
 
 export default nextConfig;
