@@ -15,6 +15,15 @@ All three UI layers (CLI, Streamlit, Next.js+FastAPI) can call into the same `tr
 
 Chinese is used throughout README, docs, and UI strings (this is a personal tool, not upstream TradingAgents); code identifiers and comments are in English.
 
+## Investor context (why this repo exists)
+
+This repo is used day-to-day by its owner (a FUTU HK margin account holder) for **actual investment research**, not just as a coding project. When doing analysis, extending analyst/tool prompts, or summarizing output for this user, keep the following in mind:
+
+- **Focus sectors**: storage/memory chips (存储芯片) and semiconductors/tech broadly. Prioritize memory/semiconductor fundamentals — DRAM/NAND pricing and supply cycles, foundry capacity, AI-driven demand — over generic market coverage when relevant.
+- **Comfortable/known strategies**: value investing (fundamentals, long holding periods) and dollar-cost averaging into `QQQM` (core low-risk holding). Short-term/leveraged trading (e.g. HK-listed warrants/CBBCs) is something the user dabbles in but is not the primary approach.
+- **Risk history — treat as a standing caution**: the user was previously stuck holding a leveraged/derivative position (code `7709`), bought partway into a rally that then reversed, and realized a loss of roughly HK$70,000+. The explicit goal now is to invest *rationally* rather than chase momentum. When output touches short-term or leveraged trade ideas, favor conservative, evidence-based framing (position sizing, entry timing, stop-loss discipline) over hype, and don't reinforce the kind of momentum-chasing entry that caused that loss.
+- **Current holdings snapshot** (FUTU HK margin account; illustrative, not guaranteed current): `MSFT`, `VTI`, `QQQM`, `NVDA`, `TQQQ` (3x leveraged Nasdaq-100), `CRCL` (Circle), Roundhill memory-chip theme ETF `DRAM` (plus a written/held DRAM put), `PDFS` (PDF Solutions — semiconductor yield/test). This skews toward broad tech/Nasdaq exposure with a concentrated memory-chip/semiconductor satellite position.
+
 ## Common commands
 
 ### Setup
