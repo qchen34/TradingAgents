@@ -1,0 +1,75 @@
+{
+  "generated_at": "2026-05-14T16:20:31.924714+00:00",
+  "report_type": "weekly",
+  "input": {
+    "watchlist_path": "/Users/qiwei/workspace/03_B站工具研究与展示/TradingAgents/data/x_brief/关注列表.md",
+    "watchers": [
+      {
+        "handle": "karpathy",
+        "name": "Andrej Karpathy"
+      }
+    ],
+    "days": 3,
+    "per_account_limit": 10
+  },
+  "output": {
+    "description": "关注博主近一周推文",
+    "tweet_window_days": 3,
+    "tweet_count": 0
+  },
+  "period": {
+    "days": 3,
+    "start_utc": "2026-05-11T16:20:30.555516+00:00",
+    "end_utc": "2026-05-14T16:20:31.924714+00:00",
+    "month_tag": "202605"
+  },
+  "overview": {
+    "total_accounts": 1,
+    "active_accounts": 0,
+    "total_tweets": 0,
+    "failed_accounts": 0,
+    "source_hits": {
+      "nitter": 1
+    },
+    "source_errors": {},
+    "tweets_kept": 0
+  },
+  "accounts": [
+    {
+      "handle": "karpathy",
+      "account": "@karpathy",
+      "name": "Andrej Karpathy",
+      "category": "",
+      "score": "",
+      "skip_reason": "",
+      "status": "ok",
+      "tweets_count": 0,
+      "error": "",
+      "source": "nitter"
+    }
+  ],
+  "tweets": [],
+  "headline": "",
+  "trending_keywords": [],
+  "top_themes": [],
+  "modules": {
+    "themes": [],
+    "p0_events": [],
+    "top_quotes": [],
+    "category_updates": [],
+    "risk_signals": [
+      {
+        "id": "llm-fallback-error",
+        "level": "MID",
+        "title": "LLM 编排暂不可用",
+        "detail": "本次使用规则兜底：Expecting ',' delimiter: line 1 column 1014 (char 1013)"
+      }
+    ]
+  },
+  "tweet_summary_md": "# X平台关注列表推文汇总\n\n**生成日期**: 2026-05-14T16:20:31.924714+00:00\n**数据来源**: Nitter RSS 订阅\n**时间范围**: 最近3天\n**账号总数**: 1 | **成功获取**: 0 | **推文总数**: 0\n\n---\n\n### ✅ @karpathy — Andrej Karpathy（0 条）\n\n---\n",
+  "monthly_analysis_md": "# X平台资讯深度分析报告\n\n**报告日期**: 2026-05-14T16:20:31.924714+00:00\n**分析账号**: 1个 | **活跃账号**: 0个 | **推文总量**: 0条\n\n---\n\n## 一、总体概览\n\n- 本报告基于 X 关注列表近30天 RSS 数据自动生成。\n- 默认口径：按账号聚合、按推文主题词粗分层。\n\n## 二、主题分布\n\n\n## 三、活跃账号 Top10\n\n\n## 四、代表性推文\n\n\n---\n\n*本报告由系统自动生成，供月度复盘使用。*\n",
+  "paths": {
+    "tweet_summary_md": "/Users/qiwei/workspace/03_B站工具研究与展示/TradingAgents/data/x_brief/推文汇总_202605.md",
+    "monthly_analysis_md": "/Users/qiwei/workspace/03_B站工具研究与展示/TradingAgents/data/x_brief/月度深度分析_202605.md"
+  }
+}

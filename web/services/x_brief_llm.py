@@ -222,8 +222,8 @@ def _dedupe_modules_by_url(modules: dict[str, Any]) -> dict[str, Any]:
 def _load_brief_config_context(max_chars: int = 12000) -> str:
     """
     第一层 LLM 的编辑偏好上下文：
-    - 读取 Claude_input/x资讯/简报配置.md
-    - 传入“关心主题、账号权重、内容偏好、简报格式偏好”等约束
+    - 读取 data/x_brief/简报配置.md（若存在）
+    - 传入「关心主题、账号权重、内容偏好、简报格式偏好」等约束
     """
     p: Path = brief_config_path()
     if not p.exists():

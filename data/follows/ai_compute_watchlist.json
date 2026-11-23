@@ -1,0 +1,143 @@
+{
+  "schema_version": "1.1",
+  "name": "AI 算力产业链 Watchlist",
+  "source_doc": "01_每日投资内容产出/辅助/Watchlist/00_Watchlist_总览.md",
+  "updated_at": "2026-05-22",
+  "priority_legend": {
+    "🔵": "核心理解——必须跟踪，作为整层理解基准",
+    "🟢": "超额收益重点——当前阶段主要精力所在",
+    "🟡": "高风险博弈——极小仓位观察，等待触发信号",
+    "⚪": "扩展观察——保持关注，尚未深度研究"
+  },
+  "groups": [
+    {
+      "id": "core",
+      "label": "🔥 核心标的",
+      "order": 0,
+      "description": "最高优先级核心观察名单（持续扩充中）",
+      "tickers": [
+        { "ticker": "NVDA", "name": "Nvidia", "rank": 1, "layer": "GPU / CUDA", "reason": "全产业链基准坐标，决定AI capex节奏", "action": "核心理解，不追高" },
+        { "ticker": "AVGO", "name": "Broadcom", "rank": 2, "layer": "定制ASIC / CPO交换芯片", "reason": "云厂自研ASIC最强卖铲子之一", "action": "核心观察" },
+        { "ticker": "MU", "name": "Micron", "rank": 3, "layer": "HBM / DRAM", "reason": "唯一美股HBM直接标的，周期转结构机会", "action": "重点观察" },
+        { "ticker": "VRT", "name": "Vertiv", "rank": 4, "layer": "液冷 / 电力基础设施", "reason": "液冷和数据中心电力系统订单最确定", "action": "等回调和book-to-bill确认" },
+        { "ticker": "GEV", "name": "GE Vernova", "rank": 5, "layer": "电力设备 / 燃气轮机", "reason": "AI数据中心接电和可调度电源卖铲子", "action": "核心观察" },
+        { "ticker": "ETN", "name": "Eaton", "rank": 6, "layer": "数据中心电气系统", "reason": "配电、开关设备、电力管理核心供应商", "action": "重点观察" },
+        { "ticker": "ANET", "name": "Arista Networks", "rank": 7, "layer": "AI以太网交换 / 数据中心网络", "reason": "补上AI集群网络系统层，云厂AI网络核心受益者", "action": "核心观察，不追高" },
+        { "ticker": "MRVL", "name": "Marvell", "rank": 8, "layer": "光DSP / CPO / 定制硅", "reason": "AI光互联升级和CPO长期方向", "action": "重点观察" },
+        { "ticker": "TER", "name": "Teradyne", "rank": 9, "layer": "AI芯片测试设备", "reason": "AI芯片复杂度提升，测试环节定价权强于传统封测", "action": "核心观察候选，不追高" },
+        { "ticker": "COHR", "name": "Coherent", "rank": 10, "layer": "光模块 / 光器件", "reason": "800G/1.6T出货和CPO过渡平台", "action": "重点观察" },
+        { "ticker": "ONTO", "name": "Onto Innovation", "rank": 11, "layer": "玻璃基板 / 检测量测", "reason": "玻璃基板产业化早期最像卖铲子", "action": "核心观察，不追高" },
+        { "ticker": "AMKR", "name": "Amkor Technology", "rank": 12, "layer": "封测 / OSAT", "reason": "最直接的美股封测标的，但需验证利润率", "action": "重点观察" },
+        { "ticker": "ALAB", "name": "Astera Labs", "rank": 13, "layer": "AI服务器内部互连", "reason": "PCIe/CXL/retimer高纯度标的，估值很满", "action": "高风险重点观察" },
+        { "ticker": "AMD", "name": "AMD", "rank": 14, "layer": "GPU / 数据中心加速器", "reason": "MI300/MI350 系列对位 NVIDIA，AI 第二供应商叙事关键", "action": "核心观察，看市占率与毛利率兑现" },
+        { "ticker": "RKLB", "name": "Rocket Lab", "rank": 15, "layer": "卫星发射 / 商业航天", "reason": "AI 时代天基算力与数据互联的运力卖铲子，Neutron 进度是关键", "action": "高风险高弹性，仅小仓位跟踪" },
+        { "ticker": "IREN", "name": "Iris Energy", "rank": 16, "layer": "数据中心 / 清洁算力", "reason": "AI 数据中心与比特币挖矿能源基础设施，电力与算力绑定叙事", "action": "重点观察" },
+        { "ticker": "CRWV", "name": "CoreWeave", "rank": 17, "layer": "GPU 云 / Neocloud", "reason": "独立 GPU 云厂商，NVIDIA 集群租赁与 AI 训练推理需求直接受益", "action": "重点观察，估值波动大" },
+        { "ticker": "LITE", "name": "Lumentum", "rank": 18, "layer": "光器件 / 激光", "reason": "800G/1.6T 光模块与激光器供应链，AI 集群光互联升级", "action": "重点观察" },
+        { "ticker": "MSFT", "name": "Microsoft", "rank": 19, "layer": "云 / Copilot / Azure AI", "reason": "北美最大云与 AI 应用入口，Capex 与 Azure OpenAI 节奏影响产业链", "action": "核心观察" },
+        { "ticker": "AMZN", "name": "Amazon", "rank": 20, "layer": "云 AWS / 电商", "reason": "AWS AI 实例与 Trainium/Inferentia 自研芯片，云厂 Capex 风向标", "action": "核心观察" },
+        { "ticker": "GOOGL", "name": "Alphabet (A)", "rank": 21, "layer": "云 GCP / Gemini", "reason": "TPU/Gemini 与 GCP AI 投入，与 Meta/MSFT 并列的云 AI 需求侧", "action": "核心观察" },
+        { "ticker": "CRCL", "name": "Circle Internet Group", "rank": 22, "layer": "稳定币 / 金融科技", "reason": "USDC 基础设施与合规稳定币叙事，观察利率与加密/支付监管", "action": "重点观察" }
+      ]
+    },
+    {
+      "id": "chips",
+      "label": "芯片层（GPU/ASIC/HBM）",
+      "order": 1,
+      "focus": "数据中心收入、毛利率、加速器路线；云厂自研ASIC订单与客户集中度；HBM份额、预售协议、HBM4良率",
+      "merged_from": ["GPU / 算力平台", "定制 ASIC / IP", "内存 / HBM"],
+      "tickers": [
+        { "ticker": "NVDA", "name": "Nvidia" },
+        { "ticker": "AMD", "name": "AMD" },
+        { "ticker": "INTC", "name": "Intel" },
+        { "ticker": "AVGO", "name": "Broadcom" },
+        { "ticker": "ARM", "name": "Arm Holdings" },
+        { "ticker": "MRVL", "name": "Marvell" },
+        { "ticker": "MU", "name": "Micron" }
+      ]
+    },
+    {
+      "id": "interconnect",
+      "label": "互联层（光互联/AI网络）",
+      "order": 2,
+      "focus": "800G/1.6T、光DSP、CPO 商业化；Ethernet AI networking、retimer、scale-up fabric",
+      "merged_from": ["光互联 / CPO", "AI网络交换 / 内部互连"],
+      "tickers": [
+        { "ticker": "MRVL", "name": "Marvell" },
+        { "ticker": "COHR", "name": "Coherent" },
+        { "ticker": "LITE", "name": "Lumentum" },
+        { "ticker": "CIEN", "name": "Ciena" },
+        { "ticker": "ANET", "name": "Arista Networks" },
+        { "ticker": "ALAB", "name": "Astera Labs" },
+        { "ticker": "AVGO", "name": "Broadcom" },
+        { "ticker": "NVDA", "name": "Nvidia" }
+      ]
+    },
+    {
+      "id": "fab_pkg",
+      "label": "制造与封测（设备/OSAT）",
+      "order": 3,
+      "focus": "glass core 验证、panel-level 订单；AI 封测订单、测试设备、探针卡、毛利率改善",
+      "merged_from": ["玻璃基板 / 先进封装设备", "封测 / 测试链"],
+      "tickers": [
+        { "ticker": "ONTO", "name": "Onto Innovation" },
+        { "ticker": "GLW", "name": "Corning" },
+        { "ticker": "CAMT", "name": "Camtek" },
+        { "ticker": "KLAC", "name": "KLA" },
+        { "ticker": "AMAT", "name": "Applied Materials" },
+        { "ticker": "AMKR", "name": "Amkor Technology" },
+        { "ticker": "TER", "name": "Teradyne" },
+        { "ticker": "FORM", "name": "FormFactor" },
+        { "ticker": "COHU", "name": "Cohu" }
+      ]
+    },
+    {
+      "id": "system",
+      "label": "系统层（AI服务器/液冷）",
+      "order": 4,
+      "focus": "AI 服务器 backlog、毛利率、治理风险；液冷 book-to-bill、订单确认",
+      "merged_from": ["AI服务器", "液冷 / 基础设施"],
+      "tickers": [
+        { "ticker": "DELL", "name": "Dell Technologies" },
+        { "ticker": "SMCI", "name": "Super Micro Computer" },
+        { "ticker": "VRT", "name": "Vertiv" },
+        { "ticker": "IREN", "name": "Iris Energy" }
+      ]
+    },
+    {
+      "id": "power_grid",
+      "label": "能源与基建（电力/施工）",
+      "order": 5,
+      "focus": "PPA、backlog、容量价格、电网设备订单；接电工程、输配电、机电施工 backlog",
+      "merged_from": ["电力 / 能源", "数据中心建设链"],
+      "tickers": [
+        { "ticker": "GEV", "name": "GE Vernova" },
+        { "ticker": "ETN", "name": "Eaton" },
+        { "ticker": "VST", "name": "Vistra" },
+        { "ticker": "CEG", "name": "Constellation Energy" },
+        { "ticker": "PWR", "name": "Quanta Services" },
+        { "ticker": "FIX", "name": "Comfort Systems USA" },
+        { "ticker": "NVT", "name": "nVent Electric" }
+      ]
+    },
+    {
+      "id": "demand",
+      "label": "需求侧（存储/云）",
+      "order": 6,
+      "focus": "推理数据存储、OCI/GPU 云需求、企业 AI 落地",
+      "merged_from": ["AI数据存储 / 云需求侧"],
+      "tickers": [
+        { "ticker": "PSTG", "name": "Pure Storage" },
+        { "ticker": "ORCL", "name": "Oracle" },
+        { "ticker": "MSFT", "name": "Microsoft" },
+        { "ticker": "AMZN", "name": "Amazon" },
+        { "ticker": "GOOGL", "name": "Alphabet" },
+        { "ticker": "CRWV", "name": "CoreWeave" },
+        { "ticker": "CRCL", "name": "Circle Internet Group" },
+        { "ticker": "WDC", "name": "Western Digital" },
+        { "ticker": "STX", "name": "Seagate Technology" },
+        { "ticker": "SNDK", "name": "SanDisk" }
+      ]
+    }
+  ]
+}

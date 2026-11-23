@@ -1,23 +1,21 @@
 # 切换与回滚预案
 
-## 切换步骤
+> **更新（2026-05）**：Streamlit UI 已下线；主栈为 **Next.js + FastAPI**。回滚以 Git 版本与部署回退为主。
 
-1. 保持 Streamlit 在线，新增 FastAPI + Next.js 并行运行。
-2. 通过 `docs/migration/parallel_validation_checklist.md` 完成验收。
-3. 将默认入口从 Streamlit 调整为 Next.js（文档/运维层）。
-4. Streamlit 保留为兼容入口（仅调试或灰度应急）。
+## 当前主栈
+
+1. FastAPI：`python -m uvicorn backend.api.main:app`
+2. Next.js：`cd frontend && npm run dev`（需 `NEXT_PUBLIC_API_BASE`）
+3. 一键脚本：`bash scripts/start_dual_stack.sh`
 
 ## 回滚策略
 
 - 场景：前端构建失败、API 不稳定、关键策略指标不一致。
 - 操作：
-  1. 停止 Next.js 与 FastAPI。
-  2. 恢复 `streamlit run app.py` 作为唯一入口。
+  1. 将部署回退到上一稳定 Git 提交或 Vercel/后端上一版本。
+  2. 停止有问题的服务进程，保留健康的一端（例如仅 API 或仅静态页）。
   3. 记录失败版本与触发条件，修复后重新灰度。
 
-## 下线 Streamlit 的前置条件
+## 已移除项
 
-- 前端所有核心页面完成 API 化。
-- LRS/Wheel 策略交互全部可用。
-- 至少 1 个交易周稳定运行无 P0 问题。
-
+- 原 `app.py` + Streamlit 页面树已不再维护；历史说明见 `docs/webui_prd.md`（已归档）。

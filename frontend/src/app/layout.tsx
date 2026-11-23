@@ -22,7 +22,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
             <span className="mr-3 border-r border-[#2B2F36] pr-3 text-xs font-bold tracking-wide text-white">
               MISSION CONTROL
             </span>
-            <div className="flex items-center gap-4 font-mono text-[11px] uppercase tracking-widest">
+            <div className="flex items-center gap-4 text-[11px] tabular-nums text-[#9aa3b5]">
               <span className="text-emerald-400">S&amp;P +0.42%</span>
               <span className="text-rose-400">NASDAQ -0.12%</span>
               <span className="text-emerald-400">BTC +1.24%</span>
@@ -41,7 +41,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
               <NavSidebar />
             </Suspense>
           </aside>
-          <main className="ml-16 h-[calc(100vh-32px)] overflow-hidden bg-[#0B0E11] p-2">
+          <main className="ml-16 h-[calc(100vh-32px)] overflow-hidden bg-[#0B0E11]">
             {children}
           </main>
         </div>

@@ -18,24 +18,40 @@ def _repo_root() -> Path:
     return Path(__file__).resolve().parents[2]
 
 
-def _workspace_root() -> Path:
-    return Path(__file__).resolve().parents[3]
+def x_cache_dir() -> Path:
+    return _repo_root() / "data" / "x_brief"
+
+
+def _x_brief_docs_bundle_dir() -> Path:
+    """与产品文档一并维护的 x 资讯目录（简报里多表账号列表常放于此）。"""
+    return _repo_root() / "docs" / "x资讯"
+
+
+def _x_brief_input_search_roots() -> tuple[Path, ...]:
+    """查找 关注列表.md / 简报配置.md 的顺序：运行时数据目录优先，其次 docs/x资讯。"""
+    return (x_cache_dir(), _x_brief_docs_bundle_dir())
+
+
+def _find_x_brief_input_file(filename: str) -> Path:
+    """返回第一个存在的路径；都不存在时落在 data/x_brief（便于统一报错与后续写入）。"""
+    for base in _x_brief_input_search_roots():
+        p = base / filename
+        if p.exists():
+            return p
+    return x_cache_dir() / filename
 
 
 def watchlist_path() -> Path:
-    return _workspace_root() / "Claude_input" / "x资讯" / "关注列表.md"
+    return _find_x_brief_input_file("关注列表.md")
 
 
 def brief_config_path() -> Path:
-    return _workspace_root() / "Claude_input" / "x资讯" / "简报配置.md"
+    return _find_x_brief_input_file("简报配置.md")
 
 
 def x_input_dir() -> Path:
-    return _workspace_root() / "Claude_input" / "x资讯"
-
-
-def x_cache_dir() -> Path:
-    return _repo_root() / "data" / "x_brief"
+    """Markdown 产出目录（与缓存、关注列表同位于 data/x_brief）。"""
+    return x_cache_dir()
 
 
 def latest_json_path() -> Path:
@@ -97,7 +113,7 @@ def parse_watchers_from_markdown(md_text: str) -> list[dict[str, Any]]:
             {
                 "handle": handle,
                 "account": f"@{handle}",
-                    "name": name_cell,
+                "name": name_cell,
                 "category": "",
                 "score": cells[6] if len(cells) > 6 else "",
                 "skip_reason": "",
@@ -114,7 +130,10 @@ def load_watchers() -> list[dict[str, Any]]:
             return rows
     p = watchlist_path()
     if not p.exists():
-        raise RuntimeError(f"关注列表不存在: {p}")
+        raise RuntimeError(
+            f"关注列表不存在: {p}。请在 data/x_brief/ 或 docs/x资讯/ 放置 关注列表.md，"
+            f"或提供可解析出账号的 简报配置.md（同上两处任择其一），格式见 docs/x_brief.md。"
+        )
     return parse_watchers_from_markdown(p.read_text(encoding="utf-8"))
 
 

@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI & 投资月报 · 2026年4月</title>
+<style>
+:root {
+  --bg: #f1f5f9;
+  --surface: #ffffff;
+  --surface-2: #f8fafc;
+  --text: #0f172a;
+  --text-muted: #64748b;
+  --text-hint: #94a3b8;
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --accent: #1e3a8a;
+  --accent-light: #dbeafe;
+  --p0-bg: #fef2f2;
+  --p0-text: #991b1b;
+  --p0-border: #fca5a5;
+  --p0-dot: #dc2626;
+  --p1-bg: #fffbeb;
+  --p1-text: #78350f;
+  --p1-border: #fcd34d;
+  --p1-dot: #d97706;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  line-height: 1.6;
+}
+.page { max-width: 860px; margin: 0 auto; padding: 0 16px 64px; }
+
+/* Header */
+.header {
+  background: #0f172a;
+  color: white;
+  padding: 32px 32px 28px;
+  border-radius: 0 0 16px 16px;
+  margin: 0 -16px 28px;
+}
+.header-eyebrow { font-size: 11px; color: #64748b; letter-spacing: 0.1em; margin-bottom: 8px; }
+.header-title { font-size: 26px; font-weight: 500; margin-bottom: 6px; }
+.header-sub { font-size: 13px; color: #94a3b8; }
+.header-tags { display: flex; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+.header-tag {
+  font-size: 11px; padding: 3px 10px;
+  border-radius: 20px;
+  border: 1px solid #334155;
+  color: #94a3b8;
+}
+
+/* Stats */
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-bottom: 28px; }
+.stat {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+}
+.stat-num { font-size: 26px; font-weight: 500; color: var(--accent); line-height: 1.2; margin-bottom: 4px; }
+.stat-label { font-size: 11px; color: var(--text-muted); }
+
+/* Section wrapper */
+.section { margin-bottom: 24px; }
+.section-head {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 10px;
+}
+.section-label {
+  font-size: 11px; font-weight: 600; color: var(--text-muted);
+  letter-spacing: 0.08em; text-transform: uppercase;
+}
+.btn-ghost {
+  font-size: 11px; color: var(--accent);
+  background: none; border: none; cursor: pointer; padding: 0;
+}
+
+/* Base card */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 8px;
+  overflow: hidden;
+  transition: border-color 0.15s;
+}
+.card:hover { border-color: var(--border-strong); }
+
+/* Accordion trigger */
+.trigger {
+  width: 100%; display: flex; align-items: flex-start; gap: 12px;
+  padding: 14px 16px;
+  cursor: pointer; background: none; border: none; text-align: left;
+}
+.trigger:hover { background: var(--surface-2); }
+.trigger-meta { flex: 1; min-width: 0; }
+.trigger-title { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 2px; }
+.trigger-sub { font-size: 12px; color: var(--text-muted); }
+.trigger-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; padding-top: 2px; }
+.chevron {
+  font-size: 12px; color: var(--text-hint);
+  transition: transform 0.22s ease;
+  display: inline-block;
+}
+.card.open .chevron { transform: rotate(180deg); }
+
+/* Accordion body */
+.body {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.3s cubic-bezier(0.4,0,0.2,1);
+  border-top: 1px solid transparent;
+}
+.card.open .body { max-height: 4000px; border-top-color: var(--border); }
+.body-inner { padding: 14px 16px 18px; }
+
+/* Priority badges */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  font-size: 10px; font-weight: 700; padding: 2px 7px;
+  border-radius: 20px; letter-spacing: 0.03em; white-space: nowrap;
+  vertical-align: middle;
+}
+.b-p0 { background: var(--p0-bg); color: var(--p0-text); border: 1px solid var(--p0-border); }
+.b-p1 { background: var(--p1-bg); color: var(--p1-text); border: 1px solid var(--p1-border); }
+.b-p2 { background: var(--surface-2); color: var(--text-muted); border: 1px solid var(--border); }
+.b-warn { background: #fff7ed; color: #9a3412; border: 1px solid #fed7aa; }
+.b-tag { background: var(--accent-light); color: var(--accent); border: none; font-weight: 500; }
+.dot { width: 5px; height: 5px; border-radius: 50%; display: inline-block; flex-shrink: 0; }
+.d-p0 { background: var(--p0-dot); }
+.d-p1 { background: var(--p1-dot); }
+
+/* Theme cards */
+.theme-num {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: #0f172a; color: white;
+  font-size: 14px; font-weight: 500;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+/* P0 event cards */
+.p0-card {
+  background: var(--surface);
+  border: 1px solid var(--p0-border);
+  border-left: 3px solid var(--p0-dot);
+  border-radius: 0 12px 12px 0;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+.p0-card:hover { border-color: var(--p0-dot); border-left-color: var(--p0-dot); }
+.p0-card.open .body { border-top-color: var(--p0-border); }
+
+/* Quote cards */
+.quote-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 8px;
+}
+.quote-text {
+  font-size: 15px; color: var(--text); line-height: 1.7; font-style: italic;
+  padding-left: 14px; border-left: 2px solid var(--border-strong);
+  margin-bottom: 12px;
+}
+.quote-meta {
+  display: flex; align-items: center; justify-content: space-between;
+  font-size: 12px; color: var(--text-muted); padding-top: 10px;
+  border-top: 1px solid var(--border);
+}
+.quote-note { margin-top: 8px; font-size: 12px; color: var(--text-muted); line-height: 1.6; }
+
+/* Bullet list */
+.blist { list-style: none; }
+.blist li {
+  display: flex; gap: 8px; align-items: flex-start;
+  padding: 7px 0; border-bottom: 1px solid var(--border);
+  font-size: 13px; line-height: 1.55;
+}
+.blist li:last-child { border-bottom: none; padding-bottom: 0; }
+.blist li .badge { margin-top: 1px; flex-shrink: 0; }
+
+/* Source link */
+.src { font-size: 11px; color: var(--accent); text-decoration: none; margin-left: 3px; }
+.src:hover { text-decoration: underline; }
+
+/* Sub-divider */
+.sub-div {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; color: var(--text-hint);
+  margin: 14px 0 8px;
+}
+.sub-div::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.sub-div:first-child { margin-top: 0; }
+
+/* Signal card */
+.signal-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.signal-group-label {
+  font-size: 10px; font-weight: 700; letter-spacing: 0.08em;
+  color: var(--text-hint); padding: 10px 16px 4px;
+}
+.sig-row {
+  display: flex; align-items: flex-start; gap: 10px;
+  padding: 10px 16px; border-top: 1px solid var(--border);
+  cursor: pointer; font-size: 13px; line-height: 1.5;
+}
+.sig-row:first-of-type { border-top: none; }
+.sig-row:hover { background: var(--surface-2); }
+.sig-dot { width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0; margin-top: 4px; }
+.d-high { background: #dc2626; }
+.d-mid { background: #d97706; }
+.d-opp { background: #16a34a; }
+.sig-chevron { margin-left: auto; font-size: 11px; color: var(--text-hint); flex-shrink: 0; transition: transform 0.2s; }
+.sig-row.open .sig-chevron { transform: rotate(180deg); }
+.sig-detail {
+  max-height: 0; overflow: hidden;
+  transition: max-height 0.25s ease;
+  font-size: 12px; color: var(--text-muted); line-height: 1.65;
+  padding: 0 16px 0 35px;
+}
+.sig-row.open + .sig-detail { max-height: 200px; padding: 2px 16px 12px 35px; }
+
+/* Signal highlight box */
+.signal-box {
+  margin-top: 12px; padding: 10px 12px;
+  border-radius: 8px; font-size: 12px; line-height: 1.6;
+}
+.signal-box.p0 { background: var(--p0-bg); color: var(--p0-text); }
+.signal-box.p1 { background: var(--p1-bg); color: var(--p1-text); }
+
+/* Warn block */
+.warn-block {
+  background: #fff7ed; border: 1px solid #fed7aa;
+  border-radius: 8px; padding: 10px 14px;
+  font-size: 12px; color: #9a3412; line-height: 1.6; margin-bottom: 10px;
+}
+
+/* Footer */
+.footer {
+  text-align: center; padding-top: 28px;
+  border-top: 1px solid var(--border);
+  font-size: 11px; color: var(--text-hint); line-height: 1.8;
+}
+
+@media (max-width: 580px) {
+  .stats { grid-template-columns: repeat(2, 1fr); }
+  .header { padding: 24px 20px 20px; }
+  .header-title { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- ═══ HEADER ═══ -->
+<div class="header">
+  <div class="header-eyebrow">AI & 投资月报</div>
+  <div class="header-title">2026年4月</div>
+  <div class="header-sub">数据周期：3月26日 — 4月26日 &nbsp;·&nbsp; 由 Hermes Agent 采集，Claude 生成</div>
+  <div class="header-tags">
+    <span class="header-tag">303 条推文</span>
+    <span class="header-tag">24 / 33 活跃账号</span>
+    <span class="header-tag">4 个 P0 事件</span>
+    <span class="header-tag">~40 条 P1 洞察</span>
+  </div>
+</div>
+
+<!-- ═══ STATS ═══ -->
+<div class="stats">
+  <div class="stat">
+    <div class="stat-num">303</div>
+    <div class="stat-label">采集推文总数</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">24/33</div>
+    <div class="stat-label">活跃信号源</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">4</div>
+    <div class="stat-label">P0 重大事件</div>
+  </div>
+  <div class="stat">
+    <div class="stat-num">~40</div>
+    <div class="stat-label">P1 深度洞察</div>
+  </div>
+</div>
+
+<!-- ═══ THREE MAIN THEMES ═══ -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-label">本月三大主线</span>
+    <button class="btn-ghost" onclick="toggleGroup('themes', this)">展开全部</button>
+  </div>
+
+  <div class="card" id="t1" data-group="themes">
+    <button class="trigger" onclick="toggle('t1')">
+      <div class="theme-num">1</div>
+      <div class="trigger-meta">
+        <div class="trigger-title">模型能力跃迁</div>
+        <div class="trigger-sub">GPT-5.5 到来，AGI 叙事从远期变为近期</div>
+      </div>
+      <div class="trigger-right"><span class="chevron">▾</span></div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <ul class="blist">
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>GPT-5.5 发布，Sam Altman 称"第一次尝到了 AGI 的滋味"——自主完成复杂代码合并、过夜自动跑实验并给出完整结果</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>OpenAI 转型信号明确："我们很大程度上必须成为一家 AI 推理公司"</li>
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>Google TPU v8i 推理专用芯片发布，与 OpenAI 的"推理公司"声明形成同一趋势的双面确认</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Liu Liu：GPT-5.4 对 GPU 计算内核的内在知识"令人难以置信"，将实质威胁 NVIDIA 软件壁垒</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="t2" data-group="themes">
+    <button class="trigger" onclick="toggle('t2')">
+      <div class="theme-num">2</div>
+      <div class="trigger-meta">
+        <div class="trigger-title">产业整合加速</div>
+        <div class="trigger-sub">资源向少数玩家集中，头部格局提前锁定</div>
+      </div>
+      <div class="trigger-right"><span class="chevron">▾</span></div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <ul class="blist">
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>xAI $600亿 收购 Cursor，AI 编程赛道最大并购，模型公司开始垂直整合应用层</li>
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>Anthropic 二级市场触及 $1 万亿 估值</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Elad Gil："OpenAI 与 Anthropic 正在拉开与其他竞争者的差距"，建议大多数 AI 公司 12-18 个月内考虑退出</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Cursor $20亿 ARR，但大量团队正在迁移到 Claude Code——整合后走向值得持续观察</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" id="t3" data-group="themes">
+    <button class="trigger" onclick="toggle('t3')">
+      <div class="theme-num">3</div>
+      <div class="trigger-meta">
+        <div class="trigger-title">AI 民主化与政治化并行</div>
+        <div class="trigger-sub">普通人能买 AI 股权了，AI 审查已成法律战场</div>
+      </div>
+      <div class="trigger-right"><span class="chevron">▾</span></div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <ul class="blist">
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>Naval 通过 AngelList 推出 USVC：$500 起投 OpenAI、Anthropic、xAI 等，无需认证投资者资格，首日数千万美元认购</li>
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>xAI 起诉 Colorado 州 AI 审查 DEI 法律，DOJ 加入诉讼——AI 言论自由已成政治战场</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Anthropic 拒绝五角大楼合作争议持续，David Sacks："不在乎个人观点，在乎产品质量"</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Paul Graham："非 AI 创业被低估"，如果有好的非 AI 想法，现在去做，因为所有人都在忽略它</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ P0 EVENTS ═══ -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-label">P0 重大事件</span>
+    <button class="btn-ghost" onclick="toggleGroup('p0s', this)">展开全部</button>
+  </div>
+
+  <!-- GPT-5.5 -->
+  <div class="p0-card card" id="p0a" data-group="p0s">
+    <button class="trigger" onclick="toggle('p0a')">
+      <div class="trigger-meta">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap">
+          <span class="badge b-p0"><span class="dot d-p0"></span>P0</span>
+          <span class="badge b-tag">AI 能力</span>
+          <span style="font-size:11px;color:var(--text-hint)">4月23日 · @sama</span>
+        </div>
+        <div class="trigger-title">GPT-5.5 发布 — OpenAI 的 AGI 里程碑</div>
+        <div class="trigger-sub">API 上线 · $5/M input · 100万上下文 · Codex 全面升级</div>
+      </div>
+      <div class="trigger-right"><span class="chevron">▾</span></div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <ul class="blist">
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>Sam Altman："第一次尝到了 AGI 的滋味" — 测试中让 GPT-5.5 处理包含数百个变更的复杂分支合并，完美完成 <a href="https://x.com/skirano/status/2047377443011342779" class="src" target="_blank">原文 ↗</a></li>
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>自主研究能力：研究员只给高层算法想法，GPT-5.5 自动跑完实验，醒来发现完整 sweep 结果</li>
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>API 上线：$5/百万输入 token，$30/百万输出 token，100万上下文窗口 <a href="https://x.com/sama/status/2047787124846653895" class="src" target="_blank">原文 ↗</a></li>
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>Codex 大更新：新增浏览器控制、Sheets & Slides、Docs & PDFs、OS 级语音输入、自动审查模式 <a href="https://x.com/sama/status/2047386068194852963" class="src" target="_blank">原文 ↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>OpenAI × NVIDIA：合作将 Codex 推向全公司部署</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>安全开源：开源 monitorability evaluations，推动 AI 安全社区研究 <a href="https://x.com/sama/status/2047473914528563592" class="src" target="_blank">原文 ↗</a></li>
+        </ul>
+        <div class="signal-box p0">信号：GPT-5.5 在编程能力上出现质的飞跃。"推理公司"转型信号明确，OpenAI 的商业模式正在重构。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- xAI Cursor -->
+  <div class="p0-card card" id="p0b" data-group="p0s">
+    <button class="trigger" onclick="toggle('p0b')">
+      <div class="trigger-meta">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap">
+          <span class="badge b-p0"><span class="dot d-p0"></span>P0</span>
+          <span class="badge b-tag">并购整合</span>
+          <span style="font-size:11px;color:var(--text-hint)">@HarryStebbings 分析</span>
+        </div>
+        <div class="trigger-title">xAI $600亿 收购 Cursor — AI 编程最大并购</div>
+        <div class="trigger-sub">Cursor $20亿 ARR · Anthropic $1T 二级估值同期发生</div>
+      </div>
+      <div class="trigger-right"><span class="chevron">▾</span></div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <ul class="blist">
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>Harry Stebbings 分析逻辑："一方有爆发性收入但利润率受计算和模型成本拖累，另一方有海量算力和模型但缺收入，合并互补" <a href="https://x.com/HarryStebbings/status/2047461264998478113" class="src" target="_blank">原文 ↗</a></li>
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>矛盾信号：Cursor 企业端 $20亿 ARR，但大量团队正在迁移到 Claude Code</li>
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>Anthropic 在二级市场触及 $1 万亿 估值，与收购同期发生</li>
+        </ul>
+        <div class="signal-box p0">信号：模型公司正在垂直整合应用层。AI 编程赛道快速整合，Claude Code 的竞争压力值得持续关注。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Google TPU -->
+  <div class="p0-card card" id="p0c" data-group="p0s">
+    <button class="trigger" onclick="toggle('p0c')">
+      <div class="trigger-meta">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap">
+          <span class="badge b-p0"><span class="dot d-p0"></span>P0</span>
+          <span class="badge b-tag">算力基建</span>
+          <span style="font-size:11px;color:var(--text-hint)">Google Cloud Next · @JeffDean</span>
+        </div>
+        <div class="trigger-title">Google TPU v8t / v8i — 推理算力新纪元</div>
+        <div class="trigger-sub">121 exaflops · 推理专用设计 · 深耕14年积累</div>
+      </div>
+      <div class="trigger-right"><span class="chevron">▾</span></div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <ul class="blist">
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>TPU v8t：Pod 规模9600芯片，FP4 达 121 exaflops（3倍于 Ironwood），面向大规模训练 <a href="https://x.com/JeffDean/status/2047405389856297387" class="src" target="_blank">原文 ↗</a></li>
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>TPU v8i：与 Gemini 联合设计，专注低延迟推理，大量片上 SRAM 减少 HBM 访问 <a href="https://x.com/JeffDean/status/2047407537566495033" class="src" target="_blank">原文 ↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Decoupled DiLoCo 论文：解决大规模训练中的故障容忍问题 <a href="https://x.com/JeffDean/status/2047665074471387456" class="src" target="_blank">原文 ↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Jeff Dean：Google 在大规模异步训练方面已深耕14年</li>
+        </ul>
+        <div class="signal-box p0">信号：推理算力需求正超过训练需求。TPU v8i 推理专用 + OpenAI "推理公司"声明 = 同一趋势双面确认。</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Naval USVC -->
+  <div class="p0-card card" id="p0d" data-group="p0s">
+    <button class="trigger" onclick="toggle('p0d')">
+      <div class="trigger-meta">
+        <div style="display:flex;align-items:center;gap:7px;margin-bottom:5px;flex-wrap:wrap">
+          <span class="badge b-p0"><span class="dot d-p0"></span>P0</span>
+          <span class="badge b-tag">投资民主化</span>
+          <span style="font-size:11px;color:var(--text-hint)">@naval · AngelList</span>
+        </div>
+        <div class="trigger-title">Naval USVC — $500 起投顶级 AI 公司股权</div>
+        <div class="trigger-sub">OpenAI · Anthropic · xAI · 上线首日数千万美元认购</div>
+      </div>
+      <div class="trigger-right"><span class="chevron">▾</span></div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <ul class="blist">
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>Naval 通过 AngelList 推出 USVC，让普通投资者 $500 起投顶级科技公司股权 <a href="https://x.com/alexbass/status/2047645157080658335" class="src" target="_blank">原文 ↗</a></li>
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>持仓：OpenAI、Anthropic、xAI、Sierra、Crusoe、Legora、Vercel</li>
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>无需认证投资者资格，SEC 注册，上线首日数千人认购数千万美元</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Naval："除了自己成为 VC，没有更低成本的投资方式"</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>与 Fundrise VCX（交易价4-5倍 NAV）形成竞争</li>
+        </ul>
+        <div class="signal-box p0">信号：私募市场民主化加速，顶级 AI 公司股权正变为"零售商品"。注意4-5倍 NAV 的溢价风险。</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ TOP 3 QUOTES ═══ -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-label">本月最值得深思</span>
+  </div>
+
+  <div class="quote-card">
+    <div class="quote-text">"One day while testing GPT-5.5, I had my first taste of AGI."</div>
+    <div class="quote-meta">
+      <span><strong>Sam Altman</strong> &nbsp;·&nbsp; OpenAI CEO &nbsp;·&nbsp; 4月23日</span>
+      <a href="https://x.com/skirano/status/2047377443011342779" class="src" target="_blank">原文 ↗</a>
+    </div>
+    <div class="quote-note">OpenAI CEO 第一次公开表示体验到了 AGI — AGI 叙事从远期正式进入近期框架</div>
+  </div>
+
+  <div class="quote-card">
+    <div class="quote-text">"Most AI companies should consider exiting in the next 12-18 months."</div>
+    <div class="quote-meta">
+      <span><strong>Elad Gil</strong> &nbsp;·&nbsp; AI 投资人 &nbsp;·&nbsp; 4月20日</span>
+      <a href="https://x.com/eladgil/status/2046284191885922498" class="src" target="_blank">原文 ↗</a>
+    </div>
+    <div class="quote-note">对 AI 创业公司最尖锐的退出建议，来自深度参与行业的一线 VC</div>
+  </div>
+
+  <div class="quote-card">
+    <div class="quote-text">"Anthropic might've wanted to hold back Mythos because they didn't have compute to serve it."</div>
+    <div class="quote-meta">
+      <span><strong>David Sacks</strong> &nbsp;·&nbsp; Craft Ventures &nbsp;·&nbsp; 4月18日</span>
+      <a href="https://x.com/SquawkCNBC/status/2047703023690924289" class="src" target="_blank">原文 ↗</a>
+    </div>
+    <div class="quote-note">揭示算力瓶颈如何制约产品发布 — 算力已成为顶级 AI 公司最核心的竞争壁垒</div>
+  </div>
+</div>
+
+<!-- ═══ CATEGORY BREAKDOWN ═══ -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-label">分类动态</span>
+    <button class="btn-ghost" onclick="toggleGroup('cats', this)">展开全部</button>
+  </div>
+
+  <!-- AI 科技领袖 -->
+  <div class="card" id="c1" data-group="cats">
+    <button class="trigger" onclick="toggle('c1')">
+      <div class="trigger-meta">
+        <div class="trigger-title">AI 科技领袖</div>
+        <div class="trigger-sub">@sama &nbsp;·&nbsp; @elonmusk &nbsp;·&nbsp; @ylecun &nbsp;·&nbsp; @GaryMarcus</div>
+      </div>
+      <div class="trigger-right">
+        <span class="badge b-p0"><span class="dot d-p0"></span>P0</span>
+        <span class="chevron">▾</span>
+      </div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <div class="sub-div">@sama — GPT-5.5 发布（见 P0 事件详细）</div>
+
+        <div class="sub-div">@elonmusk — 产品与政治并行</div>
+        <ul class="blist">
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>FSD v14.3.2 被称为"有史以来最好版本"，洛杉矶复杂路况表现极佳 <a href="https://x.com/BLKMDL3/status/2048267000359874797" class="src" target="_blank">↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>"AI必须最大化追求真相，强行使AI相信不真实的东西会让它疯掉" <a href="https://x.com/XFreeze/status/2048266495059181608" class="src" target="_blank">↗</a></li>
+          <li><span class="badge b-p2">P2</span>大量政治推文（ADL争议、加州税、欧洲右翼等）已按配置过滤</li>
+        </ul>
+
+        <div class="sub-div">@ylecun — 学术与政治</div>
+        <ul class="blist">
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>分享 Hamming "如何做一流研究"演讲，强调选择重要问题的方法论</li>
+          <li><span class="badge b-p2">P2</span>大量政治评论（Trump、记者安全等）已过滤</li>
+        </ul>
+
+        <div class="sub-div">@GaryMarcus — AI 批评家</div>
+        <ul class="blist">
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>"AI在你不了解问题时最令人印象深刻，一旦你知道想要什么，它就变得平庸" <a href="https://x.com/GaryMarcus/status/2048373439027961941" class="src" target="_blank">↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>AlphaFold 并没有"解决"蛋白质折叠：仅约70%宽结构正确，缺失动态、相互作用等关键信息</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- VC 投资人 -->
+  <div class="card" id="c2" data-group="cats">
+    <button class="trigger" onclick="toggle('c2')">
+      <div class="trigger-meta">
+        <div class="trigger-title">顶级投资人 VC</div>
+        <div class="trigger-sub">Elad Gil &nbsp;·&nbsp; David Sacks &nbsp;·&nbsp; Harry Stebbings &nbsp;·&nbsp; Paul Graham &nbsp;·&nbsp; Naval</div>
+      </div>
+      <div class="trigger-right">
+        <span class="badge b-p0"><span class="dot d-p0"></span>P0</span>
+        <span class="chevron">▾</span>
+      </div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <div class="sub-div">Elad Gil (@eladgil) — 本月最值得系统阅读的 VC 分析</div>
+        <ul class="blist">
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>"大多数AI公司应在未来12-18个月考虑退出" <a href="https://x.com/eladgil/status/2046284191885922498" class="src" target="_blank">↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>"AI卖的是劳动，不是软件"——TAM 增长10-100倍</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>编程工具的 harness（UX/工作流）比底层模型更形成粘性</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>"工匠型工程师"越来越不快乐，系统思维型和产品思维型最幸福</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Coinbase 测试 AI agent 形式的 Slack/Email 团队成员 <a href="https://x.com/eladgil/status/2046284381439103043" class="src" target="_blank">完整12条 ↗</a></li>
+        </ul>
+
+        <div class="sub-div">David Sacks (@DavidSacks) — All-In 智囊</div>
+        <ul class="blist">
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>SaaS 的 PE 和信贷面临"AI恐惧"估值压缩："传统软件退出路径只有 IPO 和 M&A，都在失效" <a href="https://x.com/DavidSacks/status/2042390626436792399" class="src" target="_blank">↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>新毕业生招聘同比上升5.6%，与"AI抢工作"叙事矛盾</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Anthropic 可能因算力不足而推迟 Mythos 发布</li>
+        </ul>
+
+        <div class="sub-div">Harry Stebbings (@HarryStebbings) — 商业分析标杆</div>
+        <ul class="blist">
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>"从 Human UX 到 Agent UX"——买家从人变成 AI agent，只在乎 API 和性能 <a href="https://x.com/HarryStebbings/status/2047461264998478113" class="src" target="_blank">↗</a></li>
+          <li><span class="badge b-p0"><span class="dot d-p0"></span>P0</span>Claude Design 将蚕食 Figma：从想法直接到产品，绕过设计环节 <a href="https://x.com/HarryStebbings/status/2047693043080261672" class="src" target="_blank">↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>未来5年将出现50-100万"AI Agent Operator"新岗位</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>AI 时代 MAU/WAU 是比收入更关键的前置指标</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>"做价值投资者今天非常昂贵，做动量投资者容易得多"</li>
+        </ul>
+
+        <div class="sub-div">Paul Graham (@paulg) — YC 教父</div>
+        <ul class="blist">
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>"非AI创业被低估"：如果有好的非AI想法，去做，因为其他人都在忽略它 <a href="https://x.com/paulg/status/2047692744089313563" class="src" target="_blank">↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>23岁无高等数学训练者用 ChatGPT Pro 解决了 Erdős 问题：心理障碍比能力差距更大 <a href="https://x.com/Ananyo/status/2047992864118894954" class="src" target="_blank">↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>FSD 正在替代短途航班："900英里自驾比飞行更舒服"</li>
+        </ul>
+
+        <div class="sub-div">Naval (@naval) — USVC 发布（见 P0 事件详细）</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI 研究 -->
+  <div class="card" id="c3" data-group="cats">
+    <button class="trigger" onclick="toggle('c3')">
+      <div class="trigger-meta">
+        <div class="trigger-title">AI 研究</div>
+        <div class="trigger-sub">@JeffDean &nbsp;·&nbsp; @erikbryn &nbsp;·&nbsp; @liuliu &nbsp;·&nbsp; @AndrewYNg</div>
+      </div>
+      <div class="trigger-right">
+        <span class="badge b-p0"><span class="dot d-p0"></span>P0</span>
+        <span class="chevron">▾</span>
+      </div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <div class="sub-div">Jeff Dean (@JeffDean) — Google AI — TPU v8 发布（见 P0 事件）</div>
+        <ul class="blist">
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Gemini 3.1 Flash TTS：支持70种语言，场景级语音控制</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Gemini Robotics-ER 1.6：机器人物理世界推理能力大幅提升</li>
+        </ul>
+
+        <div class="sub-div">Erik Brynjolfsson (@erikbryn) — 斯坦福数字经济</div>
+        <ul class="blist">
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>AI 带来巨大消费者福利，但不体现在传统经济指标中 <a href="https://x.com/RonnieChatterji/status/2047821064437424288" class="src" target="_blank">↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>"AI 应该叫 IA（Intelligence Augmentation）"——接受度会更高</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>赢家不是最精简的组织，而是最好重新设计流程的组织</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>Stanford AI Index 2026 发布：AI 正达到突破能力，同时引发紧迫问题</li>
+        </ul>
+
+        <div class="sub-div">Liu Liu (@liuliu) — 华语实战技术专家（本月唯一华语有效数据）</div>
+        <ul class="blist">
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>GPT-5.4 对 GPU 计算内核的内在知识"令人难以置信"，将实质影响 NVIDIA 软件壁垒 <a href="https://x.com/liuliu/status/2045210034813186142" class="src" target="_blank">↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>M4/M5 FLOPs 翻倍方法，Apple Silicon 推理能力大增 <a href="https://x.com/liuliu/status/2044865239532163122" class="src" target="_blank">↗</a></li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>SKILL.md vs 训练数据：当前 AI 在"知识在 SKILL.md 中"vs"在训练数据中"存在显著可用性差距</li>
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>"LLM 不仅让写作变得更难，也让阅读变得更难"——LLM 产出的观点文章天然不值得读</li>
+        </ul>
+
+        <div class="sub-div">Andrew Ng (@AndrewYNg)</div>
+        <ul class="blist">
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>持续推广 AI 教育，强调 AI 作为工具增强人类能力，本月无特别突破性内容</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 交易员 -->
+  <div class="card" id="c4" data-group="cats">
+    <button class="trigger" onclick="toggle('c4')">
+      <div class="trigger-meta">
+        <div class="trigger-title">顶级交易员</div>
+        <div class="trigger-sub">@CryptoCred 为本月唯一有效数据来源，其余账号覆盖不足</div>
+      </div>
+      <div class="trigger-right">
+        <span class="badge b-warn">⚠ 数据不足</span>
+        <span class="chevron">▾</span>
+      </div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <div class="warn-block">本类别数据覆盖较差：@Bitking_、@直播带逛Tommy RSS获取失败；@AltcoinBuzz、@TradingGods、@WarriorTrading、@ProfTrading 近一个月无有效推文；@SatoshiBun 内容已与交易无关（动漫/游戏）。建议重新筛选该列表。</div>
+        <div class="sub-div">@CryptoCred — 本月唯一有效来源</div>
+        <ul class="blist">
+          <li><span class="badge b-p1"><span class="dot d-p1"></span>P1</span>加密货币趋势分析，7条推文，内容以技术分析为主，无特别突出洞察</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- 华语圈 -->
+  <div class="card" id="c5" data-group="cats">
+    <button class="trigger" onclick="toggle('c5')">
+      <div class="trigger-meta">
+        <div class="trigger-title">华语圈</div>
+        <div class="trigger-sub">@liuliu 已并入研究类 · 其余4个中文用户名账号因 Nitter 限制无法获取</div>
+      </div>
+      <div class="trigger-right">
+        <span class="badge b-warn">⚠ 获取限制</span>
+        <span class="chevron">▾</span>
+      </div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <div class="warn-block">@二级炒家、@王川、@老胡、@比特币超级玩家 因 Nitter 不支持中文用户名，本月无法获取数据。建议改用微博/即刻等国内平台，或改用英文用户名的华语博主（如 @liuliu 模式）。</div>
+        <div class="sub-div">@liuliu — 已并入 AI 研究类别，5条高质量 P1 洞察</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ RISK & OPPORTUNITY ═══ -->
+<div class="section">
+  <div class="section-head">
+    <span class="section-label">风险与机会信号</span>
+    <span style="font-size:11px;color:var(--text-hint)">点击各行展开详情</span>
+  </div>
+
+  <div class="signal-card">
+    <div class="signal-group-label">HIGH RISK &nbsp;·&nbsp; 高风险</div>
+
+    <div class="sig-row" onclick="toggleSig(this)">
+      <div class="sig-dot d-high"></div>
+      <div style="flex:1"><strong>SaaS 估值崩溃</strong> — PE 中软件敞口的"AI恐惧"蔓延</div>
+      <span class="sig-chevron">▾</span>
+    </div>
+    <div class="sig-detail">传统软件退出路径只有 IPO 和 M&A，两条路都在失效。对持有 SaaS 公司股权的 PE 基金，信贷紧缩风险上升。— David Sacks</div>
+
+    <div class="sig-row" onclick="toggleSig(this)">
+      <div class="sig-dot d-high"></div>
+      <div style="flex:1"><strong>AI 政治化升级</strong> — AI 审查 vs 言论自由已成法律战场</div>
+      <span class="sig-chevron">▾</span>
+    </div>
+    <div class="sig-detail">xAI 起诉 Colorado 州要求 AI 审查 DEI 法律，DOJ 已加入诉讼。Anthropic 拒绝五角大楼合作引发争议。监管不确定性持续上升。</div>
+
+    <div class="sig-row" onclick="toggleSig(this)">
+      <div class="sig-dot d-high"></div>
+      <div style="flex:1"><strong>Cursor 用户流失</strong> — $600亿估值下的隐忧</div>
+      <span class="sig-chevron">▾</span>
+    </div>
+    <div class="sig-detail">Cursor 企业端 $20亿 ARR，但大量团队正在迁移到 Claude Code。xAI $600亿估值收购后，这一矛盾如何解决值得持续观察。</div>
+
+    <div class="signal-group-label" style="border-top:1px solid var(--border)">MEDIUM RISK &nbsp;·&nbsp; 中风险</div>
+
+    <div class="sig-row" onclick="toggleSig(this)">
+      <div class="sig-dot d-mid"></div>
+      <div style="flex:1"><strong>FP4 量化精度</strong> — 训练中的局限性开始显现</div>
+      <span class="sig-chevron">▾</span>
+    </div>
+    <div class="sig-detail">FP8 vs FP4 争议：实际训练中量化精度损失开始显现，可能影响下游模型质量。— Liu Liu</div>
+
+    <div class="sig-row" onclick="toggleSig(this)">
+      <div class="sig-dot d-mid"></div>
+      <div style="flex:1"><strong>顶级 AI 公司股权泡沫</strong> — Anthropic $1T、USVC 4-5倍 NAV</div>
+      <span class="sig-chevron">▾</span>
+    </div>
+    <div class="sig-detail">Anthropic 二级市场触及 $1 万亿估值。USVC 与 Fundrise VCX（交易价4-5倍 NAV）竞争。私募民主化的同时，溢价风险需谨慎。</div>
+
+    <div class="signal-group-label" style="border-top:1px solid var(--border)">OPPORTUNITY &nbsp;·&nbsp; 机会信号</div>
+
+    <div class="sig-row" onclick="toggleSig(this)">
+      <div class="sig-dot d-opp"></div>
+      <div style="flex:1"><strong>非 AI 创业被低估</strong> — Paul Graham 的反共识判断</div>
+      <span class="sig-chevron">▾</span>
+    </div>
+    <div class="sig-detail">"如果你有好的非 AI 想法，去做，因为其他人都在忽略它。" — Paul Graham。AI 最终可能将这类创业放大10倍。</div>
+
+    <div class="sig-row" onclick="toggleSig(this)">
+      <div class="sig-dot d-opp"></div>
+      <div style="flex:1"><strong>推理基础设施</strong> — 下一个十年的核心投资主题</div>
+      <span class="sig-chevron">▾</span>
+    </div>
+    <div class="sig-detail">TPU v8i（推理专用）+ OpenAI "推理公司"声明 = 同一趋势双面确认。推理算力需求正超过训练需求。分布式 AI 基础设施类比早期云计算演化路径。</div>
+
+    <div class="sig-row" onclick="toggleSig(this)">
+      <div class="sig-dot d-opp"></div>
+      <div style="flex:1"><strong>Agent Operator 新职业</strong> — 50-100万岗位需求</div>
+      <span class="sig-chevron">▾</span>
+    </div>
+    <div class="sig-detail">未来5年将出现50-100万"AI Agent Operator"新岗位，需理解 MCP/CLI/API。— Harry Stebbings。早期入场的学习机会。</div>
+
+    <div class="sig-row" onclick="toggleSig(this)">
+      <div class="sig-dot d-opp"></div>
+      <div style="flex:1"><strong>Apple Silicon 本地推理</strong> — M4/M5 FLOPs 翻倍</div>
+      <span class="sig-chevron">▾</span>
+    </div>
+    <div class="sig-detail">Liu Liu 验证 M4/M5 FLOPs 翻倍方法，Apple Silicon 推理能力大增。本地推理可行性大幅提升，隐私计算和离线 AI 应用机会上升。</div>
+  </div>
+</div>
+
+<!-- ═══ DATA GAPS ═══ -->
+<div class="section">
+  <div class="card" id="gaps">
+    <button class="trigger" onclick="toggle('gaps')" style="opacity:0.7">
+      <div class="trigger-meta">
+        <div class="trigger-title">数据缺口说明</div>
+        <div class="trigger-sub">9个账号本月未能获取 · 点击查看详情与替代建议</div>
+      </div>
+      <div class="trigger-right"><span class="chevron">▾</span></div>
+    </button>
+    <div class="body">
+      <div class="body-inner">
+        <div class="warn-block">以下账号因技术限制未能获取本月数据，建议后续补充或替换：</div>
+        <ul class="blist">
+          <li><strong>@andrejkarpathy</strong> — Nitter 镜像无法抓取 &nbsp;→&nbsp; 建议浏览器直接抓取</li>
+          <li><strong>@lmsqueegie</strong> — Nitter 镜像无法抓取 &nbsp;→&nbsp; 建议换用 @a16z 官方账号</li>
+          <li><strong>@Bitking_</strong> — RSS获取失败 &nbsp;→&nbsp; 建议换用更活跃的加密 KOL</li>
+          <li><strong>@直播带逛Tommy</strong> — 不支持中文用户名 &nbsp;→&nbsp; 建议微博/即刻获取</li>
+          <li><strong>@MikeAI</strong> — RSS获取失败 &nbsp;→&nbsp; 建议换用 @swyx 或 @svpino</li>
+          <li><strong>@二级炒家 / @王川 / @老胡 / @比特币超级玩家</strong> — 不支持中文用户名 &nbsp;→&nbsp; 建议微博/即刻，或改用英文 ID 的华语博主</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="footer">
+  <div>AI & 投资月报 · 2026年4月</div>
+  <div>数据由 Hermes Agent 采集 &nbsp;·&nbsp; 简报由 Claude 生成 &nbsp;·&nbsp; 基于 简报配置.md v1</div>
+  <div style="margin-top:4px;color:#cbd5e1">303条推文 · 24个活跃信号源 · 4个P0事件 · ~40个P1洞察</div>
+</div>
+
+</div><!-- .page -->
+
+<script>
+function toggle(id) {
+  document.getElementById(id).classList.toggle('open');
+}
+
+function toggleGroup(group, btn) {
+  const cards = document.querySelectorAll('[data-group="' + group + '"]');
+  const anyOpen = Array.from(cards).some(c => c.classList.contains('open'));
+  cards.forEach(c => anyOpen ? c.classList.remove('open') : c.classList.add('open'));
+  if (btn) btn.textContent = anyOpen ? '展开全部' : '收起全部';
+}
+
+function toggleSig(row) {
+  row.classList.toggle('open');
+}
+
+// Keyboard accessibility
+document.querySelectorAll('.trigger, .sig-row').forEach(el => {
+  el.addEventListener('keydown', e => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      el.click();
+    }
+  });
+  if (!el.getAttribute('tabindex')) el.setAttribute('tabindex', '0');
+});
+</script>
+</body>
+</html>

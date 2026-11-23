@@ -1,0 +1,20 @@
+{
+  "manifest_version": "1.0",
+  "updated_at": "2026-05-22",
+  "playbook_template_version": "1.0",
+  "investors": [
+    { "investor": "Buffett", "slug": "buffett", "use_precompute": true },
+    { "investor": "Klarman", "slug": "klarman", "use_precompute": true },
+    { "investor": "Marks", "slug": "marks", "use_precompute": true },
+    { "investor": "Druckenmiller", "slug": "druckenmiller", "use_precompute": true },
+    { "investor": "PTJ", "slug": "ptj", "use_precompute": true },
+    { "investor": "Dalio", "slug": "dalio", "use_precompute": true },
+    { "investor": "Cathie Wood", "slug": "cathie_wood", "use_precompute": true },
+    { "investor": "Ackman", "slug": "ackman", "use_precompute": true },
+    { "investor": "Burry", "slug": "burry", "use_precompute": true },
+    { "investor": "Asness", "slug": "asness", "use_precompute": true },
+    { "investor": "Greenblatt", "slug": "greenblatt", "use_precompute": true },
+    { "investor": "Loeb", "slug": "loeb", "use_precompute": true },
+    { "investor": "Weinstein", "slug": "weinstein", "use_precompute": true }
+  ]
+}

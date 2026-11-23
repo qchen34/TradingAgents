@@ -1,0 +1,35 @@
+{
+  "target_indexes": [
+    44,
+    38,
+    95,
+    39
+  ],
+  "target_count": 4,
+  "targets": [
+    {
+      "idx": 44,
+      "handle": "bozhou_ai",
+      "url": "https://x.com/bozhou_ai/status/2054920165394161910",
+      "title": "AI 写项目有个痛点，就是前端太容易、后端太难。说句话出一个页面，但一碰到建数据库、配用户登录、搞文件存储、管权限，普通人直接卡住。\n\nInsForge 就是填这个坑的。YC S26 孵化，专门给 AI 编程智能体做后端的平台，Apache 2.0 开源，GitHub 9.7k star。\n\n怎么接入？两种方式：1) MCP 服务，Claude Code、Cursor 这类工具直接连上就能用；2) CLI + Skills，命令行交互，不挑编辑器。\n\n连上之后 AI 能自动搞定六件事：PostgreSQL 数据库建表迁移查、用户认证邮箱注册 OAuth 登录权限管理、S3 文件存储、Edge Functions Deno 边缘节点跑代码、AI 网关一个接口调多个大模型、一键部署写完直接上线。\n\n上手简单。Docker Compose 一行命令本地跑起来，或者一键部署到 Railway / Zeabur / Sealos。\n\n以前 AI 只能帮你写前端代码，接上 InsForge 它就是能独立交付的全栈工程师了。\n\nhttps://github.com/InsForge/InsForge"
+    },
+    {
+      "idx": 38,
+      "handle": "berryxia",
+      "url": "https://x.com/berryxia/status/2054924976835510337",
+      "title": "Agent 记忆真是太特么卷了啊！\n不得不说，这个赛道越多人加入越爽啊！\n\nTencent AI团队花了整整6个月，就死磕一个问题：AI agent长会话里疯狂丢上下文。\n\n他们最后把一套记忆系统做完，直接开源了。\n\n我看完他们的分享，最大的感受是，99%的人还在卷上下文长度，真正把agent拉回正轨的，是这三招硬核操作。\n\n第一招，实时压缩过期上下文。  \n\n直接把token消耗砍掉61%。  \n以前动不动就爆上下文，现在中途就瘦身，agent还能保持清醒。\n\n第二招，给agent画一张结构化的任务地图，用mermaid语法直接生成。  \n\n30多步的复杂流程里，丢轨概率大幅下降。  \nagent不再像无头苍蝇，它知道自己现在在哪一步，该往哪走。\n\n第三招，专门给agent建了Persona记忆。 \n \n人格一致性从48%直接跳到76%。  \n它不再一会儿专业一会儿随意，回答风格和角色设定稳得一批。\n\n这套东西不是理论，是他们真实踩坑6个月踩出来的。\n\nRepo已经挂出来了，谁在做agent的赶紧去试。\n\n以前总觉得agent记忆难，是因为我们把问题想简单了。\n\n真正难的不再是存更多信息，是需要解决让它在正确的时间用正确的方式想起正确的东西。\n\n你还在靠堆token解决agent记忆问题吗？\n\n项目地址：https://github.com/Tencent/TencentDB-Agent-Memory"
+    },
+    {
+      "idx": 95,
+      "handle": "GoSailGlobal",
+      "url": "https://x.com/GoSailGlobal/status/2054823810558529892",
+      "title": "腾讯也下场了\n\n做agent memory 代理记忆项目\n\n开源链接：\nhttps://github.com/Tencent/TencentDB-Agent-Memory"
+    },
+    {
+      "idx": 39,
+      "handle": "berryxia",
+      "url": "https://x.com/berryxia/status/2054923579003953155",
+      "title": "看来最近Kimi闷声干大事啊，看完这几个Demo演示视频！\n我后背到没有发凉。\n\n倒是热血沸腾，觉得真的觉得牛逼！\n\nKimi今天直接把AI agent从“只会聊天”拉到了“像人一样操作浏览器”。\n\n他们放出了Web Bridge浏览器扩展。\n\n一句话命令，Agent就能自己搜索、滚动、点击、输入，完成整套任务。\n\n我看完那几段演示后彻底惊了。\n\n第一个demo：Agent同时在X、Reddit、Hacker News上搜Kimi K2.6相关帖子，过滤高互动内容，把标题、平台、链接、关键点全部自动拉进Excel表格，几秒钟搞定。\n\n第二个demo更离谱。\n\nK2.6多模态能力上线后，agent直接打开一个网站，分析完结构、图片、图表，然后把整个页面完整复制出来，连本地服务器都帮你启动好了。\n\n第三个demo：你随便聊一句，它就自动打开Google Forms，帮你把整个调研问卷从零搭好。\n\n更重要的是，它现在原生支持Kimi Code CLI、Claude Code、Cursor、Codex、Hermes等一堆工具。\n\n以前agent最大的痛点就是“只能看不能动”。\n\n现在Kimi直接把浏览器变成了agent的真实操作界面。\n\n这波操作把AI agent的生产力直接拉到新维度。\n\n以前我们还在纠结上下文长度，现在它们已经能像真人一样在网页上干活了。\n\nWeb Bridge已经在Chrome应用商店上线。\n\n去 https://www.kimi.com/features/webbridge 试试。\n\n你还在用只会聊天的agent吗？"
+    }
+  ]
+}

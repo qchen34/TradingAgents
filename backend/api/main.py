@@ -3,16 +3,23 @@ from __future__ import annotations
 import uuid
 from typing import Any
 
+from dotenv import load_dotenv
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
+from fastapi.responses import JSONResponse, Response
+
+# 在导入业务模块前加载 .env，确保 SILICONFLOW_API_KEY 等
+# 在 LLM client 初始化时可被读到（与 main.py / cli/main.py 行为一致）。
+load_dotenv()
 
 from backend.api.schemas import (
     ApiEnvelope,
     BatchQuoteRequest,
     BacktestJobRequest,
     DashboardRefreshRequest,
+    InvestorAnalysisRequest,
     LrsChatRequest,
+    TaRunRequest,
     WheelEvaluateRequest,
     XBriefRefreshRequest,
 )
@@ -29,6 +36,18 @@ from backend.api.services import (
     get_x_brief_latest,
     wheel_evaluate,
     wheel_profiles,
+    get_stock_tracker_latest,
+    create_stock_tracker_refresh_job,
+    get_stock_tracker_job,
+    get_stock_tracker_chart,
+    get_investor_analysis_cached,
+    create_investor_analysis_job,
+    get_investor_analysis_job,
+    ta_get_options,
+    ta_create_run_job,
+    ta_get_job,
+    ta_list_reports,
+    ta_get_report,
 )
 from web.services.backtesting_core import _PERIOD_ORDER, _PERIOD_SPECS
 
@@ -181,3 +200,127 @@ def get_job(job_id: str, request: Request) -> JSONResponse:
         },
     )
 
+
+# ──────────────────────────────────────────────────────────────────────────────
+# 个股追踪路由
+# ──────────────────────────────────────────────────────────────────────────────
+
+@app.get("/api/v1/stock-tracker/latest")
+def get_tracker_latest(request: Request) -> JSONResponse:
+    try:
+        return _ok(request, get_stock_tracker_latest())
+    except Exception as exc:
+        return _err(request, f"个股追踪数据读取失败：{exc}", 500)
+
+
+@app.post("/api/v1/stock-tracker/refresh")
+def post_tracker_refresh(request: Request) -> JSONResponse:
+    try:
+        return _ok(request, create_stock_tracker_refresh_job())
+    except Exception as exc:
+        return _err(request, f"个股追踪刷新失败：{exc}", 500)
+
+
+@app.get("/api/v1/stock-tracker/jobs/{job_id}")
+def get_tracker_job_status(job_id: str, request: Request) -> JSONResponse:
+    job = get_stock_tracker_job(job_id)
+    if job is None:
+        return _err(request, "任务不存在", 404)
+    return _ok(request, job)
+
+
+@app.get("/api/v1/stock-tracker/investor-analysis/jobs/{job_id}")
+def get_investor_analysis_job_status(job_id: str, request: Request) -> JSONResponse:
+    job = get_investor_analysis_job(job_id)
+    if job is None:
+        return _err(request, "任务不存在", 404)
+    return _ok(request, job)
+
+
+@app.get("/api/v1/stock-tracker/investor-analysis/{ticker}")
+def get_investor_analysis_route(ticker: str, request: Request) -> JSONResponse:
+    try:
+        data = get_investor_analysis_cached(ticker)
+        return _ok(request, data)
+    except Exception as exc:
+        return _err(request, f"读取大佬框架分析失败：{exc}", 500)
+
+
+@app.post("/api/v1/stock-tracker/investor-analysis/{ticker}")
+def post_investor_analysis_route(
+    ticker: str,
+    body: InvestorAnalysisRequest,
+    request: Request,
+) -> JSONResponse:
+    from web.services.investor_framework_service import (
+        InvestorAnalysisError,
+        InvestorJobConflictError,
+        TickerNotFoundError,
+    )
+
+    try:
+        return _ok(request, create_investor_analysis_job(ticker, body.mode))
+    except TickerNotFoundError as exc:
+        return _err(request, str(exc), 400)
+    except InvestorJobConflictError as exc:
+        return _err(request, str(exc), 409)
+    except InvestorAnalysisError as exc:
+        return _err(request, str(exc), 400)
+    except Exception as exc:
+        return _err(request, f"大佬框架分析启动失败：{exc}", 500)
+
+
+@app.get("/api/v1/stock-tracker/{ticker}/chart")
+def get_tracker_chart(ticker: str, request: Request) -> Response:
+    img = get_stock_tracker_chart(ticker)
+    if img is None:
+        return _err(request, f"图表生成失败或无数据：{ticker}", 404)
+    return Response(content=img, media_type="image/png")
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# TradingAgents 路由
+# ──────────────────────────────────────────────────────────────────────────────
+
+@app.get("/api/v1/trading-agents/options")
+def get_ta_options(request: Request) -> JSONResponse:
+    try:
+        return _ok(request, ta_get_options())
+    except Exception as exc:
+        return _err(request, f"TradingAgents 选项加载失败：{exc}", 500)
+
+
+@app.post("/api/v1/trading-agents/run")
+def post_ta_run(body: TaRunRequest, request: Request) -> JSONResponse:
+    try:
+        return _ok(request, ta_create_run_job(body.model_dump()))
+    except ValueError as exc:
+        return _err(request, f"参数错误：{exc}", 400)
+    except RuntimeError as exc:
+        return _err(request, str(exc), 409)
+    except Exception as exc:
+        return _err(request, f"TradingAgents 启动失败：{exc}", 500)
+
+
+@app.get("/api/v1/trading-agents/jobs/{job_id}")
+def get_ta_job(job_id: str, request: Request) -> JSONResponse:
+    job = ta_get_job(job_id)
+    if job is None:
+        return _err(request, "任务不存在", 404)
+    return _ok(request, job)
+
+
+@app.get("/api/v1/trading-agents/reports")
+def get_ta_reports(request: Request) -> JSONResponse:
+    try:
+        return _ok(request, {"reports": ta_list_reports()})
+    except Exception as exc:
+        return _err(request, f"历史报告读取失败：{exc}", 500)
+
+
+@app.get("/api/v1/trading-agents/reports/{report_id}")
+def get_ta_report(report_id: str, request: Request) -> JSONResponse:
+    detail = ta_get_report(report_id)
+    if detail is None:
+        return _err(request, "报告不存在", 404)
+    return _ok(request, detail)

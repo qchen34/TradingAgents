@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Generate static PNG charts for LRS TQQQ research HTML (Ch.3–Ch.4).
 
-Reuses core logic from web/pages/backtesting.py (no Streamlit).
+Reuses core ideas aligned with `web/services/backtesting_core.py` (standalone script, no UI).
 LRS simulation: idle cash earns 4% annualized, compounded each trading day.
 Outputs to this directory: chart_a_summary.png … chart_j_rolling.png
 """

@@ -255,8 +255,8 @@ export function StrategyTerminal({ initialSub }: { initialSub: "LRS TQQQ策略" 
 
               <div className="mt-3 rounded-lg border border-slate-800 bg-slate-950 p-3">
                 <pre className="whitespace-pre-wrap font-mono text-xs leading-6 text-slate-300">
-                  {`[${lrsDashTab}] 该子模块已保留原 Streamlit 结构入口。
-下一步可继续将 ${lrsDashTab} 的 Python 逻辑逐步 API 化并映射到本区块。`}
+                  {`[${lrsDashTab}] 本子模块为占位区块。
+下一步可将 ${lrsDashTab} 的 Python 逻辑逐步 API 化并映射到本区块。`}
                 </pre>
               </div>
             </section>
@@ -401,7 +401,7 @@ tp_call=${(wheelEval.execution_hint.take_profit.call * 100).toFixed(0)}%`
               <h3 className="mb-3 text-sm font-semibold tracking-wide text-slate-100">Wheel 历史报告</h3>
               <div className="rounded-lg border border-slate-800 bg-slate-950 p-3">
                 <pre className="whitespace-pre-wrap font-mono text-xs leading-6 text-slate-300">
-                  {"历史报告入口已保留（对应 Streamlit 历史报告 tab）。下一步可接入历史报告 API。"}
+                  {"历史报告入口占位。下一步可接入历史报告 API。"}
                 </pre>
               </div>
             </section>

@@ -230,10 +230,8 @@ data/dashboard/history/
 data/dashboard/latest.json
 data/cache/
 data/portfolio.json
+data/stock_tracker/latest.json
+data/stock_tracker/charts/
 
 eval_results/*
-
-docs/data_report.md
-docs/webui_prd.md
-docs/strategy_module_future.md
-docs/ui_shell.md
+.venv-*/

@@ -1,0 +1,35 @@
+[meta]
+
+phase=stage2_finalize
+
+tweets=1
+
+
+
+[prompt]
+
+你是“X资讯月报总编”。请基于阶段1草案，输出最终可渲染 JSON（阶段2定稿）。
+
+要求：
+1) 只输出 JSON 对象，不要 markdown，不要解释文字。
+2) 必须严格使用最终字段：
+{
+  "headline":"今日一句话总结，<40字，点出主旋律",
+  "trending_keywords":["关键词1","关键词2","关键词3"],
+  "themes":[{"id":"t1","title":"...","subtitle":"...","priority":"P0|P1|P2","bullets":["..."],"samples":[{"text":"...","url":"...","handle":"...","date":"..."}]}],
+  "p0_events":[{"id":"p01","title":"...","meta":"...","summary":"...","url":"..."}],
+  "top_quotes":[{"id":"q1","quote":"...","speaker":"...","date":"...","note":"...","url":"..."}],
+  "category_updates":[{"id":"c1","title":"...","subtitle":"...","level":"P0|P1|P2|WARN","items":[{"text":"...","url":"..."}]}],
+  "risk_signals":[{"id":"r1","level":"HIGH|MID|OPP","title":"...","detail":"..."}]
+}
+3) 保证 JSON 合法（双引号、无尾逗号）。
+4) 引用 URL 时，优先从“推文索引”中取值；samples/items 尽量带 url。
+5) 数量限制：themes=3, p0_events<=6, top_quotes<=3, category_updates<=6, risk_signals<=6。
+6) 严格保留 stage1 草案中每个 theme 的 priority 字段（P0/P1/P2）。
+7) 严格保留 stage1 草案中的 trending_keywords 数组。
+
+阶段1草案（JSON）：
+{"headline": "Karpathy推荐LLM输出HTML与幻灯片格式，AI交互新范式显现", "trending_keywords": ["LLM输出格式", "HTML生成", "AI人机交互", "幻灯片演示", "AI可视化"], "themes": [{"id": "t1", "title": "LLM输出格式创新", "subtitle": "Karpathy推荐将LLM响应结构化为HTML，提升可视化效果", "priority": "P0", "bullets": ["建议在查询结尾要求LLM将响应结构化为HTML", "生成的HTML文件可直接在浏览器中查看", "此方法显著提升AI输出可读性与交互性"], "sample_urls": ["https://x.com/karpathy/status/2053872850101285137"]}, {"id": "t2", "title": "AI演示新方式", "subtitle": "LLM可呈现为幻灯片等多媒体格式", "priority": "P1", "bullets": ["LLM可被要求将输出呈现为幻灯片格式", "音频已成为人类偏好的交互媒介", "多模态输出是AI发展的重要方向"], "sample_urls": ["https://x.com/karpathy/status/2053872850101285137"]}, {"id": "t3", "title": "AI交互体验优化", "subtitle": "从文本到可视化，AI输出形式持续进化", "priority": "P2", "bullets": ["传统文本输出向富媒体格式转型", "用户对AI输出形式的需求日益多样化", "结构化输出有助于提升信息传达效率"], "sample_urls": []}], "p0_events": [{"id": "p01", "title": "Karpathy分享LLM输出优化技巧", "meta": "2026-05-11 | @karpathy", "summary": "Andrej Karpathy推荐在查询结尾要求LLM将响应结构化为HTML，可直接在浏览器中查看；并可要求LLM将输出呈现为幻灯片格式。", "url": "https://x.com/karpathy/status/2053872850101285137"}], "top_quotes": [{"id": "q1", "quote": "at the end of your query ask your LLM to \"structure your response as HTML\", then view the generated file in your browser", "speaker": "Andrej Karpathy", "date": "2026-05-11", "note": "推荐将LLM响应结构化为HTML格式", "url": "https://x.com/karpathy/status/2053872850101285137"}, {"id": "q2", "quote": "I've also had some success asking the LLM to present its output as slideshows, etc.", "speaker": "Andrej Karpathy", "date": "2026-05-11", "note": "成功尝试让LLM以幻灯片形式呈现输出", "url": "https://x.com/karpathy/status/2053872850101285137"}], "category_updates": [{"id": "c1", "title": "AI工具新用法", "subtitle": "LLM输出格式优化技巧", "level": "P0", "item_urls": ["https://x.com/karpathy/status/2053872850101285137"], "item_texts": ["LLM生成HTML在浏览器中查看", "LLM输出为幻灯片格式"]}, {"id": "c2", "title": "人机交互趋势", "subtitle": "AI输出形式多样化", "level": "P1", "item_urls": [], "item_texts": ["从纯文本到富媒体", "音频成为偏好交互方式"]}], "risk_signals": []}
+
+推文索引（按 url 可回填 handle/date/text）：
+[{"handle": "karpathy", "name": "Andrej Karpathy", "published_at": "2026-05-11T16:20:21+00:00", "title": "This works really well btw, at the end of your query ask your LLM to \"structure your response as HTML\", then view the generated file in your browser. I've also had some success asking the LLM to present its output as slideshows, etc.\n\nMore generally, imo audio is the human-prefer", "url": "https://x.com/karpathy/status/2053872850101285137"}]

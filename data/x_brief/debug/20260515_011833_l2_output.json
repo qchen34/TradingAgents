@@ -1,0 +1,14 @@
+{
+  "target_indexes": [
+    44,
+    38,
+    95,
+    39
+  ],
+  "broadcast_zh": [
+    "开源平台InsForge破解AI编程后端开发难题，由YC S26季孵化并采用Apache 2.0协议，GitHub获9.7k star。平台兼容多种开发工具，可自动生成用户认证、数据库、文件存储等六项核心功能，支持Docker部署及Railway等平台一键发布，助力AI智能体实现全栈项目交付。",
+    "腾讯科研团队针对AI Agent长会话语境丢失问题，研发并在GitHub开源新型记忆系统，独创实时数据压缩、任务结构建模及人格一致性维护三大技术方案，经验证可有效提升复杂交互场景的执行稳定性。\n\nhttps://github.com/Tencent/TencentDB-Agent-Memory",
+    "腾讯开源代理记忆技术项目，推动AI与数据库技术融合应用，相关成果已在GitHub平台发布。",
+    "看来最近Kimi闷声干大事啊，看完这几个Demo演示视频！\n我后背到没有发凉。\n\n倒是热血沸腾，觉得真的觉得牛逼！\n\nKimi今天直接把AI agent从“只会聊天”拉到了“像人一样操作浏览器”。\n\n他们放出了Web Bridge浏览器扩展。\n\n一句话命令，Agent就能自己搜索、滚动、点击、输入，完成整套任务。\n\n我看完那几段演示后彻底惊了。\n\n第一个demo：Agent同时在X、Reddit、Hacker News上搜Kimi K2.6相关帖子，过滤高互动内容，把标题、平台、链接、关键点全部自动拉进Excel表格，几秒钟搞定。\n\n第二个demo更离谱。\n\nK2.6多模态能力上线后，agent直接打开一个网站，分析完结构、图片、图表，然后把整个页面完整复制出来，连本地服务器都帮你启动好了。\n\n第三个demo：你随便聊一句，它就自动打开Google Forms，帮你把整个调研问卷从零搭好。\n\n更重要的是，它现在原生支持Kimi Code CLI、Claude Code、Cursor、Codex、Hermes等一堆工具。\n\n以前agent最大的痛点就是“只能看不能动”。\n\n现在Kimi直接把浏览器变成了agent的真实操作界面。\n\n这波操作把AI agent的生产力直接拉到新维度。\n\n以前我们还在纠结上下文长度，现在它们已经能像真人一样在网页上干活了。\n\nWeb Bridge已经在Chrome应用商店上线。\n\n去 https://www.kimi.com/features/webbridge 试试。\n\n你还在用只会聊天的agent吗？"
+  ]
+}

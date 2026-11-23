@@ -1,0 +1,2190 @@
+{
+  "schema_version": "2.0",
+  "updated_at": "2026-05-21T12:33:58.318865+00:00",
+  "analyses": {
+    "AMKR": {
+      "ticker": "AMKR",
+      "verdict": "watch",
+      "verdict_confidence": "medium",
+      "verdict_summary": "股价技术延伸42%且基本面有FCF负值和QRev走弱疑虑，多数框架评分偏负面。虽有 analyst 目标价$75.5 但当前赔率不足。建议等待回踩MA50($60)一线再评估，7月财报或是催化。",
+      "entry": {
+        "ideal_price": 60.0,
+        "max_chase_price": 65.0,
+        "trigger_condition": "价格回踩至MA50(≈$60)附近且企稳，或突发利好突破$70且伴随放量",
+        "note": "当前追高赔率不佳，需等回撤再部署"
+      },
+      "stop_loss": {
+        "price": 44.27,
+        "pct_from_ideal": "约26%",
+        "logic": "跌破Weinstein Stage2上升趋势支撑位(5月低点)，亦为MA150上移提供缓冲区间；基本面恶化则需重新审视"
+      },
+      "holding_period": {
+        "range": "3-6个月",
+        "rationale": "7月底财报是关键催化剂；半导体封测需求与AI先进封装长期逻辑需时间验证；中期均线支撑仍在"
+      },
+      "framework_scores": [
+        {
+          "investor": "Buffett",
+          "score": 2,
+          "verdict": "护城河弱",
+          "key_reason": "封装行业竞争激烈，14.43%低毛利无定价权；PE 39x 偏高",
+          "concern": "负FCF说明资本回报质量差，护城河未验证"
+        },
+        {
+          "investor": "Klarman",
+          "score": 2,
+          "verdict": "安全边际不足",
+          "key_reason": "PE 39接近行业47.8，无明显折价；7月财报是潜在催化剂但时间未至",
+          "concern": "当前股价已Price-in增长预期，安全边际有限"
+        },
+        {
+          "investor": "Marks",
+          "score": 2,
+          "verdict": "情绪偏热",
+          "key_reason": "单日+4.5%且技术超涨42%；市场共识已转向乐观而非恐惧端",
+          "concern": "过度追高风险大，第二层思维需逆向而非顺势"
+        },
+        {
+          "investor": "Druckenmiller",
+          "score": 3,
+          "verdict": "宏观中性",
+          "key_reason": "半导体景气上行提供宏观顺风；MA150稳定上行表明中期趋势仍在",
+          "concern": "成交量仅0.58x，量价配合差；MACD转负显示短期动能减弱"
+        },
+        {
+          "investor": "PTJ",
+          "score": 2,
+          "verdict": "赔率不足",
+          "key_reason": "趋势向上但价格已延伸42%，当前买赔率不具3:1",
+          "concern": "延伸后追高止损难设，建议等回踩再评估"
+        },
+        {
+          "investor": "Dalio",
+          "score": 3,
+          "verdict": "周期位置模糊",
+          "key_reason": "半导体处复苏周期，但缺债务/信贷周期具体定位",
+          "concern": "宏观情景不明朗，难以精准定位资产优势区"
+        },
+        {
+          "investor": "Cathie Wood",
+          "score": 2,
+          "verdict": "非颠覆型",
+          "key_reason": "传统封装非平台型颠覆；TAM虽大但竞争格局清晰",
+          "concern": "AI封装需求是增量但非根本性技术颠覆"
+        },
+        {
+          "investor": "Ackman",
+          "score": 2,
+          "verdict": "故事一般",
+          "key_reason": "简单封装外包故事，护城河和高壁垒不明显",
+          "concern": "催化剂仅财报，缺少结构性改变或资本配置亮点"
+        },
+        {
+          "investor": "Burry",
+          "score": 3,
+          "verdict": "存误定价可能",
+          "key_reason": "市场过度聚焦短期QRev下滑而忽视27.5% YoY增长；PE相对行业折价",
+          "concern": "误定价需等待财报验证，当前负FCF可能被放大"
+        },
+        {
+          "investor": "Asness",
+          "score": 2,
+          "verdict": "因子不优",
+          "key_reason": "价值因子存于PE稍低于行业；质量因子因负FCF受损；动量偏弱",
+          "concern": "四因子综合偏弱，无单因子极强支撑"
+        },
+        {
+          "investor": "Greenblatt",
+          "score": 2,
+          "verdict": "估值不吸引",
+          "key_reason": "高PE(39x)拉低EBIT/EV收益率；ROIC难言优秀",
+          "concern": "收益率与回报率双低，神奇公式排名不靠前"
+        },
+        {
+          "investor": "Loeb",
+          "score": 2,
+          "verdict": "缺资本催化",
+          "key_reason": "负FCF限制回购/分红能力；未见分拆或激进资本运作",
+          "concern": "管理层如无外部压力，改善催化剂难觅"
+        },
+        {
+          "investor": "Weinstein",
+          "score": 3,
+          "verdict": "Stage2延伸",
+          "key_reason": "MA150斜率13.64%显示中期上升趋势；但价格偏离42%+MACD转负+RSI中性",
+          "concern": "延伸后小回调风险；7月财报前后是关键检验点"
+        }
+      ],
+      "key_risks": [
+        "负FCF(-$47M)显示资本消耗型业务，现金流持续恶化将压制估值",
+        "QRev连续两季为负(Q1 -10.77%, Q4 -4.98%)，季节性以外的需求疲软需警惕",
+        "技术面极度延伸(42% vs MA150)，若大盘回调或半导体周期反转，回调幅度或超20%",
+        "毛利率仅14.43%，在半导体设备/材料成本上行周期中，利润率承压风险大"
+      ],
+      "analyzed_at": "2026-05-21T09:26:03.936498+00:00",
+      "source_updated_at": "2026-05-21T09:25:03.669829+00:00",
+      "framework_version": "1.0",
+      "data_snapshot": {
+        "close": 68.49,
+        "stage_label": "Stage 2 中后期",
+        "pe_ttm": 39.36207,
+        "trend_buy_verdict": "avoid_chase"
+      }
+    },
+    "COHR": {
+      "ticker": "COHR",
+      "verdict": "avoid",
+      "verdict_confidence": "high",
+      "verdict_summary": "COHR当前PE达169x（行业48x）、FCF为负、股价相对MA150偏离59%且MACD转负，技术面延伸明显。即便AI/半导体长期逻辑完好，短期赔率不足且估值缺乏安全边际，建议回避追高，等待财报前后回落至合理区间再评估。",
+      "entry": {
+        "ideal_price": 260.0,
+        "max_chase_price": 300.0,
+        "trigger_condition": "回落至MA150（226）附近获得支撑后，出现企稳K线或放量阳包阴再考虑分批买入",
+        "note": "当前价格延伸过度，不宜直接买入"
+      },
+      "stop_loss": {
+        "price": 207.72,
+        "pct_from_ideal": -20.1,
+        "logic": " Weinstein框架Stage2转Stage3的临界点，亦为接近MA200（195）上方支撑区，跌破后上升趋势破坏，需止损"
+      },
+      "holding_period": {
+        "range": "3-6个月",
+        "rationale": "等待估值消化与均线回归，结合5月初财报验证增长持续性，若回调至260以下可考虑中线布局"
+      },
+      "framework_scores": [
+        {
+          "investor": "Buffett",
+          "score": 1,
+          "verdict": "不买入",
+          "key_reason": "PE 169x为行业3.5倍严重高估，FCF为负无自由现金流，质量指标不合格",
+          "concern": "定价权可能被高估、资本配置存疑"
+        },
+        {
+          "investor": "Klarman",
+          "score": 2,
+          "verdict": "不买入",
+          "key_reason": "PE远超合理范围，无30-50%安全边际，负FCF使价值实现路径不清晰",
+          "concern": "深度价值不存在，当前是价值陷阱特征"
+        },
+        {
+          "investor": "Marks",
+          "score": 3,
+          "verdict": "中性偏谨慎",
+          "key_reason": "市场情绪偏恐惧但已在高位，共识未过度乐观但估值已充分反映乐观",
+          "concern": "MA150偏离59%显示极端延伸，需等共识调整"
+        },
+        {
+          "investor": "Druckenmiller",
+          "score": 3,
+          "verdict": "中性",
+          "key_reason": "宏观流动性对半导体有利，价格趋势向上但MACD转负、量能缩，短期动能减弱",
+          "concern": "估值和宏观敏感度高，需等待更好买点"
+        },
+        {
+          "investor": "PTJ",
+          "score": 2,
+          "verdict": "不建议",
+          "key_reason": "当前价格距理想买点已涨60%+，赔率不足3:1，延伸后追高违背纪律",
+          "concern": "延伸后追涨是典型交易陷阱"
+        },
+        {
+          "investor": "Dalio",
+          "score": 4,
+          "verdict": "可观察",
+          "key_reason": "债务周期位置偏宽松利好风险资产，半导体在宏观情景中具优势",
+          "concern": "组合集中度过高需分散，单票仓位需控制"
+        },
+        {
+          "investor": "Cathie Wood",
+          "score": 4,
+          "verdict": "可关注",
+          "key_reason": "AI芯片制造+先进封装具颠覆逻辑，渗透率仍在早期，TAM足够大",
+          "concern": "当前估值已部分反映长期预期，短期性价比差"
+        },
+        {
+          "investor": "Ackman",
+          "score": 2,
+          "verdict": "不支持",
+          "key_reason": "没有一页纸能说清的可修复资本问题，无催化剂时间线，逻辑不清晰",
+          "concern": "需要等待基本面催化剂出现后再评估"
+        },
+        {
+          "investor": "Burry",
+          "score": 3,
+          "verdict": "观察",
+          "key_reason": "市场对AI/半导体过度乐观形成误定价，但无清算价值保护，安全性不足",
+          "concern": "负FCF意味着不是典型深度价值 대상"
+        },
+        {
+          "investor": "Asness",
+          "score": 2,
+          "verdict": "不支持",
+          "key_reason": "价值因子极差（PE 169vs行业48），动量尚可但质量因子为负，综合不达标",
+          "concern": "因子综合排名靠后，估值因子拖累显著"
+        },
+        {
+          "investor": "Greenblatt",
+          "score": 1,
+          "verdict": "不买入",
+          "key_reason": "收益率（EBIT/EV）极低，负FCF使ROIC/收益率排名垫底，不符合神奇公式",
+          "concern": "财务质量指标全面负面"
+        },
+        {
+          "investor": "Loeb",
+          "score": 2,
+          "verdict": "不支持",
+          "key_reason": "未看到分拆或资本重置机会，管理层未释放积极股东回报信号",
+          "concern": "需等催化剂出现或主动估值修复"
+        },
+        {
+          "investor": "Weinstein",
+          "score": 2,
+          "verdict": "不建议",
+          "key_reason": "当前处于Stage3延伸后区域，MA150 Slope仍强但MACD转负，短期有回踩压力",
+          "concern": "延伸后追涨违反Stage2买点规则"
+        }
+      ],
+      "key_risks": [
+        "PE 169x相对行业48x严重高估，估值回归风险大",
+        "FCF持续为负，现金流质量存疑影响长期支撑",
+        "Qrev增速从7.12%降至3.4%持续放缓，基本面边际弱化",
+        "MA150偏离59%技术面极端延伸，短期回调概率高"
+      ],
+      "analyzed_at": "2026-05-21T09:33:03.354924+00:00",
+      "source_updated_at": "2026-05-21T09:25:03.669829+00:00",
+      "framework_version": "1.0",
+      "data_snapshot": {
+        "close": 358.5,
+        "stage_label": "Stage 3",
+        "pe_ttm": 169.10379,
+        "trend_buy_verdict": "avoid_chase"
+      }
+    },
+    "MU": {
+      "ticker": "MU",
+      "analyzed_at": "2026-05-21T10:15:14.998680+00:00",
+      "source_updated_at": "2026-05-21T09:25:03.669829+00:00",
+      "framework_version": "2.0",
+      "data_snapshot": {
+        "close": 731.99,
+        "stage_label": "Stage 3",
+        "pe_ttm": 34.609455,
+        "trend_buy_verdict": "avoid_chase"
+      },
+      "summary": {
+        "verdict_mode": "plurality",
+        "verdict": "watch",
+        "verdict_counts": {
+          "buy": 0,
+          "watch": 10,
+          "avoid": 3
+        },
+        "verdict_summary": "0 位买入、10 位观望、3 位回避（按各框架独立 verdict 计票，非加权）",
+        "ideal_price_median": 550.0,
+        "ideal_price_range": [
+          445.0,
+          660.0
+        ],
+        "key_risks": [
+          "技术面极端延伸但基本面有HBM/AI催化剂，需等回调验证支撑",
+          "技术面极端超买，分析师目标613远低于现价731，无安全边际",
+          "价格距MA150涨幅96%，RSI69.3接近超买，追高安全边际不足",
+          "若此时买入，止损需设得很宽以容纳正常波动，赔率难达3:1"
+        ]
+      },
+      "framework_scores": [
+        {
+          "investor": "Buffett",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "AI驱动存储需求长期逻辑扎实，FCF为正、毛利率58%优秀，但护城河受行业周期制约，当前追高风险大",
+          "concern": "存储行业强周期且竞争格局激烈，技术面已过度延伸，需等回调再评估",
+          "entry": {
+            "ideal_price": 500.0,
+            "max_chase_price": 600.0,
+            "trigger_condition": "price回撤至MA150附近+基本面无变化",
+            "note": "耐心等待更好的买点"
+          },
+          "stop_loss": {
+            "price": 342.87,
+            "pct_from_ideal": -31.43,
+            "logic": "基本面恶化或护城河受损时执行，非单纯价格波动止损"
+          },
+          "holding_period": {
+            "range": "3-5年",
+            "rationale": "AI数据中心存储需求为长期结构性趋势，需跨越行业周期获取复利"
+          }
+        },
+        {
+          "investor": "Klarman",
+          "score": 2,
+          "verdict": "avoid",
+          "key_reason": "安全边际不足30%，当前价格较分析师目标价高19%，且短期技术面超买风险高",
+          "concern": "价格距MA150涨幅96%，RSI69.3接近超买，追高安全边际不足",
+          "entry": {
+            "ideal_price": 512.0,
+            "max_chase_price": 585.0,
+            "trigger_condition": "价格回落至MA50-MA150区间且企稳",
+            "note": "等待深度回撤至合理估值区间"
+          },
+          "stop_loss": {
+            "price": 440.0,
+            "pct_from_ideal": -14.06,
+            "logic": "若股价跌破MA50且无实质利好支撑，应止损防止趋势反转"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待财报季或行业产能消息落地，评估HBM需求实际贡献"
+          }
+        },
+        {
+          "investor": "Marks",
+          "score": 1,
+          "verdict": "watch",
+          "key_reason": "股价偏离MA150达96%严重延伸，RSI69.3接近超买，共识已过度乐观，追高风险极大",
+          "concern": "技术面极端延伸但基本面有HBM/AI催化剂，需等回调验证支撑",
+          "entry": {
+            "ideal_price": 580.0,
+            "max_chase_price": 650.0,
+            "trigger_condition": "股价回撤至MA50或MA150附近获得支撑，或回调15%以上出现止跌信号",
+            "note": "当前拒绝追高，等待情绪降温后的逆向机会"
+          },
+          "stop_loss": {
+            "price": 342.87,
+            "pct_from_ideal": -40.9,
+            "logic": "极端延伸后若趋势反转，向下修正空间大，参考前期支撑区作为止损参考"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待财报季或行业事件驱动估值重估，若出现大幅回调至合理估值区间可考虑分批建仓"
+          }
+        },
+        {
+          "investor": "Druckenmiller",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "趋势量能符合（MA150斜率20%、金叉），但宏观流动性不明、利润前瞻数据缺失",
+          "concern": "当前PE 34.6虽低于行业47.8，但距MA150已涨96%且RSI 69.3接近超买，追高风险极大",
+          "entry": {
+            "ideal_price": 500.0,
+            "max_chase_price": 650.0,
+            "trigger_condition": "股价回撤至MA50~MA150区间（500~620美元）且成交量放大至MA20的1.2倍以上",
+            "note": "Druckenmiller要求放量突破才买入，当前量能不足且价格过度延伸"
+          },
+          "stop_loss": {
+            "price": 342.87,
+            "pct_from_ideal": -31.43,
+            "logic": "中期趋势反转点，跌破MA200需果断离场；也可采用固定15%止损"
+          },
+          "holding_period": {
+            "range": "6-18个月",
+            "rationale": "AI驱动HBMmemory需求为长期结构性利好，需等待业绩持续兑现；若股价盘整后再度放量突破前高，可重新评估"
+          }
+        },
+        {
+          "investor": "PTJ",
+          "score": 2,
+          "verdict": "avoid",
+          "key_reason": "价格相对MA150偏离96%严重超涨，RSI69.3接近超买，追高赔率不足",
+          "concern": "若此时买入，止损需设得很宽以容纳正常波动，赔率难达3:1",
+          "entry": {
+            "ideal_price": 550.0,
+            "max_chase_price": 620.0,
+            "trigger_condition": "价格回落至MA150(372.69)上方运行并企稳，或回调至550以下出现反转K线",
+            "note": "当前过度延伸，拒绝追高，需等回撤确认支撑后再评估"
+          },
+          "stop_loss": {
+            "price": 470.0,
+            "pct_from_ideal": 14.5,
+            "logic": "若价格回落至550理想位买入，止损设于470(约14.5%止损)，若受支撑反弹可重新评估"
+          },
+          "holding_period": {
+            "range": "2-4周",
+            "rationale": "等待财报季(6月25日)或技术回撤完成，评估趋势是否延续"
+          }
+        },
+        {
+          "investor": "Dalio",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "股价相对MA150偏离96%且RSI接近超买，短期追高风险极大，建议等待回调",
+          "concern": "技术面极端延伸，短期有较大回调风险；但长期AI/HBM需求趋势仍支撑基本面",
+          "entry": {
+            "ideal_price": 500.0,
+            "max_chase_price": 600.0,
+            "trigger_condition": "价格回落至MA50或MA150附近获得支撑后",
+            "note": "等待价格从极端延伸状态回归均值后再评估"
+          },
+          "stop_loss": {
+            "price": 342.87,
+            "pct_from_ideal": 31.43,
+            "logic": "跌破前期关键支撑区间若进入Stage 3/4则触发止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待技术面回调至合理估值区间后再布局，关注财报季和行业产能周期"
+          }
+        },
+        {
+          "investor": "Cathie Wood",
+          "score": 4,
+          "verdict": "watch",
+          "key_reason": "AI驱动内存需求爆发，HBM技术颠覆+大TAM，渗透率早期，等待买點",
+          "concern": "当前价格过度延伸(MA150+96%)，RSI近超买，追高风险大",
+          "entry": {
+            "ideal_price": 550.0,
+            "max_chase_price": 620.0,
+            "trigger_condition": "回撤至MA150附近或跌破MA200后企稳",
+            "note": "等待估值回归合理区间再入场"
+          },
+          "stop_loss": {
+            "price": 450.0,
+            "pct_from_ideal": 18.18,
+            "logic": "若价格跌破MA200且无法快速收复，视为趋势转弱触发止损"
+          },
+          "holding_period": {
+            "range": "12-24个月",
+            "rationale": "AI数据中心存储需求仍处早期渗透阶段，HBM技术路线清晰，成本曲线陡降，长线看涨"
+          }
+        },
+        {
+          "investor": "Ackman",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "PE折价32%、营收增长196%、HBM存储长期赛道清晰，估值有支撑但价格极度超买",
+          "concern": "当前价格相对MA150偏离96%且RSI接近70，短期回调风险高；分析师目标价613美元低于现价",
+          "entry": {
+            "ideal_price": 660.0,
+            "max_chase_price": 700.0,
+            "trigger_condition": "股价回落至650-680区间且止跌企稳",
+            "note": "等回调后再评估，不激进追高"
+          },
+          "stop_loss": {
+            "price": 342.87,
+            "pct_from_ideal": -48.05,
+            "logic": "前波动低点342.87为强支撑位，若跌破需认错离场；对应从ideal_price回调约48%"
+          },
+          "holding_period": {
+            "range": "1-3个月",
+            "rationale": "财报前后是关键催化剂窗口；Q3财报（6月25日）将验证HBM需求和AI存储增长逻辑"
+          }
+        },
+        {
+          "investor": "Burry",
+          "score": 1,
+          "verdict": "avoid",
+          "key_reason": "当前股价被市场乐观情绪推高96%偏离MA150，不符合逆向买入原则",
+          "concern": "技术面极端超买，分析师目标613远低于现价731，无安全边际",
+          "entry": {
+            "ideal_price": 520.0,
+            "max_chase_price": 580.0,
+            "trigger_condition": "股价回落至MA150附近且RSI回落至50以下",
+            "note": "等待市场情绪消退后再评估"
+          },
+          "stop_loss": {
+            "price": 342.87,
+            "pct_from_ideal": -34.06,
+            "logic": "跌破前期支撑区间或基本面逻辑被证伪时止损"
+          },
+          "holding_period": {
+            "range": "等待3-6个月",
+            "rationale": "待估值消化及技术面回归理性后再评估"
+          }
+        },
+        {
+          "investor": "Asness",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "动量强质量优，但价格过度延伸偏离均线96%，RSI近超买，MACD转负短期有回调风险",
+          "concern": "当前极端延伸状态，距离MA150已涨96%，追高风险大；RSI69.3接近超买区间；MACD柱状图负值短期有整理需求",
+          "entry": {
+            "ideal_price": 620.0,
+            "max_chase_price": 680.0,
+            "trigger_condition": "价格回落至MA150附近获得支撑，或回撤至650以下出现止跌信号",
+            "note": "等待价格回归均线或出现合理回调后再评估，AI驱动HBM内存需求为中长期利好但需等待更好的入场点"
+          },
+          "stop_loss": {
+            "price": 550.0,
+            "pct_from_ideal": -11.29,
+            "logic": "止损设于当前价格区间下方约15-20%位置，低于理想入场价11.3%，若股价跌破550则视为上涨趋势破坏，需执行止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "基本面成长性确认（营收YoY+196%、毛利率58.4%），AI服务器HBM需求提供长期动能；但需等待技术面整理完成，若股价回落至合理区间可考虑中线持有"
+          }
+        },
+        {
+          "investor": "Greenblatt",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "无EBIT/EV和ROIC数据无法计算神奇公式排名，基本面增长强劲但技术面严重超买延伸",
+          "concern": "缺少EBIT、EV、ROIC等核心数据，无法进行收益率和ROIC排名评估",
+          "entry": {
+            "ideal_price": 600.0,
+            "max_chase_price": 680.0,
+            "trigger_condition": "价格回落至MA150附近且企稳，RSI回落至50-60区间",
+            "note": "等待估值回归合理区间后再评估"
+          },
+          "stop_loss": {
+            "price": 400.0,
+            "pct_from_ideal": 33.33,
+            "logic": "若股价跌破MA200(315.93)且确认反转，需止损；设定400美元止损相当于从理想价格下跌33%"
+          },
+          "holding_period": {
+            "range": "3-12个月",
+            "rationale": "需等待基本面数据披露以计算Greenblatt指标，同时观察AI存储需求落地情况"
+          }
+        },
+        {
+          "investor": "Loeb",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "基本面强劲但股价极端延伸，技术面风险大，需等回撤",
+          "concern": "当前股价相对MA150偏离96%，RSI接近超买，追高风险极高",
+          "entry": {
+            "ideal_price": 600.0,
+            "max_chase_price": 650.0,
+            "trigger_condition": "价格回落至600-620区间且RSI回落至60以下",
+            "note": "等股价回撤至均线附近再评估"
+          },
+          "stop_loss": {
+            "price": 342.87,
+            "pct_from_ideal": 42.82,
+            "logic": "前低支撑参考，Loeb框架下无基本面恶化不以基本面止损，以技术破坏位止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "中期等待估值回归合理区间，关注财报及HBM需求催化剂"
+          }
+        },
+        {
+          "investor": "Weinstein",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "股价极度偏离MA150达96%，RSI接近70，Stage3延伸状态不追高",
+          "concern": "当前处于极端延伸+超买，需等待回调至合理支撑后再评估",
+          "entry": {
+            "ideal_price": 445.0,
+            "max_chase_price": 520.0,
+            "trigger_condition": "回落至MA150附近且RSI回落至50-60区间",
+            "note": "当前拒绝追高，需等待价格回归均线或形成新买点"
+          },
+          "stop_loss": {
+            "price": 342.87,
+            "pct_from_ideal": -22.96,
+            "logic": "跌破MA150且进入Stage3/4时止损，342.87为前低支撑参考"
+          },
+          "holding_period": {
+            "range": "等待回调后重新评估",
+            "rationale": "极端延伸状态不宜持有，耐心等待价格回归均线健康区间"
+          }
+        }
+      ]
+    },
+    "VRT": {
+      "ticker": "VRT",
+      "analyzed_at": "2026-05-21T10:25:02.385750+00:00",
+      "source_updated_at": "2026-05-21T09:25:03.669829+00:00",
+      "framework_version": "2.0",
+      "data_snapshot": {
+        "close": 315.67,
+        "stage_label": "Stage 2 早期",
+        "pe_ttm": 79.31407,
+        "trend_buy_verdict": "avoid_chase"
+      },
+      "summary": {
+        "verdict_mode": "plurality",
+        "verdict": "watch",
+        "verdict_counts": {
+          "buy": 0,
+          "watch": 11,
+          "avoid": 2
+        },
+        "verdict_summary": "0 位买入、11 位观望、2 位回避（按各框架独立 verdict 计票，非加权）",
+        "ideal_price_median": 264.0,
+        "ideal_price_range": [
+          220.0,
+          315.0
+        ],
+        "key_risks": [
+          "当前PE/FCF估值偏高，未见市场过度厌恶或错定价证据，股价相对MA150已涨38.8%",
+          "护城河信息不足；定价权需更多验证；当前价格已过度延伸",
+          "当前估值缺乏安全边际，下行风险较大。PE_ttm=79.31 vs 行业PE=29.5，股价已提前反映乐观预期。",
+          "PE达79倍偏高，近期营收QoQ-8%，当前追高赔率不足3:1"
+        ]
+      },
+      "framework_scores": [
+        {
+          "investor": "Buffett",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "高增长+高毛利验证好生意，但PE 79倍是行业2.7倍，估值偏离安全边际",
+          "concern": "护城河信息不足；定价权需更多验证；当前价格已过度延伸",
+          "entry": {
+            "ideal_price": 230.0,
+            "max_chase_price": 280.0,
+            "trigger_condition": "PE回落至行业1.5倍以内或回撤至MA150附近",
+            "note": "等待估值回归合理区间"
+          },
+          "stop_loss": {
+            "price": 209.2,
+            "pct_from_ideal": -9.04,
+            "logic": "技术面MA200为205.81，止损设于209.2略上方，若跌破MA200确认趋势逆转"
+          },
+          "holding_period": {
+            "range": "6-18个月",
+            "rationale": "AI数据中心长期需求可维持，但须观察护城河持续性和FCF质量是否支持当前估值"
+          }
+        },
+        {
+          "investor": "Klarman",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "PE达79倍远高于行业30倍，无30-50%安全边际。股价相对MA150溢价39%且技术面过度延伸。",
+          "concern": "当前估值缺乏安全边际，下行风险较大。PE_ttm=79.31 vs 行业PE=29.5，股价已提前反映乐观预期。",
+          "entry": {
+            "ideal_price": 220.0,
+            "max_chase_price": 250.0,
+            "trigger_condition": "价格回落至MA150附近获得支撑，PE回落至50倍以下且有明确催化剂落地",
+            "note": "需等待深度折价机会"
+          },
+          "stop_loss": {
+            "price": 209.2,
+            "pct_from_ideal": 4.91,
+            "logic": "依据Weinstein阶段支撑位209.20，跌破此价位意味着上升趋势破坏，需止损防止更大损失"
+          },
+          "holding_period": {
+            "range": "6-12个月",
+            "rationale": "等待估值回归合理区间，需观察数据中心需求实际释放及液冷技术商业化进程"
+          }
+        },
+        {
+          "investor": "Marks",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "PE是行业2.7倍，价格偏离MA150达39%，共识已过度定价",
+          "concern": "高估值+短期技术面超涨，需等待更好的击球点",
+          "entry": {
+            "ideal_price": 282.5,
+            "max_chase_price": 305.0,
+            "trigger_condition": "价格回落至MA150~MA200区间（约227-280）且RSI回落至35以下",
+            "note": "等回调至合理偏离区间再评估"
+          },
+          "stop_loss": {
+            "price": 265.0,
+            "pct_from_ideal": -6.19,
+            "logic": "若价格跌破MA200（205）的1.3倍支撑区间，需警惕趋势反转"
+          },
+          "holding_period": {
+            "range": "8-14周",
+            "rationale": "AI数据中心需求长期逻辑稳固，但短期估值修正需数月消化"
+          }
+        },
+        {
+          "investor": "Druckenmiller",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "营收增长30%但PE=79过高，价格偏离MA150达39%延伸，宏观流动性数据缺失",
+          "concern": "宏观流动性数据未提供，无法判断顺风；估值显著偏高；短期RSI/MAcd偏弱",
+          "entry": {
+            "ideal_price": 283.0,
+            "max_chase_price": 315.67,
+            "trigger_condition": "价格回落至MA150~MA50区间且RSI回升至50以上",
+            "note": "等回撤至287-295区间可考虑分批建仓"
+          },
+          "stop_loss": {
+            "price": 209.2,
+            "pct_from_ideal": -26.1,
+            "logic": "MA200位置若跌破则上升趋势破坏，需快速砍仓"
+          },
+          "holding_period": {
+            "range": "6-18个月",
+            "rationale": "AI数据中心需求长期利好，等待估值回归合理区间及业绩释放"
+          }
+        },
+        {
+          "investor": "PTJ",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "价格过度延伸至MA150上方39%，短期MACD下行不宜追高，需等回撤修正",
+          "concern": "PE达79倍偏高，近期营收QoQ-8%，当前追高赔率不足3:1",
+          "entry": {
+            "ideal_price": 285.0,
+            "max_chase_price": 305.0,
+            "trigger_condition": "价格回落至MA50附近且RSI回升至50以上",
+            "note": "等回撤至300-285区间再评估买入机会"
+          },
+          "stop_loss": {
+            "price": 262.2,
+            "pct_from_ideal": -1.75,
+            "logic": "跌破MA50或从理想价下跌2%即止损，保留本金"
+          },
+          "holding_period": {
+            "range": "4-8周",
+            "rationale": "等待Q2财报和AI数据中心催化剂释放，若趋势破坏则离场"
+          }
+        },
+        {
+          "investor": "Dalio",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "宏观周期有利于工业/数据中心资产，AI算力需求长期利好，但当前估值偏高且价格过度延伸",
+          "concern": "PE=79.3远超行业PE=29.5，股价相对MA150偏离38.82%过高，短期存在回调风险",
+          "entry": {
+            "ideal_price": 270.0,
+            "max_chase_price": 310.0,
+            "trigger_condition": "价格回落至MA150附近约230-250美元区间，或出现5%以上回调后企稳",
+            "note": "等待价格回归合理估值区间，避免追高"
+          },
+          "stop_loss": {
+            "price": 209.2,
+            "pct_from_ideal": -22.5,
+            "logic": "跌破200日均线且阶段转换不利，参考前期低点209.20"
+          },
+          "holding_period": {
+            "range": "6-12个月",
+            "rationale": "DataCenter与AI算力基础设施为长期结构性趋势，等待财报验证需求可持续性"
+          }
+        },
+        {
+          "investor": "Cathie Wood",
+          "score": 4,
+          "verdict": "watch",
+          "key_reason": "AI数据中心液冷技术赛道好，渗透率早期，但估值PE=79过高需等回调",
+          "concern": "当前PE=79远高于行业PE=29.5，技术面extension过度延伸，追高风险大",
+          "entry": {
+            "ideal_price": 265.0,
+            "max_chase_price": 295.0,
+            "trigger_condition": "股价回落至MA50附近或回撤≥10%",
+            "note": "等基本面催化剂如财报前逢低布局"
+          },
+          "stop_loss": {
+            "price": 245.0,
+            "pct_from_ideal": -7.5,
+            "logic": "跌破MA200（205.81）下方支撑区间，或从理想买入价回撤超7.5%执行止损"
+          },
+          "holding_period": {
+            "range": "6-18个月",
+            "rationale": "AI数据中心基建为长期赛道，液冷技术渗透率仍低，成本曲线陡降期，适合用时间换空间。目标看高至分析师目标价364上方，但需耐心等待业绩释放消化估值"
+          }
+        },
+        {
+          "investor": "Ackman",
+          "score": 2,
+          "verdict": "avoid",
+          "key_reason": "PE达79倍严重偏离行业均值29.5倍，价格相对MA150高38.82%已过度延伸，估值泡沫明显",
+          "concern": "短期技术面过热且Q1营收QoQ-8%显示增长放缓，估值修复需要时间，财报季后或有更大波动",
+          "entry": {
+            "ideal_price": 245.0,
+            "max_chase_price": 260.0,
+            "trigger_condition": "价格回落至250美元以下且RSI回落至40以下出现企稳信号",
+            "note": "等待估值回归合理区间再评估"
+          },
+          "stop_loss": {
+            "price": 209.2,
+            "pct_from_ideal": -14.61,
+            "logic": "前期低点209.2为关键支撑，跌破则上升趋势破坏，需止损保护资本"
+          },
+          "holding_period": {
+            "range": "6-12个月",
+            "rationale": "AI数据中心长期需求逻辑成立，但需等待估值消化和催化剂兑现，期间观察Q2/Q3营收恢复情况"
+          }
+        },
+        {
+          "investor": "Burry",
+          "score": 1,
+          "verdict": "watch",
+          "key_reason": "PE 79.3远高于行业29.5，市值1212亿美元缺逆向机会，估值无安全边际",
+          "concern": "当前PE/FCF估值偏高，未见市场过度厌恶或错定价证据，股价相对MA150已涨38.8%",
+          "entry": {
+            "ideal_price": 260.0,
+            "max_chase_price": 290.0,
+            "trigger_condition": "PE回落至50以下且出现显著回调至MA150附近",
+            "note": "需等待市场负面情绪释放或估值回归"
+          },
+          "stop_loss": {
+            "price": 230.0,
+            "pct_from_ideal": 11.54,
+            "logic": "MA200为205.81，若跌破MA200且基本面恶化则止损"
+          },
+          "holding_period": {
+            "range": "6-18个月",
+            "rationale": "逆向机会需等待估值回归合理区间或出现显著催化剂导致错杀"
+          }
+        },
+        {
+          "investor": "Asness",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "质量因子强劲但PE过高价值承压，价格过度延伸需等待回撤",
+          "concern": "PE=79远超行业29.5，估值偏高；价格相对MA150涨38.82%有回撤风险",
+          "entry": {
+            "ideal_price": 245.35,
+            "max_chase_price": 280.0,
+            "trigger_condition": "等股价回落至MA150附近（约260-270）且RSI回升至50以上",
+            "note": "不追高，等待回撤至健康偏离区间再评估"
+          },
+          "stop_loss": {
+            "price": 235.0,
+            "pct_from_ideal": 4.22,
+            "logic": "若价格跌破近期支撑区235(约MA150的85%水平)则触发止损，防止趋势反转风险"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待Q2财报和AI数据中心需求催化剂释放，同时消化估值泡沫"
+          }
+        },
+        {
+          "investor": "Greenblatt",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "数据不足无法计算收益率和ROIC，但PE远高于行业，估值偏高",
+          "concern": "缺少EBIT、EV、ROIC等关键数据，无法完整执行Greenblatt神奇公式评估",
+          "entry": {
+            "ideal_price": 315.0,
+            "max_chase_price": 340.0,
+            "trigger_condition": "等待股价回落至MA150(227)附近或出现暂时性利空时再评估",
+            "note": "当前PE=79远高于行业PE=29.5，估值偏高，需等待更好价位"
+          },
+          "stop_loss": {
+            "price": 268.0,
+            "pct_from_ideal": -14.92,
+            "logic": "若出现结构性利空跌破268(约MA200附近)，则执行止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待财报季和AI算力催化剂释放，观察估值回归"
+          }
+        },
+        {
+          "investor": "Loeb",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "P/E 79 vs行业30溢价过高，价格已延伸至MA150上方38.8%，无明显催化",
+          "concern": "高估值压缩上涨空间，无分拆/回购催化剂，需等待更优价位",
+          "entry": {
+            "ideal_price": 260.0,
+            "max_chase_price": 300.0,
+            "trigger_condition": "价格回落至MA150附近且企稳",
+            "note": "等待估值回归合理区间"
+          },
+          "stop_loss": {
+            "price": 209.2,
+            "pct_from_ideal": -19.54,
+            "logic": "下破MA200触发止损，MA200为200日均线支撑位"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "观察估值消化及催化剂落地，若股价回落至合理区间可重新评估"
+          }
+        },
+        {
+          "investor": "Weinstein",
+          "score": 2,
+          "verdict": "avoid",
+          "key_reason": "MA150偏离38.82%已过度延伸，短期MACD转负不宜追高",
+          "concern": "过度延伸38.82%且MACD负向，Stage2晚期风险加大",
+          "entry": {
+            "ideal_price": 264.0,
+            "max_chase_price": 290.0,
+            "trigger_condition": "回落至MA150附近且RSI回升至50以上",
+            "note": "等价格回归健康偏离区间（约15-20%偏离）再评估"
+          },
+          "stop_loss": {
+            "price": 209.2,
+            "pct_from_ideal": -20.76,
+            "logic": "跌破MA150则趋势破坏需止损，209.2为当前MA150下方参考位"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "中期上升趋势仍在，需观察是否能以时间换空间消化延伸后再启动"
+          }
+        }
+      ]
+    },
+    "ETN": {
+      "ticker": "ETN",
+      "analyzed_at": "2026-05-21T11:39:46.117334+00:00",
+      "source_updated_at": "2026-05-21T11:38:06.985332+00:00",
+      "framework_version": "2.0",
+      "data_snapshot": {
+        "close": 379.69,
+        "stage_label": "Stage 2 早期",
+        "pe_ttm": 37.18805,
+        "trend_buy_verdict": "near_buy"
+      },
+      "summary": {
+        "verdict_mode": "plurality",
+        "verdict": "watch",
+        "verdict_counts": {
+          "buy": 1,
+          "watch": 12,
+          "avoid": 0
+        },
+        "verdict_summary": "1 位买入、12 位观望、0 位回避（按各框架独立 verdict 计票，非加权）",
+        "ideal_price_median": 364.9,
+        "ideal_price_range": [
+          265.78,
+          385.0
+        ],
+        "key_risks": [
+          "当前PE=37.2高于行业PE=29.5，溢价明显；价格高于MA150仅4.6%不足以构成深度折价",
+          "宏观流动性数据缺失；MACD负向、RSI接近超卖、成交清淡，无法确认有效突破",
+          "RSI31.9接近超卖，MACD负向但收窄，均线多头但 slope 缓，赔率偏低",
+          "TAM已成熟业务为主，渗透率已高，缺乏颠覆性创新催化，难以满足<5%渗透率标准"
+        ]
+      },
+      "framework_scores": [
+        {
+          "investor": "Buffett",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "护城河稳固但工业周期性削弱定价权，PE溢价26%需等待更优价格",
+          "concern": "RSI超卖MACD负向，短期技术面偏弱；护城河需10年以上验证",
+          "entry": {
+            "ideal_price": 364.9,
+            "max_chase_price": 370.0,
+            "trigger_condition": "价格站稳MA150且RSI回升至50上方",
+            "note": "等待均线支撑确认"
+          },
+          "stop_loss": {
+            "price": 334.02,
+            "pct_from_ideal": -8.46,
+            "logic": "止损位设于前期支撑区下方，容8.5%亏损，仅在护城河受损时触发止损"
+          },
+          "holding_period": {
+            "range": "3-5年",
+            "rationale": "工业周期复苏+电气化长期驱动需3-5年验证护城河可持续性"
+          }
+        },
+        {
+          "investor": "Klarman",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "PE溢价行业37%但成长16.8%，股价未达30%安全边际，RSI超卖或有机会但缺深度折价",
+          "concern": "当前PE=37.2高于行业PE=29.5，溢价明显；价格高于MA150仅4.6%不足以构成深度折价",
+          "entry": {
+            "ideal_price": 265.78,
+            "max_chase_price": 300.0,
+            "trigger_condition": "等待股价回落至理想买入区间265-300美元，PE回落至25-28倍区间",
+            "note": "按PE 25倍、行业平均估值、安全边际40%计算"
+          },
+          "stop_loss": {
+            "price": 244.52,
+            "pct_from_ideal": 25.6,
+            "logic": "前_stage_2起涨点止损参考334.02，跌破MA200(361.77)需警惕"
+          },
+          "holding_period": {
+            "range": "6-12个月",
+            "rationale": "等待估值消化和电气化需求催化剂落地(2026-08财报)，需见到PE回落至25-28倍区间方可建仓"
+          }
+        },
+        {
+          "investor": "Marks",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "RSI超卖释放恐慌，但PE溢价行业均值26%，需等待更好的赔率",
+          "concern": "MACD仍负且RSI继续恶化可能下破MA150支撑",
+          "entry": {
+            "ideal_price": 354.37,
+            "max_chase_price": 379.69,
+            "trigger_condition": "RSI回升至40以上且站稳MA150",
+            "note": "等待价格回落至MA150附近或RSI转强信号"
+          },
+          "stop_loss": {
+            "price": 334.02,
+            "pct_from_ideal": -5.75,
+            "logic": "前低支撑参考，跌破MA150(362.85)且RSI持续走弱则止损"
+          },
+          "holding_period": {
+            "range": "1-3个月",
+            "rationale": "等待电气化需求催化及财报验证成长，评估RSI与MACD金叉有效性"
+          }
+        },
+        {
+          "investor": "Druckenmiller",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "利润前瞻良好但价格跌破MA50，量能不足，无明确突破信号",
+          "concern": "宏观流动性数据缺失；MACD负向、RSI接近超卖、成交清淡，无法确认有效突破",
+          "entry": {
+            "ideal_price": 370.0,
+            "max_chase_price": 385.0,
+            "trigger_condition": "价格放量突破MA50且MACD转正",
+            "note": "等待二次测试MA150支撑有效后再考虑"
+          },
+          "stop_loss": {
+            "price": 350.0,
+            "pct_from_ideal": 5.41,
+            "logic": "若股价跌破MA150(362.85)且宏观或基本面逻辑破坏，应快速砍仓止損"
+          },
+          "holding_period": {
+            "range": "3-12个月",
+            "rationale": "18个月利润前瞻仍正面，电气化需求提供长期催化剂，等待趋势确认后再拉长持有期"
+          }
+        },
+        {
+          "investor": "PTJ",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "赔率约1.55:1未达3:1标准，RSI超卖但趋势不明，需等回调或企稳",
+          "concern": "RSI31.9接近超卖，MACD负向但收窄，均线多头但 slope 缓，赔率偏低",
+          "entry": {
+            "ideal_price": 362.0,
+            "max_chase_price": 379.69,
+            "trigger_condition": "价格回落至 ma150 附近且 RSI 站上40或出现阳包阴K线",
+            "note": "等赔率改善再动手"
+          },
+          "stop_loss": {
+            "price": 334.02,
+            "pct_from_ideal": 7.73,
+            "logic": "跌破前期支撑区/止损位，不争论离场"
+          },
+          "holding_period": {
+            "range": "2-4周",
+            "rationale": "等趋势确认+赔率达标后才考虑持仓"
+          }
+        },
+        {
+          "investor": "Dalio",
+          "score": 4,
+          "verdict": "watch",
+          "key_reason": "股价在MA150上方但动能指标偏弱，需等待确认信号",
+          "concern": "PE 37.2高于行业均值，需确认增长持续性",
+          "entry": {
+            "ideal_price": 375.0,
+            "max_chase_price": 382.0,
+            "trigger_condition": "价格在MA150上方企稳，RSI回升至40以上",
+            "note": "分批建仓，首次建仓30%，等待回调至均线支撑"
+          },
+          "stop_loss": {
+            "price": 355.0,
+            "pct_from_ideal": 5.33,
+            "logic": "跌破MA150且RSI持续低于35时止损，MA150为关键支撑"
+          },
+          "holding_period": {
+            "range": "6-12个月",
+            "rationale": "工业周期股需等待需求旺季验证，分析师目标450意味着约18%空间，适合中期持有"
+          }
+        },
+        {
+          "investor": "Cathie Wood",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "ETN属传统工业公司，主营电气化和液压业务，非颠覆性创新平台，不符合高增长框架",
+          "concern": "TAM已成熟业务为主，渗透率已高，缺乏颠覆性创新催化，难以满足<5%渗透率标准",
+          "entry": {
+            "ideal_price": 375.0,
+            "max_chase_price": 385.0,
+            "trigger_condition": "等待股价站稳MA150且RSI回升至40上方确认趋势反转",
+            "note": "技术面有金叉但基本面不符合框架要求"
+          },
+          "stop_loss": {
+            "price": 360.0,
+            "pct_from_ideal": 4.0,
+            "logic": "若跌破MA200(361.77)则趋势转弱，应严格止损"
+          },
+          "holding_period": {
+            "range": "1-2季度",
+            "rationale": "等待2026年8月财报验证电气化业务增长，同时观察是否符合框架要求"
+          }
+        },
+        {
+          "investor": "Ackman",
+          "score": 4,
+          "verdict": "buy",
+          "key_reason": "工业龙头高壁垒，电气化转型受益明确，财报催化剂临近，目标价距现价19%。",
+          "concern": "PE 37倍高于行业30倍，估值溢价需财报确认增长逻辑。",
+          "entry": {
+            "ideal_price": 367.0,
+            "max_chase_price": 390.0,
+            "trigger_condition": "price>367.45",
+            "note": "突破MA150后回踩确认企稳"
+          },
+          "stop_loss": {
+            "price": 348.0,
+            "pct_from_ideal": -5.18,
+            "logic": "前低支撑附近，跌破MA200支撑区间则止损"
+          },
+          "holding_period": {
+            "range": "6-12个月",
+            "rationale": "等待2026年8月财报验证电气化增长，估值有压缩空间"
+          }
+        },
+        {
+          "investor": "Burry",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "PE高于行业且P/FCF约55.7，无明显清算价值保护，非极度逆向",
+          "concern": "当前估值偏高，市场未见显著厌恶理由，安全边际不足",
+          "entry": {
+            "ideal_price": 330.0,
+            "max_chase_price": 350.0,
+            "trigger_condition": "RSI<30且出现明确恐慌抛售",
+            "note": "等待市场过度反应导致股价接近清算价值区间"
+          },
+          "stop_loss": {
+            "price": 315.0,
+            "pct_from_ideal": 4.55,
+            "logic": "若误读被证伪（如业绩指引大幅下调或行业结构性恶化）则止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "验证市场对公司厌恶理由是否成立，等待估值回归合理区间"
+          }
+        },
+        {
+          "investor": "Asness",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "质量因子突出(高毛利、FCF稳健)，价值与价格略偏离，等待动量修复",
+          "concern": "PE溢价偏高，RSI超卖，动量指标偏弱，需等待趋势明确",
+          "entry": {
+            "ideal_price": 385.0,
+            "max_chase_price": 395.0,
+            "trigger_condition": "RSI站上40且MA150走陡",
+            "note": "等待价格站稳MA150后回调至均线附近再入"
+          },
+          "stop_loss": {
+            "price": 350.0,
+            "pct_from_ideal": -9.09,
+            "logic": "基于MA200下方关键支撑，跌破MA200(361.77)需止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待Q2财报验证电气化需求，估值修复需时间"
+          }
+        },
+        {
+          "investor": "Greenblatt",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "营收增长16.8%且FCF充足，ROE良好，但缺少Greenblatt核心EBIT/EV数据",
+          "concern": "无法精确计算收益率和ROIC排名，建议补充完整财务数据后再评估",
+          "entry": {
+            "ideal_price": 365.0,
+            "max_chase_price": 380.0,
+            "trigger_condition": "股价回落至ma150(362.85)附近且企稳",
+            "note": "等待更明确的筑底信号"
+          },
+          "stop_loss": {
+            "price": 355.0,
+            "pct_from_ideal": 2.74,
+            "logic": "若跌破ma150且企稳，视为趋势转弱，止损保护资本"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "Greenblatt持股周期通常中长线，需等待财报确认盈利能力改善"
+          }
+        },
+        {
+          "investor": "Loeb",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "估值溢价缺乏分拆催化剂，RSI超卖提供潜在入场窗口",
+          "concern": "未提供回购/分拆计划及管理层资本配置记录，无法验证activist催化剂",
+          "entry": {
+            "ideal_price": 340.0,
+            "max_chase_price": 360.0,
+            "trigger_condition": "价格回落至MA150下方且 RSI回升至40上方",
+            "note": "等待比现价更优的折扣位置"
+          },
+          "stop_loss": {
+            "price": 334.02,
+            "pct_from_ideal": 1.75,
+            "logic": "跌破Stage2支撑参考且低于MA200，距理想价不足2%"
+          },
+          "holding_period": {
+            "range": "6-12个月",
+            "rationale": "等待估值回归合理区间或出现明确资本配置催化剂"
+          }
+        },
+        {
+          "investor": "Weinstein",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "Stage2早期，价格>MA150但量能弱RSI偏低，需等买点确认",
+          "concern": "成交量低于均值，RSI接近超卖，相对强度不足，MA150斜率平缓",
+          "entry": {
+            "ideal_price": 362.85,
+            "max_chase_price": 387.87,
+            "trigger_condition": "价格站上MA150且RSI回升至40以上，MACD金叉确认",
+            "note": "当前价379.69已高于理想价，可等待回踩MA150或突破MA50后介入"
+          },
+          "stop_loss": {
+            "price": 334.02,
+            "pct_from_ideal": -7.93,
+            "logic": "跌破MA150约8%或明确进入Stage3/4时止损"
+          },
+          "holding_period": {
+            "range": "4-8周",
+            "rationale": "Stage2早期需时间积蓄动能，等待财报刺激或量价配合突破"
+          }
+        }
+      ]
+    },
+    "ANET": {
+      "ticker": "ANET",
+      "analyzed_at": "2026-05-21T11:42:00.017154+00:00",
+      "source_updated_at": "2026-05-21T11:38:06.985332+00:00",
+      "framework_version": "2.0",
+      "data_snapshot": {
+        "close": 140.49,
+        "stage_label": "Stage 1",
+        "pe_ttm": 48.27835,
+        "trend_buy_verdict": "near_buy"
+      },
+      "summary": {
+        "verdict_mode": "plurality",
+        "verdict": "watch",
+        "verdict_counts": {
+          "buy": 5,
+          "watch": 7,
+          "avoid": 1
+        },
+        "verdict_summary": "5 位买入、7 位观望、1 位回避（按各框架独立 verdict 计票，非加权）",
+        "ideal_price_median": 138.0,
+        "ideal_price_range": [
+          129.25,
+          170.0
+        ],
+        "key_risks": [
+          "业务属存量替换非新市场开拓， TAM有限，不符合Cathie Wood颠覆+早期渗透+成本曲线框架",
+          "当前price<ma50<ma150，MA150走平，量能萎缩(0.78)，RSI超卖但未现反转确认",
+          "PE48倍高于行业39倍，未达30-50%安全边际标准",
+          "无EBIT和ROIC数据，无法精确计算收益率和资本回报率，建议获取完整财报后重新评估"
+        ]
+      },
+      "framework_scores": [
+        {
+          "investor": "Buffett",
+          "score": 4,
+          "verdict": "watch",
+          "key_reason": "护城河强（毛利率63.5%），FCF质量好，增长35%持续，估值略高于行业但合理。",
+          "concern": "PE 48倍略超行业1.5x，需等待更合理价位或确认护城河持续性。",
+          "entry": {
+            "ideal_price": 170.0,
+            "max_chase_price": 180.0,
+            "trigger_condition": "股价站上MA150并企稳，或RSI回升至40以上确认底部",
+            "note": "等待回调至MA150附近（~139）或以下分批建仓"
+          },
+          "stop_loss": {
+            "price": 127.83,
+            "pct_from_ideal": -24.81,
+            "logic": "基于前低支撑，跌破127.83视为护城河或基本面可能生变的信号"
+          },
+          "holding_period": {
+            "range": "2-3年",
+            "rationale": "网络设备赛道长周期，护城河需时间验证，高成长消化估值"
+          }
+        },
+        {
+          "investor": "Klarman",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "分析师强推但PE溢价24%，需等深度折价",
+          "concern": "PE48倍高于行业39倍，未达30-50%安全边际标准",
+          "entry": {
+            "ideal_price": 132.37,
+            "max_chase_price": 150.0,
+            "trigger_condition": "价格回落至MA150(138.94)附近企稳且RSI回升至30以上",
+            "note": "等财报前回调或筑底确认"
+          },
+          "stop_loss": {
+            "price": 127.83,
+            "pct_from_ideal": -3.43,
+            "logic": "前低支撑位，跌破则趋势破坏"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等2026-08财报催化剂释放，期间观察趋势底部形成"
+          }
+        },
+        {
+          "investor": "Marks",
+          "score": 5,
+          "verdict": "buy",
+          "key_reason": "RSI仅22.5极度超卖，MACD负向收窄，均线筑底结构，逆向买点明确",
+          "concern": "PE48倍高于行业，需业绩持续验证高增长逻辑",
+          "entry": {
+            "ideal_price": 138.0,
+            "max_chase_price": 145.0,
+            "trigger_condition": "RSI回升至30以上或价格站稳MA150并放量突破MA50",
+            "note": "等待MACD金叉确认或价格收复MA50后入场"
+          },
+          "stop_loss": {
+            "price": 127.83,
+            "pct_from_ideal": -7.37,
+            "logic": "前低附近，跌破MA200且RSI无法恢复时止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "数据中心网络升级周期持续，财报密集催化，等待估值修复至目标价区间"
+          }
+        },
+        {
+          "investor": "Druckenmiller",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "业绩增长强劲(营收+35%)，但宏观流动性紧缩&技术面无放量突破信号",
+          "concern": "当前price<ma50<ma150，MA150走平，量能萎缩(0.78)，RSI超卖但未现反转确认",
+          "entry": {
+            "ideal_price": 145.0,
+            "max_chase_price": 150.0,
+            "trigger_condition": "放量突破ma50且站稳，同时macd转正",
+            "note": " 等MACD金叉或价格突破146.46后回踩确认再入场"
+          },
+          "stop_loss": {
+            "price": 127.83,
+            "pct_from_ideal": -11.84,
+            "logic": "Druckenmiller快刀斩乱麻：若宏观转弱或个股放量跌破127.83立即砍仓"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待18个月利润前景确认+技术面趋势反转配合；若财报出彩且AI数据中心需求持续，可能在3-6个月内启动主升浪"
+          }
+        },
+        {
+          "investor": "PTJ",
+          "score": 4,
+          "verdict": "watch",
+          "key_reason": "RSI极度超卖、MACD收窄、接近均线支撑，基本面强劲但等待趋势确认",
+          "concern": "PE48倍高于行业、MACD仍为负、下行需守127.83止损",
+          "entry": {
+            "ideal_price": 146.5,
+            "max_chase_price": 150.0,
+            "trigger_condition": "价格突破MA50(146.46)且成交量放大，或RSI回升至30以上",
+            "note": "等待K线收盘确认突破有效性"
+          },
+          "stop_loss": {
+            "price": 127.83,
+            "pct_from_ideal": -12.75,
+            "logic": " Weinstein Stage1止损位，跌破MA150/200支撑区域后考验此位置"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "数据中心网络升级趋势明确，需等待财报验证增长持续性，目标看向前高或分析师目标188"
+          }
+        },
+        {
+          "investor": "Dalio",
+          "score": 4,
+          "verdict": "buy",
+          "key_reason": "宏观顺周期资产，数据中心网络升级需求强劲，技术面超卖筑底，基本面高增长高盈利",
+          "concern": "PE高于行业，估值偏高；需等多头信号确认",
+          "entry": {
+            "ideal_price": 138.0,
+            "max_chase_price": 148.0,
+            "trigger_condition": "MACD金叉或突破MA200后回踩确认",
+            "note": "分批建仓，首次40%，回踩MA150加30%，突破MA200加30%"
+          },
+          "stop_loss": {
+            "price": 127.83,
+            "pct_from_ideal": -7.37,
+            "logic": "Dalio框架下，跌破前期低点且宏观周期切换不利时止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "数据中心网络升级周期持续，AI驱动的资本开支扩张为中长期利好，等待下一个财报季验证增长持续性"
+          }
+        },
+        {
+          "investor": "Cathie Wood",
+          "score": 1,
+          "verdict": "avoid",
+          "key_reason": "Aresta属成熟数据中心网络市场，非颠覆性创新，渗透率已高非早期",
+          "concern": "业务属存量替换非新市场开拓， TAM有限，不符合Cathie Wood颠覆+早期渗透+成本曲线框架",
+          "entry": {
+            "ideal_price": 129.25,
+            "max_chase_price": 140.49,
+            "trigger_condition": "None",
+            "note": "部分价格由现价推算；不符合ARK投资标准，不建议买入"
+          },
+          "stop_loss": {
+            "price": 119.42,
+            "pct_from_ideal": -7.61,
+            "logic": "None"
+          },
+          "holding_period": {
+            "range": "None",
+            "rationale": "None"
+          }
+        },
+        {
+          "investor": "Ackman",
+          "score": 4,
+          "verdict": "watch",
+          "key_reason": "高成长+高壁垒，但PE48偏高需等回调，催化剂明确在2026Q2财报",
+          "concern": "PE48高于行业40%，当前价格安全边际不足，需等更低估值或催化剂确认",
+          "entry": {
+            "ideal_price": 130.0,
+            "max_chase_price": 150.0,
+            "trigger_condition": "RSI回升至30以上且站上MA150，或接近127.83支撑出现反转K线",
+            "note": "等待财报前低吸机会"
+          },
+          "stop_loss": {
+            "price": 125.0,
+            "pct_from_ideal": 3.85,
+            "logic": "若跌破127.83前低或催化剂落空则止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等2026-08财报催化剂验证，，目标价188距当前约34%空间"
+          }
+        },
+        {
+          "investor": "Burry",
+          "score": 4,
+          "verdict": "buy",
+          "key_reason": "RSI仅22.5极度超卖，市场过度反应短期波动；FCF收益率有支撑，分析师强买目标价188",
+          "concern": "PE48倍高于行业，若AI资本支出放缓可能承压；需财报验证成长可持续性",
+          "entry": {
+            "ideal_price": 138.0,
+            "max_chase_price": 146.0,
+            "trigger_condition": "RSI站上30或价格站上MA50企稳",
+            "note": "贴近MA150支撑区，赔率有利"
+          },
+          "stop_loss": {
+            "price": 127.83,
+            "pct_from_ideal": -7.37,
+            "logic": "跌破MA200确认下行趋势，损失接近10%则趋势破坏应退出"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等财报兑现成长+估值修复至目标价188，催化剂为数据中心升级需求持续"
+          }
+        },
+        {
+          "investor": "Asness",
+          "score": 4,
+          "verdict": "buy",
+          "key_reason": "收入增长35%强劲、毛利率63%优质、RSI极度超卖接近买点",
+          "concern": "PE 48倍高于行业39倍，短期技术面超卖",
+          "entry": {
+            "ideal_price": 138.0,
+            "max_chase_price": 145.0,
+            "trigger_condition": "价格稳定于MA150上方且RSI回升至30以上",
+            "note": "等待价格确认企稳后再入场"
+          },
+          "stop_loss": {
+            "price": 130.0,
+            "pct_from_ideal": -5.8,
+            "logic": "Asness框架下基本面强劲但技术面超卖，若跌破130则趋势破坏需止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "优质成长股：收入高增长+高毛利+技术面接近支撑，3-6个月可以等待估值修复"
+          }
+        },
+        {
+          "investor": "Greenblatt",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "高增长+高毛利+正FCF，基本面强劲；但缺EBIT/EV数据无法完整Greenblatt评分",
+          "concern": "无EBIT和ROIC数据，无法精确计算收益率和资本回报率，建议获取完整财报后重新评估",
+          "entry": {
+            "ideal_price": 130.0,
+            "max_chase_price": 145.0,
+            "trigger_condition": "等待EBIT/EV数据确认，若收益率排名靠前且股价低于145美元可考虑建仓",
+            "note": "技术面RSI22.56超卖，存在反弹可能，需配合基本面数据决策"
+          },
+          "stop_loss": {
+            "price": 120.0,
+            "pct_from_ideal": 7.69,
+            "logic": "若股价跌破120美元支撑，可能进入更大级别调整，需严格止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "Greenblatt侧重中期价值发现，需等待财报确认EBIT/EV和ROIC表现，3-6个月可验证基本面变化"
+          }
+        },
+        {
+          "investor": "Loeb",
+          "score": 4,
+          "verdict": "buy",
+          "key_reason": "价值合理+技术超卖+分析师强买，分拆回购催化剂可期",
+          "concern": "估值PE48高于行业38，机构持仓集中或有抛压",
+          "entry": {
+            "ideal_price": 142.0,
+            "max_chase_price": 148.0,
+            "trigger_condition": "价格站上MA150且RSI回升至30以上，或回踩MA150不破",
+            "note": "公司FCF丰沛具回购能力，数据中心升级需求支撑成长"
+          },
+          "stop_loss": {
+            "price": 127.83,
+            "pct_from_ideal": -9.98,
+            "logic": "Loeb框架下跌破MA150支撑且RSI持续疲软则止损，127.83为近期平台低点"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待财报印证数据中心需求动能，催化剂释放后分拆/回购预期推升估值"
+          }
+        },
+        {
+          "investor": "Weinstein",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "Stage1底部整固，MA150向上但角度平缓，RSI22.5极度超卖需等待反弹确认",
+          "concern": "RSI极低且MACD仍为负，量能萎缩，需等价格站上MA50或RSI回升至40以上确认",
+          "entry": {
+            "ideal_price": 139.0,
+            "max_chase_price": 146.0,
+            "trigger_condition": "价格站上MA50(146.46)并企稳，或RSI回升至40以上配合放量突破",
+            "note": "买点A候选：价格贴近MA150，属于低位筑底区域"
+          },
+          "stop_loss": {
+            "price": 127.83,
+            "pct_from_ideal": -8.04,
+            "logic": "MA150临界位跌破则确认进入Stage3/4，需严格止损"
+          },
+          "holding_period": {
+            "range": "4-8周",
+            "rationale": "等待财报催化+趋势确认，Stage2形成后中线持有"
+          }
+        }
+      ]
+    },
+    "IREN": {
+      "ticker": "IREN",
+      "analyzed_at": "2026-05-21T11:47:13.823108+00:00",
+      "source_updated_at": "2026-05-21T11:38:06.985332+00:00",
+      "framework_version": "2.0",
+      "data_snapshot": {
+        "close": 52.71,
+        "stage_label": "Stage 2 早期",
+        "pe_ttm": 68.454544,
+        "trend_buy_verdict": "near_buy"
+      },
+      "summary": {
+        "verdict_mode": "plurality",
+        "verdict": "watch",
+        "verdict_counts": {
+          "buy": 0,
+          "watch": 10,
+          "avoid": 3
+        },
+        "verdict_summary": "0 位买入、10 位观望、3 位回避（按各框架独立 verdict 计票，非加权）",
+        "ideal_price_median": 49.0,
+        "ideal_price_range": [
+          38.0,
+          52.71
+        ],
+        "key_risks": [
+          "FCF为负23亿、收入零增长、PE=68.5远高于行业29.5，基本面与高估值不匹配",
+          "FCF持续为负、营收增长停滞、估值脱离基本面支撑",
+          "目标价75美元看似42%空间，但当前PE已过度反映；需等深度回调或业绩验证",
+          "无宏观流动性数据，PE 68倍vs行业30倍，零收入增长，MA150斜率仅0.5%"
+        ]
+      },
+      "framework_scores": [
+        {
+          "investor": "Buffett",
+          "score": 2,
+          "verdict": "avoid",
+          "key_reason": "营收零增长、FCF巨亏、PE高达68倍无护城河迹象",
+          "concern": "FCF持续为负、营收增长停滞、估值脱离基本面支撑",
+          "entry": {
+            "ideal_price": 42.0,
+            "max_chase_price": 52.71,
+            "trigger_condition": "等待FCF转正或营收恢复增长后再评估",
+            "note": "当前不符合买入标准"
+          },
+          "stop_loss": {
+            "price": 38.64,
+            "pct_from_ideal": 4.37,
+            "logic": "如基本面恶化或股价跌破近期支撑位则止损"
+          },
+          "holding_period": {
+            "range": "观望",
+            "rationale": "需验证业务改善和FCF转正后方可考虑"
+          }
+        },
+        {
+          "investor": "Klarman",
+          "score": 2,
+          "verdict": "avoid",
+          "key_reason": "PE是对手公司2.3倍，缺乏安全边际；FCF巨负23亿，营收零增长，下行风险大",
+          "concern": "目标价75美元看似42%空间，但当前PE已过度反映；需等深度回调或业绩验证",
+          "entry": {
+            "ideal_price": 38.0,
+            "max_chase_price": 43.0,
+            "trigger_condition": "PE回落至40以下且出现显著回调",
+            "note": "等待PE回归合理区间再考虑"
+          },
+          "stop_loss": {
+            "price": 34.96,
+            "pct_from_ideal": 15.34,
+            "logic": "前低支撑区间，跌破MA200需止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待FY26财报验证数字资产需求是否释放，若FCF转正且PE回落至40倍以下， Klarman框架下才算具备深度折价"
+          }
+        },
+        {
+          "investor": "Marks",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "技术面金叉但基本面营收/FCF承压，估值偏离行业均值过大",
+          "concern": "PE 68倍vs行业30倍，营收增长停滞且连续两季大幅下滑，FCF为负",
+          "entry": {
+            "ideal_price": 49.0,
+            "max_chase_price": 55.0,
+            "trigger_condition": "等待回调至MA150附近或突破前高验证动能",
+            "note": "当前 price/ideal=1.08 属略追涨，非最佳逆向买点"
+          },
+          "stop_loss": {
+            "price": 43.83,
+            "pct_from_ideal": 10.55,
+            "logic": "前低支撑下方，跌破MA200及前波平台止损"
+          },
+          "holding_period": {
+            "range": "4-8周",
+            "rationale": "观察Q2财报是否验证28%增长预期，若数字资产需求催化剂兑现则持有，否则考虑退出"
+          }
+        },
+        {
+          "investor": "Druckenmiller",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "价格突破MA150但量能不足(0.83)，且FCF巨额为负，18个月利润前瞻存疑",
+          "concern": "无宏观流动性数据，PE 68倍vs行业30倍，零收入增长，MA150斜率仅0.5%",
+          "entry": {
+            "ideal_price": 52.71,
+            "max_chase_price": 55.35,
+            "trigger_condition": "放量突破55美元且站稳，同时成交量>1.2倍MA20",
+            "note": "等财报后确认增长逻辑"
+          },
+          "stop_loss": {
+            "price": 43.83,
+            "pct_from_ideal": -16.84,
+            "logic": "跌破MA200且宏观转弱或FCF持续恶化则砍仓"
+          },
+          "holding_period": {
+            "range": "1-3个月",
+            "rationale": "等5月财报验证数字资产需求逻辑，若量价配合可持有至MA200向上发散"
+          }
+        },
+        {
+          "investor": "PTJ",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "趋势偏多但估值风险突出:PE=68.5远高于行业PE=29.5，FCF为负，收入增长停滞",
+          "concern": "高估值+负FCF+近期收入负增长，基本面不支持重仓；MA150斜率仅0.5%趋势不强",
+          "entry": {
+            "ideal_price": 52.0,
+            "max_chase_price": 55.0,
+            "trigger_condition": "等待股价站稳MA150上方且RSI突破60或出现放量阳线确认趋势",
+            "note": "金叉后12日需观察能否有效突破当前整理区"
+          },
+          "stop_loss": {
+            "price": 43.83,
+            "pct_from_ideal": 15.67,
+            "logic": "跌破MA200(44.37)下方支撑区，触发 Weinstein Stage 2 买点A止损参考43.83"
+          },
+          "holding_period": {
+            "range": "4-8周",
+            "rationale": "等5月中旬财报催化剂释放，若数字资产需求超预期可能启动趋势；若不及预期需及时退出"
+          }
+        },
+        {
+          "investor": "Dalio",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "AI数据中心主题有宏观顺风，但营收增速归零、FCF巨亏、高PE难支撑",
+          "concern": "PE 68远高行业30、营收连续两季下滑20%+、FCF负231亿，估值与基本面背离",
+          "entry": {
+            "ideal_price": 52.71,
+            "max_chase_price": 58.0,
+            "trigger_condition": "等待5/8财报后需求验证，若营收恢复正增长且FCF收窄再考虑",
+            "note": "当前仅技术面突破均线，但基本面尚未确认周期拐点"
+          },
+          "stop_loss": {
+            "price": 43.83,
+            "pct_from_ideal": -16.84,
+            "logic": "前波低点附近，跌破MA200且脱离健康区则止损"
+          },
+          "holding_period": {
+            "range": "1-3个月",
+            "rationale": "等待宏观周期切换至降息/信贷宽松阶段，同时验证AI数据中心需求落地"
+          }
+        },
+        {
+          "investor": "Cathie Wood",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "数字资产挖矿非核心颠覆平台，TAM受限于比特币生态，渗透率难量化",
+          "concern": "PE高达68倍、FCF为-23亿且收入增长停滞，Wright成本曲线优势不明确；MA150走平显示动能不足",
+          "entry": {
+            "ideal_price": 47.64,
+            "max_chase_price": 52.71,
+            "trigger_condition": "价格回落至MA150附近且成交量放大可考虑分批建仓",
+            "note": "需确认比特币价格趋势及公司成本优势能否持续扩大"
+          },
+          "stop_loss": {
+            "price": 43.83,
+            "pct_from_ideal": 7.99,
+            "logic": "跌破MA200或MA150下拐时止损；若比特币跌破关键支撑需同步评估"
+          },
+          "holding_period": {
+            "range": "3-12个月",
+            "rationale": "加密货币监管政策明朗化需时间，挖矿行业成本竞争格局尚未定局，适合中线观察而非长线持有"
+          }
+        },
+        {
+          "investor": "Ackman",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "高估值(PE68xvs行业29.5x)且FCF持续为负，需等财报验证数字资产需求复苏逻辑",
+          "concern": "PE远高于行业平均，负FCF持续，基本面高估但增长逻辑待验证",
+          "entry": {
+            "ideal_price": 45.0,
+            "max_chase_price": 50.0,
+            "trigger_condition": "跌破MA200=44.37至该水平附近出现止跌信号，且成交量放大",
+            "note": "等待更悲观预期计入后再考虑"
+          },
+          "stop_loss": {
+            "price": 43.83,
+            "pct_from_ideal": -2.6,
+            "logic": "跌破MA200且幅度达到8.4%时止损，视为催化剂落空或下跌趋势延续"
+          },
+          "holding_period": {
+            "range": "1-3个月",
+            "rationale": "等2026-05-08财报催化剂，若数字资产需求无实质改善则卖出；若EBITDA转正或订单突破可考虑持有至目标价75美元"
+          }
+        },
+        {
+          "investor": "Burry",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "股价今日大涨10%后缺乏深度逆向空间，非典型Burry左侧布局点",
+          "concern": "FCF负23亿美元且PE达68倍行业最高，基本面存现金消耗风险",
+          "entry": {
+            "ideal_price": 52.71,
+            "max_chase_price": 52.71,
+            "trigger_condition": "等待FCF转正或PE回落至40倍以下再评估",
+            "note": "当前技术面偏多但基本面现金流转负，非逆向买入窗口"
+          },
+          "stop_loss": {
+            "price": 43.83,
+            "pct_from_ideal": 16.85,
+            "logic": "技术面破MA200或FCF持续恶化则止损"
+          },
+          "holding_period": {
+            "range": "1-3季度",
+            "rationale": "等待财报验证现金流改善或市场重新定价"
+          }
+        },
+        {
+          "investor": "Asness",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "动量略强但价值因子极差(PE 68.5 vs 行业30)，质量因子因负FCF受损，四因子不均衡",
+          "concern": "PE高达68倍且FCF为-23亿，价值与质量因子显著承压；近期营收增速转负",
+          "entry": {
+            "ideal_price": 50.0,
+            "max_chase_price": 55.0,
+            "trigger_condition": "价格回落至MA150(47.64)附近获得支撑且企稳",
+            "note": "等待更高确定性的回调买入机会而非追高"
+          },
+          "stop_loss": {
+            "price": 43.83,
+            "pct_from_ideal": -12.34,
+            "logic": "前期支撑区间下沿，若失守则趋势破坏触发系统性止损"
+          },
+          "holding_period": {
+            "range": "4-8周",
+            "rationale": "动量信号偏多但基本面存隐忧，中期持有观察财报与FCF拐点"
+          }
+        },
+        {
+          "investor": "Greenblatt",
+          "score": 1,
+          "verdict": "avoid",
+          "key_reason": "缺少EBIT和ROIC核心数据，无法计算收益率和ROIC，不符合Greenblatt框架评估基础",
+          "concern": "FCF为负23亿、收入零增长、PE=68.5远高于行业29.5，基本面与高估值不匹配",
+          "entry": {
+            "ideal_price": 48.49,
+            "max_chase_price": 52.71,
+            "trigger_condition": "None",
+            "note": "部分价格由现价推算；无EBIT数据无法计算EBIT/EV收益率，暂不符合Greenblatt买入条件"
+          },
+          "stop_loss": {
+            "price": 44.8,
+            "pct_from_ideal": -7.61,
+            "logic": "因无法计算关键指标，不设Greenblatt框架止损"
+          },
+          "holding_period": {
+            "range": "None",
+            "rationale": "数据不足无法评估"
+          }
+        },
+        {
+          "investor": "Loeb",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "PE 68倍vs行业30倍严重高估，负FCF无资本配置优化，分拆催化剂缺失",
+          "concern": "高估值无增长支撑，基本面不支持激进催化，MA150走平动能不足",
+          "entry": {
+            "ideal_price": 48.5,
+            "max_chase_price": 52.71,
+            "trigger_condition": "等待估值修复至PE<45或出现明确分拆/回购催化剂",
+            "note": "当前估值无法满足Loeb买入标准"
+          },
+          "stop_loss": {
+            "price": 43.83,
+            "pct_from_ideal": 9.62,
+            "logic": "前低支撑参考Weinstein Stage 2止损位，需严格控制风险"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待财报验证数字资产需求催化，或估值回调至合理区间再评估"
+          }
+        },
+        {
+          "investor": "Weinstein",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "Stage2早期+均线健康+RSI中性，MA150略上翘但基本面存忧（PE高、FCF负、收入降）",
+          "concern": "高估值PE68.5 vs行业29.5，FCF负23亿，收入QoQ连两个月下滑，需财报验证",
+          "entry": {
+            "ideal_price": 52.0,
+            "max_chase_price": 54.85,
+            "trigger_condition": "股价回撤至MA150附近（~47.6-52）或缩量企稳后买入",
+            "note": "当前已涨10.4%需等回调，不宜追高"
+          },
+          "stop_loss": {
+            "price": 45.0,
+            "pct_from_ideal": -13.46,
+            "logic": "MA150失守或跌破MA200（44.37）将转弱，若跌破45考虑止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "MA150走平需时间验证方向，等待财报指引+量价配合确认Stage2成立"
+          }
+        }
+      ]
+    },
+    "MSFT": {
+      "ticker": "MSFT",
+      "analyzed_at": "2026-05-21T12:33:58.316938+00:00",
+      "source_updated_at": "2026-05-21T11:38:06.985332+00:00",
+      "framework_version": "2.0",
+      "data_snapshot": {
+        "close": 421.06,
+        "stage_label": "Stage 1",
+        "pe_ttm": 25.063097,
+        "trend_buy_verdict": "not_yet"
+      },
+      "summary": {
+        "verdict_mode": "plurality",
+        "verdict": "watch",
+        "verdict_counts": {
+          "buy": 4,
+          "watch": 9,
+          "avoid": 0
+        },
+        "verdict_summary": "4 位买入、9 位观望、0 位回避（按各框架独立 verdict 计票，非加权）",
+        "ideal_price_median": 415.0,
+        "ideal_price_range": [
+          370.0,
+          450.0
+        ],
+        "key_risks": [
+          "RS负向，MACD负值，需等MA150拐头向上方可考虑",
+          "公司成熟度高，缺乏渗透率<5%的颠覆业务；成本曲线已平缓，非陡降阶段",
+          "MA150下行中，死叉82日，短期均线空头排列，技术面转强需等待",
+          "价格低于下行MA150，MACD负向，死叉82日未修复，量能0.8倍低于20日均线"
+        ]
+      },
+      "framework_scores": [
+        {
+          "investor": "Buffett",
+          "score": 5,
+          "verdict": "buy",
+          "key_reason": "护城河强：Windows/Office/Azure生态+AI领先；FCF 370亿健康；毛利率68%体现强定价权；PE折价行业",
+          "concern": "短期技术面偏弱：失守MA150，但基本面仍稳固",
+          "entry": {
+            "ideal_price": 410.0,
+            "max_chase_price": 440.0,
+            "trigger_condition": "PE<行业1.5倍且FCF yield>4%",
+            "note": "当前PE=25.1仅为行业65折，FCF yield≈11.8%远超4%门槛"
+          },
+          "stop_loss": {
+            "price": 408.0,
+            "pct_from_ideal": -0.49,
+            "logic": "护城河受损才触发止损，非技术波动，本处设为接近成本保护"
+          },
+          "holding_period": {
+            "range": "3-5年",
+            "rationale": "长期持有优质股权，等待AI云服务等催化剂释放价值"
+          }
+        },
+        {
+          "investor": "Klarman",
+          "score": 4,
+          "verdict": "buy",
+          "key_reason": "PE折价35%满足安全边际，分析师目标价560有33%上涨空间，7月财报为催化剂",
+          "concern": "MA150下行、股价低于MA150，趋势尚未反转需等待均线走强",
+          "entry": {
+            "ideal_price": 408.0,
+            "max_chase_price": 440.0,
+            "trigger_condition": "MA150走平且股价稳定站上MA150，或出现放量阳线突破下降趋势",
+            "note": "当前价位高于理想价位3%，可等待回落至理想价位或突破信号出现后再介入"
+          },
+          "stop_loss": {
+            "price": 385.0,
+            "pct_from_ideal": -5.6,
+            "logic": "前低附近，若跌破MA200(460)至385以下则趋势破坏，需止损"
+          },
+          "holding_period": {
+            "range": "6-18个月",
+            "rationale": "等待财报业绩释放、AI云服务需求验证，目标是达到分析师目标价560"
+          }
+        },
+        {
+          "investor": "Marks",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "PE 25<行业38有估值优势，FCF强劲，但MA150下行且价格低于均线，趋势尚未转强",
+          "concern": "MA150下行中，死叉82日，短期均线空头排列，技术面转强需等待",
+          "entry": {
+            "ideal_price": 415.0,
+            "max_chase_price": 425.0,
+            "trigger_condition": "MA150走平或上拐，且价格站上MA150",
+            "note": "等待趋势转折确认后再考虑买入"
+          },
+          "stop_loss": {
+            "price": 398.0,
+            "pct_from_ideal": 4.1,
+            "logic": "MA50为399.82，置于其下方作为止损参考，若失守MA50可能进入更大调整"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "基本面稳健但需等待技术面趋势转强，财报催化前保持跟踪"
+          }
+        },
+        {
+          "investor": "Druckenmiller",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "宏观流动性改善支撑牛市，但股价尚未突破MA150且量能不足，需等待趋势转强",
+          "concern": "价格低于下行MA150，MACD负向，死叉82日未修复，量能0.8倍低于20日均线",
+          "entry": {
+            "ideal_price": 450.0,
+            "max_chase_price": 480.0,
+            "trigger_condition": "价格突破MA150且站稳，放量上涨确认趋势反转",
+            "note": "等待MA150走平上拐+放量突破信号"
+          },
+          "stop_loss": {
+            "price": 408.14,
+            "pct_from_ideal": -9.3,
+            "logic": "Druckenmiller强调快速砍仓：若宏观转弱或个股逻辑破裂须果断止损，当前股价低于重要均线且趋势未稳，跌破MA50支撑后需严格防守"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "18个月利润前瞻显示AI云服务驱动增长，2026年7月财报为催化剂，需等待均线多头排列确认趋势形成"
+          }
+        },
+        {
+          "investor": "PTJ",
+          "score": 4,
+          "verdict": "buy",
+          "key_reason": "赔率超10:1满足VTJ核心，股价站上MA50且MACD收窄，技术面转好迹象显现",
+          "concern": "MA150仍在下行，均线死叉82日前，短期趋势尚未完全转强",
+          "entry": {
+            "ideal_price": 415.0,
+            "max_chase_price": 421.06,
+            "trigger_condition": "价格回落至MA50附近且不破408.14止损位",
+            "note": "分批建仓，首次30%仓位"
+          },
+          "stop_loss": {
+            "price": 408.14,
+            "pct_from_ideal": -1.65,
+            "logic": "跌破MA50且创近期新低则止损，维持赔率>10:1的严格 VTJ 止损原则"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待MA150走平拐头+财报催化+AI云服务需求释放，若趋势转强可持有至MA200"
+          }
+        },
+        {
+          "investor": "Dalio",
+          "score": 4,
+          "verdict": "buy",
+          "key_reason": "降息周期前夕，科技股受益；MSFT强劲FCF与AI云业务支撑，估值合理",
+          "concern": "MA150下行趋势未扭转，需等待均线结构转强",
+          "entry": {
+            "ideal_price": 415.0,
+            "max_chase_price": 430.0,
+            "trigger_condition": "价格站稳MA150且MACD转正",
+            "note": "当前超跌区，分批建仓"
+          },
+          "stop_loss": {
+            "price": 408.0,
+            "pct_from_ideal": 1.69,
+            "logic": "MA50为短期支撑，跌破执行止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待信贷周期转向宽松的业绩兑现，MA150拐头向上为出场信号"
+          }
+        },
+        {
+          "investor": "Cathie Wood",
+          "score": 2,
+          "verdict": "watch",
+          "key_reason": "MSFT为成熟科技巨头，云/AI渗透率已高，非早期颠覆创新，不符合CW框架高成长标准",
+          "concern": "公司成熟度高，缺乏渗透率<5%的颠覆业务；成本曲线已平缓，非陡降阶段",
+          "entry": {
+            "ideal_price": 421.06,
+            "max_chase_price": 450.0,
+            "trigger_condition": "等待MA150走平上拐+成交量放大确认趋势反转",
+            "note": "仅当技术面出现明确上升趋势信号后才考虑介入"
+          },
+          "stop_loss": {
+            "price": 400.0,
+            "pct_from_ideal": -5.0,
+            "logic": "CW框架下若渗透率假设失效或技术路径证伪需止损，400为近期支撑区"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待AI云服务渗透率提升验证及财报催化剂，若未达预期需重新评估"
+          }
+        },
+        {
+          "investor": "Ackman",
+          "score": 4,
+          "verdict": "watch",
+          "key_reason": "高壁垒+AI云催化剂明确，PE25倍相对低估，合理价560目标价具33%空间",
+          "concern": "MA150仍下行趋势未确认，股价低于MA150需等待均线转强或进一步回调",
+          "entry": {
+            "ideal_price": 380.0,
+            "max_chase_price": 450.0,
+            "trigger_condition": "等待MA150拐头向上或价格回落至MA50-380区间分批建仓",
+            "note": "当前PE25倍vs行业39具备估值优势，分析师目标560若实现对应33%涨幅"
+          },
+          "stop_loss": {
+            "price": 360.0,
+            "pct_from_ideal": -5.26,
+            "logic": "跌破MA50与4月低点连线支撑，且基本面恶化或催化剂落空时执行"
+          },
+          "holding_period": {
+            "range": "6-12个月",
+            "rationale": "等待AI云服务业绩释放+2026年7月财报催化剂，趋势转强后中线持有"
+          }
+        },
+        {
+          "investor": "Burry",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "PE折价显著(25 vs 38行业)且FCF强劲，但缺乏明显市场过度厌恶催化",
+          "concern": "当前无显著逆向催化，MA150下行趋势中，需等市场情绪极端化",
+          "entry": {
+            "ideal_price": 400.0,
+            "max_chase_price": 420.0,
+            "trigger_condition": "股价进入超跌区且MA150走平或上拐",
+            "note": "等待分析师下调评级或财报不及预期导致的恐慌抛售"
+          },
+          "stop_loss": {
+            "price": 380.0,
+            "pct_from_ideal": 5.0,
+            "logic": "若误读被证伪(如AI需求证伪或核心竞争力受损)则止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待估值修复或下一个财报周期验证AI云服务增长逻辑"
+          }
+        },
+        {
+          "investor": "Asness",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "质量因子强劲(Value:PE<行业,Quality:毛利率68%++,FCF强),但动量偏弱(MA空头排列,股价<MA150)",
+          "concern": "当前均线空头排列未改,需等待MA150上拐或价格站上MA150形成动量确认",
+          "entry": {
+            "ideal_price": 430.0,
+            "max_chase_price": 445.0,
+            "trigger_condition": "价格站上MA150并企稳,或MA150开始拐头向上",
+            "note": "等待动量因子确认,不做追涨"
+          },
+          "stop_loss": {
+            "price": 400.0,
+            "pct_from_ideal": 6.98,
+            "logic": "MA50附近支撑,跌破MA50且确认有效下破则止损,保护本金"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等Q2财报释放AI云服务催化,配合均线修复,有基本面支撑可持有"
+          }
+        },
+        {
+          "investor": "Greenblatt",
+          "score": 4,
+          "verdict": "watch",
+          "key_reason": "PE低于行业均值、毛利率优秀、FCF健康、收入增长18%，但缺少EBIT/EV和ROIC关键数据",
+          "concern": "缺少EBIT/EV和ROIC数据，无法完整计算Greenblatt神奇公式排名，仅能基于估值和盈利能力指标判断",
+          "entry": {
+            "ideal_price": 420.0,
+            "max_chase_price": 445.0,
+            "trigger_condition": "等待股价站上MA150并企稳，或者在420以下分批建仓",
+            "note": "PE 25倍低于行业38倍，具备估值吸引力，需等待更多数据确认ROIC"
+          },
+          "stop_loss": {
+            "price": 390.0,
+            "pct_from_ideal": -7.14,
+            "logic": "股价若跌破MA150支撑且基本面出现恶化则止损，390为MA50附近关键支撑位"
+          },
+          "holding_period": {
+            "range": "6-12个月",
+            "rationale": "Greenblatt看重长期资本回报，需等待完整财报周期验证ROIC维持在高位，分析师目标560暗示约33%上涨空间"
+          }
+        },
+        {
+          "investor": "Loeb",
+          "score": 3,
+          "verdict": "watch",
+          "key_reason": "PE折价但缺分拆/激进催化剂，当前非最优买点",
+          "concern": "价格低于MA150且趋势向下，缺乏Loeb框架的核心催化剂",
+          "entry": {
+            "ideal_price": 370.0,
+            "max_chase_price": 400.0,
+            "trigger_condition": "MA150走平上拐且价格站上MA150",
+            "note": "等待趋势逆转后再考虑介入"
+          },
+          "stop_loss": {
+            "price": 360.0,
+            "pct_from_ideal": -2.7,
+            "logic": "若跌破360则确认下行趋势延续，触发止损"
+          },
+          "holding_period": {
+            "range": "3-6个月",
+            "rationale": "等待分拆/资本配置催化剂或技术面转强"
+          }
+        },
+        {
+          "investor": "Weinstein",
+          "score": 1,
+          "verdict": "watch",
+          "key_reason": "Stage1等待区，MA150下行，价格低于MA150，尚未形成上升趋势",
+          "concern": "RS负向，MACD负值，需等MA150拐头向上方可考虑",
+          "entry": {
+            "ideal_price": 443.57,
+            "max_chase_price": 450.0,
+            "trigger_condition": "价格站上MA150且MA150走平上拐",
+            "note": "需等待均线结构转强，MA50上穿MA150形成金叉"
+          },
+          "stop_loss": {
+            "price": 408.14,
+            "pct_from_ideal": -7.99,
+            "logic": " Weinstein框架要求跌破MA150或进入Stage3/4时离场，408.14为前期支撑参考位"
+          },
+          "holding_period": {
+            "range": "4-8周",
+            "rationale": " Stage1过渡期较长，需等待趋势转折信号确认后再评估持有期"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -21,10 +21,13 @@ from web.services.x_brief_renderer import (
     load_latest_view,
     persist_outputs,
 )
-from web.pages.wheel.style_profiles import STYLE_PROFILES
-from web.pages.wheel.strategy_shared import rsi
+from web.wheel_style_profiles import STYLE_PROFILES
+from web.wheel_strategy_shared import rsi
 from web.services.dashboard_llm import build_llm_config
 from web.services.strategy_api_service import answer_lrs_question, get_lrs_doc_markdown
+from web.services import investor_framework_service as ifs
+from web.services import stock_tracker_service as st
+from web.services import trading_agents_service as ta
 
 
 DEFAULT_SESSION_STATE: dict[str, Any] = {
@@ -397,4 +400,85 @@ def refresh_x_brief(days: int = 7, per_account_limit: int = 80) -> dict[str, Any
     payload["overview"] = overview
 
     return persist_outputs(payload, tweet_md, analysis_md, modules=modules)
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# 个股追踪 service 函数
+# ──────────────────────────────────────────────────────────────────────────────
+
+def get_stock_tracker_latest() -> dict[str, Any]:
+    return st.load_latest()
+
+
+def create_stock_tracker_refresh_job() -> dict[str, Any]:
+    job = st.create_refresh_job()
+    return {
+        "job_id": job.job_id,
+        "status": job.status,
+        "created_at": job.created_at,
+        "progress": job.progress,
+    }
+
+
+def get_stock_tracker_job(job_id: str) -> dict[str, Any] | None:
+    job = st.get_tracker_job(job_id)
+    if job is None:
+        return None
+    return {
+        "job_id": job.job_id,
+        "status": job.status,
+        "created_at": job.created_at,
+        "updated_at": job.updated_at,
+        "progress": job.progress,
+        "result": job.result,
+        "error": job.error,
+    }
+
+
+def get_stock_tracker_chart(ticker: str) -> bytes | None:
+    return st.get_chart_png(ticker.upper())
+
+
+def get_investor_analysis_cached(ticker: str) -> dict[str, Any] | None:
+    return ifs.get_investor_analysis(ticker)
+
+
+def create_investor_analysis_job(ticker: str, mode: str = "quick") -> dict[str, Any]:
+    job = ifs.create_investor_analysis_job(ticker, mode=mode)
+    return ifs.serialize_investor_job(job)
+
+
+def get_investor_analysis_job(job_id: str) -> dict[str, Any] | None:
+    job = ifs.get_investor_job(job_id)
+    if job is None:
+        return None
+    return ifs.serialize_investor_job(job)
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# TradingAgents service 函数
+# ──────────────────────────────────────────────────────────────────────────────
+
+def ta_get_options() -> dict[str, Any]:
+    return ta.get_options()
+
+
+def ta_create_run_job(payload: dict[str, Any]) -> dict[str, Any]:
+    job = ta.create_run_job(payload)
+    return ta.serialize_job(job)
+
+
+def ta_get_job(job_id: str) -> dict[str, Any] | None:
+    job = ta.get_job(job_id)
+    if job is None:
+        return None
+    return ta.serialize_job(job)
+
+
+def ta_list_reports() -> list[dict[str, Any]]:
+    return ta.list_reports()
+
+
+def ta_get_report(report_id: str) -> dict[str, Any] | None:
+    return ta.get_report(report_id)
 

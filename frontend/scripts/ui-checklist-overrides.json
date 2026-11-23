@@ -1,0 +1,31 @@
+{
+  "extraRoutes": [
+    {
+      "path": "/api-health",
+      "label": "API 健康检查",
+      "fromNav": false,
+      "visitPath": "/api-health",
+      "actions": "打开页面，等待各接口探测完成（若有）。",
+      "expect": "可见各 API 状态或错误说明；无白屏。",
+      "failures": "NEXT_PUBLIC_API_BASE 未配置或后端未启动。"
+    },
+    {
+      "path": "/screener",
+      "label": "筛选器",
+      "fromNav": false,
+      "visitPath": "/screener",
+      "actions": "直接访问 URL（侧栏无入口时）。",
+      "expect": "页面可加载；交互按该页 PRD 预期。",
+      "failures": "路由未实现或占位。"
+    }
+  ],
+  "pathOverrides": {
+    "/stock-detail": {
+      "visitPath": "/stock-detail?ticker=NVDA",
+      "note": "无 ticker 时详情可能为空；自检请带示例 ticker。"
+    }
+  },
+  "subNavRoutes": [
+    { "path": "/strategy/wheel", "label": "Wheel", "parentNav": "/strategy", "actions": "在侧栏策略展开后点击 Wheel，或直接访问 URL。", "expect": "Wheel 页面内容与控件可见。" }
+  ]
+}

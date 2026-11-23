@@ -39,3 +39,22 @@ class XBriefRefreshRequest(BaseModel):
     days: int = Field(default=7, ge=3, le=30)
     per_account_limit: int = Field(default=80, ge=10, le=200)
 
+
+class InvestorAnalysisRequest(BaseModel):
+    mode: Literal["quick", "deep"] = "quick"
+
+
+class TaRunRequest(BaseModel):
+    ticker: str = Field(min_length=1)
+    analysis_date: str = Field(min_length=10, max_length=10)
+    analysts: list[str] = Field(min_length=1)
+    research_depth: int = Field(default=3)
+    llm_provider: str = Field(default="siliconflow")
+    backend_url: str | None = None
+    shallow_thinker: str = Field(min_length=1)
+    deep_thinker: str = Field(min_length=1)
+    openai_reasoning_effort: str | None = None
+    anthropic_effort: str | None = None
+    google_thinking_level: str | None = None
+    output_language: str = Field(default="English")
+

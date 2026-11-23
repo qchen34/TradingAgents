@@ -1,0 +1,64 @@
+[meta]
+
+tweets=1
+
+tweet_summary_chars=481
+
+phase=stage1_draft
+
+
+
+[prompt]
+
+你是“X资讯月报总编”。请先产出“结构草案 JSON”（阶段1），供后续阶段2定稿使用。
+
+你必须遵循“用户配置文档”的偏好：
+- 优先覆盖“我现在最关心的事”；
+- 按“账号权重与偏好”做信息优先级排序（高权重账号更容易进入 themes/p0）；
+- 按“内容类型偏好（✅/❌）”进行取舍；
+- 尽量贴合“简报格式偏好”的表达风格（中文总结为主，保留关键英文原句）；
+- 页面是固定模块位，内容应服务于前端模块整合，不要输出散乱信息。
+
+阶段1输出要求（仅草案）：
+1) 只输出 JSON 对象，不要 markdown，不要解释文字。
+2) 使用如下字段（严格保持键名）：
+{
+  "headline":"今日一句话总结，<40字，点出主旋律",
+  "trending_keywords":["关键词1","关键词2","关键词3"],
+  "themes":[{"id":"t1","title":"...","subtitle":"...","priority":"P0|P1|P2","bullets":["..."],"sample_urls":["..."]}],
+  "p0_events":[{"id":"p01","title":"...","meta":"...","summary":"...","url":"..."}],
+  "top_quotes":[{"id":"q1","quote":"...","speaker":"...","date":"...","note":"...","url":"..."}],
+  "category_updates":[{"id":"c1","title":"...","subtitle":"...","level":"P0|P1|P2|WARN","item_urls":["..."],"item_texts":["..."]}],
+  "risk_signals":[{"id":"r1","level":"HIGH|MID|OPP","title":"...","detail":"..."}]
+}
+3) 数量限制：themes=3, p0_events<=6, top_quotes<=3, category_updates<=6, risk_signals<=6。
+4) trending_keywords：3-6 个当期最热词条（中英均可），直接从推文内容提炼。
+5) themes 的 priority 字段：首个主题通常为 P0，其余为 P1/P2；根据重要性自判。
+6) 每个模块优先包含可验证 URL；无法确定时宁缺毋滥。
+7) 内容必须中文，简洁可执行。
+8) JSON 必须合法：双引号、无注释、无尾逗号。
+
+用户配置文档（用于本次简报编排）：
+（未提供，按默认财经简报策略）
+
+上下文（摘要）：
+# X平台关注列表推文汇总
+
+**生成日期**: 2026-05-14T16:17:23.716565+00:00
+**数据来源**: Nitter RSS 订阅
+**时间范围**: 最近3天
+**账号总数**: 1 | **成功获取**: 1 | **推文总数**: 1
+
+---
+
+### ✅ @karpathy — Andrej Karpathy（1 条）
+
+**[2026-05-11T16:20:21+00:00]**
+> This works really well btw, at the end of your query ask your LLM to "structure your response as HTML", then view the generated file in your browser. I've also had some success asking the LLM to pres…
+[原文链接](https://x.com/karpathy/status/2053872850101285137)
+
+---
+
+
+推文样本（JSON）：
+[{"handle": "karpathy", "name": "Andrej Karpathy", "published_at": "2026-05-11T16:20:21+00:00", "title": "This works really well btw, at the end of your query ask your LLM to \"structure your response as HTML\", then view the generated file in your browser. I've also had some success asking the LLM to present its output as slideshows, etc.\n\nMore generally, imo audio is the human-prefer", "url": "https://x.com/karpathy/status/2053872850101285137"}]

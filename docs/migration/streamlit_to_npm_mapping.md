@@ -1,5 +1,7 @@
 # Streamlit -> npm 页面映射
 
+> **说明**：原 Streamlit 已移除；本文档仅保留路由/API 对照，供迁移参考。
+
 ## 路由映射
 
 - `仪表盘` -> `frontend/src/app/page.tsx`
